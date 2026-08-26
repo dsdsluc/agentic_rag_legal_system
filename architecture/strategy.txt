@@ -1,0 +1,360 @@
+CHIẾN LƯỢC MỞ RỘNG ĐA LĨNH VỰC PHÁP LUẬT (dân sự, hình sự, ...)
+Ngày: 2026-08-25
+Câu hỏi gốc: hệ thống đã sẵn sàng tiếp nhận thêm văn bản luật dân sự/hình
+sự chưa, và nếu chưa, cách tiếp cận nào tốt nhất để mở rộng mà KHÔNG phá
+vỡ hệ thống hiện tại, mở rộng hiệu quả, tránh quá tải.
+
+=====================================================================
+TRẢ LỜI TRỰC TIẾP: CHƯA SẴN SÀNG — nhưng khoảng cách không quá lớn
+=====================================================================
+
+Đã grep trực tiếp toàn bộ src/ (không suy đoán): CHÍNH XÁC 6 file có prompt
+hardcode cụm "giao thông đường bộ"/"pháp luật giao thông" — tức là giả định
+CỨNG rằng toàn bộ corpus chỉ có 1 lĩnh vực, nằm rải khắp pipeline chứ không
+chỉ ở 1 chỗ dễ sửa:
+
+  1. src/rag/generate.py — _GROUNDING_RULES: system prompt CHÍNH cho việc
+     trả lời, mở đầu bằng "Bạn là trợ lý pháp lý, trả lời câu hỏi về pháp
+     luật giao thông đường bộ Việt Nam". Nếu thêm văn bản dân sự/hình sự
+     vào corpus mà KHÔNG sửa dòng này, model sẽ bị mâu thuẫn chỉ thị: vừa
+     được đọc nội dung dân sự/hình sự trong Ngữ cảnh, vừa bị bảo chỉ trả
+     lời câu hỏi giao thông — hành vi không đoán trước được.
+  2. src/rag/query_rewrite.py — QUERY_REWRITE_PROMPT: không chỉ hardcode
+     domain trong câu mở đầu, mà CẤU TRÚC trích xuất ý định (violation,
+     vehicle_type, info_need) vốn được THIẾT KẾ RIÊNG cho hành vi vi phạm
+     giao thông + loại phương tiện — không có ý nghĩa gì với 1 câu hỏi dân
+     sự (ví dụ "hợp đồng vô hiệu khi nào") hay hình sự (ví dụ "tội trộm
+     cắp tài sản bị phạt bao nhiêu năm tù"). Đây là chỗ cần SỬA CẤU TRÚC,
+     không chỉ đổi vài chữ.
+  3. src/rag/subchunk.py — KHOAN_SELECT_PROMPT (bước trim khoản cho Điều
+     dài): "Bạn được cho một Điều luật xử phạt giao thông đường bộ...".
+  4. src/rag/supersession.py — RELEVANCE_FILTER_PROMPT (lọc context sửa
+     đổi trước khi bơm vào): "câu hỏi pháp luật giao thông".
+  5. src/rag/eval.py — JUDGE_SYSTEM_PROMPT: giám khảo LLM chấm điểm cũng
+     giả định domain giao thông — thêm case dân sự/hình sự vào qa_set.json
+     mà không sửa chỗ này, điểm chấm sẽ không đáng tin.
+  6. src/ingestion/fine_amount.py — FINE_EXTRACT_PROMPT: trích xuất
+     fine_min/fine_max giả định cấu trúc "Điều luật xử phạt giao thông
+     đường bộ" — mức phạt tù (hình sự) hay không có "mức phạt tiền" nào cả
+     (nhiều Điều trong Bộ luật Dân sự) sẽ không được xử lý đúng.
+
+NGOÀI 6 CHỖ PROMPT, còn 1 khoảng trống ở tầng DỮ LIỆU quan trọng hơn: đã
+kiểm tra ingestion/models.py — KHÔNG có field "domain"/"lĩnh vực" nào trong
+ArticleChunk hay DocumentMetadata. DocType hiện có (LUAT/NGHI_DINH/THONG_TU)
+là loại VĂN BẢN (luật/nghị định/thông tư), không phải LĨNH VỰC (giao thông/
+dân sự/hình sự) — 2 khái niệm khác nhau, đang bị nhầm làm một vì từ trước
+tới giờ chỉ có 1 lĩnh vực nên không cần phân biệt.
+
+Hệ quả cụ thể nếu cứ ingest thẳng văn bản dân sự/hình sự vào corpus hiện
+tại mà không sửa gì: retriever.py's _fused_search tìm kiếm trên TOÀN BỘ
+collection, không có cách nào giới hạn phạm vi tìm kiếm theo lĩnh vực — một
+câu hỏi giao thông có thể vô tình khớp với 1 đoạn hình sự nói tới "phương
+tiện" theo nghĩa khác (ví dụ hình sự cũng nói "phương tiện phạm tội"), và
+ngược lại. Đây CHÍNH XÁC là dạng lỗi "xe máy" vs "xe máy chuyên dùng" đã
+gặp và phải vá riêng trong retriever.py (_filter_wrong_vehicle_category) —
+nhưng ở quy mô lớn hơn nhiều lần khi có thêm 2 lĩnh vực hoàn toàn khác biệt
+về từ vựng lẫn cấu trúc hình phạt.
+
+=====================================================================
+1. KIẾN TRÚC ĐỀ XUẤT: 1 collection + metadata "domain", KHÔNG tách riêng
+=====================================================================
+
+Quyết định kiến trúc quan trọng nhất: mỗi lĩnh vực có Chroma collection/
+BM25 index RIÊNG, hay dùng CHUNG 1 collection với field "domain" để lọc?
+
+ĐỀ XUẤT: dùng chung 1 collection, thêm field domain vào metadata, lọc bằng
+`where` clause khi cần — theo ĐÚNG pattern retriever.py đã có sẵn cho
+"template" (_EXCLUDE_TEMPLATE) và cho doc_id (_scoped_context_search).
+
+Lý do KHÔNG tách collection riêng:
+  - Câu hỏi pháp lý thực tế thường BẮC CẦU nhiều lĩnh vực (tai nạn giao
+    thông nghiêm trọng có thể vừa cần Nghị định xử phạt giao thông, vừa
+    cần Điều 584 Bộ luật Dân sự về "trách nhiệm bồi thường thiệt hại ngoài
+    hợp đồng", có khi cả Bộ luật Hình sự nếu đủ nghiêm trọng). Tách
+    collection riêng buộc phải tìm kiếm nhiều collection song song rồi gộp
+    kết quả — phức tạp hơn 1 where-clause, mà lại MẤT khả năng 1 lần fuse
+    RRF xuyên lĩnh vực khi câu hỏi thật sự cần cả hai.
+  - Quy mô hiện tại (~2100 dòng corpus.jsonl cho 10 văn bản giao thông)
+    còn cách rất xa giới hạn thực tế của Chroma (single-machine Chroma xử
+    lý tốt tới hàng trăm nghìn, thậm chí hàng triệu vector) — tách
+    collection bây giờ là tối ưu hoá sớm cho vấn đề chưa xảy ra.
+  - Tách collection nghĩa là nhân đôi/ba hạ tầng (get_collection(),
+    get_bm25_index(), toàn bộ retriever.py phải biết "đang ở collection
+    nào") — tăng bề mặt lỗi và code cần bảo trì, ngược với mục tiêu "tránh
+    quá tải" (ở đây hiểu là quá tải cho người bảo trì, không chỉ quá tải
+    hạ tầng).
+
+Việc CẦN làm thay vào đó:
+  a. Thêm `domain: DomainType` (enum, ví dụ "giao_thong"/"dan_su"/"hinh_su")
+     vào ArticleChunk (ingestion/models.py) và DocumentMetadata — bắt buộc
+     có giá trị, không None, để không lặp lại tình trạng "ngầm định 1 giá
+     trị vì chưa cần phân biệt" như DocType hiện tại.
+  b. Thêm "domain" vào chunk_metadata() (ingestion/vectorstore.py) — Chroma
+     where filter theo domain gần như miễn phí, đã có cơ chế index metadata
+     sẵn cho article_number/doc_type/chunk_type.
+  c. BM25: bm25_index.py hiện tokenize TOÀN BỘ chunks không phân domain —
+     thêm tham số domain filter khi build hoặc khi search (lọc chunks
+     TRƯỚC khi tokenize nếu cần tách biệt hẳn, hoặc lọc sau khi search rẻ
+     hơn nếu domain hiếm khi cần lọc cứng).
+  d. doc_id: thêm tiền tố lĩnh vực cho văn bản mới (ví dụ "BLDS_..." cho Bộ
+     luật Dân sự, "BLHS_..." cho Bộ luật Hình sự) — vừa tránh trùng doc_id
+     (số hiệu nghị định có thể trùng số giữa các lĩnh vực), vừa giúp
+     debug/log tự giải thích được, khớp quy ước đặt tên đã có (ND_, LUAT_,
+     TT_ hiện đang mã hoá LOẠI văn bản; thêm tiền tố lĩnh vực là lớp thông
+     tin khác, không xung đột).
+
+=====================================================================
+2. CHẾ ĐỘ AUTO — tự nhận diện lĩnh vực từ câu hỏi, KHÔNG cần người dùng
+   chọn tay
+=====================================================================
+
+Đây CHÍNH XÁC là yêu cầu của người dùng ("dựa vào câu hỏi của người đặt, từ
+đó biết được nó thuộc lĩnh vực nào") — xác nhận thiết kế: KHÔNG có bộ chọn
+lĩnh vực thủ công nào trên UI, toàn bộ việc phân loại diễn ra NGẦM, tự động,
+mỗi lần có câu hỏi mới.
+
+ĐỀ XUẤT VỊ TRÍ: gộp việc phân loại lĩnh vực vào NGAY trong lệnh gọi
+rewrite_query() đã có sẵn (thêm 1 field "domain" vào JSON output của
+QUERY_REWRITE_PROMPT), KHÔNG thêm một lệnh gọi LLM riêng cho việc phân
+loại.
+
+Lý do: toàn bộ session này đã nhiều lần phải kiểm soát số lượng lệnh gọi
+OpenAI mỗi request (rate limiting, max_tokens, cảnh báo fan-out ở
+plans/plan.txt) — thêm 1 bước "domain classifier" riêng là thêm 1 lệnh gọi
+LLM NỮA cho MỌI câu hỏi, trong khi rewrite_query() đã chạy sẵn 1 lệnh gọi
+để trích violation/vehicle_type/info_need — phân loại domain cùng lúc gần
+như miễn phí (cùng 1 lệnh gọi, thêm 1 field JSON).
+
+Vấn đề CẤU TRÚC cần giải quyết: QUERY_REWRITE_PROMPT hiện chỉ có 1 bộ field
+(violation/vehicle_type/info_need) CHUYÊN cho giao thông. Cách xử lý:
+  - Field "domain" luôn có (giao_thong/dan_su/hinh_su/khac).
+  - Field violation/vehicle_type/info_need CHỈ áp dụng khi domain =
+    giao_thong — với domain khác, dùng 1 field tổng quát hơn (ví dụ
+    "chu_de": cụm từ pháp lý trang trọng tương ứng, và "loai_yeu_cau": ví
+    dụ "hỏi mức án", "hỏi thủ tục", "hỏi định nghĩa" — tương tự info_need
+    nhưng không ép cứng vào "phạt tiền/trừ điểm" của giao thông).
+  - search_phrases (dùng cho hybrid search) vẫn tạo ra như cũ, chỉ đổi
+    NGÔN NGỮ định hướng theo domain đã phân loại.
+
+XỬ LÝ KHI "AUTO" KHÔNG CHẮC (câu hỏi mơ hồ về lĩnh vực, hoặc thật sự bắc
+cầu 2 lĩnh vực) — đây là phần dễ bị bỏ sót nhất khi làm "tự động nhận diện"
+nhưng codebase ĐÃ CÓ SẴN nguyên mẫu cho đúng loại vấn đề này: so sánh với
+`vehicle_type_ambiguous` trong query_rewrite.py hiện tại — khi loại xe
+chưa rõ mà mức phạt khác nhau tùy loại xe, hệ thống KHÔNG đoán bừa 1 loại,
+mà tự động mở rộng tìm kiếm cho nhiều loại xe phổ biến
+(COMMON_VEHICLE_TYPES fan-out) rồi để _intent_note() nhắc model nêu rõ
+từng loại trong câu trả lời. Áp dụng ĐÚNG pattern này cho domain:
+  - Thêm field "domain_ambiguous": true khi model không chắc chắn (ví dụ
+    câu hỏi kiểu "tai nạn giao thông thì phải làm sao" — vừa có thể hỏi
+    thủ tục giao thông, vừa có thể hỏi trách nhiệm bồi thường dân sự).
+  - Khi domain_ambiguous=true: KHÔNG áp domain filter cứng ở retrieval
+    (tìm trên toàn bộ corpus, không giới hạn where-clause theo domain) —
+    coi "không chắc lĩnh vực" tương đương "không lọc", để không bỏ sót.
+  - Khi domain_ambiguous=false (đa số trường hợp — câu hỏi thường tự nó
+    đã rõ lĩnh vực): áp domain filter để tăng độ chính xác và giảm nhiễu.
+  - Đây là lý do THÊM cho việc GIỮ 1 collection dùng chung (mục 1) — nếu
+    tách collection riêng theo lĩnh vực, xử lý "domain_ambiguous" sẽ phải
+    tìm kiếm NHIỀU collection song song rồi gộp, phức tạp hơn hẳn so với
+    chỉ đơn giản "bỏ where-clause đi" như thiết kế 1-collection cho phép.
+
+=====================================================================
+3. PROMPT SINH CÂU TRẢ LỜI (generate.py) — tổng quát hoá, không viết N bản
+=====================================================================
+
+KHÔNG đề xuất viết N bộ system prompt riêng cho N lĩnh vực (khó bảo trì —
+mỗi lần sửa quy tắc grounding chung phải sửa N chỗ, dễ lệch nhau theo thời
+gian, đúng loại "quá tải bảo trì" cần tránh).
+
+ĐỀ XUẤT: _GROUNDING_RULES tổng quát hoá câu mở đầu từ "pháp luật giao thông
+đường bộ Việt Nam" thành "pháp luật Việt Nam" (bỏ domain cụ thể) — các quy
+tắc grounding còn lại (không bịa, ưu tiên bản sửa đổi, xử lý OCR chưa xác
+minh...) vốn đã domain-agnostic, không cần đổi. CITIZEN/PROFESSIONAL_SYSTEM_
+PROMPT (giọng văn, định dạng trích dẫn) cũng không phụ thuộc domain, giữ
+nguyên.
+
+Phần THỰC SỰ cần domain-aware là 1 đoạn NGẮN chèn động vào cuối prompt dựa
+trên domain đã phân loại ở bước 2 — ví dụ với hình sự, nhắc thêm "phân biệt
+rõ giữa tội danh và biện pháp xử lý hành chính, nêu rõ khung hình phạt là
+khoảng chứ không phải mức án cụ thể (tòa án quyết định trong khung đó)".
+Đây là kỹ thuật chèn 1 đoạn hướng dẫn NGẮN theo điều kiện — không phải viết
+lại toàn bộ system prompt.
+
+=====================================================================
+4. get_fine_range VÀ CÁC TOOL — cần mở rộng schema, không chỉ prompt
+=====================================================================
+
+fine_min/fine_max (tiền phạt) hiện là field DUY NHẤT biểu diễn "mức xử lý"
+— đúng cho giao thông (100% là phạt tiền), nhưng KHÔNG đủ cho hình sự
+(khung hình phạt thường là "phạt tù từ X đến Y năm", có thể có cả phạt
+tiền bổ sung) hay dân sự (không có "mức phạt" theo nghĩa này — chỉ có
+"mức bồi thường" tính theo thiệt hại thực tế, không phải 1 khoảng cố định
+trong luật). Đây là chỗ CẦN THÊM FIELD, không chỉ sửa prompt:
+  - Thêm `penalty_type` (enum: "phat_tien"/"phat_tu"/"khac"/None).
+  - Thêm `prison_min_months`/`prison_max_months` cho khung hình phạt tù.
+  - fine_min/fine_max giữ nguyên ý nghĩa (tiền), áp dụng cho cả phạt tiền
+    hành chính (giao thông) lẫn phạt tiền hình sự khi có.
+  - get_fine_range (rag/tools.py) mở rộng để đọc thêm các field mới, đổi
+    tên hiển thị cho phù hợp (có thể tách thành get_penalty_range tổng
+    quát hơn, hoặc giữ tên cũ nhưng linh hoạt định dạng đầu ra theo
+    penalty_type) — quyết định cụ thể nên làm khi đã có dữ liệu hình sự
+    thật để biết đúng hình dạng cần trích xuất.
+  - get_article/get_khoan/search_corpus: KHÔNG cần đổi gì — vốn đã domain-
+    agnostic (nhận doc_id, không giả định nội dung).
+
+=====================================================================
+5. LEGAL WORKSPACE (Postgres/web) — CHIA RÕ theo bộ luật/lĩnh vực, KHÁC
+   với Chroma
+=====================================================================
+
+Yêu cầu rõ ràng của người dùng: bên Postgres/Legal Workspace (trang duyệt
+văn bản cho NGƯỜI DÙNG xem, khác với Chroma vốn phục vụ RETRIEVAL cho
+model) phải chia tách theo từng bộ luật/lĩnh vực, KHÔNG gộp chung 1 khối
+như Chroma.
+
+Đây là 2 mối quan tâm KHÁC NHAU, không mâu thuẫn với đề xuất "1 collection"
+ở mục 1 — Chroma phục vụ model tìm kiếm (cần khả năng bắc cầu lĩnh vực khi
+câu hỏi cần), còn Legal Workspace phục vụ NGƯỜI xem/duyệt văn bản (cần
+điều hướng rõ ràng, không muốn thấy 1 danh sách 30+ văn bản trộn lẫn giao
+thông/dân sự/hình sự không phân biệt). Tách kiến trúc theo ĐÚNG mối quan
+tâm của từng phần, không dùng chung 1 quyết định cho cả hai, là hướng đúng.
+
+Đã kiểm tra web/prisma/schema.prisma — Document model hiện tại:
+  model Document {
+    id, title, docType (LUAT/NGHI_DINH/THONG_TU), docNumber, description,
+    source, effectiveDate, articles[], relationsFrom/To[]
+  }
+Xác nhận: giống hệt tình trạng bên Python, KHÔNG có field domain/lĩnh vực
+nào. web/app/van-ban/page.tsx đã DÙNG docType để nhóm/lọc trên UI hiện có —
+tức là hạ tầng "nhóm theo 1 trường phân loại" đã tồn tại sẵn, chỉ cần thêm
+field domain và áp dụng cùng cách.
+
+VIỆC CẦN LÀM (song song với thay đổi ingestion bên Python ở mục 1, vì
+Postgres CHỈ LÀ bản chiếu một chiều từ corpus.jsonl qua sync-corpus.ts —
+domain phải có nguồn gốc từ ingestion trước, không tự thêm riêng ở Postgres):
+
+  a. Thêm `domain DomainType` vào Document model (schema.prisma) — enum
+     giống hệt bên Python (giao_thong/dan_su/hinh_su), migration mặc định
+     "giao_thong" cho toàn bộ Document hiện có (khớp Bước 1 ở mục 6).
+  b. sync-corpus.ts: thêm domain vào phần field được chiếu từ JSONL sang
+     Postgres Document — cùng cơ chế đã chiếu docType, không phải viết mới
+     từ đầu.
+  c. web/app/van-ban/page.tsx (trang danh sách văn bản): đổi cấu trúc điều
+     hướng để LĨNH VỰC là tầng nhóm CHÍNH (ví dụ 3 khu vực rõ rệt: "Giao
+     thông đường bộ", "Dân sự", "Hình sự" — mỗi khu vực có danh sách văn
+     bản riêng, docType vẫn dùng làm bộ lọc PHỤ bên trong từng khu vực như
+     hiện tại). Có thể làm bằng cách gọn nhất là thêm 1 tầng route
+     /van-ban/[domain]/... hoặc đơn giản hơn là nhóm bằng section ngay
+     trên cùng 1 trang — quyết định UI cụ thể để dành khi bắt tay code,
+     nhưng NGUYÊN TẮC là domain phải là điểm chia tách nhìn thấy đầu tiên,
+     không phải 1 filter ẩn trong dropdown.
+  d. Trang chi tiết văn bản/Điều ([docId]/page.tsx, [docId]/dieu/
+     [articleNumber]/page.tsx) không cần đổi cấu trúc — chỉ cần đường dẫn
+     "quay lại danh sách" trỏ đúng về khu vực lĩnh vực tương ứng thay vì
+     danh sách chung.
+  e. KHÔNG tách bảng Postgres riêng theo lĩnh vực (không làm Document_
+     DanSu, Document_HinhSu... riêng bảng) — vẫn 1 bảng Document/Article/
+     Khoan dùng chung + field domain, vì DocumentRelation (quan hệ sửa
+     đổi/hướng dẫn/liên quan) đã có sẵn CÓ THỂ bắc cầu lĩnh vực trong thực
+     tế (ví dụ 1 Nghị định giao thông có thể liên kết tới Điều khoản Bộ
+     luật Dân sự về bồi thường) — tách bảng riêng sẽ phải tự chế lại toàn
+     bộ cơ chế quan hệ liên văn bản đang có sẵn. "Chia theo bộ luật" ở đây
+     nên hiểu là chia ở TẦNG HIỂN THỊ/ĐIỀU HƯỚNG (người dùng thấy tách
+     biệt rõ ràng), không phải chia ở TẦNG LƯU TRỮ (bảng vẫn chung, có
+     field phân biệt) — cùng logic với quyết định Chroma ở mục 1, chỉ khác
+     ở chỗ ĐÂY LÀ TRẢI NGHIỆM NGƯỜI DÙNG nên ưu tiên rõ ràng/dễ điều hướng
+     hơn là hiệu quả truy vấn thuần túy.
+
+=====================================================================
+6. RỦI RO NGHIÊM TRỌNG NHẤT: lỗi ranh giới trích xuất (§2.6) CHƯA rõ gốc
+=====================================================================
+
+Phiên làm việc trước đã phát hiện và vá NHIỀU trường hợp article-level text
+bị dính lẫn (2 Điều liên tiếp dính làm 1, hoặc Điều dính cả Phụ lục mẫu
+đơn phía sau) trong corpus giao thông hiện tại — đã sửa các trường hợp phát
+hiện được, nhưng NGUYÊN NHÂN GỐC trong pipeline ingestion (bước nào tạo ra
+ranh giới Điều sai) VẪN CHƯA được xác định/sửa tận gốc (xem plans cũ mục
+2.6, phần "CÒN LẠI 3/23... để dành nếu cần").
+
+Đây là RỦI RO CAO nếu ingest thêm 2 bộ luật lớn (Bộ luật Dân sự, Bộ luật
+Hình sự — cả hai đều DÀI HƠN NHIỀU so với các nghị định giao thông hiện có,
+nhiều Điều, nhiều Chương/Mục) mà KHÔNG xử lý trước: cùng 1 lỗi ranh giới có
+thể xuất hiện lặp lại, với tần suất cao hơn (nhiều Điều liên tiếp/nhiều Phụ
+lục hơn), và VÌ 2 bộ luật này KHÔNG có cấu trúc "1 khoản = 1 mức phạt" đơn
+giản như nghị định xử phạt giao thông, hệ quả của Điều bị dính lẫn có thể
+NGHIÊM TRỌNG HƠN (ví dụ 1 điều khoản về tội danh bị lẫn khung hình phạt của
+tội khác).
+
+ĐỀ XUẤT: TRƯỚC khi ingest số lượng lớn, dành thời gian xác định nguyên
+nhân gốc của lỗi ranh giới (khả năng cao nằm ở bước OCR/PDF-extraction xác
+định "Điều kết thúc ở đâu" — cần rà lại build_corpus.py/pdf_extract.py).
+Nếu không kịp sửa gốc trước khi ingest, TỐI THIỂU phải chạy lại đúng quy
+trình audit trùng lặp chunk_id đã dùng ở §2.6 (script so sánh) NGAY SAU MỖI
+đợt ingest văn bản mới — coi đây là bước BẮT BUỘC trong checklist ingest,
+không phải tuỳ chọn.
+
+=====================================================================
+7. LỘ TRÌNH TRIỂN KHAI — không phá vỡ hệ thống hiện tại
+=====================================================================
+
+Nguyên tắc xuyên suốt: mọi thay đổi PHẢI có cách tắt/bật (feature flag),
+theo đúng pattern use_tools/use_reflection/trim_context đã dùng suốt phiên
+này — để corpus giao thông hiện tại + 9 case eval hiện tại LUÔN là lưới an
+toàn kiểm tra không có gì bị hỏng ở mỗi bước.
+
+  Bước 1 — Data model (rủi ro thấp, không ảnh hưởng corpus hiện tại):
+    Thêm field domain vào ArticleChunk/DocumentMetadata, migrate TOÀN BỘ
+    chunk hiện có với domain="giao_thong" mặc định (1 script, không đổi
+    nội dung, chỉ gắn nhãn). Verify: get_article/get_khoan/search_corpus/
+    eval.py chạy y hệt trước đó (domain field tồn tại nhưng chưa được dùng
+    để lọc gì cả).
+
+  Bước 2 — Pilot 1 lĩnh vực (khuyến nghị: dân sự trước hình sự — dân sự có
+    khả năng liên quan trực tiếp tới câu hỏi giao thông hiện tại nhiều hơn
+    — trách nhiệm bồi thường, hợp đồng vận chuyển — nên giá trị thử nghiệm
+    cao hơn, đồng thời cấu trúc "khung hình phạt tù" phức tạp hơn của hình
+    sự để lại làm sau khi đã có kinh nghiệm từ 1 lượt pilot):
+    a. Chạy ingestion cho 1-2 văn bản dân sự đại diện (ví dụ chính Bộ luật
+       Dân sự, gán domain="dan_su", doc_id tiền tố "BLDS_").
+    b. BẮT BUỘC chạy audit trùng lặp chunk_id (§6) ngay sau ingest.
+    c. Đồng thời làm phần Postgres/web (§5.a-d): thêm field domain vào
+       Document, cập nhật sync-corpus.ts, chạy sync để đưa văn bản dân sự
+       vào Legal Workspace với khu vực điều hướng riêng — để admin/người
+       kiểm duyệt có thể xem/rà soát văn bản mới ngay trên UI song song
+       với việc validate ở bước d.
+    d. Thêm 3-5 case eval MỚI cho lĩnh vực dân sự vào 1 file riêng (không
+       trộn vào qa_set.json hiện tại — tránh việc 1 file lớn khó theo dõi
+       domain nào đang yếu) — dùng SystemPrompt tổng quát hoá ở mục 3.
+    e. Chạy LẠI 9 case giao thông hiện tại (không đổi gì) — xác nhận điểm
+       số KHÔNG tụt so với trước khi thêm dữ liệu dân sự (bảo đảm domain
+       filter/prompt tổng quát hoá không vô tình làm hỏng đường cũ).
+
+  Bước 3 — Bật domain filter có kiểm soát: thêm use_domain_filter (hoặc
+    tương tự) như 1 tham số A/B qua eval.py, giống hệt cách use_tools đã
+    được validate — CHỈ bật mặc định sau khi đo cho thấy KHÔNG có case nào
+    (cả giao thông lẫn dân sự) tệ đi. Nhớ verify riêng nhánh
+    domain_ambiguous=true (mục 2) — case này KHÔNG áp filter, phải test
+    để chắc chắn nó thật sự tìm được trên toàn corpus, không bị lỡ tay
+    giới hạn nhầm domain.
+
+  Bước 4 — Lặp lại bước 2-3 cho hình sự sau khi bước dân sự đã ổn định
+    (không làm song song 2 lĩnh vực mới cùng lúc — mỗi lượt chỉ đổi 1 biến
+    số để khi có vấn đề, biết ngay nguyên nhân từ đâu). Hình sự thêm việc
+    mở rộng schema penalty_type/prison_min_months (mục 4) — làm ở bước
+    này, không làm sớm hơn cho dân sự vì dân sự không cần các field đó.
+
+=====================================================================
+TÓM TẮT MỘT DÒNG
+=====================================================================
+Chưa sẵn sàng — 6 prompt + thiếu field domain là rào cản cụ thể, không
+phải rào cản mơ hồ. Chế độ AUTO (tự nhận diện lĩnh vực từ câu hỏi, không
+cần người dùng chọn tay) gộp vào lệnh gọi rewrite_query có sẵn, dùng đúng
+pattern "ambiguous → mở rộng tìm kiếm thay vì đoán bừa" đã có sẵn cho loại
+phương tiện. Retrieval (Chroma/BM25) giữ 1 collection dùng chung + field
+domain lọc bằng metadata — vì model cần bắc cầu lĩnh vực khi câu hỏi thật
+sự cần. Legal Workspace (Postgres/web) NGƯỢC LẠI — chia rõ theo lĩnh vực ở
+tầng điều hướng/hiển thị cho người dùng xem, dù vẫn dùng chung 1 bộ bảng
+Document/Article/Khoan (không tách bảng, giữ được DocumentRelation bắc
+cầu lĩnh vực). Tổng quát hoá generate.py thay vì viết N bản, mở rộng schema
+fine cho hình sự, và BẮT BUỘC audit lại lỗi ranh giới trích xuất sau mỗi
+đợt ingest — triển khai theo từng bước có eval chặn ở giữa, pilot 1 lĩnh
+vực (dân sự) trước khi làm lĩnh vực thứ hai (hình sự).

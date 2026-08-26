@@ -1,0 +1,47 @@
+[
+  {
+    "question": "Luật Trật tự, an toàn giao thông đường bộ có hiệu lực thi hành từ ngày nào?",
+    "reference_answer": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025.",
+    "tags": ["luat", "hieu_luc"]
+  },
+  {
+    "question": "Giấy phép lái xe hạng A1 được cấp cho người lái loại xe nào?",
+    "reference_answer": "Hạng A1 cấp cho người lái xe mô tô hai bánh có dung tích xi-lanh đến 125 cm3 hoặc có công suất động cơ điện đến 11 kW.",
+    "tags": ["luat", "gplx"]
+  },
+  {
+    "question": "Điều khiển xe khi trong máu hoặc hơi thở có nồng độ cồn có bị pháp luật nghiêm cấm không?",
+    "reference_answer": "Có. Theo Điều 9 Luật Trật tự, an toàn giao thông đường bộ, điều khiển phương tiện tham gia giao thông đường bộ mà trong máu hoặc hơi thở có nồng độ cồn là hành vi bị nghiêm cấm.",
+    "tags": ["luat", "nghiem_cam"]
+  },
+  {
+    "question": "Thông tư 17/2026/TT-BXD có hiệu lực thi hành từ ngày nào?",
+    "reference_answer": "Thông tư 17/2026/TT-BXD có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026.",
+    "tags": ["thong_tu", "hieu_luc"]
+  },
+  {
+    "question": "Luật Đường bộ 35/2024/QH15 quy định như thế nào về phân loại đường bộ?",
+    "reference_answer": "Không có thông tin — Luật Đường bộ 35/2024/QH15 chỉ được nhắc đến như một văn bản liên quan trong dữ liệu quan hệ, nhưng nội dung văn bản này không có trong kho dữ liệu hiện có, nên hệ thống phải từ chối trả lời thay vì suy đoán.",
+    "tags": ["refusal", "out_of_corpus"]
+  },
+  {
+    "question": "Nghị định 238/2026/NĐ-CP có hiệu lực thi hành từ ngày nào?",
+    "reference_answer": "Nghị định 238/2026/NĐ-CP có hiệu lực thi hành từ ngày 15 tháng 8 năm 2026.",
+    "tags": ["nghi_dinh", "hieu_luc", "ocr"]
+  },
+  {
+    "question": "Nghị định 238/2026/NĐ-CP sửa đổi, bổ sung nội dung gì của Nghị định 168/2024/NĐ-CP liên quan đến việc chở trẻ em trên xe ô tô?",
+    "reference_answer": "Nghị định 238/2026/NĐ-CP bổ sung khoản 1a vào Điều 6 Nghị định 168/2024/NĐ-CP: phạt cảnh cáo đối với người điều khiển xe ô tô chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét mà không sử dụng thiết bị an toàn phù hợp cho trẻ em theo quy định (trừ xe ô tô kinh doanh vận tải hành khách). Đây là quy định sửa đổi, cần được ưu tiên áp dụng thay cho Nghị định 168/2024/NĐ-CP gốc.",
+    "tags": ["nghi_dinh", "amendment", "ocr"]
+  },
+  {
+    "question": "Mức phạt đối với người điều khiển xe mô tô, xe gắn máy không đội mũ bảo hiểm là bao nhiêu?",
+    "reference_answer": "Theo Điều 7 Nghị định 168/2024/NĐ-CP, phạt tiền từ 400.000 đồng đến 600.000 đồng đối với người điều khiển xe mô tô, xe gắn máy không đội mũ bảo hiểm cho người đi mô tô, xe máy hoặc đội mũ bảo hiểm không cài quai đúng quy cách khi tham gia giao thông.",
+    "tags": ["nghi_dinh", "gap_recovered", "ocr"]
+  },
+  {
+    "question": "Tôi vượt đèn đỏ mất bao nhiêu tiền?",
+    "reference_answer": "Mức phạt cho hành vi không chấp hành hiệu lệnh của đèn tín hiệu giao thông khác nhau tùy loại phương tiện (ví dụ mô tô/xe gắn máy so với ô tô). Vì người dùng không nêu rõ loại xe, câu trả lời đúng đắn là nêu rõ điều này còn tùy loại phương tiện và hỏi lại hoặc nêu rõ giả định, không được khẳng định một mức phạt cụ thể như thể áp dụng chung cho mọi loại xe.",
+    "tags": ["colloquial", "intent", "vehicle_ambiguous"]
+  }
+]

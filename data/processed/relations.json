@@ -1,0 +1,314 @@
+[
+  {
+    "from_doc_id": "LUAT_TTATGTDB_36_2024_QH15",
+    "relation_type": "Được hướng dẫn bởi",
+    "to_doc_text": "Nghị định 151/2024/NĐ-CP",
+    "to_doc_id": "ND_151_2024"
+  },
+  {
+    "from_doc_id": "LUAT_TTATGTDB_36_2024_QH15",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 165/2024/NĐ-CP",
+    "to_doc_id": "ND_165_2024"
+  },
+  {
+    "from_doc_id": "ND_151_2024",
+    "relation_type": "Hướng dẫn thi hành",
+    "to_doc_text": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15",
+    "to_doc_id": "LUAT_TTATGTDB_36_2024_QH15"
+  },
+  {
+    "from_doc_id": "ND_151_2024",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Đường bộ 35/2024/QH15",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "ND_151_2024",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 165/2024/NĐ-CP",
+    "to_doc_id": "ND_165_2024"
+  },
+  {
+    "from_doc_id": "ND_165_2024",
+    "relation_type": "Hướng dẫn thi hành",
+    "to_doc_text": "Luật Đường bộ 35/2024/QH15",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "ND_165_2024",
+    "relation_type": "Hướng dẫn thi hành một số nội dung",
+    "to_doc_text": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15",
+    "to_doc_id": "LUAT_TTATGTDB_36_2024_QH15"
+  },
+  {
+    "from_doc_id": "ND_165_2024",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 151/2024/NĐ-CP",
+    "to_doc_id": "ND_151_2024"
+  },
+  {
+    "from_doc_id": "ND_165_2024",
+    "relation_type": "Được sửa đổi, bổ sung bởi",
+    "to_doc_text": "Nghị định 241/2026/NĐ-CP",
+    "to_doc_id": "ND_241_2026"
+  },
+  {
+    "from_doc_id": "ND_168_2024",
+    "relation_type": "Được ban hành để quy định chi tiết và xử lý các vi phạm liên quan đến",
+    "to_doc_text": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15",
+    "to_doc_id": "LUAT_TTATGTDB_36_2024_QH15"
+  },
+  {
+    "from_doc_id": "ND_168_2024",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Đường bộ 35/2024/QH15",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "ND_168_2024",
+    "relation_type": "Được sửa đổi, bổ sung bởi",
+    "to_doc_text": "Nghị định 238/2026/NĐ-CP",
+    "to_doc_id": "ND_238_2026"
+  },
+  {
+    "from_doc_id": "ND_238_2026",
+    "relation_type": "Sửa đổi, bổ sung",
+    "to_doc_text": "Nghị định 168/2024/NĐ-CP",
+    "to_doc_id": "ND_168_2024"
+  },
+  {
+    "from_doc_id": "ND_238_2026",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15",
+    "to_doc_id": "LUAT_TTATGTDB_36_2024_QH15"
+  },
+  {
+    "from_doc_id": "ND_241_2026",
+    "relation_type": "Sửa đổi, bổ sung",
+    "to_doc_text": "Nghị định 165/2024/NĐ-CP",
+    "to_doc_id": "ND_165_2024"
+  },
+  {
+    "from_doc_id": "ND_241_2026",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Đường bộ 35/2024/QH15",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "ND_241_2026",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15",
+    "to_doc_id": "LUAT_TTATGTDB_36_2024_QH15"
+  },
+  {
+    "from_doc_id": "ND_336_2025",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Đường bộ 35/2024/QH15",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "ND_336_2025",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15",
+    "to_doc_id": "LUAT_TTATGTDB_36_2024_QH15"
+  },
+  {
+    "from_doc_id": "ND_336_2025",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 165/2024/NĐ-CP",
+    "to_doc_id": "ND_165_2024"
+  },
+  {
+    "from_doc_id": "TT_105_2026_TT_BCA",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15",
+    "to_doc_id": "LUAT_TTATGTDB_36_2024_QH15"
+  },
+  {
+    "from_doc_id": "TT_105_2026_TT_BCA",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 168/2024/NĐ-CP",
+    "to_doc_id": "ND_168_2024"
+  },
+  {
+    "from_doc_id": "TT_105_2026_TT_BCA",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 238/2026/NĐ-CP",
+    "to_doc_id": "ND_238_2026"
+  },
+  {
+    "from_doc_id": "TT_105_2026_TT_BCA",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 151/2024/NĐ-CP",
+    "to_doc_id": "ND_151_2024"
+  },
+  {
+    "from_doc_id": "TT_17_2026_TT_BXD",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15",
+    "to_doc_id": "LUAT_TTATGTDB_36_2024_QH15"
+  },
+  {
+    "from_doc_id": "TT_17_2026_TT_BXD",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Đường bộ 35/2024/QH15",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "TT_17_2026_TT_BXD",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 151/2024/NĐ-CP",
+    "to_doc_id": "ND_151_2024"
+  },
+  {
+    "from_doc_id": "TT_17_2026_TT_BXD",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 165/2024/NĐ-CP",
+    "to_doc_id": "ND_165_2024"
+  },
+  {
+    "from_doc_id": "TT_73_2024_TT_BCA",
+    "relation_type": "Hướng dẫn thực hiện",
+    "to_doc_text": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15",
+    "to_doc_id": "LUAT_TTATGTDB_36_2024_QH15"
+  },
+  {
+    "from_doc_id": "TT_73_2024_TT_BCA",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 168/2024/NĐ-CP",
+    "to_doc_id": "ND_168_2024"
+  },
+  {
+    "from_doc_id": "TT_73_2024_TT_BCA",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Nghị định 238/2026/NĐ-CP",
+    "to_doc_id": "ND_238_2026"
+  },
+  {
+    "from_doc_id": "LUAT_12_2017_QH14",
+    "relation_type": "Sửa đổi, bổ sung",
+    "to_doc_text": "Bộ luật Hình sự 100/2015/QH13",
+    "to_doc_id": "BLHS_100_2015_QH13"
+  },
+  {
+    "from_doc_id": "LUAT_12_2017_QH14",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Bộ luật Tố tụng hình sự 101/2015/QH13",
+    "to_doc_id": "BLTTHS_101_2015_QH13"
+  },
+  {
+    "from_doc_id": "LUAT_12_2017_QH14",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Thi hành án hình sự 41/2019/QH14",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "LUAT_12_2017_QH14",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Tổ chức cơ quan điều tra hình sự 99/2015/QH13",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLDS_91_2015_QH13",
+    "relation_type": "Thay thế",
+    "to_doc_text": "Bộ luật Dân sự 33/2005/QH11",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLDS_91_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Bộ luật Tố tụng dân sự 92/2015/QH13",
+    "to_doc_id": "BLTTDS_92_2015_QH13"
+  },
+  {
+    "from_doc_id": "BLDS_91_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Hôn nhân và gia đình 52/2014/QH13",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLDS_91_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Đất đai 31/2024/QH15",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLDS_91_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Nhà ở 27/2023/QH15",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLTTDS_92_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Bộ luật Dân sự 91/2015/QH13",
+    "to_doc_id": "BLDS_91_2015_QH13"
+  },
+  {
+    "from_doc_id": "BLTTDS_92_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Hôn nhân và gia đình 52/2014/QH13",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLTTDS_92_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Thương mại 36/2005/QH11",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLTTDS_92_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Bộ luật Lao động 45/2019/QH14",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLTTHS_101_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Bộ luật Hình sự 100/2015/QH13",
+    "to_doc_id": "BLHS_100_2015_QH13"
+  },
+  {
+    "from_doc_id": "BLTTHS_101_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật sửa đổi, bổ sung một số điều của Bộ luật Hình sự 12/2017/QH14",
+    "to_doc_id": "LUAT_12_2017_QH14"
+  },
+  {
+    "from_doc_id": "BLTTHS_101_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Tổ chức cơ quan điều tra hình sự 99/2015/QH13",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLTTHS_101_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Thi hành án hình sự 41/2019/QH14",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLHS_100_2015_QH13",
+    "relation_type": "Được sửa đổi, bổ sung bởi",
+    "to_doc_text": "Luật 12/2017/QH14",
+    "to_doc_id": "LUAT_12_2017_QH14"
+  },
+  {
+    "from_doc_id": "BLHS_100_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Bộ luật Tố tụng hình sự 101/2015/QH13",
+    "to_doc_id": "BLTTHS_101_2015_QH13"
+  },
+  {
+    "from_doc_id": "BLHS_100_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Thi hành án hình sự 41/2019/QH14",
+    "to_doc_id": null
+  },
+  {
+    "from_doc_id": "BLHS_100_2015_QH13",
+    "relation_type": "Liên quan đến",
+    "to_doc_text": "Luật Tổ chức cơ quan điều tra hình sự 99/2015/QH13",
+    "to_doc_id": null
+  }
+]

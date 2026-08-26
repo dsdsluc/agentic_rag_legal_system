@@ -1,0 +1,318 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Read projection of the RAG corpus for the web app's document-viewing and
+// citation-linking UI (professional mode) — populated by prisma/sync-corpus.ts
+// from data/processed/{corpus.jsonl,relations.json,khoan_relations.json},
+// which the Python ingestion pipeline already produces. Not used for
+// retrieval — Chroma/BM25 stay the source of truth there; this only needs
+// to answer "show me Điều X of document Y and what links to/from it".
+
+// Auth: a registered account (email/password) unlocks Chuyên gia mode in
+// chat and the /van-ban document library — anonymous guests only get
+// Citizen-mode chat. Sessions are DB-backed opaque tokens (not JWT) so
+// logout/expiry is a plain row delete, not a signature-verification story.
+enum Role {
+  user
+  admin
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  phone        String?
+  occupation   String?
+  role         Role     @default(user)
+  // Separate from `role` on purpose: lets a specific editor fix OCR'd Điều/
+  // Khoản content in Legal Workspace without granting the rest of admin
+  // (user management, future admin-only features). A single global flag —
+  // not a permissions table — because there's exactly one grantable action
+  // today; revisit only if a second, differently-scoped permission shows up.
+  canEditLegalDocs Boolean  @default(false)
+  // Admin-initiated account lock — a stronger, orthogonal control than role:
+  // a locked admin keeps their role but can't log in at all. Locking also
+  // revokes existing sessions (see /api/admin/users/[id] PATCH) rather than
+  // waiting for them to expire naturally.
+  isLocked         Boolean  @default(false)
+  createdAt        DateTime @default(now())
+
+  sessions      Session[]
+  conversations Conversation[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // SHA-256 of the raw token that actually lives in the cookie — a DB leak
+  // alone can't be replayed as a live session.
+  tokenHash String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+enum AnswerMode {
+  citizen
+  professional
+}
+
+// Persisted chat history for both signed-in users and anonymous visitors.
+// Exactly one of (userId, guestId) is set — enforced at the application
+// layer, not the DB — mirroring the free-text-id style already used for
+// KhoanRelation.fromChunkId instead of a hard FK. guestId is an opaque
+// random cookie value (lib/guest.ts), never PII, so an anonymous visitor's
+// history survives a refresh without requiring an account.
+model Conversation {
+  id        String     @id @default(cuid())
+  userId    String?
+  user      User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  guestId   String?
+  title     String
+  mode      AnswerMode
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  messages Message[]
+
+  @@index([userId])
+  @@index([guestId])
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           String
+  text           String
+  mode           AnswerMode
+  // SourceOut[] — only present on assistant messages answered in
+  // professional mode (see lib/types.ts SourceOut).
+  sourcesJson    Json?
+  // QueryResponse.domains — the resolved subject-matter domain(s) for this
+  // turn (see rag/domain_classify.py), only present on assistant messages.
+  // Empty array means "no filter was applied" (ambiguous/cross-domain), not
+  // "unknown" — messages from before this field existed are also just `[]`,
+  // indistinguishable from that case, which is fine: both render as no
+  // domain badge/icon (see lib/domain.ts's representativeDomain).
+  domains        String[]     @default([])
+  createdAt      DateTime     @default(now())
+
+  @@index([conversationId, createdAt])
+}
+
+enum DocType {
+  luat
+  nghi_dinh
+  thong_tu
+  bo_luat
+}
+
+// Subject-matter grouping, orthogonal to DocType's legal-rank taxonomy —
+// this is what /van-ban's workspace switcher partitions on ("Giao thông" /
+// "Dân sự" / "Hình sự"), each of which still spans Luật/Nghị định/Thông tư
+// internally. Populated from documents.json's `domain` field (already
+// produced by the Python ingestion pipeline; see src/ingestion/models.py).
+enum Domain {
+  giao_thong
+  dan_su
+  hinh_su
+}
+
+enum ChunkType {
+  article
+  preamble
+  annex
+  template
+}
+
+model Document {
+  id            String    @id
+  title         String
+  docType       DocType
+  domain        Domain
+  docNumber     String
+  description   String
+  source        String
+  effectiveDate DateTime?
+
+  articles      Article[]
+  relationsFrom DocumentRelation[] @relation("DocumentRelationFrom")
+  relationsTo   DocumentRelation[] @relation("DocumentRelationTo")
+}
+
+model Article {
+  id            String    @id
+  documentId    String
+  document      Document  @relation(fields: [documentId], references: [id])
+  articleNumber Int?
+  heading       String?
+  text          String
+  chunkType     ChunkType
+  needsReview   Boolean   @default(false)
+  ocrConfidence Float?
+
+  khoans        Khoan[]
+
+  @@unique([documentId, articleNumber])
+  @@index([documentId])
+}
+
+model Khoan {
+  id          String  @id
+  articleId   String
+  article     Article @relation(fields: [articleId], references: [id])
+  // Not an Int — an inserted clause is often labeled "8a"/"9a" ("bổ sung
+  // khoản 8a vào sau khoản 8"), see KhoanRelation below.
+  khoanNumber String
+  text        String
+  fineMin     Int?
+  fineMax     Int?
+  needsReview Boolean @default(false)
+
+  supersededBy KhoanRelation[] @relation("KhoanRelationTarget")
+
+  @@unique([articleId, khoanNumber])
+  @@index([articleId])
+}
+
+model DocumentRelation {
+  id             String    @id @default(cuid())
+  fromDocumentId String
+  fromDocument   Document  @relation("DocumentRelationFrom", fields: [fromDocumentId], references: [id])
+  toDocumentId   String?
+  toDocument     Document? @relation("DocumentRelationTo", fields: [toDocumentId], references: [id])
+  // Kept even when toDocumentId resolves — mirrors ingestion/models.py's
+  // RelationEdge.to_doc_text, the original free-text reference.
+  toDocText      String
+  relationType   String
+
+  @@index([fromDocumentId])
+  @@index([toDocumentId])
+}
+
+model KhoanRelation {
+  id      String @id @default(cuid())
+  // The amending khoản/Điều — free-text chunk_id, not a hard FK: the
+  // amending side can be a whole Điều (no khoản children) or a specific
+  // khoản, matching khoan_relations.json's from_chunk_id as-is.
+  fromChunkId String
+
+  toKhoanId       String?
+  toKhoan         Khoan?  @relation("KhoanRelationTarget", fields: [toKhoanId], references: [id])
+  toDocumentId    String
+  toArticleNumber Int?
+  toKhoanLabel    String?
+
+  relationType String
+  resolved     Boolean
+  note         String?
+
+  @@index([toKhoanId])
+  @@index([fromChunkId])
+}
+
+// Singleton row (always id "singleton", upserted in place — never a second
+// row) backing the citizen/Legal Workspace notification dock. Three
+// independent switches: `active` shows/hides the corner banner itself (no
+// banner at all when off, per the brief); `apiEnabled` is a separate kill
+// switch admins can use to stop the browser from calling the FastAPI RAG
+// backend (out of API tokens, or mid-deploy) — when off, chat sends skip
+// the network call and surface `message` in place of an answer instead of
+// a raw connection error. `professionalModeEnabled` is a third, independent
+// kill switch for Chế độ Chuyên gia specifically (cost control — Chuyên
+// gia answers run with a higher max_tokens budget than Người dân, see
+// generate.py's PROFESSIONAL_MAX_TOKENS) — when off, ModeBubble locks the
+// option (same treatment as "not logged in") and an in-flight send in an
+// already-professional conversation is blocked the same way apiEnabled=
+// false blocks any send, not just newly-selected ones. Admin-only write;
+// read publicly by both the chat send path and the notification dock.
+model SiteAnnouncement {
+  id                      String   @id @default("singleton")
+  message                 String   @default("")
+  active                  Boolean  @default(false)
+  apiEnabled              Boolean  @default(true)
+  professionalModeEnabled Boolean  @default(true)
+  updatedAt               DateTime @updatedAt
+}
+
+// Singleton row (same pattern as SiteAnnouncement above, separate on
+// purpose — different audience/purpose): a note the admin writes for an
+// outside evaluator (e.g. a recruiter test-driving the deployed app), shown
+// publicly next to the login form (see AuthBenefits.tsx) rather than to
+// regular end users — a test account's credentials or a caveat about the
+// deployment (e.g. "FastAPI backend isn't reachable on this Vercel preview")
+// belong here, not in SiteAnnouncement's citizen-facing banner.
+model RecruiterNote {
+  id        String   @id @default("singleton")
+  message   String   @default("")
+  active    Boolean  @default(false)
+  updatedAt DateTime @updatedAt
+}
+
+// One row per LLM call the FastAPI backend made for one /query request —
+// see src/rag/usage.py, which tags each call with a `stage` (query_rewrite,
+// condense_question, khoan_select, relevance_filter, generate/
+// generate_agent, reflection). Row-per-stage rather than one row per
+// request with a JSON breakdown so cost/token aggregation (by day, by
+// stage, by user) is a plain SQL GROUP BY, not JSON parsing.
+//
+// Written by POST /api/conversations/sync alongside the Message it belongs
+// to (the browser gets `usage` back from FastAPI's /query response and
+// forwards it verbatim) — loosely tied via conversationId/userId/guestId
+// the same free-text-id style as the rest of this schema (Conversation
+// itself, KhoanRelation.fromChunkId), not a hard FK to Message, since sync
+// only has the client-generated pendingId, not Message's real cuid.
+model QueryUsage {
+  id               String     @id @default(cuid())
+  conversationId   String
+  userId           String?
+  guestId          String?
+  mode             AnswerMode
+  stage            String
+  model            String
+  promptTokens     Int
+  completionTokens Int
+  costUsd          Float
+  createdAt        DateTime   @default(now())
+
+  @@index([createdAt])
+  @@index([userId])
+  @@index([conversationId])
+}
+
+// One row per browser-side call to FastAPI's /query — the ONLY place a
+// failed or slow request is ever recorded: unlike Message/QueryUsage,
+// which only ever see successful turns (see chat-store.tsx's runQuery,
+// which never persists an errored turn), this is written on both success
+// and failure. FastAPI itself only logs to its own stdout (see
+// src/api/main.py) — nothing else queryable exists for the admin health
+// dashboard to read. Written by POST /api/telemetry/query, fired for every
+// postQuery() attempt from lib/api.ts.
+model QueryLog {
+  id             String     @id @default(cuid())
+  conversationId String
+  userId         String?
+  guestId        String?
+  mode           AnswerMode
+  success        Boolean
+  statusCode     Int?
+  errorMessage   String?
+  latencyMs      Int
+  createdAt      DateTime   @default(now())
+
+  @@index([createdAt])
+  @@index([success])
+}

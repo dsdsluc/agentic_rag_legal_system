@@ -1,0 +1,80 @@
+REFLECTION STEP — thêm bước tự kiểm tra trước khi chốt câu trả lời
+Ngày: 2026-08-25
+Bối cảnh: sau khi đánh giá kiến trúc (xem architecture/architecture.txt —
+hệ thống ở mức Agentic RAG tầng generation), thảo luận hướng "autonomous
+agent" cần gì thêm (planning/multi-agent) — kết luận multi-agent KHÔNG cần
+thiết cho việc mở rộng đa lĩnh vực pháp luật (dân sự, hình sự...), nhưng
+một bước reflection (tự kiểm tra câu trả lời trước khi chốt) là đáng làm.
+Người dùng đồng ý, yêu cầu implement reflection; việc mở rộng thêm văn bản
+đa lĩnh vực để người dùng tự tìm kiếm sau, KHÔNG thuộc phạm vi việc này.
+
+=====================================================================
+ĐÃ LÀM
+=====================================================================
+
+  - [x] REFLECTION_SYSTEM_PROMPT (src/rag/generate.py) — 1 lệnh gọi LLM
+    THÊM, chạy SAU khi có câu trả lời nháp (dù đi qua tool-calling loop
+    hay đường thẳng use_tools=False), đối chiếu lại với TOÀN BỘ những gì
+    đã đọc (Ngữ cảnh ban đầu + mọi nội dung lấy thêm qua tool trong lượt
+    đó — trích từ ToolMessage trong transcript của LangGraph agent) trước
+    khi trả về. Tập trung vào lớp lỗi rủi ro cao nhất cho 1 trợ lý về mức
+    phạt/trừ điểm: số liệu/trích dẫn bị lệch so với nguồn.
+
+  - [x] _reflect() (rag/generate.py) — fail-open giống các bước LLM phụ
+    khác trong module (condense_question, rewrite_query): lỗi mạng/API thì
+    trả về draft không đổi, không chặn cả pipeline.
+
+  - [x] use_reflection: bool = True thêm vào answer_question() + EvalCase,
+    cùng pattern A/B với use_tools/trim_context/use_graph_expansion.
+
+  - [x] VERIFY TRỰC TIẾP (không chỉ đọc code): gọi _reflect() với 1 câu trả
+    lời nháp cố ý SAI số tiền (4.000.000-6.000.000 thay vì đúng là
+    400.000-600.000) — reflection PHÁT HIỆN và SỬA ĐÚNG về 400.000-600.000.
+    Gọi lại với câu trả lời nháp ĐÃ ĐÚNG — trả về y nguyên, không đổi 1 ký
+    tự (đúng thiết kế "chỉ sửa khi có lỗi thật").
+
+  - [x] PHÁT HIỆN BUG THẬT khi chạy eval.py so sánh use_reflection=False
+    vs True trên 9 case: 2/9 case (trước đó đều F=5,C=5 khi không có
+    reflection) tụt xuống F=1,C=1 và F=2,C=2 — vì gpt-4o-mini đôi khi trả
+    lời BẰNG LỜI BÌNH LUẬN VỀ câu trả lời nháp ("Câu trả lời nháp đã đúng
+    và đầy đủ.") THAY VÌ chính nội dung câu trả lời, khiến toàn bộ nội
+    dung thật (100-500+ ký tự) bị mất, chỉ còn lại câu bình luận vô nghĩa
+    36 ký tự. Đây là lỗi prompt engineering — dù đã viết rõ "trả lời lại
+    NGUYÊN VĂN", model đôi khi vẫn không tuân theo.
+    → Đã sửa ở 2 lớp:
+      a. Viết lại REFLECTION_SYSTEM_PROMPT rõ ràng hơn nhiều: cấm tuyệt
+         đối viết câu mô tả/nhận xét, yêu cầu đầu ra CHỈ được là "COPY
+         NGUYÊN VĂN, TỪNG CHỮ MỘT" khi không có lỗi.
+      b. Thêm lưới an toàn ở TẦNG CODE (không chỉ dựa vào prompt):
+         _REFLECTION_MIN_LENGTH_RATIO (0.4) — nếu output ngắn hơn 40% độ
+         dài draft (với điều kiện draft đủ dài, >60 ký tự) HOẶC chứa các
+         cụm từ nhận diện bình luận ("câu trả lời nháp", "đã đúng và đầy
+         đủ", "không cần sửa"), coi là bình luận sai định dạng, TỰ ĐỘNG
+         fallback về draft — không tin tưởng hoàn toàn vào việc prompt
+         luôn được tuân theo.
+    Chạy lại eval sau khi sửa: cả 2 case lỗi trở về F=5,C=5, tổng thể
+    faithfulness 4.89/5, correctness 4.78/5 — khớp đúng baseline không có
+    reflection (không có case nào tệ đi), case REVIEW còn lại là case đã
+    biết từ trước (vehicle_ambiguous), không phải case mới.
+
+  - [x] tests/test_reflection.py — 7 test dùng LLM giả (fake stub, không
+    cần gọi OpenAI thật) khoá lại toàn bộ hành vi lưới an toàn: trả về bản
+    sửa hợp lý, copy nguyên văn khi đúng, fallback khi phát hiện bình luận
+    (theo cụm từ, theo tỷ lệ độ dài), fallback khi lỗi LLM, fallback khi
+    output rỗng, không fallback nhầm cho draft ngắn hợp lệ. 39/39 pytest
+    pass (32 cũ + 7 mới).
+
+=====================================================================
+BÀI HỌC ĐÁNG GHI LẠI
+=====================================================================
+Việc thêm reflection tưởng đơn giản (1 lệnh gọi LLM cross-check) nhưng tự
+nó lại là một bề mặt lỗi MỚI cần eval để bắt được — không thể chỉ tin vào
+"đã viết rõ trong prompt" (đã viết "trả lời lại NGUYÊN VĂN... không thêm
+lời dẫn" ngay từ bản đầu, model vẫn không tuân theo ở 2/9 case). Bài học:
+với bất kỳ bước LLM nào có nhiệm vụ "trả về X nguyên văn nếu ổn", nên có
+thêm 1 lớp kiểm tra Ở TẦNG CODE (không chỉ dựa vào prompt) để phát hiện khi
+model trả về thứ gì đó rõ ràng không phải "X" — ở đây là so sánh độ dài +
+nhận diện cụm từ. Đây là lần thứ 2 trong phiên làm việc này việc CHẠY EVAL
+TRƯỚC/SAU (không chỉ đọc code hay tin vào 1 lần test thủ công) bắt được lỗi
+thật mà nếu không đo sẽ không phát hiện (lần đầu: fine_min/fine_max không
+cập nhật khi tách Điều 37/38 — xem plans cũ mục 2.6).

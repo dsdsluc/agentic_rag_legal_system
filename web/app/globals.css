@@ -1,0 +1,260 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-be-vietnam);
+  --font-mono: var(--font-ibm-plex-mono);
+  --font-heading: var(--font-archive-serif, Georgia, "Times New Roman", serif);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.7);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.3);
+  --radius-2xl: calc(var(--radius) * 1.7);
+  --radius-3xl: calc(var(--radius) * 2.1);
+  --radius-4xl: calc(var(--radius) * 2.5);
+
+  /* Mode-aware accents: Apple's own HIG system colors, matching the two
+     registers the app switches between — warm/approachable for Citizen,
+     cool/precise for Professional (echoing iMessage's blue-vs-green
+     sent-bubble convention without copying it literally). */
+  --color-citizen: var(--citizen);
+  --color-citizen-soft: var(--citizen-soft);
+  --color-citizen-foreground: var(--citizen-foreground);
+  --color-professional: var(--professional);
+  --color-professional-soft: var(--professional-soft);
+  --color-professional-foreground: var(--professional-foreground);
+  --color-bubble-assistant: var(--bubble-assistant);
+  --color-bubble-assistant-foreground: var(--bubble-assistant-foreground);
+
+  /* Legal-rank accents for /van-ban (Luật reuses --professional above —
+     viewing raw văn bản is inherently the Chuyên gia register). Same HIG
+     system-color approach, extended to purple/green so color tracks rank:
+     Luật > Nghị định > Thông tư. */
+  --color-nghidinh: var(--nghidinh);
+  --color-nghidinh-soft: var(--nghidinh-soft);
+  --color-nghidinh-foreground: var(--nghidinh-foreground);
+  --color-thongtu: var(--thongtu);
+  --color-thongtu-soft: var(--thongtu-soft);
+  --color-thongtu-foreground: var(--thongtu-foreground);
+
+  /* Workspace accents for /van-ban's domain switcher (lib/domain.ts) — a
+     second, independent HIG triad from the doc-type one above, so a
+     workspace tab and the doc-type badges inside it never share a hue. */
+  --color-giaothong: var(--giaothong);
+  --color-giaothong-soft: var(--giaothong-soft);
+  --color-giaothong-foreground: var(--giaothong-foreground);
+  --color-dansu: var(--dansu);
+  --color-dansu-soft: var(--dansu-soft);
+  --color-dansu-foreground: var(--dansu-foreground);
+  --color-hinhsu: var(--hinhsu);
+  --color-hinhsu-soft: var(--hinhsu-soft);
+  --color-hinhsu-foreground: var(--hinhsu-foreground);
+
+  /* --font-archive-serif is set app-wide by the root layout (next/font/google
+     EB Garamond); the fallback keeps `font-serif` safe even if that ever
+     changes. Same variable as --font-heading above — one book-register
+     typeface for both, chat and /van-ban alike. */
+  --font-serif: var(--font-archive-serif, Georgia, "Times New Roman", serif);
+}
+
+:root {
+  /* Warm paper/ink palette — originally /van-ban's own register, promoted
+     app-wide so chat and the document library read as one place. Citizen/
+     professional/doc-type accents stay cool on purpose ("colored ink on
+     parchment"), unchanged below. */
+  --background: #f7f3ea;
+  --foreground: #2a2420;
+  --card: #fbf8f0;
+  --card-foreground: #2a2420;
+  --popover: #fbf8f0;
+  --popover-foreground: #2a2420;
+  --primary: #007aff;
+  --primary-foreground: #ffffff;
+  --secondary: #efe9d8;
+  --secondary-foreground: #2a2420;
+  --muted: #efe9d8;
+  --muted-foreground: #8a7f6c;
+  --accent: #efe9d8;
+  --accent-foreground: #2a2420;
+  --destructive: #ff3b30;
+  --border: #ddd2ba;
+  --input: #ddd2ba;
+  --ring: #007aff;
+  --chart-1: #007aff;
+  --chart-2: #ff9500;
+  --chart-3: #34c759;
+  --chart-4: #af52de;
+  --chart-5: #ff2d55;
+  --radius: 1.25rem;
+  /* Slightly lighter panel than the canvas — gives the sidebar real depth
+     instead of blending flat into the page, mirroring how message bubbles
+     already sit as tinted cards on that same warm ground. Hover/active tint
+     matches --background so a selected row reads as "sinking into" the
+     canvas rather than a generic highlight. */
+  --sidebar: #fbf8f0;
+  --sidebar-foreground: #2a2420;
+  --sidebar-primary: #007aff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #efe9d8;
+  --sidebar-accent-foreground: #2a2420;
+  --sidebar-border: #ddd2ba;
+  --sidebar-ring: #007aff;
+
+  --citizen: #ff9500;
+  --citizen-soft: #ffe9c7;
+  --citizen-foreground: #7a3e00;
+  --professional: #007aff;
+  --professional-soft: #d6e9ff;
+  --professional-foreground: #003d80;
+  --bubble-assistant: #efe9d8;
+  --bubble-assistant-foreground: #2a2420;
+
+  --nghidinh: #af52de;
+  --nghidinh-soft: #f3e3fb;
+  --nghidinh-foreground: #6b1f96;
+  --thongtu: #34c759;
+  --thongtu-soft: #d9f7e3;
+  --thongtu-foreground: #1a7a34;
+
+  --giaothong: #5ac8fa;
+  --giaothong-soft: #dbf3fd;
+  --giaothong-foreground: #0a6b8a;
+  --dansu: #5856d6;
+  --dansu-soft: #e4e3fb;
+  --dansu-foreground: #34328f;
+  --hinhsu: #ff3b30;
+  --hinhsu-soft: #ffe0dd;
+  --hinhsu-foreground: #99150c;
+}
+
+.dark {
+  /* Warm dark leather/ink, mirroring the light palette above — promoted
+     from /van-ban the same way. */
+  --background: #211c16;
+  --foreground: #ece4d3;
+  --card: #2a241c;
+  --card-foreground: #ece4d3;
+  --popover: #2a241c;
+  --popover-foreground: #ece4d3;
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: #322b21;
+  --secondary-foreground: #ece4d3;
+  --muted: #322b21;
+  --muted-foreground: #a89a80;
+  --accent: #322b21;
+  --accent-foreground: #ece4d3;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #3d352a;
+  --input: #3d352a;
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: #2a241c;
+  --sidebar-foreground: #ece4d3;
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: #322b21;
+  --sidebar-accent-foreground: #ece4d3;
+  --sidebar-border: #3d352a;
+  --sidebar-ring: oklch(0.556 0 0);
+
+  --citizen: #ff9f0a;
+  --citizen-soft: #4a3200;
+  --citizen-foreground: #ffd699;
+  --professional: #0a84ff;
+  --professional-soft: #00284d;
+  --professional-foreground: #a8d4ff;
+  --bubble-assistant: #322b21;
+  --bubble-assistant-foreground: #ece4d3;
+
+  --nghidinh: #bf5af2;
+  --nghidinh-soft: #3a1550;
+  --nghidinh-foreground: #e3b3fa;
+  --thongtu: #30d158;
+  --thongtu-soft: #0f3a1c;
+  --thongtu-foreground: #8ff0ab;
+
+  --giaothong: #64d2ff;
+  --giaothong-soft: #05303f;
+  --giaothong-foreground: #9fe3ff;
+  --dansu: #5e5ce6;
+  --dansu-soft: #201f52;
+  --dansu-foreground: #c2c0f7;
+  --hinhsu: #ff453a;
+  --hinhsu-soft: #4a1512;
+  --hinhsu-foreground: #ffb4ac;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+
+  /* Thin, theme-colored scrollbars app-wide (Firefox + Chromium/Safari) —
+     the default OS scrollbar (chunky, arrow buttons on Windows) renders
+     identically whether it belongs to the page or a nested scrollable div,
+     so this is what actually reads as "modern/native-looking", not which
+     element owns the scroll. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 9999px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--muted-foreground);
+  }
+}

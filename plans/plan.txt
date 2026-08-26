@@ -1,0 +1,324 @@
+ĐỀ XUẤT: NEON REGION + SUPABASE/PGVECTOR — PHÂN TÍCH LỰA CHỌN (2026-08-26)
+================================================================================
+
+BỐI CẢNH
+--------
+Bạn cấu hình sai region lúc tạo Neon project, giờ cần tạo lại. Nhân dịp đó,
+bạn cân nhắc chuyển sang Supabase vì nghe nói Supabase lưu được cả vector
+database. Tài liệu này ghi lại hiện trạng hệ thống, xác nhận khả năng của
+Supabase, và so sánh các hướng đi để bạn quyết định — KHÔNG tự ý thực hiện gì.
+
+
+1. HIỆN TRẠNG HỆ THỐNG (2 kho dữ liệu HOÀN TOÀN TÁCH BIỆT, cần phân biệt rõ)
+-----------------------------------------------------------------------------
+Dự án hiện có 2 chỗ lưu dữ liệu khác nhau, dễ nhầm là "một database":
+
+  (a) NEON POSTGRES — web/prisma/schema.prisma (provider "postgresql"),
+      kết nối qua web/.env DATABASE_URL. Đây là DB QUAN HỆ cho web app
+      Next.js: Conversation, Message, Document, User, SiteAnnouncement,
+      v.v. — chỉ phục vụ Prisma/web, KHÔNG liên quan trực tiếp tới việc
+      trả lời câu hỏi pháp luật.
+
+  (b) CHROMA (local, embedded) — src/ingestion/vectorstore.py dùng
+      chromadb.PersistentClient(path=CHROMA_DIR), lưu dạng file trên đĩa,
+      KHÔNG phải dịch vụ hosted, không có URL/region. Đây là vector store
+      cho retrieval của RAG backend (Python), kèm BM25 (rank_bm25, cũng
+      chạy in-process/local, xem src/rag/bm25_index.py) — hai cái này
+      fuse với nhau bằng RRF trong retriever.py.
+
+  => "Region sai" chỉ ảnh hưởng tới (a) Neon. Chroma không có khái niệm
+     region vì nó không phải dịch vụ cloud — đang chạy ngay trên máy chạy
+     FastAPI backend.
+
+  => Việc đổi Neon region KHÔNG bắt buộc phải đụng gì tới Chroma/RAG cả.
+     Đây là 2 quyết định độc lập, gộp chung vào 1 lần đổi hạ tầng chỉ vì
+     tiện, không phải vì bắt buộc phải làm cùng lúc.
+
+
+2. VẤN ĐỀ NEON REGION — XÁC NHẬN VÀ HƯỚNG XỬ LÝ
+------------------------------------------------
+Neon (giống hầu hết Postgres-as-a-service) CHỐT region tại lúc tạo project,
+không có nút "đổi region" cho project đang chạy. Muốn đổi region, phải:
+  1. Tạo project Neon mới ở region đúng.
+  2. Migrate schema + data sang project mới (pg_dump/pg_restore, hoặc
+     `prisma migrate deploy` lên DB mới rồi copy data bằng script/
+     `pg_dump --data-only`).
+  3. Đổi DATABASE_URL trong web/.env sang connection string mới.
+  4. Xóa project Neon cũ (region sai) sau khi xác nhận project mới ổn.
+
+Vì dữ liệu hiện tại (conversations/messages) đã được bạn chủ động xóa sạch
+để test tay (phiên trước), bước 2 gần như không có gì để migrate — tạo mới
++ `prisma migrate deploy` là đủ, không cần pg_dump. Đây là lý do THỜI ĐIỂM
+NÀY đặc biệt thuận lợi để đổi hạ tầng nếu bạn muốn, vì chi phí migrate dữ
+liệu gần như bằng 0.
+
+
+3. SUPABASE CÓ LƯU ĐƯỢC VECTOR KHÔNG? — ĐÚNG, XÁC NHẬN
+---------------------------------------------------------
+Supabase = Postgres (giống Neon) + một bộ tiện ích quanh nó (Auth, Storage,
+Realtime, auto-generated REST/GraphQL API...). Điểm khác biệt liên quan tới
+câu hỏi của bạn:
+
+  - Supabase BẬT SẴN extension `pgvector` cho mọi project (1 click hoặc
+    `create extension vector;`) — cho phép tạo cột kiểu `vector(n)` ngay
+    trong bảng Postgres thường, đánh index bằng HNSW hoặc IVFFlat, và
+    query bằng toán tử khoảng cách (`<->` cosine/L2/inner product).
+  - Vì vậy Supabase CÓ THỂ đóng vai trò vector store — nhưng bản chất vẫn
+    là "Postgres có thêm kiểu cột vector", không phải một vector DB
+    chuyên dụng riêng (khác Pinecone/Qdrant/Weaviate về kiến trúc, dù
+    cùng mục đích).
+  - Neon CŨNG hỗ trợ `pgvector` (Neon cũng là Postgres, extension này có
+    sẵn trong danh sách extension được phép bật) — nên "Supabase lưu được
+    vector còn Neon thì không" là hiểu chưa đúng; khác biệt thực sự nằm ở
+    hệ sinh thái tiện ích đi kèm, không phải ở khả năng lưu vector.
+
+
+4. BA HƯỚNG ĐI — SO SÁNH
+--------------------------
+
+HƯỚNG A — Tạo lại Neon project ở đúng region, giữ nguyên kiến trúc
+  Việc cần làm: (2) ở trên, không đụng gì khác.
+  Ưu điểm:
+    - Ít việc nhất, không rủi ro, không cần học API/SDK mới.
+    - Chroma+BM25 vẫn miễn phí, chạy local, không phát sinh network
+      latency cho retrieval (vector search hiện tại là in-process, nhanh
+      hơn gọi ra một Postgres server qua mạng).
+  Nhược điểm:
+    - Không giải quyết gì thêm ngoài đúng vấn đề region.
+    - Chroma vẫn là "khó backup/scale" nếu sau này muốn deploy backend
+      lên nhiều instance (mỗi instance cần đồng bộ file Chroma riêng —
+      đã từng gặp việc Chroma "stale" phải rebuild thủ công trong phiên
+      trước, xem lịch sử: thiếu domain metadata + tài liệu mới sau khi
+      ingest, phải chạy lại load_vectorstore.py).
+
+HƯỚNG B — Chuyển DB quan hệ (Prisma/web) sang Supabase, GIỮ Chroma cho RAG
+  Việc cần làm: tạo Supabase project (chọn đúng region), đổi
+  DATABASE_URL, `prisma migrate deploy`. Chroma không đổi gì.
+  Ưu điểm:
+    - Có thêm Auth/Storage/Realtime của Supabase nếu sau này cần (hiện
+      web app tự làm auth riêng — xem lib/legalEditAuth.ts, không chắc
+      có nhu cầu đổi sang Supabase Auth).
+    - Vẫn tránh được network latency cho retrieval vì Chroma không đổi.
+  Nhược điểm:
+    - Đổi hạ tầng nhưng không giải quyết vấn đề gốc gì cho RAG — thuần
+      lợi ích ở phía web app.
+    - Thêm 1 nhà cung cấp phải quản lý thay vì tận dụng sẵn Neon.
+
+HƯỚNG C — Gộp CẢ 2 kho dữ liệu vào 1 Supabase Postgres (pgvector thay
+  Chroma, giữ BM25 riêng vì pgvector không thay được full-text/BM25)
+  Việc cần làm:
+    - Tạo bảng `chunks` trong Supabase với cột `embedding vector(768)`
+      (kích thước khớp model `bkai-foundation-models/vietnamese-bi-
+      encoder` đang dùng), migrate ~2818 chunk hiện có từ Chroma sang.
+    - Viết lại phần "dense search" trong retriever.py (_dense_search)
+      để query Supabase bằng SQL (`ORDER BY embedding <-> query_vector
+      LIMIT k`) thay vì `collection.query()` của Chroma.
+    - BM25 (rank_bm25) giữ nguyên — pgvector không thay thế được sparse/
+      keyword search, đây là 2 kỹ thuật khác nhau; muốn gộp luôn cả BM25
+      vào Postgres thì phải chuyển sang Postgres full-text search
+      (`tsvector`/`ts_rank`), là một thay đổi retrieval-logic riêng,
+      không tự động tương đương BM25 hiện tại (đã được tune qua RRF +
+      các filter domain/vehicle-category trong retriever.py) — RỦI RO
+      HỒI QUY CHẤT LƯỢNG RETRIEVAL nếu làm vội, nên tách khỏi việc đổi
+      hạ tầng và chỉ làm sau khi có eval baseline so sánh.
+  Ưu điểm:
+    - Một nơi lưu trữ duy nhất, dễ backup/restore, dễ scale nhiều
+      instance backend (không còn phụ thuộc file Chroma local).
+    - Loại bỏ hẳn lớp phức tạp "phải rebuild Chroma thủ công khi corpus
+      đổi" từng gây lỗi thật trong phiên trước.
+  Nhược điểm:
+    - Việc LỚN NHẤT trong 3 hướng — đụng vào retriever.py, phải test lại
+      kỹ bằng eval.py để đảm bảo không giảm chất lượng câu trả lời (đúng
+      tinh thần "không đổi gì ở retrieval mà không có eval xác nhận" đã
+      áp dụng xuyên suốt các phiên trước).
+    - Query vector qua network (Supabase) sẽ chậm hơn Chroma local —
+      cần đo latency thực tế trước khi quyết định, nhất là vì
+      answer_question() đã có nhiều bước LLM tuần tự (rewrite → retrieve
+      → generate → reflect), thêm latency network vào bước retrieve sẽ
+      cộng dồn vào tổng thời gian trả lời.
+    - Corpus hiện tại chỉ ~2818 chunks — quy mô này Chroma local xử lý
+      cực nhanh và miễn phí; lợi ích "scale" của một vector DB hosted
+      chưa rõ ràng ở quy mô này, có thể là tối ưu hóa sớm.
+
+
+5. KHUYẾN NGHỊ
+---------------
+- Vấn đề TRƯỚC MẮT (region sai) → HƯỚNG A: tạo lại Neon project đúng
+  region. Không có lý do kỹ thuật nào bắt buộc phải đổi sang Supabase chỉ
+  để sửa region — Neon cũng hỗ trợ chọn region ngay từ đầu, chỉ cần tạo
+  project mới đúng chỗ.
+- Việc "Supabase lưu được vector" là ĐÚNG nhưng không phải lý do đủ mạnh
+  để đổi ngay, vì lợi ích chính của nó (HƯỚNG C) chỉ hiện rõ khi: (1) cần
+  deploy backend nhiều instance đồng thời (hiện chạy 1 instance local),
+  hoặc (2) corpus lớn hơn đáng kể so với ~2818 chunks hiện tại. Ở quy mô
+  và giai đoạn hiện tại, đây là việc nên CÂN NHẮC SAU, không phải làm
+  ngay kèm việc sửa region.
+- Nếu vẫn muốn dùng Supabase, HƯỚNG B (chỉ đổi phần Prisma/web) là lựa
+  chọn an toàn nhất để "thử" hệ sinh thái Supabase mà không đụng vào chất
+  lượng retrieval đang hoạt động ổn định — có thể làm ngay cùng lúc với
+  việc tạo lại DB (đằng nào cũng phải tạo project mới ở đúng region).
+- Nếu muốn theo HƯỚNG C sau này: nên bắt đầu bằng việc chạy eval.py trên
+  baseline hiện tại (Chroma) để có số so sánh, rồi mới migrate, rồi chạy
+  lại eval.py trên pgvector để đối chiếu — không migrate rồi mới đo.
+
+
+================================================================================
+PHẦN 2: DEPLOY ONLINE CHO NGƯỜI DÙNG THẬT (bổ sung 2026-08-26)
+================================================================================
+Bạn cho biết đang tính đưa app lên online cho mọi người dùng. Điều này thay
+đổi đáng kể mức độ ưu tiên của một số điểm ở Phần 1 — cụ thể, việc Chroma là
+file local KHÔNG còn là "premature optimization to ignore" nữa, vì hosting
+thật có khái niệm container ephemeral (mất file khi restart/redeploy) mà máy
+dev của bạn không gặp phải. Ghi rõ ở đây để không lặp lại nhầm lẫn đó khi bắt
+tay vào deploy thật.
+
+
+6. HAI SERVICE ĐỘC LẬP CẦN DEPLOY RIÊNG
+------------------------------------------
+App hiện có 2 phần chạy tách biệt, phải deploy thành 2 service khác nhau,
+nói chuyện với nhau qua HTTP (không phải 1 app monolith):
+
+  (a) Next.js web (thư mục web/) — gọi thẳng ra FastAPI từ TRÌNH DUYỆT
+      (web/lib/api.ts dùng NEXT_PUBLIC_API_URL, KHÔNG qua proxy Next.js
+      API route) — nghĩa là FastAPI backend PHẢI có địa chỉ public, HTTPS,
+      không thể chỉ là localhost hay chạy sau firewall riêng.
+  (b) FastAPI backend (src/api/main.py) — process Python chạy uvicorn,
+      giữ state trong RAM sau khi khởi động (model embedding, Chroma
+      client, BM25 index — xem `lifespan()` trong main.py: cả 3 được
+      preload lúc startup để request đầu tiên không phải chờ).
+
+Cả 2 đã có sẵn cấu hình qua biến môi trường, khá thuận lợi cho deploy:
+  - `NEXT_PUBLIC_API_URL` (web) — trỏ vào domain backend production.
+  - `CORS_ORIGINS` (backend, main.py dòng 58-59) — phải thêm domain web
+    production vào, mặc định chỉ có localhost.
+
+
+7. VẤN ĐỀ QUAN TRỌNG NHẤT: DỮ LIỆU LOCAL CỦA BACKEND SẼ MẤT KHI DEPLOY
+--------------------------------------------------------------------------
+FastAPI backend phụ thuộc 2 thứ nằm trên đĩa cục bộ, không phải dịch vụ
+ngoài:
+  - Thư mục Chroma (CHROMA_DIR, chromadb.PersistentClient) — vector index.
+  - File corpus (CORPUS_PATH, đọc bởi cả load_vectorstore.py lẫn
+    bm25_index.py) — BM25 build lại TỪ ĐẦU, TRONG RAM, mỗi lần process
+    khởi động (không có index BM25 lưu sẵn).
+
+Hầu hết nền tảng hosting container (Render, Railway, Fly.io, Cloud Run,
+Heroku...) dùng **ephemeral filesystem** theo mặc định: mỗi lần deploy lại
+(push code mới) hoặc container tự khởi động lại, mọi file ghi ra ngoài
+image gốc bị XÓA SẠCH — trong khi Chroma hiện tại được tạo ra bằng cách
+BẠN tự chạy `ingestion.load_vectorstore` thủ công trên máy, không phải một
+phần của quy trình khởi động app.
+
+  => Nếu deploy mà không xử lý điểm này, backend production sẽ khởi động
+     với Chroma RỖNG (hoặc lỗi vì thư mục không tồn tại) — mọi câu hỏi trả
+     lời "Không tìm thấy quy định liên quan trong kho dữ liệu hiện có."
+
+3 cách xử lý, xếp theo độ đơn giản:
+  A. BAKE vào Docker image: build image có sẵn cả CHROMA_DIR (đã chạy
+     load_vectorstore trước) và corpus.jsonl bên trong. Đơn giản, không
+     cần thêm dịch vụ, nhưng mỗi lần corpus đổi (thêm văn bản, sửa OCR...)
+     phải rebuild + redeploy lại image — không update dữ liệu độc lập với
+     việc deploy code được.
+  B. Persistent volume: hầu hết nền tảng (Render Disks, Railway Volumes,
+     Fly Volumes) cho gắn 1 ổ đĩa bền vào container ở một path cố định —
+     trỏ CHROMA_DIR/CORPUS_PATH vào đó, chạy load_vectorstore MỘT LẦN sau
+     khi volume được tạo. Dữ liệu sống qua các lần redeploy code, nhưng
+     vẫn phải SSH/exec vào container để cập nhật corpus thủ công mỗi khi
+     có văn bản mới — chỉ khác Hướng A ở chỗ không mất khi redeploy.
+  C. Chuyển dense search sang vector DB hosted (Neon/Supabase pgvector,
+     hoặc Chroma Cloud phiên bản hosted của chính Chroma) — đây chính là
+     HƯỚNG C ở Phần 1, và trong bối cảnh DEPLOY THẬT thì lý do "chưa cần
+     vì corpus nhỏ" ở Phần 1 KHÔNG còn là lý do trì hoãn mạnh nữa, vì vấn
+     đề ở đây không phải hiệu năng mà là ĐỘ BỀN DỮ LIỆU qua các lần
+     redeploy — một vấn đề hosted DB giải quyết triệt để, còn A/B chỉ né
+     tránh chứ không giải quyết gốc.
+
+  Khuyến nghị: bắt đầu bằng A (nhanh nhất để lên online), NHƯNG nếu bạn dự
+  định cập nhật corpus (thêm văn bản luật mới) thường xuyên sau khi đã có
+  người dùng thật, nên chuyển sang C sớm — cập nhật corpus mà không cần
+  rebuild/redeploy cả app là lợi ích thực sự rõ ràng ở giai đoạn "có người
+  dùng thật", khác với giai đoạn dev một mình hiện tại.
+
+
+8. FASTAPI BACKEND CẦN HOST DẠNG "LUÔN CHẠY", KHÔNG PHẢI SERVERLESS
+------------------------------------------------------------------------
+`lifespan()` trong main.py preload model embedding + Chroma + BM25 vào RAM
+lúc khởi động (log thực tế đo được: ~15-20 giây, phần lớn là tải
+sentence-transformers model). Điều này khiến backend KHÔNG hợp với nền
+tảng serverless "scale-to-zero" (AWS Lambda, Vercel Functions, Cloud Run
+với min-instances=0 mặc định):
+  - Request đầu tiên sau một thời gian không ai gọi sẽ phải chờ ~15-20s
+    cold start — trải nghiệm rất tệ cho người dùng thật.
+  - BM25 index xây trong RAM mỗi lần cold start — với serverless có thể bị
+    cold start liên tục nếu traffic thấp/rải rác, tốn phí và độ trễ lặp
+    lại nhiều lần trong ngày.
+
+  => Nên chọn nền tảng host process Python DÀI HẠN (long-running
+     container), ví dụ Render (Web Service, không phải serverless
+     function), Railway, Fly.io, hoặc một VPS. Next.js web app thì NGƯỢC
+     LẠI rất hợp với Vercel (serverless/edge) vì nó không giữ state nặng
+     như vậy — 2 service này không cần chung 1 kiểu hosting.
+
+
+9. /query KHÔNG CÓ AUTH — RỦI RO CHI PHÍ CẦN CHỦ ĐỘNG KIỂM SOÁT
+------------------------------------------------------------------
+main.py đã có comment ghi rõ quyết định thiết kế: `/query` và `/documents`
+được gọi thẳng từ trình duyệt, KHÔNG có lớp xác thực nào, chỉ dựa vào rate
+limit theo IP (slowapi, mặc định 20 request/phút cho /query, đọc từ biến
+môi trường `QUERY_RATE_LIMIT`) làm rào chắn duy nhất. Đây là lựa chọn hợp
+lý khi chỉ có mình bạn test, nhưng với người dùng thật (và cả người không
+thiện chí) cần cân nhắc thêm trước khi public:
+
+  - Mỗi lượt /query tốn NHIỀU lệnh gọi OpenAI (rewrite_query, classify_
+    domains khi Auto, generate, reflection, đôi khi thêm vòng tool-calling
+    get_article/get_khoan) — 1 IP spam đúng 20 request/phút, chạy 24/7,
+    vẫn có thể tạo ra chi phí OpenAI đáng kể nếu không set thêm giới hạn.
+  - Chế độ Chuyên gia cho phép max_tokens tới 4000/câu trả lời (gấp đôi
+    Chuyên gia — xem PROFESSIONAL_MAX_TOKENS trong generate.py) — tốn
+    tiền hơn Người dân đáng kể mỗi request.
+  - Rate limit theo IP có thể bị né dễ dàng (proxy/VPN xoay IP) — chỉ là
+    rào chắn "chống spam vô ý", không chống được người cố tình lạm dụng.
+
+  Gợi ý (không bắt buộc, tùy mức độ bạn lo ngại chi phí):
+  - Đặt `QUERY_RATE_LIMIT` production thấp hơn mặc định dev nếu cần, và
+    theo dõi chi phí OpenAI qua dashboard những ngày đầu sau khi public.
+  - Cân nhắc đặt hard cap tổng chi phí/ngày trên OpenAI dashboard (tính
+    năng có sẵn của OpenAI, không cần code) làm lưới an toàn cuối cùng.
+  - Nếu chi phí thực tế vượt kỳ vọng, bước tiếp theo tự nhiên là yêu cầu
+    đăng nhập mới được chat (hiện đã có hệ thống user/session riêng cho
+    phần admin — lib/legalEditAuth.ts — có thể mở rộng sang gate cả
+    /query, nhưng đây là thay đổi UX cần cân nhắc riêng, không phải việc
+    làm ngay lúc deploy).
+
+
+10. CÁC VIỆC KHÁC CẦN LÀM TRƯỚC KHI PUBLIC (danh sách ngắn)
+------------------------------------------------------------
+  - `prisma migrate deploy` (KHÔNG phải `migrate dev`) lên Neon production
+    trước lần deploy đầu tiên — migrate dev có thể hỏi tương tác, không
+    chạy được trong CI/deploy pipeline.
+  - Đưa toàn bộ secret (OPENAI_API_KEY, DATABASE_URL, LangSmith key nếu
+    dùng traceable, admin seed credentials...) vào biến môi trường của
+    nền tảng hosting — KHÔNG commit .env vào git (kiểm tra .gitignore đã
+    che .env chưa vì repo hiện chưa phải git repo, xem lại trước khi tạo).
+  - Domain + HTTPS: Vercel tự cấp cho web app; backend cũng cần HTTPS
+    (Render/Railway/Fly đều tự cấp SSL cho domain họ generate, hoặc custom
+    domain riêng) — `NEXT_PUBLIC_API_URL` phải là `https://...`, không
+    phải `http://`, để tránh lỗi mixed-content khi web app chạy trên
+    HTTPS.
+  - Set `CORS_ORIGINS` backend production đúng domain web thật, không để
+    sót localhost trong danh sách production (không sai nhưng thừa).
+
+
+11. THỨ TỰ TRIỂN KHAI GỢI Ý
+------------------------------
+  1. Xử lý Neon region (Phần 1, Hướng A hoặc B) → có DATABASE_URL production.
+  2. Quyết định hướng xử lý Chroma/corpus persistence (mục 7 — A/B nhanh
+     để lên online trước, hoặc C nếu đã sẵn sàng đầu tư ngay).
+  3. Deploy FastAPI backend trước, xác nhận `/health` sống và `/query`
+     trả lời đúng qua domain public (curl trực tiếp, chưa cần web).
+  4. Deploy Next.js web trỏ `NEXT_PUBLIC_API_URL` vào backend đã deploy,
+     `prisma migrate deploy` lên Neon production.
+  5. Set `CORS_ORIGINS` backend = domain web thật, redeploy backend.
+  6. Test tay toàn bộ luồng qua domain production thật (không chỉ
+     localhost) trước khi chia sẻ cho người dùng — đúng tinh thần "verify
+     bằng E2E thật" đã áp dụng xuyên suốt các phiên trước.

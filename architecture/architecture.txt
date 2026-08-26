@@ -1,0 +1,168 @@
+ĐÁNH GIÁ KIẾN TRÚC: Hệ thống đang ở mức Naive RAG, Advanced RAG, hay Agentic RAG?
+Ngày: 2026-08-25
+Phạm vi đánh giá: src/rag/* (generate.py, retriever.py, query_rewrite.py,
+tools.py, subchunk.py, supersession.py, graph.py), src/api/main.py
+
+=====================================================================
+KẾT LUẬN NGẮN GỌN
+=====================================================================
+Hệ thống hiện ở mức AGENTIC RAG ở TẦNG TRẢ LỜI (generation), xây trên nền
+một tầng ADVANCED RAG (còn gọi là Modular RAG) khá đầy đủ ở TẦNG TRUY XUẤT
+(retrieval). Đây là kiến trúc LAI (hybrid) — không phải "agentic thuần" theo
+nghĩa có planning, multi-agent, hay tool ecosystem mở — nhưng đã vượt qua
+ranh giới cốt lõi phân biệt Advanced RAG với Agentic RAG: MODEL TỰ QUYẾT
+ĐỊNH, TẠI THỜI ĐIỂM SUY LUẬN, CÓ CẦN LẤY THÊM THÔNG TIN HAY KHÔNG VÀ LẤY
+BẰNG CÔNG CỤ NÀO — thay vì luôn chạy đúng 1 chuỗi bước cố định do người
+viết code quyết định trước.
+
+=====================================================================
+1. BA MỨC ĐỘ — ĐỊNH NGHĨA NGẮN (làm khung tham chiếu)
+=====================================================================
+
+NAIVE RAG: embed câu hỏi → tìm top-k đoạn gần nhất trong 1 vector store →
+nhét thẳng vào prompt → gọi LLM 1 lần → trả lời. Không có bước biến đổi câu
+hỏi, không kết hợp nhiều phương pháp tìm kiếm, không có bước lọc/xếp hạng
+lại sau khi truy xuất, không có cách nào để hệ thống "biết" nó truy xuất
+thiếu và tự sửa.
+
+ADVANCED RAG (Modular RAG): thêm các bước tối ưu TRƯỚC truy xuất (viết lại
+câu hỏi, mở rộng truy vấn, phân loại ý định) và SAU truy xuất (xếp hạng lại,
+lọc, nén ngữ cảnh, kết hợp nhiều nguồn tìm kiếm). Có thể rất tinh vi, nhưng
+về bản chất VẪN LÀ MỘT PIPELINE CỐ ĐỊNH: truy xuất diễn ra đúng 1 lần (hoặc
+một số bước con cố định trước), rồi bàn giao cho bước generate cuối cùng —
+người viết code quyết định TOÀN BỘ trình tự trước, model không có quyền
+thay đổi trình tự đó khi đang chạy.
+
+AGENTIC RAG: bước "trả lời" không còn là 1 lệnh gọi LLM cố định — model có
+quyền tự quyết định, ngay trong lúc suy luận, việc có cần thêm thông tin
+hay không, gọi công cụ nào, với tham số gì, và lặp lại bao nhiêu lần trước
+khi chốt câu trả lời. Đặc trưng cốt lõi: QUYẾT ĐỊNH TRUY XUẤT/HÀNH ĐỘNG được
+đưa ra BỞI MODEL TẠI THỜI ĐIỂM CHẠY, không phải được lập trình sẵn trong
+code.
+
+=====================================================================
+2. TRƯỚC PHIÊN LÀM VIỆC NÀY: Advanced RAG khá đầy đủ, CHƯA agentic
+=====================================================================
+
+Trước khi có tool-calling (trước "Giai đoạn 1" trong plans/plan_2.txt), hệ
+thống đã có RẤT NHIỀU kỹ thuật Advanced RAG:
+
+  - Tiền xử lý câu hỏi: condense_question (gộp câu hỏi ngắn với lịch sử hội
+    thoại), rewrite_query (tạo nhiều cách diễn đạt tìm kiếm bằng thuật ngữ
+    pháp lý trang trọng, trích xuất ý định — loại vi phạm, loại phương
+    tiện, nhu cầu thông tin).
+  - Truy xuất lai (hybrid): kết hợp dense (Chroma embedding) và sparse
+    (BM25) qua Reciprocal Rank Fusion (RRF) — retriever.py::_fused_search.
+  - Hậu xử lý truy xuất tinh vi: lọc "vehicle category" collision
+    (_filter_wrong_vehicle_category), trim khoản bằng LLM cho các Điều dài
+    nhiều vi phạm không liên quan (subchunk.py::find_best_khoan), mở rộng
+    ngữ cảnh qua đồ thị quan hệ pháp luật (sửa đổi/bổ sung — graph.py,
+    supersession.py), lọc độ liên quan trước khi bơm context sửa đổi vào
+    (_filter_relevant).
+  - Fan-out truy vấn có điều kiện: khi loại phương tiện chưa rõ và ảnh
+    hưởng mức phạt, tự động mở rộng tìm kiếm cho nhiều loại xe phổ biến.
+
+Đây là một pipeline Advanced RAG RẤT tinh vi — nhưng đến hết bước này, toàn
+bộ trình tự (rewrite → fuse → trim → expand → generate) là CỐ ĐỊNH, chạy
+đúng 1 lượt, và bước generate() cuối cùng chỉ là 1 lệnh gọi
+`llm.invoke(messages)` duy nhất, không có cách nào để model tự xin thêm dữ
+liệu nếu ngữ cảnh đã lắp ráp sẵn không đủ.
+
+=====================================================================
+3. SAU PHIÊN LÀM VIỆC NÀY: đã thêm tầng Agentic thật ở generation
+=====================================================================
+
+generate.py::answer_question giờ không còn gọi thẳng `llm.invoke()` — nó
+gọi `_generate_answer()`, dùng `langgraph.prebuilt.create_react_agent` (một
+ReAct loop chuẩn) với 4 công cụ model có thể TỰ QUYẾT ĐỊNH gọi (rag/tools.py):
+
+  - get_article(doc_id, dieu_number) / get_khoan(doc_id, dieu_number,
+    khoan_number): lấy trực tiếp một Điều/Khoản KHÁC ngoài những gì đã có
+    trong Ngữ cảnh ban đầu — dùng khi model tự nhận ra một đoạn tham chiếu
+    tới quy định khác mà chưa đọc.
+  - search_corpus(query, doc_id?, top_k?): tự soạn một câu tìm kiếm MỚI và
+    tìm lại trong kho dữ liệu — không phải câu hỏi gốc, mà câu model tự
+    nghĩ ra dựa trên những gì đã đọc.
+  - get_fine_range(doc_id, dieu_number, khoan_number?): tự đối chiếu số
+    tiền phạt trước khi chốt câu trả lời.
+
+Bị chặn tối đa 3 vòng gọi công cụ (MAX_TOOL_ROUNDS, recursion_limit=8) rồi
+bắt buộc trả lời — tránh vòng lặp vô hạn, nhưng KHÔNG làm mất tính chất
+agentic: trong phạm vi 3 vòng đó, model hoàn toàn tự quyết, không theo kịch
+bản.
+
+BẰNG CHỨNG THỰC NGHIỆM (không chỉ suy luận từ code — đã verify bằng dữ
+liệu thật, xem plans/plan_2.txt Giai đoạn 1): dựng tình huống Ngữ cảnh CHỈ
+có Điều 22 (ND_336/2025) tham chiếu "điểm b khoản 3 Điều 12" nhưng KHÔNG
+kèm nội dung khoản đó, hỏi thẳng nội dung khoản đó là gì. Model trả lời
+ĐÚNG NGUYÊN VĂN nội dung khoản 3 Điều 12 — nội dung này KHÔNG hề có trong
+Ngữ cảnh ban đầu, chỉ có thể lấy được bằng cách model TỰ GỌI get_khoan.
+Đối chiếu corpus xác nhận khớp 100%, không phải model bịa trúng.
+
+Đo bằng eval.py (9 case, so use_tools=False/True): faithfulness/correctness
+không xấu đi, latency chỉ tăng ở các case model THỰC SỰ chọn gọi thêm công
+cụ (không phải mọi câu hỏi đều kích hoạt agentic loop) — đúng đặc trưng
+agentic: hành vi THAY ĐỔI tuỳ ngữ cảnh, không phải luôn chạy y hệt nhau.
+
+=====================================================================
+4. GIỚI HẠN THÀNH THẬT — chưa phải "agentic thuần" hoàn toàn
+=====================================================================
+
+Để tránh đánh giá quá tay, cần nêu rõ những gì CHƯA có:
+
+  - Retrieval BAN ĐẦU (search_corpus's lượt gọi mặc định đầu tiên bên
+    trong retrieve()) VẪN LÀ pipeline cố định (rewrite → fuse → trim →
+    expand) — model chỉ có quyền tự quyết định "có cần lấy THÊM hay không"
+    SAU KHI ngữ cảnh ban đầu đã được lắp ráp sẵn, không có quyền quyết
+    định CÁCH tìm kiếm ban đầu. Đây là kiến trúc LAI, không phải "agentic
+    từ đầu đến cuối".
+  - Vòng lặp bị giới hạn cứng 3 lượt — không phải agentic mở (open-ended
+    exploration) như một số hệ thống agent nghiên cứu sâu (deep research
+    agent) có thể tự lặp hàng chục bước.
+  - Không có planning/reflection tường minh (model không được yêu cầu viết
+    ra kế hoạch trước khi hành động, không có bước "phê bình lại câu trả
+    lời của chính mình" trước khi chốt).
+  - Không có multi-agent (không có agent con chuyên biệt nào — ví dụ 1
+    agent "verifier" riêng kiểm tra lại câu trả lời của agent "answerer").
+  - Đa số câu hỏi (theo eval 9 case) KHÔNG kích hoạt vòng gọi công cụ nào —
+    hành vi mặc định cho câu hỏi đơn giản vẫn giống hệt Advanced RAG cũ
+    (1 lượt LLM, không tool call). Tính "agentic" chỉ thể hiện rõ khi có
+    tham chiếu chéo hoặc cần đối chiếu số liệu — đúng như thiết kế, nhưng
+    có nghĩa phần lớn lưu lượng thực tế vẫn "cảm giác" như Advanced RAG.
+  - Bộ công cụ còn hẹp (4 công cụ, đều CHỈ ĐỌC, tham số cố định kiểu
+    int/string) — chưa có khả năng hành động ngoài phạm vi tra cứu văn bản
+    pháp luật (không tính toán trừ điểm GPLX, không kiểm tra hiệu lực theo
+    ngày — xem plans/plan_2.txt Giai đoạn 3, đã khảo sát và quyết định
+    chưa làm).
+
+=====================================================================
+5. TẠI SAO GỌI LÀ "AGENTIC" CHỨ KHÔNG DỪNG Ở "ADVANCED" — lập luận cốt lõi
+=====================================================================
+
+Ranh giới chuẩn giữa Advanced RAG và Agentic RAG trong tài liệu ngành KHÔNG
+nằm ở việc pipeline có tinh vi hay không (Advanced RAG có thể rất tinh vi,
+như hệ thống này TRƯỚC phiên làm việc) — mà nằm ở việc AI QUYẾT ĐỊNH TRÌNH
+TỰ HÀNH ĐỘNG: người viết code (Advanced RAG) hay chính model tại thời điểm
+chạy (Agentic RAG).
+
+Trước phiên này: dù có rewrite/fuse/trim/expand tinh vi đến đâu, TRÌNH TỰ
+đó luôn cố định trong code — retrieve() luôn chạy hết các bước rồi mới gọi
+generate() đúng 1 lần, bất kể ngữ cảnh lắp ráp được có đủ hay không.
+
+Sau phiên này: bước cuối cùng (generate) không còn là 1 lệnh gọi cố định —
+nó là một VÒNG LẶP mà TẠI MỖI BƯỚC, chính model (không phải code) quyết
+định: "Ngữ cảnh hiện tại đã đủ để trả lời chưa? Nếu chưa, cần đọc thêm gì,
+qua công cụ nào?" — và quyết định đó THAY ĐỔI theo từng câu hỏi cụ thể
+(verify bằng thực nghiệm ở mục 3), không phải luôn giống nhau. Đây chính
+xác là định nghĩa hoạt động (operational definition) của "agentic" trong
+bối cảnh RAG: model có quyền tác động (act) dựa trên nhận thức riêng về
+tình trạng thiếu thông tin, không chỉ "sinh văn bản" từ dữ liệu đã cho sẵn.
+
+=====================================================================
+TÓM TẮT MỘT DÒNG
+=====================================================================
+Naive RAG → KHÔNG. Advanced/Modular RAG → ĐÃ VƯỢT QUA (là nền tảng vốn có
+từ trước). Agentic RAG → DÙNG ĐƯỢC, đã verify bằng thực nghiệm, nhưng ở
+dạng LAI (agentic ở tầng generation, pipeline cố định ở tầng retrieval ban
+đầu) và BỊ GIỚI HẠN (3 vòng, 4 tool chỉ đọc, không planning/multi-agent) —
+không phải một "autonomous agent" theo nghĩa đầy đủ nhất của thuật ngữ.

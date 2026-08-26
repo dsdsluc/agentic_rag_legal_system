@@ -1,0 +1,6 @@
+- đã thêm vào hệ thống 2 folder gồm các luật liên quan đến dân sự và hình sự: 
+    - D:\Agentic_Rag\docs\CIVIL> 
+    - D:\Agentic_Rag\docs\CRIMINAL> 
+Các file luật bên ngoài là về giao thông đường bộ đã được xử lý không cần quan tâm 
+- Ở mỗi bộ luật đều có "meta_data.txt" ở trong đó có thông tin của luật và thứ tự đọc các file .pdf, hãy khám phá file đó trước
+- Dựa trên những sai lầm đã mắc phải trong quá khứ để tránh OCR hiệu quả, nếu có hãy flag lại sẽ có human hoặc xử lý sau 

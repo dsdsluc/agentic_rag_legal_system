@@ -1,0 +1,1754 @@
+[
+  {
+    "id": "ngt01",
+    "question": "Chủ tịch Ủy ban nhân dân cấp xã có thể phạt tiền tối đa bao nhiêu?",
+    "relevant": [
+      "ND_168_2024::dieu_42",
+      "ND_336_2025::dieu_17"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 336/2025/NĐ-CP — Điều 17. Thẫm quyền xử phạt của Chủ tịch Ủy ban nhân dân các cấp",
+    "source_excerpt": "Điều 17. Thẫm quyền xử phạt của Chủ tịch Ủy ban nhân dân các cấp\n1. Chủ tịch Ủy ban nhân dân cấp xã có quyền:\na) Phạt cảnh cáo;\nb) Phạt tiền đến 37.500.000 đồng:\nc) Tước quyền sử dụng giấy phép có thời hạn hoặc đình chỉ hoạt động có thời hạn; - » ~\nd) Áp dụng biện pháp khắc phục hậu quả quy định tại Điều 3 Nghị định này.\n2. Chủ tịch Ủy ban nhân dân cấp tỉnh có quyền:\na) Phạt cảnh cáo;\nb) Phạt tiền đến 75.000.000 đồng:\nc) Tước quyền sử dụng gẩy phép có thời hạn mặc đình chỉ hoạt động có thời hạn;\nd) Áp dụng biện pháp khắc phục hậu quả quy định tại Điều 3 Nghị định ủỳ.",
+    "literal_overlap": 0.6,
+    "note": "gộp đáp án với câu trùng ngt45"
+  },
+  {
+    "id": "ngt02",
+    "question": "Xe vận chuyển hàng siêu trường, siêu trọng có được ghép nối thành tổ hợp nhiều xe không?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_53"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 53. Bảo đảm trật tự, an toàn giao thông đường bộ đối với xe vận chuyển",
+    "source_excerpt": "3. Xe vận chuyển hàng siêu trường, siêu trọng được phép ghép, nối thành tổ\nhợp nhiều xe gồm xe ô tô đầu kéo, xe ô tô kéo rơ moóc để kéo hoặc vừa kéo vừa\nđẩy các rơ moóc, sơ mi rơ moóc chuyên dùng, rơ moóc kiểu mô đun, bao gồm cả\ntrường hợp ghép nối thông qua hàng được chở.",
+    "literal_overlap": 0.76
+  },
+  {
+    "id": "ngt03",
+    "question": "Nếu mình vi phạm quy định khi điều khiển xe máy chuyên dùng thì mình phải làm gì để khắc phục hậu quả?",
+    "relevant": [
+      "ND_168_2024::dieu_16"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 168/2024/NĐ-CP — Điều 16. Xử phạt người điều kh1en xe máy chuyên dùng (kể cả rơ moóc",
+    "source_excerpt": "5. Ngoài việc bị w dụng hình thức xử phạt, người điều khiển phương\ntiện thực hiện hành vi vi phạm còn bị áp dụng biện pháp khắc phuc hậu quả\nsau đây:\n|\na) Thực hiện hành vi vi phạm quy định tại điểm b, điểm c, điểm d khoản 1 Điều\nnày buộc lắp đầy đủ thiết bị hoặc thay thế thiết bị đủ tiêu chuẩn, quy chuẩn an\ntoàn kỹ thuật hoặc khôi phục lại tính năng kỹ thuật của thiết bị theo quy định;\nb) Thực hiện hành vi quy &ằh tại điểm đ khoản 2 Điều này buộc nộp lại\nchứng nhận đăng ký xe (hoặc bản sao chứng nhận đăng ký xe có chứng thực kèm\ntheo bản gốc giấy biên nhận của tổ chức tín dụng, chị nhánh ngân",
+    "literal_overlap": 0.23
+  },
+  {
+    "id": "ngt04",
+    "question": "Ai có trách nhiệm bảo đảm trật tự, an toàn giao thông đường bộ?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_3"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 3. Nguyên tắc bảo đảm trật tự, an toàn giao thông đường bộ",
+    "source_excerpt": "Điều 3. Nguyên tắc bảo đảm trật tự, an toàn giao thông đường bộ\n1. Tuân thủ Hiến pháp, pháp luật Việt Nam và điều ước quốc tế mà nước\nCộng hòa xã hội chủ nghĩa Việt Nam là thành viên.\n2. Bảo đảm giao thông đường bộ được trật tự, an toàn, thông suốt, góp phần\nphát triển kinh tế - xã hội, bảo đảm quốc phòng, an ninh và bảo vệ môi trường;\nphòng ngừa vi phạm pháp luật về trật tự, an toàn giao thông đường bộ, tai nạn giao\nthông đường bộ và ùn tắc giao thông; bảo vệ tính mạng, sức khỏe, tài sản của cá\nnhân và tài sản của cơ quan, tổ chức.\n3. Bảo đảm trật tự, an toàn giao thông đường bộ là trách nhiệ",
+    "literal_overlap": 0.69
+  },
+  {
+    "id": "ngt05",
+    "question": "Khi nào thì không được quay đầu xe?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_15"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 15. Chuyển hướng xe",
+    "source_excerpt": "Điều 15. Chuyển hướng xe\n1. Chuyển hướng xe là tình huống giao thông mà xe rẽ trái hoặc rẽ phải hoặc\nquay đầu xe.\n2. Trước khi chuyển hướng, người điều khiển phương tiện tham gia giao thông\nđường bộ phải quan sát, bảo đảm khoảng cách an toàn với xe phía sau, giảm tốc độ\nvà có tín hiệu báo hướng rẽ hoặc có tín hiệu bằng tay theo hướng rẽ đối với xe thô\nsơ không có đèn báo hướng rẽ, chuyển dần sang làn gần nhất với hướng rẽ. Tín\nhiệu báo hướng rẽ hoặc tín hiệu bằng tay phải sử dụng liên tục trong quá trình\nchuyển hướng. Khi bảo đảm an toàn, không gây trở ngại cho người và phương tiện\nkhác mới đư",
+    "literal_overlap": 0.29
+  },
+  {
+    "id": "ngt06",
+    "question": "Lực lượng nào trong Công an nhân dân được trang bị để thực hiện nhiệm vụ tuần tra, kiểm soát giao thông?",
+    "relevant": [
+      "TT_73_2024_TT_BCA::dieu_31"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Thông tư 73/2024/TT-BCA — Điều 31. Trang bị và điều kiện bảo đảm của lực lượng khác trong",
+    "source_excerpt": "Điều 31. Trang bị và điều kiện bảo đảm của lực lượng khác trong\nCông an nhân dân thực hiện nhiệm vụ tuần tra, kiểm soát trật tự, an toàn\ngiao thông đường bộ\n1. Lực lượng khác trong Công an nhân dân khi thực hiện nhiệm vụ tuần\ntra, kiểm soát trật tự, an toàn giao thông đường bộ được trang bị gồm: còi, loa,\ngậy chỉ huy giao thông, phương tiện, thiết bị kỹ thuật nghiệp vụ, vũ khí, công cụ\nhỗ trợ khác theo quy định và các biểu mẫu xử lý vi phạm.\nViệc quản lý, sử dụng phương tiện, thiết bị kỹ thuật nghiệp vụ, vũ khí,\ncông cụ hỗ trợ và biểu mẫu thực hiện theo quy định. Phương tiện, thiết bị kỹ\nthuật",
+    "literal_overlap": 0.71
+  },
+  {
+    "id": "ngt07",
+    "question": "Mức phạt cho cá nhân khi không làm đúng quy trình quản lý tại trạm thu phí là bao nhiêu?",
+    "relevant": [
+      "ND_336_2025::dieu_10"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 336/2025/NĐ-CP — Điều 10. Xứ phạt các hành vi vi phạm về thanh toán điện tử giao thông",
+    "source_excerpt": "3. Phạt tiền từ 10.000.000 đồng đến 20.000.000 đồng đối với cá nhân, từ\n20.000.000 đông đên 40.000.000 đông đôi với tô chức thực hiện một trong các\nhành vì vì phạm sau đây:\na) Không thực hiện đúng quy trình ạ1an lý, vận hành trạm thu phl theo quy\nđịnh đề xảy ra tai nạn giao thông đối với các phương tiện khi phương tiện tham\ngia giao thông qua trạm thu phí, trừ hành vi vi phạm quy định tại điểm c khoản 5...\nĐiều này;\nb) Phát hành chứng từ thu tiền sử dụng đường bộ không đúng đối tượng,\nđúng giá trị cho từng đôi tượng phải trả tại trạm thu phí;\nc) Xâm nhập hoặc tìm cách xâm nhập hệ thống thanh t",
+    "literal_overlap": 0.32
+  },
+  {
+    "id": "ngt08",
+    "question": "Mức phạt tiền cho hành vi vận chuyển động vật sống mà không có đủ giấy tờ là bao nhiêu?",
+    "relevant": [
+      "ND_168_2024::dieu_24"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 168/2024/NĐ-CP — Điều 24. Xử phạt, trừ điểm giầy ỵJhep lái xe của người ffleu khiến xe ô tô",
+    "source_excerpt": "Điều 24. Xử phạt, trừ điểm giầy ỵJhep lái xe của người ffleu khiến xe ô tô\nthực hiện hành vi vi phạm quy định về vận chuyền động vật sống, thực phẩm\ntươi song\nl. Phạt tiền từ 1.000.000 đong đến 2. 000.000 đồng đối với hành Vì vì phạm vận\nchuyên động vật sống, thực pham tươi song không mang đủ giấy tờ theo quy\nđịnh (đối với loại động vật sống, thực phẩm tươi sống khi vận: chuyên phải có\ngiấy tờ).\n2. Phạt tiền từ 3.000.000 đong đến 5.000.000 đồng đối với hành vì vi\npham vận chuyển thực phalm tươi sông khong chấp hành quy định về an toàn\nthực phẩm, vệ sinh dịch tễ, phòng dịch và bảo đảm vệ sinh m",
+    "literal_overlap": 0.37
+  },
+  {
+    "id": "ngt09",
+    "question": "Những loại xe nào phải hoạt động đúng tuyến, đúng lịch trình và đúng nơi quy định trong đô thị?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_44"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 44. Bảo đảm trật tự, an toàn giao thông đường bộ đối với phương",
+    "source_excerpt": "Điều 44. Bảo đảm trật tự, an toàn giao thông đường bộ đối với phương\ntiện vận tải đường bộ trong đô thị\n1. Xe buýt, xe chở người bốn bánh có gắn động cơ phải hoạt động đúng tuyến,\nđúng lịch trình, thời gian được phép hoạt động và dừng xe, đỗ xe đúng nơi quy định.\n2. Xe taxi đón, trả hành khách theo thỏa thuận giữa hành khách và người lái xe\nnhưng phải chấp hành các quy định của pháp luật về trật tự, an toàn giao thông\nđường bộ khi đón, trả hành khách.\n3. Xe chở hàng phải hoạt động đúng tuyến, phạm vi và thời gian quy định đối\nvới từng loại xe.\n4. Xe vệ sinh môi trường, xe ô tô chở vật liệu xây",
+    "literal_overlap": 0.68
+  },
+  {
+    "id": "ngt10",
+    "question": "Các đơn vị, địa phương nào phải xây dựng, phê duyệt và lưu trữ kế hoạch tuần tra, kiểm soát trên môi trường điện tử?",
+    "relevant": [
+      "TT_73_2024_TT_BCA::dieu_10"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Thông tư 73/2024/TT-BCA — Điều 10. Xây dựng, ban hành kế hoạch tuần tra, kiểm soát",
+    "source_excerpt": "5. Các đơn vị, địa phương đã được trang bị hệ thống cơ sở dữ liệu quản lý\nhoạt động tuần tra, kiểm soát trên môi trương điện tử thì thực hiện việc xây\ndựng, phê duyệt và lưu trữ kế hoạch tuần tra, kiểm soát trên môi trường điện tử.",
+    "literal_overlap": 0.88
+  },
+  {
+    "id": "ngt11",
+    "question": "Ai là cơ quan chủ quản cơ sở dữ liệu đường bộ?",
+    "relevant": [
+      "ND_165_2024::dieu_58"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 58. Nguyên tắc xây dựng, cập nhật, quản lý, vận hành, khai thác,",
+    "source_excerpt": "Điều 58. Nguyên tắc xây dựng, cập nhật, quản lý, vận hành, khai thác,\nsử dụng, bảo trì cơ sở dữ liệu đường bộ\n1. Cơ sở dữ liệu đường bộ được xây dựng, quản lý tập trung, thống nhất từ\ntrung ương đên địa phương.\n2. Cơ sở dữ liệu đường bộ được cập nhật kịp thời, đầy đủ, chính xác; duy\ntrì hoạt động liên tục, ôn định, thông suôt đáp ứng yêu câu khai thác và sử dụng\ncủa các cơ quan, tô chức, cá nhân theo quy định pháp luật.\n3. Cơ sở dữ liệu đường bộ được lưu trữ, bảo mật, bảo đảm an toàn thông tin.\n4. Việc xây dựng, quản lý, khai thác, sử dụng cơ sở dữ liệu đường bộ tuân\nthủ các quy định của Luật ",
+    "literal_overlap": 0.55
+  },
+  {
+    "id": "ngt12",
+    "question": "Ai sẽ tổ chức bảo vệ kết cầu hạ tầng đường bộ?",
+    "relevant": [
+      "ND_165_2024::dieu_20"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 20. Bảo vệ kết cầu hạ tằng đường bộ",
+    "source_excerpt": "7. Ủy ban nhân dân cấp huyện, Ủy ban nhân dân cấp xã trực tiếp tổ chức\nthực hiện bảo vệ kêt câu hạ tâng đường bộ quy định tại khoản 1 và khoản 2 Điêu\nnày đôi với kêt câu hạ tâng đường bộ thuộc phạm vi quản lý.",
+    "literal_overlap": 0.27
+  },
+  {
+    "id": "ngt13",
+    "question": "Chi phí để lập phương án tổ chức giao thông khi xây dựng đường cao tốc được tính vào đâu?",
+    "relevant": [
+      "ND_165_2024::dieu_26"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 26. Lập, thẩm định, phê duyệt phương án tổ chức giao tthông",
+    "source_excerpt": "5. Chi phí lập phương án tổ chức giao thông được tính trong chi phí tư vấn\nthiết kế khi đầu tư xây dựng công trình đường cao tốc; chi phí khảo sát, lập\nphương án tổ chức giao thông điều chỉnh khi đường cao tốc đã đưa vào khai thác\nđược tính trong chỉ phí quản lý, vận hành, khai thác và bảo trì đường cao tốc.",
+    "literal_overlap": 0.58
+  },
+  {
+    "id": "ngt14",
+    "question": "Khi vận chuyển động vật sống, mình cần giấy tờ gì và có yêu cầu gì cho phương tiện không?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_50"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 50. Bảo đảm trật tự, an toàn giao thông đường bộ đối với phương",
+    "source_excerpt": "Điều 50. Bảo đảm trật tự, an toàn giao thông đường bộ đối với phương\ntiện giao thông đường bộ vận chuyển động vật sống, thực phẩm tươi sống\n1. Việc vận chuyển động vật sống phải bảo đảm các yêu cầu sau đây:\na) Người lái xe phải mang đủ giấy tờ theo quy định của pháp luật;\nb) Phương tiện vận chuyển phải có kết cấu phù hợp với loại động vật chuyên chở;\nc) Trong quá trình vận chuyển phải chấp hành các quy định của pháp luật về\ntrật tự, an toàn giao thông đường bộ, vệ sinh dịch tễ, phòng dịch và bảo đảm vệ\nsinh môi trường.\n2. Việc vận chuyển thực phẩm tươi sống phải bảo đảm các yêu cầu sau đây:\na)",
+    "literal_overlap": 0.37
+  },
+  {
+    "id": "ngt15",
+    "question": "Chủ phương tiện phải chịu chi phí gì khi phương tiện bị tạm giữ?",
+    "relevant": [
+      "ND_168_2024::dieu_52"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 168/2024/NĐ-CP — Điều 52. Sửa đối, bốổ sung một số điều của Nghị định số 100/2019/NĐ-CP",
+    "source_excerpt": "7. Sửa đổi, bổ sung khoản 4 Điều 82 như sau: `\n“4. Khi phương tiện bị tạm|giữ theo quy định tại khoản 2 Điều này, chủ,\nphương tiện phải chịu mọi chi phí (nếu có) cho việc sử dụng phương tiện\nkhác thay thế để vận chuyển ngLrơ1 hàng hóa được chở trên phương tiện bị\ntạm giữ.” `\nt\nũ\nr",
+    "literal_overlap": 0.75
+  },
+  {
+    "id": "ngt16",
+    "question": "Ai sẽ chịu trách nhiệm quản lý và bảo trì kết cấu hạ tầng đường địa phương?",
+    "relevant": [
+      "ND_165_2024::dieu_9"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 9. Trách nhiệm quản lý, vận hành, khai thác, bảo trì kết cấu hạ",
+    "source_excerpt": "2. Ủy ban nhân dân các cấp tổ chức quản lý, vận hành, khai thác, bảo trì\nkết cấu hạ tầng đường địa phương thuộc phạm vi quản lý, quốc lộ quy định tại\nkhoản 4 Điều 8 Luật Đường bộ và khoản 1 Điều 4, khoản 1 Điều 5, khoản 1\nĐiều 6 của Nghị định này.",
+    "literal_overlap": 0.56
+  },
+  {
+    "id": "ngt17",
+    "question": "Ủy ban nhân dân cấp tỉnh có trách nhiệm gì khi được giao quản lý quốc lộ?",
+    "relevant": [
+      "ND_165_2024::dieu_5"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 5. Gle1o Ủy ban nhân dân cấp tỉnh quản lý quoc lộ đề ửap ứng nhu",
+    "source_excerpt": "2. Trách nhiệm của Ủy ban nhân dân cấp tỉnh khi được Thủ tướng Chính phủ\nglao quản lý quôc lộ\na) Tiếp nhận tuyến, đoạn tuyến wóc lộ được giao và tổ chức thực hiện theo\nmục đích được giao; bảo đảm quy mô, câp công trình không thấp hơn quy hoạch\nmạng lưới đường bộ, quy hoạch kết cầu hạ tầng đường bộ được duyệt;\nb) Bảo đảm nguồn lực để quản lý, vận hành, khai thác, bảo trì quốc lộ được\ngiao, đầu tư xây dựng, cải tạo, nâng cấp, mở TỘng quoc lộ kể từ khi được giao theo\nquy hoạch mạng lưới đường bộ, quy hoạch kết cầu hạ tằng đường bộ được duyệt:\nc) Bảo đảm kết nối giao thông theo quy định tại điểm d",
+    "literal_overlap": 0.62
+  },
+  {
+    "id": "ngt18",
+    "question": "Mức phạt tiền đối với cá nhân khi dựng cổng chào trái phép trong phạm vi đất dành cho kết cấu hạ tầng đường bộ là bao nhiêu?",
+    "relevant": [
+      "ND_336_2025::dieu_5"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 336/2025/NĐ-CP — Điều 5. Xử phạt các hành vi vi phạm quy định về sử dụng, khai thác",
+    "source_excerpt": "2. Phạt tiền từ 1.000.000 đồng đến 2.000.000 đồng đối với cá nhân, từ\n2.000.000 đông đên 4.000.000 đông đôi với tô chức thực hiện một trong các hành\nvi vi phạm sau đây: '\na) Dựng cổng chào trái phép trong phạm vi đất dành cho kết cấu hạ tằng\nđường bộ gây ảnh hướng đên an toàn giao thông đường bộ;\nb) Treo băng rôn trái phép trong phạm vi đất của đường bộ gây ảnh hưởng\nđên an toàn giao thông đường bộ;\nc) Đặt, treo biển hiệu, bảng ạảng cáo trên đất của đường bộ ở đoạn đường\nngoài đô thị trừ việc đặt, treo Ẹên hiệu, bảng quảng cáo tại lòng đường và trừ\nhành vi vi phạm quy định tại điêm a khoản 5 Đ",
+    "literal_overlap": 0.67
+  },
+  {
+    "id": "ngt19",
+    "question": "Khi nào thì bắt đầu tính thời gian tước quyền sử dụng giấy phép lái xe?",
+    "relevant": [
+      "ND_336_2025::dieu_23"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 336/2025/NĐ-CP — Điều 23. Tước quyền sử dụng giấy phép có fflơl hạn hoặc đình chỉ hoạt",
+    "source_excerpt": "1. Thời điểm bắt đầu tính thời hạn tước quyền sử dụng giấy phép trong hoạt\nđộng đường bộ như sau:\n@ Trường hợp tại thời điểm ra quyết định xử phạt vi phạm hành chính mà\nngười có thẩm quyên xử phạt đã tạm giữ được gg1ay phép trong hoạt động fflrơng\nbộ của cá nhân, tổ chức vi _phạm thì thời điểm bắt đầu tính thời hạn tước quyền sử\ndụng giấy phép là thời điểm quyết định xử phạt vi phạm hành chính có hiệu lực\nthi hành;\nb) Trường hợp tại thời điểm ra quyết định xử phạt vi phạm hành chính mà\nngười có thẩm quyền xử phạt chưa tạm giữ được giây phép trong hoạt động\nđường bộ của cá nhân, tổ chức vi phạm",
+    "literal_overlap": 0.53
+  },
+  {
+    "id": "ngt20",
+    "question": "Trong trường hợp mở rộng, nâng cấp đường cao tốc, cơ quan nào có thẩm quyền tổ chức ký kết phụ lục hợp đồng dự án?",
+    "relevant": [
+      "ND_165_2024::dieu_48"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 48. Mở rong, nâng cap đường cao tốc trong trường hợp lập dự án",
+    "source_excerpt": "5. Cơ quan có thẩm quyền và nhà đầu tư hiện hữu tổ chức ký kết phụ lục\nhợp đông dự án, cập nhật phương án tài chính theo quy định pháp luật đâu tư\ntheo phương thức đôi tác công tư, trong đó:\na) Dự kiến doanh thu dự án hiện hữu khi thực hiện mở rộng, nâng cấp;\nb) Điều chỉnh chỉ phí quản lý, vận hành, bảo trì công trình sau khi mở rộng,\nnâng câp;\nc) Mức giá, phí, thời gian thực hiện hợp đồng được điều chỉnh căn cứ doanh\nthu, chỉ phí và các nội dung khác của phương án tài chính;\nd) Các nội dung wn thiết khác cần sửa đồi do ảnh hưởng của việc mở rộng,\nnâng câp đường cao tốc.",
+    "literal_overlap": 0.64
+  },
+  {
+    "id": "ngt21",
+    "question": "Nếu thấy tai nạn giao thông, mình phải báo cho ai ngay lập tức?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_76"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 76. Giải quyết tình huống đột xuất gây mất trật tự, an toàn giao thông",
+    "source_excerpt": "2. Cơ quan, tổ chức, cá nhân khi phát hiện tình huống quy định tại khoản 1\nĐiều này kịp thời báo cho cơ quan Công an nơi gần nhất hoặc cơ quan quản lý\nđường bộ; trường hợp phát hiện vụ tai nạn giao thông đường bộ phải báo ngay cho\ncơ quan, tổ chức quy định tại khoản 1 Điều 81 của Luật này; trường hợp tình\nhuống đột xuất có thể gây mất an toàn cho người, phương tiện tham gia giao thông\nđường bộ phải thực hiện biện pháp cảnh báo an toàn ngay cho người tham gia giao\nthông đường bộ biết.",
+    "literal_overlap": 0.38
+  },
+  {
+    "id": "ngt22",
+    "question": "Nếu xe gặp sự cố trên đường cao tốc thì mình phải làm gì để đảm bảo an toàn?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_25"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 25. Giao thông trên đường cao tốc",
+    "source_excerpt": "2. Chỉ được dừng xe, đỗ xe ở nơi quy định; trường hợp gặp sự cố kỹ thuật hoặc\nbất khả kháng khác buộc phải dừng xe, đỗ xe thì được dừng xe, đỗ xe ở làn dừng\nkhẩn cấp cùng chiều xe chạy và phải có báo hiệu bằng đèn khẩn cấp; trường hợp\nxe không thể di chuyển được vào làn dừng khẩn cấp, phải có báo hiệu bằng đèn\nkhẩn cấp và đặt biển hoặc đèn cảnh báo về phía sau xe khoảng cách tối thiểu 150\nmét, nhanh chóng báo cho cơ quan Cảnh sát giao thông thực hiện nhiệm vụ bảo\nđảm trật tự, an toàn giao thông trên tuyến hoặc cơ quan quản lý đường cao tốc.",
+    "literal_overlap": 0.28
+  },
+  {
+    "id": "ngt23",
+    "question": "Mức phạt tiền cho hành vi không mặc đồng phục hoặc không đeo thẻ tên của lái xe là bao nhiêu?",
+    "relevant": [
+      "ND_336_2025::dieu_11"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 336/2025/NĐ-CP — Điều 11. Xử phạt người điều khiển xe ô tô, xe chở người bốn bánh có gắn động cơ kinh doanh vận tải vi phạm quy định về vận tải đường bộ",
+    "source_excerpt": "Điều 11. Xử phạt người điều khiển xe ô tô, xe chở người bốn bánh có gắn động cơ kinh doanh vận tải vi phạm quy định về vận tải đường bộ\n1. Phạt tiền từ 300.000 đồng đến 500.000 đồng đối với hành vi vi phạm không mặc đồng phục, không đeo thẻ tên của lái xe theo đúng mẫu đơn vị kinh doanh vận tải đã quy định.\n2. Phạt tiền từ 1.000.000 đồng đến 2.000.000 đồng đối với việc thực hiện một trong các hành vi vi phạm sau đây:\na) Điều khiển xe taxi không có đồng hồ tính tiền cước (đối với loại xe đăng ký sử dụng đồng hồ tính tiền) hoặc có nhưng không đúng quy định hoặc có nhưng không sử dụng đồng hồ để ",
+    "literal_overlap": 0.55
+  },
+  {
+    "id": "ngt24",
+    "question": "Nếu điều khiển xe không gắn biển số tạm thời thì bị phạt bao nhiêu?",
+    "relevant": [
+      "ND_168_2024::dieu_37"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 168/2024/NĐ-CP — Điều 37. Xử phạt người điều khiển phương tiện giao thông cơ giới đường bộ gắn biển số nước ngoài",
+    "source_excerpt": "4. Phạt tiền từ 8.000.000 đồng đến 10.000.000 đồng đối với một trong các hành vi vi phạm sau đây:\na) Điều khiển phương tiện không gắn biển số tạm thời hoặc gắn biển số tạm thời không do cơ quan có thẩm quyền cấp (nếu có quy định phải gắn biển số tạm thời);\nb) Điều khiển xe ô tô có tay lái bên phải tham gia giao thông mà không đi theo đoàn, không có người, phương tiện hỗ trợ, hướng dẫn giao thông theo quy định.",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "ngt25",
+    "question": "Ai có thẩm quyền quyết định huy động lực lượng tham gia phối hợp với Cảnh sát giao thông thực hiện tuần tra, kiểm soát?",
+    "relevant": [
+      "TT_73_2024_TT_BCA::dieu_29"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Thông tư 73/2024/TT-BCA — Điều 29. Thẳm quyền huy động, lực lượng được huy động và điều",
+    "source_excerpt": "Điều 29. Thẳm quyền huy động, lực lượng được huy động và điều\nkiện của cán bộ, chiến sĩ được huy động\n1. Thẳm quyền huy động\na) Bộ trưởng Bộ Công an quyết định huy động lực ủợng khác trong Công an\nnhân dân tham gia phối hợp với Cảnh sát giao thông thực hiện tuần tra, kiểm soát\ntrong phạm vi toàn quốc;\nb) Giám đốc Công an cấp tỉnh quyết định huy động lực lượng khác trong\nCông an nhân dân thuộc quyền quản lý tham gia phối hợp với Cảnh sát giao thông\nthực hiện tuần tra, kiểm soát trong phạm vi từ hai địa bàn cấp huyện trở lên;\nc) Trưởng Công an cấp huyện quyết định huy động lực lượng khác trong\nC",
+    "literal_overlap": 0.79
+  },
+  {
+    "id": "ngt26",
+    "question": "Nhà đầu tư có trách nhiệm gì khi vận hành trạm dừng nghỉ?",
+    "relevant": [
+      "ND_165_2024::dieu_52"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 52. Lựa chọn nhà đầu tư vận hành, khai thác hoặc úìlẸg cấp, mở",
+    "source_excerpt": "Điều 52. Lựa chọn nhà đầu tư vận hành, khai thác hoặc úìlẸg cấp, mở\nrộng, cải tạo, hiện đại hóa, vận hành, khai thác trạm dừng nghỉí săn có là tài\nsản công\nl. Việc lựa chọn nhà đầu tư vận hành, khai thác hoặc nâng cấp, mở rộng, cải\ntạo, hiện đại hóa, vận hành, khai thác trạm dừng nghỉ sẵn có là tài sản công thực\nhiện theo quy định của pháp luật về đấu thầu hoặc pháp luật về quản lý, sử dụng\ntài sản công hoặc kết hợp thực hiện trong dự án đường bộ cao tốc theo phương\nthức đối tác công tư căn cứ như sau:\na) Hiện trạng, hình thức, phương thức quản lý tài sản;\nb) Nhu cầu nâng cấp, mở rộng, cải tạo",
+    "literal_overlap": 0.42
+  },
+  {
+    "id": "ngt27",
+    "question": "Khi nào thì mình phải bật đèn xe máy chuyên dùng?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_20"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 20. Sử dụng đèn",
+    "source_excerpt": "Điều 20. Sử dụng đèn\n1. Người lái xe, người điều khiển xe máy chuyên dùng tham gia giao thông\nđường bộ phải bật đèn chiếu sáng phía trước trong thời gian từ 18 giờ ngày hôm\ntrước đến 06 giờ ngày hôm sau hoặc khi có sương mù, khói, bụi, trời mưa, thời tiết\nxấu làm hạn chế tầm nhìn.\n2. Người lái xe, người điều khiển xe máy chuyên dùng phải tắt đèn chiếu xa,\nbật đèn chiếu gần trong các trường hợp sau đây:\na) Khi gặp người đi bộ qua đường;\nb) Khi đi trên các đoạn đường qua khu đông dân cư có hệ thống chiếu sáng\nđang hoạt động;\nc) Khi gặp xe đi ngược chiều, trừ trường hợp dải phân cách có khả năng ",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "ngt28",
+    "question": "Xe ô tô chở hành khách có được đón, trả khách ở nơi không quy định không?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_45"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 45. Bảo đảm trật tự, an toàn giao thông đường bộ đối với xe ô tô vận",
+    "source_excerpt": "1. Việc vận chuyển hành khách bằng xe ô tô phải tuân thủ các quy định sau đây:\na) Đón, trả hành khách đúng nơi quy định; hướng dẫn sử dụng trang thiết bị an\ntoàn trên xe; có biện pháp giữ gìn vệ sinh trong xe;\nb) Vận chuyển hành khách đúng lịch trình, lộ trình đã đăng ký, trừ trường hợp\nbất khả kháng;\nc) Không chở hành khách trên nóc xe, trong khoang chở hành lý hoặc để hành\nkhách đu, bám bên ngoài xe;\nd) Không chở hàng hóa nguy hiểm, hàng hóa cấm lưu hành, hàng lậu, động vật\nhoang dã, hàng có mùi hôi thối hoặc động vật, hàng hóa khác có ảnh hưởng đến\nsức khỏe của hành khách, môi trường;\nđ) Kh",
+    "literal_overlap": 0.38
+  },
+  {
+    "id": "ngt29",
+    "question": "Chủ đầu tư xây dựng công trình hạ tầng có trách nhiệm gì đối với kết cấu hạ tầng đường bộ bị ảnh hưởng?",
+    "relevant": [
+      "ND_165_2024::dieu_14"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 14. Xây dựng, lắp đặt và khai thác công trình hạ tầng trong phạm",
+    "source_excerpt": "3. Chủ đầu tư xây dựng, lắp đặt công trình hạ tầng có trách nhiệm hoàn trả\nkết cầu hạ tầng đường bộ bị ảnh hưởng và phải đáp ứng các quy định sau:\na) Kết cấu hạ tầng đường bộ hoàn trả phải được thiết kế, thi công, nghiệm\nthu, bảo hành theo quy định của pháp luật về xây dựng, quy định của pháp luật\nvề tiêu chuần, quy chuần;\nb) Quy mô, chất lượng, yêu oau kỹ thuật kết cầu hạ tầng đường bộ hoàn trả\nkhông được thấp hơn kết cầu hạ tằng đường bộ trước khi xây dựng, lắp đặt công\ntrình hạ tầng.",
+    "literal_overlap": 0.77
+  },
+  {
+    "id": "ngt30",
+    "question": "Có cần phải thắt dây an toàn khi ngồi trên ô tô không?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_10"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 10. Quy tắc chung",
+    "source_excerpt": "Điều 10. Quy tắc chung\n1. Người tham gia giao thông đường bộ phải đi bên phải theo chiều đi của\nmình, đi đúng làn đường, phần đường quy định, chấp hành báo hiệu đường bộ và\ncác quy tắc giao thông đường bộ khác.\n2. Người lái xe và người được chở trên xe ô tô phải thắt dây đai an toàn tại\nnhững chỗ có trang bị dây đai an toàn khi tham gia giao thông đường bộ.\n3. Khi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe ô tô không\nđược cho trẻ em ngồi cùng hàng ghế với người lái xe, trừ loại xe ô tô chỉ có một\nhàng ghế; người lái xe phải sử dụng, hướng dẫn sử dụng thiết bị an toàn phù hợp\nch",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "ngt31",
+    "question": "Cá nhân sẽ bị phạt bao nhiêu tiền nếu làm hư hỏng hệ thống thoát nước đường bộ?",
+    "relevant": [
+      "ND_336_2025::dieu_9"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 336/2025/NĐ-CP — Điều 9. Xử phạt các hành vi vi phạm quy định về quản lý, khai thác, bảo",
+    "source_excerpt": "4. Phạt tiền từ 3.000.000 đong đến 5. 000.000 đồng đối với cá nhân, từ\n6.000.000 đồng đến 10.000.000 đồng đối với tổ chức thực hiện một trong các mmhr…\nvi vi phạm sau đây:\na) Làm hư hỏng hoặc làm mất tác dụng của hệ thống thoát nước đường bộ;\nb) Tự ý tháo dỡ, di chuyen điều chỉnh, làm hư hỏng, làm sai mục đích sử\nủng hoặc làm sai lệch biên báo hiệu, đèn tín hiệu giao thông, rào chắn, cọc tiêu,\ncột cây số, vạch Ị<ẻ đường, íường bảo vệ, hàng rào hộ lan, mốc chỉ giới, cọc mốc\ngiải phóng mặt băng và các báo hiệu đường bộ khác;\nc) Tự ý đập phá, tháo dỡ bó vỉa hè hoặc sửa chữa, cải tạo vỉa hè trái p",
+    "literal_overlap": 0.47
+  },
+  {
+    "id": "ngt32",
+    "question": "Nếu lái xe cứu hộ không lắp thiết bị giám sát hành trình thì bị phạt bao nhiêu?",
+    "relevant": [
+      "ND_168_2024::dieu_29"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 168/2024/NĐ-CP — Điều 29. Xử phạt, trừ điểm giấy phép lái xe của người điều khiển xe cứu",
+    "source_excerpt": "Điều 29. Xử phạt, trừ điểm giấy phép lái xe của người điều khiển xe cứu\nhộ giao thông đường bộ\n1. Phạt tiền từ 1.000.000 đồng đến 2.000.000 đồng đối với hành vi vi phạm\nđiều khiển xe ô tô cứu hộ giao thông đường bộ không lắp thiết bị ghi nhận hình\nảnh người lái xe hoặc có lắp thiết bị ghi nhận hình ảnh người lái xe nhưng không\ncó tác dụng trong quá trình xe tham gia giao fflong theo quy định hoặc làm sai\nlệch dữ liệu của thiết bị ghi nhận hình ảnh người lái xe lắp trên xe ô tô.\n2. Phạt tiền từ 2.000.000 đồng đến 3.000.000 đồng đối với hành vi vi phạm\nđiều khiển xe ô tô cứu hộ giao thông đường ",
+    "literal_overlap": 0.35
+  },
+  {
+    "id": "ngt33",
+    "question": "Mình cần chuẩn bị những gì để đổi chứng chỉ thầm tra viên an toàn giao thông đường bộ?",
+    "relevant": [
+      "ND_165_2024::dieu_40"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 40. Cấp đổi chứng chỉ thầm tra viên an toàn giao thông đường bộ",
+    "source_excerpt": "2. Hồ sơ đề nghị cấp đổi chứng chỉ do cá nhân lập thành 01 bộ, bao gồm:\na) Đơn đề nghị (bản chính) cấp đồi chứng chỉ theo quy định tại Mẫu số 5 Phụ\nlục VII kèm theo Nghị định này, kèm theo ảnh theo quy định tại điểm c khoản\n2 Điều 39 của Nghị định này;\nb) Bản khai kinh nghiệm (bản chính) thầm tra, thầm định an toàn giao thông\nđường bộ, th1et kế, thầm định phê duyệt xử lý điểm hay xảy ra tai nạn giao thông,\nđiểm tiềm ân tai nạn giao thông đường bộ (trong khoảng thời gian có hiệu lực\ncủa chứng chỉ xin cấp đôi): bản khai theo quy định tại Mẫu số 06 Phụ lục VIII\nkèm theo Nghị định này.",
+    "literal_overlap": 0.44
+  },
+  {
+    "id": "ngt34",
+    "question": "Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên có thời hạn bao lâu?",
+    "relevant": [
+      "ND_151_2024::dieu_22"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 151/2024/NĐ-CP — Điều 22. Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên",
+    "source_excerpt": "Điều 22. Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên\n1. Hình thức, nội dung giấy phép sử dụng thiết bị phát tín hiệu của xe ưu\ntiên theo Mẫu số 02a Phụ lục II kèm theo Nghị định này.\n2. Thời hạn của giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên:\na) Không quá 05 năm kề từ ngày cấp và không được quá ngày hết niên hạn\nsử dụng của phương tiện;\nb) Ớấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cấp cho xe đi\nlàm nhiệm vụ trong tình trạng khân câp quy định tại khoản 8 Điều 18 của\nNghị định này hêt hiệu lực ngay sau khi kêt thúc tình trạng khân câp.\n3. Giấy phép sử dụng t",
+    "literal_overlap": 0.76
+  },
+  {
+    "id": "ngt35",
+    "question": "Ai có trách nhiệm quản lý phần đất đã giải phóng mặt bằng trong giai đoạn đầu tư xây dựng đường cao tốc?",
+    "relevant": [
+      "ND_165_2024::dieu_53"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 53. Tổ chưc quản lý, vận hành, khai thác, bảo trì, bảo vệ kết cấu hạ",
+    "source_excerpt": "3. Các hạng mục công trình và thiết bị phải có quy trình vận hành khai thác\nnhư sau:\na) Công trình hầm trên đường cao tốc có sử dụng các thiết bị thông gió, lọc\nbụi, kiêm soát môi trường, phòng cháy, chữa cháy, hệ thông điện và các thiêt bị\nkhác phục vụ khai thác, sử dụng;:\nb) Trung tâm quản lý, điều hành giao thông tuyến;\nc) Công trình kiểm soát tải trọng xe;\nd) Các hạng mục, thiết bị khác do chủ đầu tư, người quản lý, sử dụng đường\ncao tôc quyêt định.\n.4 Đối với trường hợp đường cao tốc phân kỳ Qầu tư được giải phóng mặt\nbăng theo quy mô làn xe quy hoạch, việc quản lý phân đât chưa xây dựng ",
+    "literal_overlap": 0.32
+  },
+  {
+    "id": "ngt36",
+    "question": "Cơ quan nào có trách nhiệm thông báo cho Cảnh sát giao thông khi lòng đường, vỉa hè được sử dụng tạm thời?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_77"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 77. Bảo đảm trật tự, an toàn giao thông đường bộ đối với trường hợp",
+    "source_excerpt": "Điều 77. Bảo đảm trật tự, an toàn giao thông đường bộ đối với trường hợp\nsử dụng tạm thời lòng đường, vỉa hè vào mục đích khác\n1. Lòng đường được sử dụng cho mục đích giao thông; vỉa hè được sử dụng\ncho người đi bộ. Trường hợp cần thiết sử dụng tạm thời lòng đường, vỉa hè phục\nvụ sự kiện chính trị, hoạt động văn hóa, thể thao và mục đích khác, cơ quan, tổ\nchức, cá nhân có nhu cầu sử dụng tạm thời lòng đường, vỉa hè phải có phương án\nsử dụng tạm thời lòng đường, vỉa hè và được cơ quan có thẩm quyền cho phép; cơ\nquan cho phép sử dụng tạm thời lòng đường, vỉa hè gửi thông báo ngay cho cơ\nquan Cản",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "ngt37",
+    "question": "Nếu thấy đèn đỏ nhấp nháy và chuông kêu thì mình phải làm gì khi đến đường ngang?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_24"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 24. Giao thông tại đường ngang, cầu chung đường sắt",
+    "source_excerpt": "Điều 24. Giao thông tại đường ngang, cầu chung đường sắt\n1. Khi có hiệu lệnh của nhân viên gác chắn, đèn đỏ sáng nhấp nháy, chuông\nkêu, chắn đường bộ đang dịch chuyển hoặc đã đóng, người tham gia giao thông\nđường bộ phải dừng lại về bên phải đường của mình, trước vạch dừng xe.\n2. Khi tới đường ngang không có người gác, chắn đường bộ, chuông, đèn tín\nhiệu, người tham gia giao thông đường bộ phải dừng lại về bên phải đường của\nmình, trước vạch dừng xe và quan sát hai phía, khi không có phương tiện giao\nthông đường sắt tới mới được đi qua.\n3. Khi phương tiện tham gia giao thông đường bộ bị hư hỏn",
+    "literal_overlap": 0.24
+  },
+  {
+    "id": "ngt38",
+    "question": "Mình có cần mang giấy tờ gì khi tham gia giao thông không?",
+    "relevant": [
+      "TT_73_2024_TT_BCA::dieu_8"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Thông tư 73/2024/TT-BCA — Điều 8. Nội dung kiếm soát",
+    "source_excerpt": "1. Kiểm soát các giấy tờ có liên quan đến người và phương tiện giao\nthông, gồm:\na) Giấy phép lái xe; chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông\nđường bộ, bằng hoặc chứng chỉ điều khiển xe máy chuyên dùng: chứng nhận\nđăng ký xe hoặc bản sao chứng nhận đăng ký xe có chứng thực kèm bản gốc giấy\ntờ xác nhận của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài; chứng nhận\nkiểm định, tem kiểm định an toàn kỹ thuật và bảo vệ môi trường (đối với loại\nphương tiện giao thông có quy định phải kiểm định); chứng nhận bảo hiểm bắt\nbuộc trách nhiệm dân sự của chủ xe cơ giới và giấy tờ cần thiết kh",
+    "literal_overlap": 0.17
+  },
+  {
+    "id": "ngt39",
+    "question": "Cơ quan nào có trách nhiệm chấp thuận cơ sở kinh doanh đào tạo thẩm tra viên an toàn giao thông?",
+    "relevant": [
+      "ND_165_2024::dieu_37"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 37. Trình tự, thủ tục chấp thuận cơ sở kinh doanh đào tạo thắm",
+    "source_excerpt": "3. Cục Đường bộ Việt Nam có trách nhiệm:\na) Chấp thuận cơ sở kinh doanh đào tạo thẩm tra viên an toàn giao thông;\nb) Công khai danh sách cơ sở kinh doanh đào tạo thẩm tra viên an toàn giao\nthông đường bộ trên Công thông tin điện tử của Bộ Giao thông vận tải, Cục\nĐường bộ Việt Nam.",
+    "literal_overlap": 0.8
+  },
+  {
+    "id": "ngt40",
+    "question": "Khi có ùn tắc giao thông, Cảnh sát giao thông sẽ làm gì để giải quyết?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_78"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15 — Điều 78. Giải quyết, khắc phục ùn tắc giao thông",
+    "source_excerpt": "Điều 78. Giải quyết, khắc phục ùn tắc giao thông\n1. Khi xảy ra tình huống đột xuất ùn tắc giao thông, Cảnh sát giao thông phải\ntiến hành các biện pháp giải quyết theo quy định tại khoản 3 Điều 76 của Luật này.\n2. Khi xuất hiện ùn tắc giao thông, phải tiến hành các biện pháp sau đây:\na) Cơ quan Cảnh sát giao thông có phương án chỉ huy, điều khiển giao thông\nđường bộ; xử lý vi phạm pháp luật về trật tự, an toàn giao thông đường bộ; kiến\nnghị cơ quan có thẩm quyền giải quyết, phòng ngừa ùn tắc giao thông;\nb) Cơ quan quản lý đường bộ chủ trì, phối hợp với cơ quan, tổ chức, cá nhân\ncó liên quan xác",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "ngt41",
+    "question": "Trạm dừng nghỉ có được xây dựng riêng không hay phải đi kèm với dự án khác?",
+    "relevant": [
+      "ND_165_2024::dieu_67"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 67. Sửa đồi, bồ sung một số điều của các Nghị định có liên quan",
+    "source_excerpt": "4. Sửa đổi, bồ sung điểm d khoản 2 Điều 4 Nghị định số I 15/2024/NĐ-CP\nngày 16 tháng 9 năm 2024 của Chính phủ quy định chi tiết một số điều và biện\npháp thi hành Luật Đầu thầu về lựa chọn nhà đầu tư thực hiện dự án có sử dụng\nđất như sau:\n“d) Dự án đầu tư xây dựng trạm dừng nghỉ theo quy định của pháp luật về\nđường bộ, trừ trường hợp trạm dừng nghỉ được đầu tư xây dựng cùng với dự án\ntheo phương thức đối tác công tư hoặc Nhà nước lựa chọn nhà đầu tư vận hành,\nkhai thác hoặc nâng cấp, cải tạo, mở rộng, hiện đại hóa vận hành, khai thác theo\nquy định của pháp luật về quản lý, sử dụng tài sản công",
+    "literal_overlap": 0.31
+  },
+  {
+    "id": "ngt42",
+    "question": "Nếu có cháy xe trên đường thì mình phải làm gì để giải quyết sự cố đó?",
+    "relevant": [
+      "TT_73_2024_TT_BCA::dieu_19"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Thông tư 73/2024/TT-BCA — Điều 19. Giải quyết, xử lý tai nạn giao thông; ùn tắc giao thông: sự",
+    "source_excerpt": "4. Giải quyết sự cố cháy nổ xe trên đường bộ\nThực hiện theo quy định tại Điều 76 của Luật Trật tự, an toàn giao thông\nđường bộ và quy định sau đây:\na) Đặt biển báo số 245a “Đi chậm” hoặc biển báo số 245b (đối với tuyến\nđối ngoại):\nb) Báo cháy, sự có, tai nạn giao thông có người bị mắc kẹt trong phương\ntiện giao thông trên đường bộ cho lực lượng Cảnh sát phòng cháy, chữa cháy và\ncứu nạn, cứu hộ tại địa bàn Xây ra cháy;\nc) Tô chức cứu người, thoát hiểm cho người ngồi trên xe; tổ chức cấp cứu\nngười bị nạn (nêu có);\nd) Sử dụng phương tiện, thiết bị chữa cháy, cứu nạn, cứu hộ trên phương\ntiện giao ",
+    "literal_overlap": 0.31
+  },
+  {
+    "id": "ngt43",
+    "question": "Ai có thẩm quyền lập biên bản vi phạm hành chính trong hoạt động đường bộ?",
+    "relevant": [
+      "ND_336_2025::dieu_21"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 336/2025/NĐ-CP — Điều 21. Thẩm quyền lập biên bản vi phạm hành chính",
+    "source_excerpt": "Điều 21. Thẩm quyền lập biên bản vi phạm hành chính\nThẩm quyền lập biên bản vi phạm hành chính trong hoạt động đường bộ bao gồm:\n1. Các chức danh quy định tại Điều 17, khoản 2 và khoản 3 Điều 19 có thẩm quyền lập biên bản vi phạm hành chính đối với các hành vi vi phạm quy định của Nghị định này;\n2. Các chức danh quy định tại Điều 18 có thẩm quyền lập biên bản vi phạm hành chính đối với các hành vi vi phạm được phân định tại khoản 4 Điều 16 của Nghị định này;\n3. Chức danh quy định tại khoản 1 Điều 19 có thẩm quyền lập biên bản vi phạm hành chính đối với các hành vi vi phạm được phân định tại kh",
+    "literal_overlap": 0.93
+  },
+  {
+    "id": "ngt44",
+    "question": "Trong trường hợp nào thì giấy chấp thuận cơ sở kinh doanh đào tạo sẽ bị thu hồi?",
+    "relevant": [
+      "ND_165_2024::dieu_42"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 165/2024/NĐ-CP — Điều 42. Thu hồi giấy chấp thuận cơ sở kinh doanh đào tạo, thu hồi",
+    "source_excerpt": "1. Thu hồi giấy chấp thuận đối với một trong các trường hợp sau đây:\na) Cơ sở kinh doanh đào tạo thực hiện đào tạo thẩm tra viên an toàn fgigo\nthông đường bộ không theo chương trình khung ban hành theo quy định tại Mâu\nsô 07 Phụ lục VIII kèm theo Nghị định này;\nb) Cơ sở kinh doanh đào tạo công nhận kết quả thi cho người không tham\ndự khóa đào tạo thâm tra viên an toàn giao thông đường bộ;\nc) Trong ạời gian 03 năm liên tục, cơ sở kinh doanh đào tạo không thực\nhiện đào tạo thâm tra viên an toàn giao thông đường bộ.",
+    "literal_overlap": 0.53
+  },
+  {
+    "id": "ngt46",
+    "question": "Ai có quyền khai thác thông tin trong Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ?",
+    "relevant": [
+      "ND_151_2024::dieu_14"
+    ],
+    "domain": "giao_thong",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Nghị định 151/2024/NĐ-CP — Điều 14. Kết nối, chia sẻ, khai fflac, sử dụng Cơ sở dữ liệu về trật tự,",
+    "source_excerpt": "Điều 14. Kết nối, chia sẻ, khai fflac, sử dụng Cơ sở dữ liệu về trật tự,\nan toàn giao thông đường bộ\n]. Việc kết nối, chia sẻ thông tin giữa Cơ sở dữ liệu về trật tự, an toàn glao\nthông đường bộ với các cơ sở dữ liệu chuyên ngành và các cơ sở dữ liệu khác\nđược thực hiện theo quy định của Luật Trật tự, an toàn giao thong đường bộ và\nquy định của Chính phủ về quản lý, kết nối và chia sẻ dữ liệu sô trong cơ quan nhà\nnước và các quy định khác có liên quan.\n2. Khi được kết nối, chia sẻ Cơ sở dữ liệu về trật tự, an toàn giao thông\nđường bộ, cơ quan quản lý nhà nước căn cứ .chức năng, nhiệm vụ được g",
+    "literal_overlap": 0.7
+  },
+  {
+    "id": "nds01",
+    "question": "Trong trường hợp nào bên phải thực hiện nghĩa vụ trước có quyền hoãn thực hiện nghĩa vụ?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_411"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 411. Quyền hoãn thực hiện nghĩa vụ ưong hợp đồng song vụ",
+    "source_excerpt": "Điều 411. Quyền hoãn thực hiện nghĩa vụ ưong hợp đồng song vụ\n1. Bên phải thực hiện nghĩa vụ trước có quyền hoãn thực hiện nghĩa Vụ,\nnếu khả năng thực hiện nghĩa vụ của bên kia đã bị giảm sút nghiêm trọng đến\nmức không thể thực hiện được nghĩa vụ như đã cam kết cho đến khi bên kia có\nkhả năng thực hiện được nghĩa vụ hoặc có biện pháp bảo đảm thực hiện nghĩa vụ.\n2. Bên phải thực hiện nghĩa vụ sau có quyền hoãn thực hiện Ẹhla vụ\nđến hạn nếu bên thực hiện nghĩa vụ trước chưa thực hiện nghĩa vụ của mình\nkhi đến hạn.",
+    "literal_overlap": 0.71
+  },
+  {
+    "id": "nds02",
+    "question": "Nếu không có thỏa thuận thì tài sản cầm cố sẽ được xử lý như thế nào?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_303"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 303. Phương thức xử lý tài sản cầm cố, thế chấp",
+    "source_excerpt": "Điều 303. Phương thức xử lý tài sản cầm cố, thế chấp\n1. Bên bảo đảm và bên nhận bảo đảm có quyền thỏa thuận một trong các\nphương thức xử lý tài sản câm cô, thê châp sau đây:\na) Bán đầu giá tài sản;\nb) Bên nhận bảo đảm tự bán tài sản;\nc) Bên nhận bảo đảm nhận chính tài sản để thay thế cho việc thực hiện\nnghĩa vụ của bên bảo đảm;\nd) Phương thức khác.\n2. Trường hợp không có thỏa thuận về phương thức xử ly tài sản bảo đảm\ntheo quy định tại khoản 1 Điều này thì tài sản được bán đấu giá, trừ trường hợp\nluật có quy định khác.",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nds03",
+    "question": "Bên nhận tài sản có quyền gì khi bên vận chuyển chậm giao hàng?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_540"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 540. Quyền của bên nhận tài sản",
+    "source_excerpt": "Điều 540. Quyền của bên nhận tài sản\n1. Kiểm tra số lượng, chất lượng tài sản được vận d*myển đến.\n2. Nhận tài sản được vận chuyên đến.\n3. Vêu cầu bên vận chuyển thanh toán chỉ phí hợp lý phát sinh do phải\nchờ nhận tài sản nếu bên vận chuyên chậm giao.\n4. Yêu cầu bên vận chuyển bồi thường thiệt hại do tài sản bị mất, hư hỏng.",
+    "literal_overlap": 0.46
+  },
+  {
+    "id": "nds04",
+    "question": "Bên nhận gia công có quyền yêu cầu bên đặt gia công giao nguyên vật liệu đúng những tiêu chí nào?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_547"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 547. Quyền của bên nhận gia công",
+    "source_excerpt": "Điều 547. Quyền của bên nhận gia công\n1. Yêu cầu bên đặt gia công giao nguyên vật liệu đúng chất lượng, số\nlượng, thời hạn và địa điêm đã thoả thuận.\n2. Từ chối sự chỉ dẫn không hợp lý của bên đặt gia công trong quá trình\nthực hiện hợp đồng, nếu thấy chỉ dẫn đó có thể làm giảm chất lượng sản phẩm,\nnhưng phải báo ngay cho bên đặt gia công.\n3. Yêu cầu bên đặt gia công trả đủ tiền công theo đúng thời hạn và\nphương thức đã thoả thuận.",
+    "literal_overlap": 0.63
+  },
+  {
+    "id": "nds05",
+    "question": "Nếu bên có nghĩa vụ không thực hiện đúng nghĩa vụ trong thời gian hợp lý, bên có quyền có thể hủy bỏ hợp đồng không?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_424"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 424. Huỷ bỏ hợp đồng do chậm thực hiện nghĩa vụ",
+    "source_excerpt": "Điều 424. Huỷ bỏ hợp đồng do chậm thực hiện nghĩa vụ\nl. Trường hợp bên có nghĩa vụ không thực hiện đúng nghĩa vụ mà bên có\nquyên yêu câu thực hiện nghĩa vụ trong một thời hạn hợp lý nhưng bên có nghĩa\nvụ không thực hiện thì bên có quyên có thê huỷ bỏ hợp đông.\n2. Trường hợp do tính chất của hợp đồng hoặc do ý chí của các bên,\nhợp đồng sẽ không đạt được mục đích nêu không được thực hiện trong thời\nhạn nhât định mà hệt thời hạn đó bên có nghĩa vụ không thực hiện đúng nghĩa\nvụ thì bên kia có quyên hủy bỏ hợp đông mà không phải tuân theo quy định\ntại khoản 1 Điềệu này.",
+    "literal_overlap": 0.61
+  },
+  {
+    "id": "nds06",
+    "question": "Nếu bệnh nhân không thể đồng ý thì ai sẽ phải cho phép thử nghiệm trên cơ thể họ?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_33"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 33. Quyền sống, quyền được bảo đảm an toàn về tính mạng, sức",
+    "source_excerpt": "3. Việc gây mê, mồ, cắt bỏ, cấy ghép mô, bộ phận cơ thể người; thực hiện\nkỹ thuật, phương pháp khám, chữa bệnh mới trên cơ thể người; thử nghiệm y\nhọc, dược học, khoa học hay bất cứ hình thức thử nghiệm nào khác trên cơ thể\nngười phải được sự đồng ý của người đó và phải được tổ chức có thẳm quyền\nthực hiện.\nTrường hợp người được thử nghiệm là người chưa thành niên, người\nmất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ\nhành vi hoặc là bệnh nhân bất tỉnh thì phải được cha, mẹ, vợ, chồng, con\nthành niên hoặc người giám hộ của người đó đồng ý; trường hợp có nguy cơ\nđe dọa đ",
+    "literal_overlap": 0.28
+  },
+  {
+    "id": "nds07",
+    "question": "Mình có phải trông coi tài sản trong quá trình vận chuyển không?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_536"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 536. Nghĩa vụ của bên thuê vận chuyễn",
+    "source_excerpt": "Điều 536. Nghĩa vụ của bên thuê vận chuyễn\n1. Trả đủ tiền cước phí vận chuyển cho bên vận chuyển theo đúng thời\nhạn, phương thức đã thoả thuận.\n2. Cung cấp thông tin cần thiết liên quan đến tài sản vận chuyển để bảo\nđảm an toàn cho tài sản vận chuyên.\n3. Trông coi tài sản trên fflrơng vận chuyển, nếu có thoả thuận. Trường\nhợp bên thuê vận chuyển trông coi tài sản mà tài sản bị mất, hư hỏng thì không\nđược bồi thường.",
+    "literal_overlap": 0.33
+  },
+  {
+    "id": "nds08",
+    "question": "Cơ quan, tổ chức nước ngoài có khả năng tham gia tố tụng dân sự ở Việt Nam không?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_467"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 467. Năng lực pháp luật tố tụng dân sự của cơ quan, tổ chức",
+    "source_excerpt": "Điều 467. Năng lực pháp luật tố tụng dân sự của cơ quan, tổ chức\nnước ngoài, chi nhánh, văn phòng đại diện tại Việt Nam của cơ quan, tổ\nchức nước ngoài và tỗ chức quốc tế, cơ quan đại diện của tỗ chức quốc tế\ntại Việt Nam, Nhà nước nước ngoài\n1. Năng lực pháp luật tố tụng dân sự của cơ quan, tổ chức nước ngoài\nđược xác định theo pháp luật của nước nơi cơ quan, tổ chức đó được thành lập.\nNăng lực pháp luật tố tụng dân sự của chi nhánh, văn phòng đại diện\nqg5\ntại Việt Nam của cơ quan, tổ chức nước ngoài được xác định theo pháp luật\nViệt Nam.\n2. Năng lực phap luật tố tụng dân sự của tổ chức quốc ",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nds09",
+    "question": "Tòa án có trách nhiệm gì khi quyền dân sự của người dân bị xâm phạm?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_14"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 14. Bảo vệ quyền dân sự thông qua cơ quan có thắm quyền",
+    "source_excerpt": "Điều 14. Bảo vệ quyền dân sự thông qua cơ quan có thắm quyền\n1. Tòa án, cơ quan có thẩm quyền khác có trách nhiệm tôn trọng, bảo vệ\nquyền dân sự của cá nhân, pháp nhân.\nTrường hợp quyền dân sự bị xâm phạm hoặc có tranh chấp thì việc bảo vệ\nquyền được thực hiện theo pháp luật tô tụng tại Tòa án hoặc trọng tài.\nViệc bảo vệ quyền dân sự theo thủ tục hành chính được thực hiện trong\ntrường hợp luật quy định. Quyết định giải quyết vụ việc theo thủ tục hành chính\ncó thể được xem xét lại tại Tòa án.\n2. Tòa án không được từ chối giải quyết vụ, việc dân sự vì lý do chưa có\nđiều luật để áp dụng: trong tr",
+    "literal_overlap": 0.53
+  },
+  {
+    "id": "nds10",
+    "question": "Sau khi phiên tòa phúc thẩm kết thúc, ai sẽ hỏi về việc rút đơn khởi kiện hoặc thay đổi kháng cáo, kháng nghị?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_298"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 298. Hỏi về việc kháng cáo, kháng nghị và xử lý việc thay đổi",
+    "source_excerpt": "Điều 298. Hỏi về việc kháng cáo, kháng nghị và xử lý việc thay đổi\nkháng cáo, kháng nghị tại phiên tòa\n1. Sau khi kết thúc thủ tục bắt đầu phiên tòa phúc thẩm thì mmột thành\nviên của Hội đồng xét xử phúc thẩm công bố nội dung vụ án, quyết định của\nbản án sơ thẳm và nội dung kháng cáo, kháng nghị.\n2. Chủ tọa phiên tòa hỏi về các vấn đề sau đây:\na) Hỏi nguyên đơn có rút đơn khởi kiện hay không;\nb) Hỏi người kháng cáo, Kiểm sát viên có thay đổi, bố sung, rút kháng\ncáo, kháng nghị hay không;\nc) Hỏi các đương sự có thoả thuận được với nhau về việc giải quyết vụ\nán hay không.\n3. Trường hợp người khá",
+    "literal_overlap": 0.65
+  },
+  {
+    "id": "nds11",
+    "question": "Khi nào thì kiểm sát viên hoặc kiểm tra viên phải từ chối làm việc trong vụ án?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_60"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 60. Thay đỗi Kiếm sát viên, Kiểm tra viên",
+    "source_excerpt": "Điều 60. Thay đỗi Kiếm sát viên, Kiểm tra viên\nKiểm sát viên, Kiểm tra viên phải từ chối tiến hành tố tụng hoặc bị thay\nđổi trong những trường hợp sau đây:\n1. Thuộc một trong những trường hợp quy định tại Điều 52 của Bộ luật này;\n2. Họ đã là người tiến hành tố tụng trong vụ việc đó với tư cách là Thắm\nphán, Hội thẩm nhân dân, Thẩm tra viên, Thư ký Tòa án, Kiểm sát viên, Kiểm\ntra viên.",
+    "literal_overlap": 0.47
+  },
+  {
+    "id": "nds12",
+    "question": "Mình có được hưởng lợi nhuận từ việc hợp tác không?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_507"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 507. Q1:yễ`al1, nghĩa vụ của thành viên hợp tác",
+    "source_excerpt": "Điều 507. Q1:yễ`al1, nghĩa vụ của thành viên hợp tác\n1. Được hưởng hoa lợi, lợi tức thu được từ hoạt động hợp tác.\n2. Tham gia quyết định các vấn đề liên quan đến thực hiện hợp đồng hợp\ntác, giám sát hoạt động hợp tác.\n3. Bồi thường thiệt hại cho các thành viên hợp tác khác do lỗi của mình\ngây ra.\n4. Thực hiện quyền, nghĩa vụ khác theo hợp đồng.",
+    "literal_overlap": 0.2
+  },
+  {
+    "id": "nds13",
+    "question": "Nếu tôi đã nộp tiền tạm ứng để định giá tài sản nhưng không phải chịu chi phí định giá thì ai sẽ hoàn trả số tiền đó cho tôi?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_166"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 166. Xử lý tiền tạm ứng chỉ phí định giá tài sản",
+    "source_excerpt": "Điều 166. Xử lý tiền tạm ứng chỉ phí định giá tài sản\n1, Trường hợp người đã nộp tiền tạm ứng chỉ phí định giá tài sản không\nphải chịu chi phí định giá thì người phải chịu chỉ phí định giá theo quyêt định\ncủa Tòa án phải hoàn trả cho người đã nộp tiên tạm ứng chỉ phí định giá.\n2. Trường hợp gươl đa nop tiền tạm ứng chỉ phí định giá tài sản phải\nchịu ch1 phí định giá, nếu số tiền tạm ứng đã nộp chưa ử cho chi phí định giá\nthực tế thì họ phải nộp thêm fflan tiền còn thiếu; nếu số Uen tạm ứng đã nộp\nnhiều hơn chi phí định giá thực tế thì họ được trả lại phần tiền còn thừa.",
+    "literal_overlap": 0.54
+  },
+  {
+    "id": "nds14",
+    "question": "Nếu mình sử dụng tài sản của người khác mà không có giấy tờ gì thì mình có phải trả lại tài sản đó không?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_580"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 580. Tài sản hoàn trả",
+    "source_excerpt": "Điều 580. Tài sản hoàn trả\n1. Người chiếm hữu, người sử dụng tài sản mà không có căn cứ pháp luật\nphải hoàn trả toàn bộ tài sản đã thu được.\n2. Trường hợp tài sản hoàn trả là vật đặc định thì phải hoàn trả đúng vật\nđó; nêu vật đặc định đó bị mât hoặc hư hỏng thì phải đên bù băng tiên, trừ\ntrường hợp có thoả thuận khác.\nfifý\n3. Trường hợp tài sản hoàn trả là vật cùng loại, nhưng bị mất hoặc hư\nhỏng thì phải trả vật cùng loại hoặc đên bù băng tiên, trừ trường hợp có thoả\nthuận khác.\n4. Người được lợi về tài sản mà không có căn cứ pháp luật phải hoàn trả\nkhoản lợi về tài sản đó cho người bị thiệt",
+    "literal_overlap": 0.3
+  },
+  {
+    "id": "nds15",
+    "question": "Ai có quyền nghị án trong Hội đồng xét xử?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_264"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 264. Nghị án",
+    "source_excerpt": "2. Chỉ có các thành viên Hội đồng xét xử mới có quyền nghị án. Khi\nnghị án, các thành viên Hội đồng xét xử phải căn cứ vào tài liệu, chứng cứ đã\nđược xem xét tại phiên tòa, kết quả tranh tụng tại phiên tòa, các quy định của\npháp luật, nếu vụ án thuộc trường hợp quy định tại khoản 2 Điều 4 của Bộ\nluật này thì còn phải căn cứ vào tập quán, tương tự phap luật, những nguyên\ntắc cơ bản của pháp luật dân sự, án lệ hoặc lễ công ủng, ffla giải m1yet tất cả\ncác vấn đề của vụ án ủmg cách biểu quyết theo đa số về từng vấn đe Hội\nthẳm nhân dân biểu quyet trước, Thẩm _phán chủ tọa phiên tòa biểu quyet sau\n",
+    "literal_overlap": 0.67
+  },
+  {
+    "id": "nds16",
+    "question": "Sau phiên tòa, Kiểm sát viên có phải gửi ý kiến của mình cho Tòa án không?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_262"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 262. Phát biểu của Kiểm sát viên",
+    "source_excerpt": "Điều 262. Phát biểu của Kiểm sát viên\nSau khi những người tham gia tố tụng phát biểu tranh luận và đối đáp\nxong, Kiêm sát viên phát biêu ý kiên về việc tuân theo pháp luật tô tụng của\nThâm phán, Hội đồng xét xử, Thư ký phiên tòa và của người tham gia tô tụng\ntrong quá trình giải quyết vụ án kê từ khi thụ lý cho đên trước thời điệm Hội\nđôồng xét xử nghị án và phát biêu ý kiên v việc giải quyêt vụ án.\nNgay sau khi kết thúc phiên tòa, Kiểm sát viên phải gửi văn bản phát\nbiêu ý kiên cho Tòa án đê lưu vào hô sơ vụ án.\n“ZZ#",
+    "literal_overlap": 0.44
+  },
+  {
+    "id": "nds17",
+    "question": "Trẻ em sinh ra được bao lâu thì phải làm giấy khai sinh và giấy khai tử?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_30"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 30. Quyền được khai sinh, khai tử",
+    "source_excerpt": "Điều 30. Quyền được khai sinh, khai tử\n1. Cá nhân từ khi sinh ra có quyền được khai sinh.\n2. Cá nhân chết phải được khai tử.\n3. Trẻ em sinh ra mà sống đươc từ hai mươi bốn giờ trở lên mới chết thì\nphải được khai sinh và khai tử; nếu sinh ra mà sống dưới hai mươi bon giờ thì\nkhông phải khai sinh và khai tử, trừ trường hợp cha đẻ, mẹ đẻ có yêu cầu.\n4. Việc khai sinh, khai tử do pháp luật về hộ tịch quy định.",
+    "literal_overlap": 0.47
+  },
+  {
+    "id": "nds18",
+    "question": "Ai có quyền yêu cầu Tòa án tuyên bố một người mất năng lực hành vi dân sự?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_376"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 376. Quyền yêu cầu tuyên bố một người mất năng lực hành vi",
+    "source_excerpt": "Điều 376. Quyền yêu cầu tuyên bố một người mất năng lực hành vi\ndân sự, bị hạn chế năng lực hành vi dân sự hoặc có khó khăn trong nhận\nthức, làm chủ hành vi\n1. Ì`Ĩgl1'Ơ1 có quyền, lợi ích liên quan, cơ quan, tổ chức hữu quan có\nquyền yêu câu Tòa án tuyên bố một người mắất năng lực hành vi dân sự hoặc\nbị hạn chế năng lực hành vi dân sự hoặc có khó khăn trong nhận thức, làm\nchủ hành vi theo quy định của Bộ luật dân sự.\n2. Ng*»rơ1 thành niên khong đủ khả năng nhận thưc, làm chủ hành vi do\ntình trạng the chất, tỉnh thần nhưng chưa đến mức mắất năng lực hành vi dân\nsự có quyền yêu cầu Tòa án tuyên ",
+    "literal_overlap": 0.94
+  },
+  {
+    "id": "nds19",
+    "question": "Ai có trách nhiệm thực hiện việc quản lý tài sản được giao từ Nhà nước?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_201"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 201. Thực hiện quyền sở hữu toàn dân đối với tài sản được giao",
+    "source_excerpt": "Điều 201. Thực hiện quyền sở hữu toàn dân đối với tài sản được giao\ncho cơ quan nhà nước, đơn vị vũ trang nhân dân\n1. Khi tài sản thuộc sở hữu toàn dân được giao cho cơ quan nhà nước, đơn\nvị vũ trang nhân dân thì Nhà nước thực hiện quyên kiêm tra, giám sát việc quản\nlý, sử dụng tài sản đó.\n.\n2. Cơ quan nhà nước, đơn vị vũ ưang nhân dân thực hiện việc quản lý,\nsử ủng đúng mục đích, theo quy định của pháp luật đối với tài sản được Nhà\nnước giao.",
+    "literal_overlap": 0.53
+  },
+  {
+    "id": "nds20",
+    "question": "Trong trường hợp Kiểm sát viên không có mặt tại phiên tòa, phiên tòa có bị hoãn không?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_232"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 232. Sự có mặt của Kiễm sát viên",
+    "source_excerpt": "Điều 232. Sự có mặt của Kiễm sát viên\n1. Kiểm sát viên được Viện trưởng Viện kiểm sát cùng cấp phân công có\nnhiệm vụ tham gia phiên tòa; nêu Kiêm sát viên văng mặt thì Hội đông xét xử\nvân tiên hành xét xử, không hoãn phiên tòa.\n2. Trường hợp Kiểm sát viên bị thay đối tại phiên tòa hoặc không thể\ntiệp tục tham gia phiên tòa xét xử, nhưng có Kiêm sát viên dự khuyêt thì\nngười này được tham gia phiên tòa xét xử tiệp vụ án nêu họ có mặt tại phiên\ntòa từ đâu.\n⁄\nAQS",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nds21",
+    "question": "Nếu một người trong nhóm miễn nghĩa vụ thì những người khác vẫn có thể yêu cầu bên có nghĩa vụ thực hiện không?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_289"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 289. Thực hiện nghĩa vụ đối với nhiều người có quyền liên đới",
+    "source_excerpt": "Điều 289. Thực hiện nghĩa vụ đối với nhiều người có quyền liên đới\n. Ngh1al vụ đ01 với nhiều Ẹươl có quyen liên đới là ngh1e1 vụ mà theo đó\nmỗi người trong số những người có quyền đều có thể yêu cầu bên có nghĩa vụ\nthực hiện toàn bộ nghĩa vụ.\n2 Bên có ngh1a1 vụ có. thể thực hiện nghĩa vụ của mình đối với bất cứ ai\ntrong số những người có quyền liên đới.\n3. Trường hợp một trong số những người có ạyen liên đới miễn cho bên\ncó nghĩa vụ không phải thực hiện ủan nghĩa vụ đối với mình thì bên có nghĩa\nvụ vẫn phải thực hiện phần nghĩa vụ còn lại đối với những người có quyền liên\nđới khác.",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nds22",
+    "question": "Nếu tôi không đồng ý với quyết định đưa vụ án ra xét xử theo thủ tục rút gọn thì tôi có bao lâu để khiếu nại?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_319"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 319. Khiếu nại, kiến nghị và giải quyết khiếu nại, kiến nghị về",
+    "source_excerpt": "Điều 319. Khiếu nại, kiến nghị và giải quyết khiếu nại, kiến nghị về\nquyết định đưa vụ án ra xét xử theo thủ tục rút gọn\n1. Trong thời hạn 03 ngày làm việc, kể từ ngày nhận được quyết định\nđưa vụ án ra xét xử theo thủ tục rút gọn, đương sự có quyền khiêu nại, Viện\nkiêm sát cùng cấp có quyên kiên nghị với Chánh án Tòa án đã ra quyêt định.\n2. Trong thời hạn 03 ngày làm việc, kể từ ngày nhận được khiếu nại,\nkiên nghị về quyêt định đưa vụ án ra xét xử theo thủ tục rút gọn, Chánh án\nTòa án phải ra một trong các quyêt định sau đây:\na) Giữ nguyên quyết định đưa vụ án ra xét xử theo thủ tục rút gọn;\nb",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nds23",
+    "question": "Bên cầm giữ có quyền gì liên quan đến việc khai thác tài sản cầm giữ?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_348"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 348. Quyền của bên cầm giữ",
+    "source_excerpt": "Điều 348. Quyền của bên cầm giữ\n1. Yêu cầu bên có nghĩa vụ phải thực hiện đầy đủ nghĩa vụ phát sinh từ\nhợp đông song vụ.\n2. Yêu cầu bên có nghĩa vụ phải thanh toán chỉ phí cần thiết cho việc bảo\nquản, giữ gìn tài sản câm giữ.\n3. Được khai thác tài sản cằm giữ để thu hoa lợi, lợi tức nếu được bên có\nnghĩa vụ đông ý.\nGiá trị của việc khai thác tài sản cầm giữ được bù trừ vào giá trị nghĩa vụ\ncủa bên có nghĩa vụ.",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nds24",
+    "question": "Bên nhận cầm cố có quyền yêu cầu ai trả lại tài sản cầm cố nếu họ đang chiếm hữu trái pháp luật?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_314"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 314. Quyền của bên nhận cằm cố",
+    "source_excerpt": "Điều 314. Quyền của bên nhận cằm cố\n1. Yêu cầu người đang chiếm hữu, sử dụng trái pháp luật tài sản cầm cố\ntrả lại tài sản đó.\n2. Xử lý tài sản cầm cố theo phương thức đã thoả thuận hoặc theo quy\nđịnh của pháp luật.\n3. Được cho thuê, cho mượn, khai thác công dụng tài sản cầm cố và\nhưởng hoa lợi, lợi tức từ tài sản cầm cố, nếu có thoả thuận.\n4. Được thanh toán chi phí hợp lý bảo quản tài sản cầm cố khi trả lại tài\nsản cho bên cầm cố.",
+    "literal_overlap": 0.57
+  },
+  {
+    "id": "nds25",
+    "question": "Trong bao lâu kể từ khi nhận đơn yêu cầu, Thẩm phán phải ra quyết định mở phiên họp xét tính hợp pháp của cuộc đình công?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_410"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 410. Thủ tục giải quyết đơn yêu cầu xét tính hợp pháp của",
+    "source_excerpt": "Điều 410. Thủ tục giải quyết đơn yêu cầu xét tính hợp pháp của\ncuộc đình công\n1. Ngay sau khi nhận đơn yêu cầu, Chánh án Tòa án nhân dân cấp tỉnh\nquyết định thành lập Hội đồng xét tính hợp pháp của cuộc đình công và phân\ncông một Thầẩm phán chủ trì việc giải quyết đơn yêu cầu.\nJxx\n2. Trong thời hạn 05 ngày làm việc, kể từ ngày nhan đơn yêu cầu, Thắm\nphán được phân công chủ trì việc giải quyết đơn yêu cầu @a1 ra quyết định\nmở phiên họp xét tính hợp pháp của cuộc đình công. Quyết định mở phiên\nhọp xét tính hợp pháp của cuộc đình công phải được gn ngay cho tổ chưc đại\ndiện ừip thể lao động, người",
+    "literal_overlap": 0.69
+  },
+  {
+    "id": "nds26",
+    "question": "Ai có quyền khởi kiện để yêu cầu tòa án áp dụng biện pháp bắt giữ tàu bay?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_131"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 131. Bắt giữ tàu bay, tàu biển để bảo đảm giải quyết vụ án",
+    "source_excerpt": "1. Tòa án quyết mnh áp dụng biện pháp khẩn cấp tạm thời bắt giữ tàu\nbay để bảo đảm giải quyết vụ án dân sự mà vụ án đó do chủ sở hữu tàu bay,\nchủ nợ trong trường hợp tàu bay là tài an bảo đảm, người bị thiệt hại do tàu\nbay đang bay gây ra hoặc người có quyen lợi ích liên quan đối với tàu bay\nkhởi kiện theo quy định của pháp luật vê hàng không dân dụng Việt Nam.",
+    "literal_overlap": 0.47
+  },
+  {
+    "id": "nds27",
+    "question": "Mức bồi thường tối đa cho việc xâm phạm thi thể là bao nhiêu?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_606"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 606. Bồi thường thiệt hại do xâm phạm thi thể",
+    "source_excerpt": "Điều 606. Bồi thường thiệt hại do xâm phạm thi thể\n1. Cá nhân, pháp nhân xâm phạm thi thể phải bồi thường thiệt hại.\n2. Thiệt hại do xâm phạm thi thể gồm chỉ phí hợp lý để hạn chế, khắc\nphục thiệt hại.\n3. Người chịu trách nhiệm bồi thLtơng khi thi thể bị xâm phạm phải bồi\nủ.rơnẹ theo quy định tại khoản 2 Điều này và một khoản tiền khac đêề bù đắp\ntồn thật về tỉnh thần cho nhưng ng1xơ1 thân thích thuộc ủng thừa kế thứ nhất của\nngười chết, nếu không có những người này thì người trực tiếp nuôi dưỡng người\nAS\nchết được hưởng khoản tiền này. Mức bồi thường bù (Íap tồn thất về tnh thần do\ncác bên th",
+    "literal_overlap": 0.38
+  },
+  {
+    "id": "nds28",
+    "question": "Sở hữu chung theo phần có đặc điểm gì trong việc xác định quyền sở hữu của mỗi chủ sở hữu?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_209"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 209. Sở hữu chung theo phần",
+    "source_excerpt": "Điều 209. Sở hữu chung theo phần\n1. Sở hữu chung theo phần là sở hữu chung mà trong đó phần quyền sở\nhữu của mỗi chủ sở hữu được xác định đối với tài sản chung.\n2. Mỗi chủ sở hữu chung theo phần có quyền, nghĩa vụ đối với tài sản\nthuộc sở hữu chung tương ứng với phân quyên sở hữu của mình, trừ trường\nhợp có thoả thuận khác.",
+    "literal_overlap": 0.61
+  },
+  {
+    "id": "nds29",
+    "question": "Ai có thể thành lập pháp nhân?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_82"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 82. Thành lập, đăng ký pháp nhân",
+    "source_excerpt": "Điều 82. Thành lập, đăng ký pháp nhân\nl. Pháp nhân được thành lập theo sáng kiến của cá nhân, pháp nhân hoặc\ntheo quyết định của cơ quan nhà nước có thẩm quyền.\n2. Đăng ký pháp nhân bao gồm đăng ký thành lập, đăng ký thay đổi và\nđăng ký khác theo quy định của pháp luật.\n3. Việc đăng ký pháp nhân phải được công bố công khai.\n<ê",
+    "literal_overlap": 0.33
+  },
+  {
+    "id": "nds30",
+    "question": "Ai có quyền xem biên bản phiên tòa ngay sau khi phiên tòa kết thúc?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_236"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 236. Biên bản phiên tòa",
+    "source_excerpt": "Điều 236. Biên bản phiên tòa\n1. Biên bản phiên tòa phải gh¡ đầy đủ các nội dung sau đây:\na) Các nội dung chính trong quyết định đưa vụ án ra xét xử quy định tại\nkhoản 1 Điềêu 220 của Bộ luật này;\nAO Y\nb) Mọi diễn biến tại phiên tòa từ khi bắt đầu cho đến khi kết thúc phiên tòa;\nc) Các câu hỏi, câu trả lời và phát biều tại phiên tòa.\n2. Ngoài việc ghi biên bản phiên tòa, Hội đồng xét xử có thể thực hiện\nviệc ghi âm, ghi hình về diễn biên phiên tòa.\n3. Sau khi kết thúc phiên tòa, chủ toạ phiên tòa phải kiểm tra biên bản và\ncùng với Thư ký phiên tòa ký biên bản đó.\n4. Kiểm sát viên và những người",
+    "literal_overlap": 0.38
+  },
+  {
+    "id": "nds31",
+    "question": "Nếu tôi đã nộp tiền tạm ứng giám định mà không phải chịu chi phí thì ai sẽ hoàn trả tiền cho tôi?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_162"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 162. Xử lý tiền tạm ứng chỉ phí giám định đã nộp",
+    "source_excerpt": "Điều 162. Xử lý tiền tạm ứng chỉ phí giám định đã nộp\n1 Trường hợp người đã nộp tiền tạm ứng chỉ phí giám định không phải\nchịu chi phí giám định thì người phải chịu chỉ phí giám định theo quyết định\ncủa Tòa án phải hoàn trả cho người đã nộp tiên tạm ứng chi phí giám định.\n2. Trường hợp gươ1 đã nộp tiền tạm ứng chỉ phí giám định phải chịu\nchi phí giám định, nêu sô tiền tạm ứng đã mp chưa đủ cho chi phí giám định\nthực tế thì họ phải nộp thêm ủan tiền còn thiếu; nếu số tiền tạm ứng đã nộp\nnh1eu hơn chỉ phí giám định thực tế thì họ được trả lại phần tiền còn thừa theo\nquyết định của Tòa án.\nà",
+    "literal_overlap": 0.45
+  },
+  {
+    "id": "nds32",
+    "question": "Hội đồng xét xử tái thẩm có quyền gì khi không chấp nhận kháng nghị?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_356"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 356. Thắm quyền của Hội đồng xét xử tái thẫm",
+    "source_excerpt": "Điều 356. Thắm quyền của Hội đồng xét xử tái thẫm\nHội đồng xét xử tái thẳm có thắm quyền sau đây:\n1. Không chấp nhận kháng nghị và giữ nguyên bản án, quyết định đã có\nhiệu lực pháp luật;\n2. Hủy bản án, quyết định đã có hiệu lực pháp luật để xét xử sơ thẩm lại\ntheo thủ tục do Bộ luật này quy định;\n3. Hủy bản án, quyết định đã có hiệu lực pháp luật và đình chỉ giải quyết\nvụ án.",
+    "literal_overlap": 0.57
+  },
+  {
+    "id": "nds33",
+    "question": "Ai có quyền yêu cầu Tòa án thông báo tìm kiếm người vắng mặt tại nơi cư trú?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_64"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 64. Vêu cầu thông báo tìm kiếm người vắng mặt tại nơi cư trú",
+    "source_excerpt": "Điều 64. Vêu cầu thông báo tìm kiếm người vắng mặt tại nơi cư trú\nvà quản lý tài sản của người đó\nKhi một ngLrơ1 ủet tích 06 tháng liền trở lên thì nhưng ng1J,'ơ1 có quyền,\nlợi ích liên quan có quyên yeu cầu Tòa án ứxong báo tìm kiếm gươl vang mặt\ntại nơi cư trú theo quy định của pháp luật vê tô Umg dân sự và có thể yêu cầu\nTòa án áp dụng biện pháp wan lý tài sản của người vắng mặt tại nơi cư trú quy\nđịnh tại Điều 65 của Bộ luật này.",
+    "literal_overlap": 0.82
+  },
+  {
+    "id": "nds34",
+    "question": "Thời hạn hoãn phiên tòa là bao lâu?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_233"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 233. Thời hạn hoãn phiên tòa và quyết định hoãn phiên tòa",
+    "source_excerpt": "Điều 233. Thời hạn hoãn phiên tòa và quyết định hoãn phiên tòa\n1. Hội đồng xét xử quyết định hoãn phiên tòa trong các mrơng hợp quy\nđịnh tại khoản 2 Điều 56, khoản 2 Điều 62, khoản 2 Điều 84, Điều 227, khoản\n2 Điều 229, khoản 2 Điều 230, khoản 2 Điều 231 và Điều 241 của Bộ luật\nnày. Thời hạn hoãn phiên tòa là không quá 01 tháng, đối với phiên tòa xét xử\nvụ án theo thủ tục rút gọn là không quá 15 ngày, kể từ ngày ra quyết định\nhoãn phiên tòa.\n2. Quyết định hoãn phiên tòa phải có các nội dung chính sau đây:\na) Ngày, tháng, năm ra quyết định;\nb) Tên Tòa án và họ, tên những người tiến hành tổ tụng",
+    "literal_overlap": 0.71
+  },
+  {
+    "id": "nds35",
+    "question": "Bên vận chuyển có quyền từ chối vận chuyển những loại tài sản nào?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_535"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 535. Quyền của bên vận chuyên",
+    "source_excerpt": "Điều 535. Quyền của bên vận chuyên\n1. Kiểm tra sự xác thực của tài sản, của vận đơn hoặc chứng từ vận\nchuyển tương đương khác.\n2. Từ chối vận chuyển tài sản không đúng với loại tài sản đã thoả thuận\ntrong hợp ®ng\n3. Yêu cầu bên thuê vận chuyển thanh toán đủ cước phí vận chuyển đúng\nthời hạn.\n4. Từ chm vận chuyển tài sản cấm giao dịch, tài sản có tính chất nguy\nhiểm, độc hại, nếu bên vận chuyễn biết hoặc phải biết.",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nds36",
+    "question": "Khi nào thì người giám hộ phải chuyển giao giám hộ cho người mới?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_61"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 61. Chuyền giao giám hộ",
+    "source_excerpt": "Điều 61. Chuyền giao giám hộ\n1. Khi thay đổi người giám hộ thì trong thời hạn 15 ngày, kể từ ngày có\nngười giám hộ mới, người đã thực hiện việc giám hộ phải chuyên giao giám hộ\ncho người thay thê mình.\n2. Việc chuyển giao giám hộ phải được lập thành văn bản, trong đó ghi rõ\nlý do chuyên giao và tình trạng tài sản, vận đê khác có liên quan của người được\ngiám hộ tại thời điêm chuyên giao. Cơ quan cử, chỉ định người giám hộ, người\ngiám sát việc giám hộ chứng kiên việc chuyên giao giám hộ.\n3. Trường hợp thay đổi người giám hộ quy định tại khoản 1 Điều 60 của\nBộ luật nay thì cơ quan cử, chỉ định n",
+    "literal_overlap": 0.58
+  },
+  {
+    "id": "nds37",
+    "question": "Sau khi có thông báo về việc mở thừa kế, những người thừa kế có thể họp mặt để làm gì?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_656"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 656. Họp mặt những người thừa kế",
+    "source_excerpt": "Điều 656. Họp mặt những người thừa kế\nÌ. Sau khi có thông báo về việc mở thừa kế hoặc di chúc được công bó,\nnhững người thừa kế có thể họp mặt để thoả thuận những việc sau đây:\na) Cử người ạ1an lý di sản, người phân chia di sản, xác định quyền, nghĩa\nvụ của những người này, nếu người đề lại di sản không chỉ định trong di chúc;\nb) Cách thức phân chia di sản.\n2. Mọi thoả thuận của những người thừa kế phải được lập thành văn bản.",
+    "literal_overlap": 0.84
+  },
+  {
+    "id": "nds38",
+    "question": "Ai là những người tham gia tố tụng dân sự?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_46"
+    ],
+    "domain": "dan_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 46. Cơ quan tiến hành tố tụng, người tiến hành tố tụng",
+    "source_excerpt": "Điều 46. Cơ quan tiến hành tố tụng, người tiến hành tố tụng\n1. Các cơ quan tiền hành tố tụng dân sự gồm có:\na) Tòa án;\nb) Viện kiểm sát.\nv\n2. Những người tiền hành tố tụng dân sự gồm có:\na) Chánh án Tòa án, Thẩm phán, Hội thẩm nhân dân, Thẩm tra viên,\nThư ký Tòa án;\nb) Viện trưởng Viện kiểm sát, Kiểm sát viên, Kiểm tra viên.",
+    "literal_overlap": 0.44
+  },
+  {
+    "id": "nds39",
+    "question": "Bên đặt gia công có quyền giảm tiền công trong trường hợp nào?",
+    "relevant": [
+      "BLDS_91_2015_QH13::dieu_552"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Dân sự 91/2015/QH13 — Điều 552. Trả tiền công",
+    "source_excerpt": "Điều 552. Trả tiền công\n1. Bên đặt gia công phải trả đủ tiền công vào thời điểm nhận sản phẩm,\ntrừ trường hợp có thoả thuận khác.\n2. Trường hợp khong có thoả thuận về mức tiền công thì áp dụng mức\ntiền công trung bình đ01 với việc tạo ra sản phẩm cùng loại tại địa điểm gia công\nvà vào thời điểm trả tiền.\n3. Bên đặt gia công không có quyen giảm tiền công, nếu sản phẩm không\nbảo đảm chất lượng do nguyên vật liệu mà mình đã cung cấp hoặc do sự chỉ dẫn\nkhông hợp lý của mình.",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nds40",
+    "question": "Ai có quyền khởi kiện vụ án hôn nhân và gia đình để bảo vệ quyền lợi của người khác?",
+    "relevant": [
+      "BLTTDS_92_2015_QH13::dieu_187"
+    ],
+    "domain": "dan_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng dân sự 92/2015/QH13 — Điều 187. Quyel1 khởi kiện vụ án dân sự đễ bão vệ quyền và lợi ích",
+    "source_excerpt": "Điều 187. Quyel1 khởi kiện vụ án dân sự đễ bão vệ quyền và lợi ích\nhợp pháp của người khác, lợi ích Ổng cộng và lợi ích của Nhà nước\n1. Cơ quan quản lý nhà nước về gia đình, cơ quan quản lý nhà nước về\ntrẻ em, Hội liên hiệp phụ nữ Việt Nam trong phạm vi nhiệm vụ, quyền hạn\ncủa mình có quyền khởi kiện vụ án về hôn nhân và gia đình theo quy định của\nLuật hôn nhân và gia đình.\n2. Tổ chức đại diện tập thể lao động có quyền khởi kiện vụ án lao động\ntrong trường hợp cần bảo vệ quyền và lợi ích hợp pháp của tập thể người lao\nđộng hoặc khi được người lao động ủy quyền theo quy định của pháp luật.\n3. T",
+    "literal_overlap": 0.68
+  },
+  {
+    "id": "nhs01",
+    "question": "Quyết định giám đốc thẩm cần có những nội dung gì?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_394"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 394. Quyết định giám đốc thẫm",
+    "source_excerpt": "Điều 394. Quyết định giám đốc thẫm\n1. Hội đồng giám đốc thắm ra quyết định giám đốc thẩm nhân danh\nnước Cộng hoà xã hội chủ nghĩa Việt Nam.\n2. Quyết định giám đốc thẳm có các nội dung:\na) Ngày, tháng, năm và địa điểm mở phiên tòa;\nb) Họ tên các thành viên Hội đồng giám đốc thắm;\nc) Họ tên Kiểm sát viên thực hành quyền công tố, kiểm sát xét xử\nphiên tòa;\nd) Tên vụ án mà Hội đồng đưa ra xét xử giám đốc thầm;\nđ) Tên, tuổi, địa chỉ của ngt1'ơ1 bị kết á án và những người khác có quyền\nlợi, nghĩa vụ liên quan theo quyết định giám đốc thắm;\ne) Tóm tắt nội dung vụ án, phần quyết định của bản án, quyết",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nhs02",
+    "question": "Thời gian lấy lời khai người dưới 18 tuổi có những quy định gì về số lần và thời gian trong một ngày?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_421"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 421. Lấy lời khai người bị giữ trong trường hợp khẩn cấp,",
+    "source_excerpt": "4. Thời gian lấy lời khai người dưới 18 tuổi không mza hai lần trong 01\nngày và mỗi lâần không quá 02 giờ, trừ trường hợp vụ án có nhiều tình tiết\nphức tạp.",
+    "literal_overlap": 0.38
+  },
+  {
+    "id": "nhs03",
+    "question": "Nếu ai đó làm gián điệp thì bị phạt bao nhiêu năm tù?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_110"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 110. Tội gián điệp",
+    "source_excerpt": "Điều 110. Tội gián điệp\n1. Người nào có một trong các hành vi sau đây, thì bị phạt t từ 12 năm\nđến 20 năm, tù chung thân hoặc tử hình:\na) Hoạt động tình báo, phá hoại hoặc gây cơ sở để hoạt động tình báo,\nphá hoại chống nước Cộng hòa xã hội chủ nghĩa Việt Nam;\nb) Gây cơ sở đề hoạt động tình báo, phá hoại theo sự chỉ đạo của nước\nngoài; hoạt động thám báo, chỉ điểm, chứa chấp, dẫn đường hoặc thực hiện\nhành vi khác giúp người nước ngoài hoạt động tình báo, phá hoại;\nc) Cung cấp hoặc thu thập nhằm cung cấp bí mật Nhà nước cho nước\nngoài; thu thập, cung ủp tin tức, tài liệu khác nhằm mục đích để n",
+    "literal_overlap": 0.33
+  },
+  {
+    "id": "nhs04",
+    "question": "Nếu ai đó vô ý làm lộ bí mật quân sự thì sẽ bị phạt như thế nào?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_406"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 406. Tội vô ý làm lộ bí mật công tác quân sự",
+    "source_excerpt": "Điều 406. Tội vô ý làm lộ bí mật công tác quân sự\n1. Người nào vô ý làm lộ bí mật công tác quân sự, nếu không thuộc một\ntrong các trường hợp quy định tại Điều 338 và Điều 362 của Bộ luật này, thì\nbị phạt cải tạo không giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 02\nnăm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 01I\nnăm đến 05 năm:\na) Là chỉ huy hoặc sỹ quan;\nỬÙ\nb) Trong khu vực có chiến sự;\nc) Trong chiến đấu;\nd) Gây hậu quả nghiêm trọng, rất nghiêm trọng hoặc đặc biệt nghiêm\ntrọng.",
+    "literal_overlap": 0.41
+  },
+  {
+    "id": "nhs05",
+    "question": "Người nào tự ý rời bỏ vị trí chiến đấu sẽ bị phạt tù bao lâu?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_401"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 401. Tội bỏ vị trí chiến đấu hoặc không làm nhiệm vụ trong",
+    "source_excerpt": "Điều 401. Tội bỏ vị trí chiến đấu hoặc không làm nhiệm vụ trong\nchiến đầu\n1. Người nào tự ý rời bỏ vị trí chiến đấu hoặc không làm nhiệm vụ trong\nchiến đấu, thì bị phạt tù từ 02 năm đến 07 năm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 05\nnăm đến 12 năm:\na) Là chỉ huy hoặc sĩ quan;\nb) Bỏ vũ khí, trang bị kỹ thuật quân sự hoặc tài liệu bí mật công tác quân sự;\nc) Lôi kéo người khác phạm tội;\nd) Gây hậu quả nghiêm trọng hoặc rất nghiêm trọng.\n3. Phạm tội gây hậu quả đặc biệt nghiêm trọng, thì bị phạt tù từ 10 năm\nđến 20 năm.",
+    "literal_overlap": 0.73
+  },
+  {
+    "id": "nhs06",
+    "question": "Nếu mình tự thú về tội phạm thì cơ quan nào sẽ tiếp nhận và thông báo cho mình?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_152"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 152. Người phạm tội tự thú, đầu thú",
+    "source_excerpt": "Điều 152. Người phạm tội tự thú, đầu thú\n1. Khi người phạm tội đến tự thú, đầu thú, cơ _quan, tổ chức tiếp nhận\nphải lập biên bản ghi rõ họ tên, tuổi, nghe nghxep, chỗ ở và lời khai của người\ntự thú, đầu thú. Cơ quan, tổ chức tiếp nhận người phạm tội tự thú, đầu thú có\ntrách nhiệm thông báo ngay cho Cơ quan điều tra hoặc Viện kiểm sát.\n2. Trường hợp xác định tội ủam do người tự thú, đầu thú thực hiện\nkhong thuộc thâm quyền điều tra của mình thì Cơ quan điều tra t1ep nhận\nngL1'ơ1 tự thú, đầu thú phe11 thông báo ngay cho Cơ quan điều tra có thẩm\nquyền để tiếp nhận, giải quyết.\n3. Trong thời hạn ",
+    "literal_overlap": 0.28
+  },
+  {
+    "id": "nhs07",
+    "question": "Ai có thể giám sát người dưới 18 tuổi bị buộc tội?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_418"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 418. Giám sát đối với người bị buộc tội là người dưới 18 tuổi",
+    "source_excerpt": "Điều 418. Giám sát đối với người bị buộc tội là người dưới 18 tuổi\n1. Cơ quan điều tra, cơ quan được giao nhiệm vụ tiến hành một số hoạt\nđộng điều tra, Viện 1c1em sát, Tòa án có thể ra quyết định ffl80 người bị buộc\ntội là người dưới 18 tuo1 cho gươl đại diện của họ giám aat đe bảo đảm sự có\nmặt của họ khi có giấy triệu tập của cơ quan có thắm quyen tiền hành tố tụng.\n2. Người axơc giao nhiệm vụ giám sát có ngh1eJ. vụ gam sát chặt chẽ\nngười dưới 18 tuổi, theo dõi tư cách, đạo đức và giáo dục người đó.\nTrường hợp ngươ1 dưới 18 tuổi có dấu hiệu bỏ trốn hoặc có hành vi\nmua chuộc, cưỡng ép, xúi gi",
+    "literal_overlap": 0.64
+  },
+  {
+    "id": "nhs08",
+    "question": "Nếu mình lôi kéo người khác phá rối an ninh thì mình sẽ bị phạt bao nhiêu năm tù?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_118"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 118. Tội phá rối an ninh",
+    "source_excerpt": "Điều 118. Tội phá rối an ninh\n1. Người nào nhằm chống chính quyền nhân dân mà kích động, lôi kéo,\ntụ tập nhiều người phá rối an ninh, chống người thi hành công vụ, cản trở hoạt\n®.\nđộng của cơ quan, tổ chức, nếu không thuộc trường hợp quy định tại Điều 112\ncủa Bộ luật này, thì bị phạt tù từ 05 năm đến 15 năm.\n2. Người đồng phạm khác, thì bị phạt tù từ 02 năm đến 07 năm.\n3. Người chuẩn bị phạm tội này, thì bị phạt tù từ 06 tháng đến 03 năm.",
+    "literal_overlap": 0.28
+  },
+  {
+    "id": "nhs09",
+    "question": "Nếu làm chết 3 người thì bị phạt bao nhiêu năm tù?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_316"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 316. Tội phá thai trái phép",
+    "source_excerpt": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07\nnăm đên 15 năm:\na) Làm chết 03 người trở lên;\nb) Gây tổn hại cho sức khỏe của 03 người với tỷ lệ tổn thương cơ thể\ncủa mỗi người 61% trở lên;\nc) Gây tổn hại cho sức khỏe của 03 người trở lên mà tổng tỷ lệ tồn\nthương cơ thê của những người này 201% trở lên.",
+    "literal_overlap": 0.27
+  },
+  {
+    "id": "nhs10",
+    "question": "Nếu bị buộc tội thì mình có được trợ giúp pháp lý không?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_71"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 71. Trách nhiệm thông ủo, giải thích và bảo đám thực hiện",
+    "source_excerpt": "Điều 71. Trách nhiệm thông ủo, giải thích và bảo đám thực hiện\ncluyen và nghĩa vụ của người tham ffla tố tụng\n1. Cơ quan, 1'lgươl có thắm quyền tiến hành tố tụng có trách nhiệm\nthong báo, giải thích và bảo đảm thực hiện quyền và nghĩa vụ của người tham\ngia tô tụng theo quy định của Bộ luật này.\nTrường hợp nglrơi bị buộc tội, người bị hại thuộc diện được trợ giúp\nự1ap lý theo quy fflnh của Luật trợ giúp pỈ13.Ị) lý thì cơ quan, người có thẳm\nquyên tiền hành tố _ụng có trách nhiệm giải thích cho họ quyền được trợ giúp\n@ap lý; nếu họ đe nghị được trợ giúp pháp lý thì cơ quan, người có thẩm\nquyền t",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nhs11",
+    "question": "Nếu tôi vô ý làm thương tích cho người khác với tỷ lệ tổn thương từ 31% đến 60%, tôi sẽ bị phạt như thế nào?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_139"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 139. Tội vô ý gây thương tích hoặc gây tôn hại cho sức khoẻ của",
+    "source_excerpt": "Điều 139. Tội vô ý gây thương tích hoặc gây tôn hại cho sức khoẻ của\nngười khác do vi phạm quy tăc nghề nghiệp hoặc quy tắc hành chính\n1. Người nào vô ý gây fflương tích hoặc gây tồn hại cho sức khoẻ của\nngươ1 khác do vi phelm quy tắc nghề nghiệp hoặc quy tắc hành chính mà tỷ lệ\ntổn thương cơ thể từ 31% đến 60%, thì bị phạt tiền từ 20.000.000 đồng đến\n100.000.000 đồng, phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 03\ntháng đến 01 năm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 06\ntháng đến 03 năm:\n£.\na) Đối với 02 người trở lên mà tỷ lệ tổn thương cơ thể của",
+    "literal_overlap": 0.4
+  },
+  {
+    "id": "nhs12",
+    "question": "Nếu gây thiệt hại từ 100 triệu đến dưới 300 triệu đồng trong đấu thầu thì sẽ bị phạt bao nhiêu năm tù?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_222"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 222. Tội vi phạm quy định về đấu thầu gây hậu quả nghiêm",
+    "source_excerpt": "Điều 222. Tội vi phạm quy định về đấu thầu gây hậu quả nghiêm\ntrọng\n1. Người nào thực hiện một trong những hành v sau đây, gây thiệt hại từ\n100.000.000 đồng đến dưới 300.000.000 đồng hoặc dưới 100.000.000 đồng\nnhưng đã bị xử lý kỷ luật về hành vi này mà còn vi phạm, thì bị phạt cải tạo\nkhông giam giữ đến 03 năm hoặc phạt tù từ 01 năm đến 05 năm:\na) Can thiệp trái pháp luật vào hoạt động đầu thầu;\nb) Thông thầu;\ne) Gian lận trong đấu thầu;\nd) Cần trở hoạt động đấu thầu;\nđ) Vi phạm quy định của pháp luật về bảo đảm công bằng, minh bạch\ntrong hoạt động đấu thầu;\ne) Tô chức lựa chọn nhà thâu khi n",
+    "literal_overlap": 0.41
+  },
+  {
+    "id": "nhs13",
+    "question": "Nếu bị cáo hết thời hạn tạm giam mà án sơ thẩm bị hủy thì bị cáo có bị tạm giam tiếp không?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_358"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 358. Hủy bán án sơ thắm để điều tra lại hoặc xét xử lại",
+    "source_excerpt": "5. Trường hợp hủy bản án sơ ủa.m để điều tra lại hoac xét xử lại mà\nthời hạn tạm giam đối với bị cáo đã hết và xét thay cần @ax tiếp tục tạm giam\nbị cáo thì Hội đong xét xử phúc thầm ra quyết định t1ep tục tạm giam bị cáo\ncho đến khi Viện kiểm sát hoặc Tòa án cấp sơ thẩm thụ lý lại vụ án.\nTrong thời hạn 15 ngày kể từ : ngày tuyên hủy bản á án sơ thẩm, hồ sơ vụ\nán phải được chuyển cho Viện kiểm sát hoặc Tòa án cấp sơ thẩm để giải\nquyết theo thủ tục chung quy định tại Bộ luật này.",
+    "literal_overlap": 0.3
+  },
+  {
+    "id": "nhs14",
+    "question": "Nếu vi phạm an toàn lao động mà làm chết một người thì sẽ bị phạt bao nhiêu tiền?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_295"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 295. Tội vi phạm quy định về an toàn lao động, vệ sinh lao",
+    "source_excerpt": "1. Người nào vi phạm quy định về an toàn lao động, vệ sinh lao động, về\nan toàn ở những nơi đông người thuộc một trong các trường hợp sau đây, thì\nbị phạt tiền từ 20.000.000 đồng đến 100.000.000 đồng, phạt cải tạo không\nglam giữ đến 03 năm hoặc phạt tù từ 01 năm đến 05 năm:\n} =_\na) Làm chết 01 người hoặc gây thương tích hoặc gây tồn hại cho sức\nkhỏe của 01 người với tỷ lệ tồn thương cơ thể từ 61% trở lên;\nb) Gây thương tích hoặc gây tôn hại cho sức khỏe của 02 người với tý lệ\ntôn thương cơ thể của mỗi người từ 31% đến 60%;\nc) Gây thương tích hoặc gây tồn hại cho sức khỏe của 03 người trở lên\nm",
+    "literal_overlap": 0.33
+  },
+  {
+    "id": "nhs15",
+    "question": "Nếu nhận lợi ích từ 2 triệu đến dưới 100 triệu để tác động đến người có chức vụ, mình sẽ bị phạt bao nhiêu năm tù?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_366"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 366. Tội lợi dụng ảnh hướng đối với người có chức vụ quyền",
+    "source_excerpt": "Điều 366. Tội lợi dụng ảnh hướng đối với người có chức vụ quyền\nhạn để trục lợi\n1. Người nào trực tiếp hoặc qua trung gian nhận bất kỳ lợi ích nào dưới\nmọi hình thức thuộc một trong các trường hợp sau đây hoặc đã bị xử lý kỷ\nluật về hành vi này mà còn vi phạm, để dùng ảnh hưởng của mình thúc đầy\nngười có chức vụ, quyền hạn làm hoặc không làm một việc thuộc trách nhiệm\ncủa họ hoặc làm một việc không được phép làm, thì bị phạt cải tạo không\ngiam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm:\na) Tiền, tài sản hoặc lợi ích vật chất khác trị giá từ 2.000.000 đồng đến\ndưới 100.000.000 đồng:\nb) ",
+    "literal_overlap": 0.31
+  },
+  {
+    "id": "nhs16",
+    "question": "Nếu một người có thẩm quyền truy cứu hình sự người mà họ biết rõ là không có tội thì sẽ bị phạt tù bao lâu?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_368"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 368. Tội truy cứu trách nhiệm hình sự người không có tội",
+    "source_excerpt": "Điều 368. Tội truy cứu trách nhiệm hình sự người không có tội\n1. Người nào có thẩm quyền mà truy cứu trách nhiệm hình sự người mà\nmình biết rõ là không có tội, thì bị phạt tù từ 01 năm đến 05 năm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 05\nnăm đến 10 năm:\na) Truy cứu trách nhiệm hình sự về tội xâm phạm an ninh quốc gia hoặc\ntội khác là tội phạm đặc biệt nghiêm trọng;\nb) Đồi với 02 người đến 05 người;\nc) Đối với người dưới 18 tuổi, phụ nữ mà biết là có thai, người già yếu;\nd) Gây rối loạn tâm thần và hành vi của nạn nhân từ 11% đến 45%;\nđ) Dẫn đến việc kết án oan n",
+    "literal_overlap": 0.56
+  },
+  {
+    "id": "nhs17",
+    "question": "Mức phạt tù tối thiểu cho người đầu hàng địch là bao nhiêu năm?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_399"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 399. Tội đầu hàng địch",
+    "source_excerpt": "Điều 399. Tội đầu hàng địch\n1. Người nào đầu hàng địch, thì bị phạt tù từ 03 năm đến 10 năm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07\nnăm đến 15 năm:\na) Là chỉ huy hoặc sĩ quan;\nb) Giao nộp cho địch vũ khí, phương tiện kỹ thuật quân sự;\nc) Giao nộp tài liệu quan trọng hoặc khai báo bí mật công tác quân sự;\nd) Lôi kéo người khác phạm tội;\nđ) Gây hậu quả nghiêm trọng hoặc rất nghiêm trọng.\n3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 12\nnăm đến 20 năm hoặc tù chung thân:\na) Giao nộp cho địch vật, tài liệu bí mật nhà nước hoặc khai báo bí m",
+    "literal_overlap": 0.23
+  },
+  {
+    "id": "nhs18",
+    "question": "Nếu ai đó thực hiện hành vi tiêu diệt hàng loạt dân cư thì sẽ bị phạt bao nhiêu năm tù?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_422"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 422. Tội chống loài người",
+    "source_excerpt": "Điều 422. Tội chống loài người\n1. Người nào trong thời bình hay trong chiến tranh mel thưc hiện hành vi\ntiêu fflet hàng loạt dân cư của một khu vực, phá hủy nguồn sống, pha hoại\ncuộc sống văn ho'c1 tỉnh thần wa một quốc gia hoặc một wmg lãnh thổ độc\nlập, có chủ quyền, làm đảo lộn nền tảng của một xã hội nhằm phá hoại xã hội\nđó hoặc thực hiện hành vì diệt chủng khác hoặc thực hiện hành vi diệt sinh,\ndiệt môi trường tự nhiên, thì bị phạt tù từ 10 năm đến 20 năm, tù chung thân\nhoặc tử hình.\n2. Phạm tội trong trường hợp do bị ép buộc hoặc do thi hành mệnh lệnh\ncủa cấp trên, thì bị phạt tù từ 10 nă",
+    "literal_overlap": 0.45
+  },
+  {
+    "id": "nhs19",
+    "question": "Những tình tiết nào không được dùng làm chứng cứ trong quá trình khai báo của người làm chứng?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_91"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 91. Lời khai của người làm chứng",
+    "source_excerpt": "Điều 91. Lời khai của người làm chứng\n1, Người làm chứng trình bày những gì mà họ biết nguồn tin về tội\nphạm, về vụ án, nhân thân của người bị buộc tội, bị hại, quan hệ giữa họ\nvới người bị buộc tội, bị hại, người làm chứng khác và trả lời những câu\nhỏi đặt ra.\n2. Không được dùng làm chứng cứ những tình tiết do người làm chứng\ntrình bày nếu họ không thể nói rõ vì sao biết được tình tiết đó.",
+    "literal_overlap": 0.53
+  },
+  {
+    "id": "nhs20",
+    "question": "Nếu biết một tội phạm nhưng không báo cáo thì bị phạt như thế nào?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_390"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 390. Tội không tố giác tội phạm",
+    "source_excerpt": "Điều 390. Tội không tố giác tội phạm\n1. Người nào biết rõ một trong các tội phạm được quy định tại Điều 389\ncủa Bộ luật này đang được chuẩn bị, đang hoặc đã được thực hiện mà không\ntố giác, nếu không thuộc trường hợp quy định tại khoản 2 Điều 19 của Bộ luật\nnày, thì bị phạt cảnh cáo, phạt cải tạo không giam giữ đến 03 năm hoặc phạt\ntù từ 06 tháng đến 03 năm.\n2. Người không tố giác nếu đã có hành động can ngăn người phạm tội\nhoặc hạn chế tác hại của tội phạm, thì có thể được miễn trách nhiệm hình sự\nhoặc miễn hình phạt.",
+    "literal_overlap": 0.21
+  },
+  {
+    "id": "nhs21",
+    "question": "Sau bao lâu thì Chánh án Tòa án phải mở phiên họp xét tha tù trước thời hạn có điều kiện sau khi nhận hồ sơ?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_368"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 368. Thủ tục xét tha tù trước thời hạn có điều kiện",
+    "source_excerpt": "4. Trong thời hạn 15 ngày ke từ ngày nhận được hỗ sơ của cơ quan đề\nnghị, Chánh án Tòa án nhân dân cấp tỉnh, Chánh án Tòa án quân sự cấp quân\nkhu phải mở phiên họp xét tha tù trước thời hạn có điều kiện; ®ng thời thong\nbáo bằng văn bản cho Viện kiểm sát ơung cấp để cử Kiểm sát viên tham gia\nphiên họp. Trường hợp Tòa án yeu cầu cơ quan lập hồ sơ bổ sung tài liệu thì\ntrong thời hạn 03 ngay kể từ ngay nhận được yêu cầu, cơ quan lập hồ sơ phải\nbỗ sung tài liệu và gửi cho Tòa án, Viện kiểm sát.\n5, Hội đồng xét tha t trước thời hạn có điều kiện gồm Chánh án và 02\nThắm phán, do Chánh án làm Chủ tịch ",
+    "literal_overlap": 0.64
+  },
+  {
+    "id": "nhs22",
+    "question": "Cơ quan điều tra phải gửi quyết định phục hồi điều tra cho ai trong thời hạn bao lâu?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_235"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 235. Phục hồi điều tra",
+    "source_excerpt": "Điều 235. Phục hồi điều tra\n1. Khi có lý do để hủy bỏ quyet định đình chỉ điều tra hoặc ạyet định\ntạm đình chỉ điều tra thì Cơ quan điều tra ra quyết định phục hồi điều tra, nếu\nchưa hết thời hiệu truy cứu trách nhiệm hình sự.\nNếu việc điều tra bị đình chỉ theo quy định tại khoản 5 và khoản ó Điều\n157 của Bộ luật này mà bị can khong đong ý và yêu cầu điều tra lại thì Cơ\nquan điều tra hoặc Viện kiểm sát cùng cấp ra quyết định phục hồi điều tra.\n2. Ủong thời hạn 02 ngay kế từ ngày ra ạyet định phục hox điều tra,\nCơ quan điều tra phải gửi ựyet định này cho Viện kiểm sát cùng cấp, bị can,\nẸươl bào",
+    "literal_overlap": 0.59
+  },
+  {
+    "id": "nhs23",
+    "question": "Mức phạt đối với người chiếm đoạt con dấu, tài liệu của cơ quan, tổ chức không thuộc tài liệu bí mật là gì?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_342"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 342. Tội chiếm đoạt, mua bán, tiêu hủy con dấu, tài liệu của cơ",
+    "source_excerpt": "Điều 342. Tội chiếm đoạt, mua bán, tiêu hủy con dấu, tài liệu của cơ\nquan, tổ chức\n1. Người nào chiếm đoạt, mua bán hoặc tiêu hủy trái phép con dấu, tài\nliệu của cơ quan, tổ chức không thuộc tài liệu bí mật nhà nước hoặc bí mật\ncông tác, thì bị phạt tiền từ 5.000.000 đồng đến 50.000.000 đồng, phạt cải tạo\nkhông giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 02 năm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02\nnăm đến 05 năm:\na) Có tổ chức;\nb) Thu lợi bất chính 10.000.000 đồng trở lên;\nc) Thực hiện hành vi trái pháp luật;\nd) Tái phạm nguy hiểm.\n3. Người phạm tội cò",
+    "literal_overlap": 0.64
+  },
+  {
+    "id": "nhs24",
+    "question": "Nếu mình chiếm đoạt tàu bay và làm chết một người thì mình sẽ bị phạt bao nhiêu năm tù?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_282"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 282. Tội chiếm đoạt tàu bay, tàu thuỷ",
+    "source_excerpt": "Điều 282. Tội chiếm đoạt tàu bay, tàu thuỷ\n1. Người nào dùng vũ lực, đe doạ dùng vũ lực hoặc dùng thủ đoạn khác\nnhằm chiếm đoạt tàu bay hoặc tàu thuỷ, thì bị phạt tủ từ 07 năm đến 15 năm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 12\nnăm đến 20 năm:\na) Có tổ chức;\nb) Sử dụng vũ khí hoặc phương tiện nguy hiểm;\nœ) Làm chết 01 người hoặc gây thương tích hoặc gây tồổn hại cho sức\nkhỏe của 01 người với tỷ lệ tổn thương cơ thể 61% trở lên;\nd) Gây thương tích hoặc gây tồn hại cho sức khỏe của 02 người với tỷ lệ\ntồn thương cơ thê của mỗi người từ 31% đến 60%;\nđ) Gây thương t",
+    "literal_overlap": 0.26
+  },
+  {
+    "id": "nhs25",
+    "question": "Nguyên tắc nào đảm bảo quyền bào chữa cho người dưới 18 tuổi?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_414"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 414. Nguyên tắc tiến hành tố tụng",
+    "source_excerpt": "Điều 414. Nguyên tắc tiến hành tố tụng\n1. Bảo đảm thủ tục tố tụng thân thiện, phù hợp với tâm lý, lứa tuổi, mức\nđộ trưởng thành, khả năng nhận thức của người dưới 18 tu01, bảo đảm quyen\nvà lợi ích hợp pháp của người dưới 18 tuổi; bảo đảm lợi ích tốt nhất của người\ndưới 18 tuổi.\n2. Bảo đảm giữ bí mật cá nhân của người dưới 18 tuổi.\n3. Bảo đảm quyền tham ga tố tụng của người đại diện của người dưới\n18 tuổi, nhà trường, Đoàn thanh niên, người có kinh nghiệm, hiểu biết về tâm\nlý, xã hội, tổ chức khác nơi người dưới 18 tuổi học tập, lao động và sinh hoạt.\n_ . 4. Tôn trọng quyền được tham gia, trình",
+    "literal_overlap": 0.33
+  },
+  {
+    "id": "nhs26",
+    "question": "Nếu một công ty gây hại cho nguồn lợi thủy sản thì mức phạt sẽ là bao nhiêu?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_242"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 242. Tội huỷ hoại nguồn lợi thuỷ sần",
+    "source_excerpt": "5. Pháp nhân thương mại phạm tội quy định tại Điều này, thì bị phạt như\nsau:\na) Phạm tội thuộc trường hợp quy định tại khoản 1 Điều này, thì bị phạt\ntiền từ 300.000.000 đồng đến 1.000.000.000 đồng:\nb) Phạm tội thuộc trường hợp quy định tại khoản 2 Điều này, thì bị phạt\ntiền từ 1.000.000.000 đồng đến 3.000.000.000 đồng:\nc) Phạm tội thuộc trường hợp quy định tại khoản 3 Điều này, thì bị phạt\ntiền từ 3.000.000.000 đồng đến 5.000.000.000 đồng hoặc đình chỉ hoạt động\ncó thời hạn từ 06 tháng đến 03 năm;\nd) Pháp nhân thương mại còn có thể bị phạt tiền từ 50.000.000 đồng đến\n200.000.000 đồng, cầm kinh",
+    "literal_overlap": 0.0
+  },
+  {
+    "id": "nhs27",
+    "question": "Khi nào thì thẩm phán hoặc hội thẩm phải từ chối tham gia xét xử?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_53"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 53. Thay đổi Thẳm phán, Hội thẩm",
+    "source_excerpt": "Điều 53. Thay đổi Thẳm phán, Hội thẩm\n1, Thắm phán, Hội thẳm phải từ chối tham gia xét xử hoặc bị thay đổi\nkhi thuộc một trong các trường hợp:\na) Trường hợp quy định tại Điều 49 của Bộ luật này;\nb) Họ cùng trong một Hội đồng xét xử và là người thân thích với nhau;\ne) Đã tham gia xét xử sơ thẩm hoặc phúc thẳm hoặc tiến hành tố tụng\nvụ án đó với tư cách là Điều tra viên, Cán bộ điều tra, Kiếm sát viên, Kiếm tra\nviên, Thẩm tra viên, Thư ký Tòa án.\n2. Việc thay đổi Thầẩm phán, Hội thẳm trước khi 'mở phiên tòa do Chánh\nán hoặc Phó Chánh án Tòa án được phân công giải quyết vụ án quyết định.\nThe11n J",
+    "literal_overlap": 0.5
+  },
+  {
+    "id": "nhs28",
+    "question": "Trong trường hợp nào Tòa án mới áp dụng hình phạt đối với người dưới 18 tuổi phạm tội?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_91"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 91. Nguyên tắc xứ lý đối với người dưới 18 tuổi phạm tội",
+    "source_excerpt": "4. Khi xét xử, Tòa án chỉ áp dụng hình phạt đối với người dưới 18 tuổi\nphạm tội nếu xét thấy việc miễn trách nhiệm hình sự và áp dụng một trong\ncác biện pháp quy định tại Mục 2 hoặc việc áp dụng biện pháp giáo dục tại\ntrường giáo dưỡng quy định tại Mục 3 Chương này không bảo đảm hiệu quả\ngiáo dục, phòng ngừa.",
+    "literal_overlap": 0.67
+  },
+  {
+    "id": "nhs29",
+    "question": "Nếu ai đó gây chia rẽ giữa các tôn giáo, thì họ sẽ bị phạt bao lâu tù?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_116"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 116. Tội phá hoại chính sách đoàn kết",
+    "source_excerpt": "Điều 116. Tội phá hoại chính sách đoàn kết\nl. Người nào thực hiện một trong những hành vi sau đây nhằm chống\nchính quyền nhân dân, thì bị phạt tù từ 07 năm đến 15 năm:\na) Gây chia rẽ giữa các tằng lớp nhân dân, giữa nhân dân với chính quyền\nnhân dân, với lực lượng vũ trang nhân dân, với các tổ chức chính trị - xã hội;\nb) Gây hằn thù, kỳ thị, chia rẽ, ly khai dân tộc, xâm phạm quyền bình\nđẳng trong cộng Ổng các dân tộc Việt Nam;\nc) Gây chia rẽ người theo tôn giáo với người không theo tôn giáo, giữa\nngười theo các tôn giáo khác nhau, chia rẽ các tín đồ tôn giáo với chính quyền\nnhân dân, với các ",
+    "literal_overlap": 0.41
+  },
+  {
+    "id": "nhs30",
+    "question": "Khi nào thì cơ quan có thẩm quyền ra quyết định khởi tố vụ án hình sự?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_432"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 432. Khởi tố vụ án, thay đổi, bỗ sung quyết định khởi tố vụ án",
+    "source_excerpt": "Điều 432. Khởi tố vụ án, thay đổi, bỗ sung quyết định khởi tố vụ án\nhình sự\nl. Khi xác định có dau hiệu tội phạm do pháp nhân thực hiện thì cơ\nquan có thẩm quyen ra quyết định khởi tố vụ án hình sự theo quy định tại các\nđiều 143, 153 và 154 của Bộ luật này.\n2. Căn cứ, trình tự, thủ tục thay đổi, bo sung quyết định khởi tố vụ án\nhình sự được thực hiện theo quy định tại Điều 156 của Bộ luật này.",
+    "literal_overlap": 0.75
+  },
+  {
+    "id": "nhs31",
+    "question": "Sau khi hết thời hạn kháng cáo, Tòa án cấp sơ thẩm sẽ thông báo về việc kháng cáo trong thời gian bao lâu?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_338"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 338. Thông báo về việc kháng cáo, gửi quyết định kháng nghị",
+    "source_excerpt": "Điều 338. Thông báo về việc kháng cáo, gửi quyết định kháng nghị\n1, Việc khang cáo phaz được Tòa án cấp sơ thẳm thông báo bằng văn\nbản cho Viện kiểm sát mng cấp và những người liên quan đến kháng cáo\ntrong thời hạn 07 ngày kếể từ ngày hết thời hạn kháng cáo. Thông báo phải nêu\nrõ yêu cầu của người kháng cáo.\n2. Trong thời Mn 02 ngày kể từ ngày ra quyết định khang nghị, Viện\nkiểm sát pha1 gửi quyết định kháng nghị kèm theo c:hưng cứ, tài liệu, đồ vật\nbỗ sung (nếu có) cho Tòa án đã xét xử sơ thẩm, gư1 quyết mnh kháng nghị\ncho bị cáo và nhtJ'ng người liên quan đến kháng nghị. Viện kiểm sát đã khá",
+    "literal_overlap": 0.64
+  },
+  {
+    "id": "nhs32",
+    "question": "Sau khi Tòa án từ chối dẫn độ công dân Việt Nam, trong bao nhiêu ngày họ phải chuyển hồ sơ cho Viện kiểm sát?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_499"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 499. Trmh tự, thủ tục xem xét, xứ lý yeu cầu truy cứu trách",
+    "source_excerpt": "Điều 499. Trmh tự, thủ tục xem xét, xứ lý yeu cầu truy cứu trách\nnhiệm hình sự đối với công dân Việt Nam bị từ chối dẫn độ\n1. Trong thời hạn 10 ngày kế từ ngày ra quyet định từ chối dẫn độ công\ndân Việt Nam theo yêu cầu của cơ quan có thẳm quyền của nước ngoài, Tòa\nán đã ra quyet định từ chối dẫn độ chuyen hồ sơ và các tài liệu kèm theo của\nnước ngoài đến Viện kiểm sát nhân dân tối cao để xem xét việc truy cứu trách\nnhiệm hình sự.\n2. Viện kiểm sát nhân dân tối cao xem xét, xử lý yêu cầu của nước\nngoài về truy cứu trách nhiệm hình sự công dân Việt Nam bị từ chối dẫn độ\ntheo quy định của luật.\n3",
+    "literal_overlap": 0.46
+  },
+  {
+    "id": "nhs33",
+    "question": "Khi nào cơ quan có thẩm quyền có thể ra quyết định khởi tố bị can đối với pháp nhân?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_433"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 433. Khởi tố bị can, thay đỗổi, bỗ sung quyết định khởi tố bị",
+    "source_excerpt": "Điều 433. Khởi tố bị can, thay đỗổi, bỗ sung quyết định khởi tố bị\ncan đối với pháp nhân\n1. Khi có đủ căn cứ xác định pháp nhân đã thực hiện hành vi mà Bộ\nluật hình sự quy định là tội phạm thì cơ quan có thẳm quyền ra quyết định\nkhởi tố bị can đối với pháp nhân.\n2. Quyet định khởi tố bị can đối với pháp nhân ghi rõ thời gian, địa\nđiểm ra quyết định; họ tên, chức vụ người ra quyết định: tên và địa chỉ của\npháp nhân theo quyết định thành lap của cơ quan có thẩm ạyen tội danh,\nđiều khoản của Bộ luật hình sự đã áp dụng; thời gian, địa điêm phạm tội và\nnhững tình tiết khác của tội phạm.\nNeu pháp nh",
+    "literal_overlap": 0.68
+  },
+  {
+    "id": "nhs34",
+    "question": "Nếu bị bắt vì sản xuất hàng giả để chăn nuôi, mình bị phạt bao nhiêu tiền?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_195"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 195. Tội sản xuất, buôn bán hàng giả là thức ăn dùng để chăn",
+    "source_excerpt": "5. Người phạm tội còn có thể bị phạt tiền từ 20.000.000 đồng đến\n100.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc\n`nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.\n-",
+    "literal_overlap": 0.06
+  },
+  {
+    "id": "nhs35",
+    "question": "Ai là người quyết định việc giải quyết tranh chấp về thẩm quyền xét xử giữa các Tòa án nhân dân cấp tỉnh?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_275"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 275. Giải quyết việc tranh dmp về thẫm (ll.l}’ềll xét xử",
+    "source_excerpt": "Điều 275. Giải quyết việc tranh dmp về thẫm (ll.l}’ềll xét xử\n1. Việc giải quyết tranh chấp về thẩm quyền xét xử giữa các Tòa án\nnhân dân cập ủyên trong cùng một tỉnh, thành phô trực thuộc trung ương,\ngưa các Tòa ffl'l quân sự khu vực ufong wng một quân khu do Chánh án Tòa\nán nhân dân cấp tỉnh, Chánh án Tòa án m1an sự wp quân khu quyết định.\n2. Việc giải quyết tranh chấp về thắm qu yền xét xử giữa các Tòa án\nnhân dân cap huyện thuộc các tỉnh, thành phô trực thuộc trung ương khác\nnhau, fflưa các Tòa án quan sự khu vực thuộc các quan khu khac nhau do\nChánh án Tòa án nhân dân cap tỉnh, Chánh án T",
+    "literal_overlap": 0.82
+  },
+  {
+    "id": "nhs36",
+    "question": "Nếu mình không kịp kháng cáo thì có được chấp nhận không?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_335"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 335. Kháng cáo quá hạn",
+    "source_excerpt": "1. Việc khang cáo quá hạn được chấp nhận nều có lý do bất khả kháng\nhoặc do trở nga1 khách quan mà người kháng cáo không thể thực hiện được\nviệc kháng cáo trong thời hạn do Bộ luật này quy định.",
+    "literal_overlap": 0.27
+  },
+  {
+    "id": "nhs37",
+    "question": "Nếu mình xúi giục người khác tự sát thì bị phạt như thế nào?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_131"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 131. Tội xúi giục hoặc giúp người khác tự sát",
+    "source_excerpt": "Điều 131. Tội xúi giục hoặc giúp người khác tự sát\n1. Người nào thực hiện một trong các hành vi sau đây, thì bị phạt cải tạo\nkhông giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm:\na) Kích động, dụ dỗ, thúc &Ễy người khác tự tước đoạt tính mạng của họ;\nb) Tạo điều kiện vật chất hoặc tỉnh thần cho người khác tự tước đoạt tính\nmạng của họ.\n2. Phạm tội làm 02 người trở lên tự sát, thì bị phạt tù từ 02 năm đến 07 năm.",
+    "literal_overlap": 0.54
+  },
+  {
+    "id": "nhs38",
+    "question": "Ai sẽ là người chủ trì phiên tòa xét xử sơ thẩm?",
+    "relevant": [
+      "BLTTHS_101_2015_QH13::dieu_463"
+    ],
+    "domain": "hinh_su",
+    "style": "colloquial",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Tố tụng hình sự 101/2015/QH13 — Điều 463. Phiên tòa xét xử sơ thẫm",
+    "source_excerpt": "Điều 463. Phiên tòa xét xử sơ thẫm\n1. Phiên tòa xét xử sơ thẩm theo thủ tục rút gọn do một Thâm phán tiền hành.\n<ề\n.2. Sau phần thủ tục bắt đầu phiên tòa, Kiểm sát viên công bố quyết định\ntruy tố.\n3. Các trình tự, thủ tục khác tại phiên tòa xét xử sơ thẳm được thực hiện\ntheo thủ tục chung quy định tại Bộ luật này nhưng không tiên hành nghị án.",
+    "literal_overlap": 0.45
+  },
+  {
+    "id": "nhs39",
+    "question": "Người cán bộ nào cố ý từ bỏ nhiệm vụ trong trường hợp gây thiệt hại về tài sản từ 300 triệu đến dưới 1 tỷ đồng sẽ bị phạt như thế nào?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_363"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 363. Tội đào nhiệm",
+    "source_excerpt": "Điều 363. Tội đào nhiệm\n1. Người nào là cán bộ, công chức, viên chức mà cố ý từ bỏ nhiệm vụ\ncông tác thuộc một trong các trường hợp sau đây, thì bị phạt cải tạo không\ngiam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm:\n\\ a) Gây thương tích hoặc gây tồn hại cho sức khỏe của người khác mà tỷ\nlệ tôn thương cơ thê 31% trở lên;\nb) Gây thiệt hại về tài sản từ 300.000.000 đồng đến dưới 1.000.000.000\nđông:\nc) Đã bị xử lý kỷ luật về hành vi này mà còn vi phạm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02\nnăm đến 07 năm:\na) Làm chết người;\nb) Lôi kéo người khác đào nhiệm",
+    "literal_overlap": 0.53
+  },
+  {
+    "id": "nhs40",
+    "question": "Người nào tổ chức đánh bạc trái phép cho bao nhiêu người thì bị phạt tiền từ 50 triệu đến 300 triệu đồng?",
+    "relevant": [
+      "BLHS_100_2015_QH13::dieu_322"
+    ],
+    "domain": "hinh_su",
+    "style": "formal",
+    "source": "gpt-4o-mini",
+    "reviewed": false,
+    "source_heading": "Bộ luật Hình sự 100/2015/QH13 — Điều 322. Tội tổ chức đánh bạc hoặc gá bạc",
+    "source_excerpt": "Điều 322. Tội tổ chức đánh bạc hoặc gá bạc\n1. Người nào tổ chức đánh bạc hoặc gá bạc trái phép thuộc một trong\ncác trường hợp sau, thì bị phạt tiền từ 50.000.000 đồng đến 300.000.000 đồng\nhoặc phạt tù từ 01 năm đến 05 năm:\na) Tổ chức, sử dụng địa điểm thuộc quyền sở hữu, quản lý của mình đề\ncho 10 người đánh bạc trở lên trong cùng một lúc hoặc cho 02 chiếu bạc trở\nlên mà số tiền hoặc hiện vật dùng đánh bạc trị giá 5.000.000 đồng trở lên;\nb) Tổng số tiền hoặc hiện vật dùng đánh bạc trong cùng 01 lần có giá trị\n20.000.000 đồng trở lên;\nc) Tổ chức nơi cầm cố tài sản cho người tham gia đánh bạc; l",
+    "literal_overlap": 0.59
+  }
+]

@@ -1,0 +1,171 @@
+ĐÁNH GIÁ TẦNG XỬ LÝ ĐẦU VÀO (INPUT PROCESSING) — HIỆN TRẠNG & ĐIỂM YẾU
+(cập nhật 2026-11-24, sau khi sửa security + chuyển thư mục; phần làm giàu CHƯA sửa)
+
+======================================================================
+1. HIỆN TRẠNG
+======================================================================
+  Câu hỏi
+    │
+    ├─1. Regex chặn tấn công        rag/input/security.py          ĐÃ SỬA (hết chặn nhầm)
+    ├─2. Gộp ngữ cảnh hội thoại     rag/input/query_rewrite.py     condense_question() — GPT, chỉ khi có lịch sử
+    ├─3. Phân loại phạm vi+lĩnh vực rag/input/domain_classify.py   classify_question() — GPT, ĐÃ NỐI
+    │      phạm vi: pháp luật / lạc đề / tấn công -> lạc đề, tấn công: DỪNG
+    │      lĩnh vực: 1..3 nhãn (một câu thuộc NHIỀU lĩnh vực được), không chắc -> cả 3
+    └─4. LÀM GIÀU CÂU HỎI            rag/input/query_rewrite.py     rewrite_query() — GPT + quy tắc viết tay
+           Một lần gọi gpt-4o-mini trả JSON gồm 2 thứ khác nhau:
+             (a) intent: violation, vehicle_type, info_need (khái niệm GIAO THÔNG)
+             (b) search_phrases: 3 câu theo khuôn cố định
+                   1. thuật ngữ pháp lý  2. bản rút gọn  3. câu gốc
+           Sau đó code vá lại mảng bằng quy tắc viết tay (chỉ cho xe):
+             - thay "xe máy" -> "mô tô, xe gắn máy", "xe hơi" -> "xe ô tô"
+             - câu nào thiếu loại xe thì ghép thêm loại xe vào cuối
+             - không rõ loại xe + hỏi mức phạt -> thêm 3 câu ô tô / xe máy / xe đạp,
+               và tăng top_k 5 -> 10
+             - vehicle_type_ambiguous do CODE tính (GPT trả lời không ổn định)
+           Mỗi câu trong mảng được tìm riêng (embedding + BM25), gộp RRF, rerank
+           theo câu gốc, GPT trả lời câu gốc.
+
+  intent còn được dùng ở phía sau:
+    - retriever.py: lọc Điều xe đạp / xe máy chuyên dùng theo vehicle_type (quy tắc viết tay)
+    - retriever.py: chọn Khoản bằng GPT dựa trên violation
+    - generate.py: ghi chú "chưa rõ loại xe" vào prompt trả lời
+  Gọi GPT NỐI TIẾP: 2 -> 3 -> 4.
+
+======================================================================
+2. ĐIỂM YẾU (xếp từ nghiêm trọng đến nhẹ)
+======================================================================
+
+[NGHIÊM TRỌNG] 2.1 Khuôn intent chỉ dành cho giao thông, áp cho mọi câu hỏi
+  Prompt mở đầu "câu hỏi ... về pháp luật giao thông đường bộ"; intent chỉ có
+  hành vi vi phạm / loại xe / mức phạt / trừ điểm GPLX. Hệ thống có 3 lĩnh vực:
+  câu dân sự ("chia thừa kế không di chúc") hay hình sự ("tự vệ có phạm tội
+  không") bị ép vào khuôn không có chỗ cho khái niệm của chúng (hàng thừa kế,
+  phòng vệ chính đáng, thời hiệu...). Hệ quả: cụm thuật ngữ sinh ra có thể
+  lệch, "violation" bị điền gượng, kéo theo bước chọn Khoản phía sau.
+  -> 2/3 lĩnh vực đang chạy trên một thiết kế không dành cho chúng.
+
+[NGHIÊM TRỌNG] 2.2 Chuỗi quy tắc vá viết tay, chồng chéo, chỉ cho xe
+  Cùng một vấn đề "loại xe" được xử lý ở 5 chỗ khác nhau:
+    1. dòng prompt dặn GPT dùng thuật ngữ trang trọng cho loại xe
+    2. quy tắc thay "xe máy" -> "mô tô, xe gắn máy"
+    3. quy tắc ghép loại xe vào câu nào thiếu
+    4. quy tắc nhân 3 câu theo 3 loại xe
+    5. bộ lọc xe đạp / xe máy chuyên dùng trong retriever.py
+  Mỗi quy tắc vá MỘT lỗi cụ thể quan sát được trên hệ thống CŨ (trước khi có
+  chia Khoản, tách từ, rerank) — không phải thiết kế. Hệ quả:
+    - dễ vỡ: sửa một chỗ phải nhớ 4 chỗ còn lại
+    - có thể sai ngầm: ghép "mô tô, xe gắn máy" vào cuối MỌI câu tìm kiếm,
+      kể cả câu về chủ đề khác trong cùng câu hỏi
+    - có thể đã thừa: reranker đọc câu hỏi + đoạn luật cùng lúc, phân biệt
+      "xe máy" với "xe máy chuyên dùng" được — CHƯA ĐO
+    - không mở rộng được: lĩnh vực khác cũng có nhầm lẫn kiểu này (vd "cướp"
+      vs "cướp giật" vs "trộm cắp") nhưng không thể viết tay quy tắc cho tất cả
+
+[CAO] 2.3 Một lần gọi làm hai việc khác bản chất; hai lần gọi chồng chéo nhau
+  rewrite_query gộp (a) HIỂU câu hỏi (intent) và (b) TẠO câu tìm kiếm vào một
+  JSON — hai việc có mục đích khác nhau nhưng thiết kế dính chặt. Trong khi
+  đó classify_question (bước 3) cũng phải HIỂU câu hỏi để biết lĩnh vực, nhưng
+  là một lần gọi RIÊNG, và kết quả lĩnh vực KHÔNG được chuyển cho bước 4 ->
+  bước 4 không biết câu hỏi là dân sự hay hình sự khi viết thuật ngữ.
+  -> 2 lần gọi GPT cùng đọc một câu hỏi, không chia sẻ hiểu biết với nhau.
+
+[CAO] 2.4 Ba câu tìm kiếm theo khuôn cố định, không rõ giá trị
+  Luôn đúng 3 câu: thuật ngữ / rút gọn / gốc — bất kể câu hỏi đơn giản hay
+  phức tạp, một ý hay nhiều ý. Câu "rút gọn" thường gần trùng câu thuật
+  ngữ. Cả 3 câu có trọng số NGANG NHAU khi gộp RRF -> một câu sinh lệch có
+  sức kéo Điều sai vào ngang với câu tốt.
+  Giá trị chưa được chứng minh trên hệ thống mới: trên hệ thống CŨ chỉ +3
+  điểm Hit@5 (83% -> 86%) mà chậm ~35 lần; hệ thống MỚI đạt 96% KHÔNG cần
+  bước này. CHƯA ĐO full+rewrite.
+
+[TRUNG BÌNH] 2.5 Phần phía sau phụ thuộc vào khuôn intent giao thông
+  Bộ lọc loại xe, chọn Khoản (dùng violation), mở rộng top_k khi "không rõ
+  loại xe", ghi chú vào prompt trả lời — tất cả đọc các trường chỉ có nghĩa
+  với giao thông. Sửa khuôn intent (2.1) kéo theo phải sửa các chỗ này.
+
+[TRUNG BÌNH] 2.6 Ba lần gọi GPT nối tiếp trước khi bắt đầu tìm kiếm
+  condense -> classify -> rewrite: mỗi bước ~0,5–1,5 s, cộng dồn. Bước 3 và 4
+  độc lập nhưng chạy tuần tự (liên quan 2.3).
+
+[NHẸ] 2.7 Lỗi bị nuốt im lặng
+  rewrite_query, condense_question bắt mọi lỗi và lặng lẽ quay về câu gốc,
+  không ghi log (classify_question đã có log). OpenAI lỗi kéo dài -> hệ thống
+  chạy ở chế độ kém mà không ai biết.
+
+[NHẸ] 2.8 Cache chỉ trong một tiến trình
+  lru_cache theo nguyên văn câu hỏi, mất khi khởi động lại, không dùng chung
+  giữa các tiến trình.
+
+======================================================================
+3. NHẬN ĐỊNH
+======================================================================
+  - Ý tưởng gốc ĐÚNG: sinh nhiều cách diễn đạt rồi gộp kết quả (multi-query /
+    query expansion) là kỹ thuật phổ biến; bắc cầu từ ngữ đời thường sang
+    thuật ngữ luật là nhu cầu thật.
+  - Cách xây dựng CHẮP VÁ: lớn lên từ từng lỗi xe máy cụ thể, mỗi lỗi thêm
+    một quy tắc / một dòng prompt; chưa từng được thiết kế lại khi hệ thống
+    mở rộng sang dân sự, hình sự, và khi tầng tìm kiếm đã mạnh lên.
+
+======================================================================
+4. VIỆC NÊN LÀM TRƯỚC KHI THIẾT KẾ LẠI (đo trước khi sửa)
+======================================================================
+  - Đo full vs full+rewrite trên 70 câu, chia theo lĩnh vực
+    (~70 lần gọi gpt-4o-mini, < 0,05 USD) -> trả lời 2.1, 2.4
+  - Đo full+rewrite khi TẮT các quy tắc viết tay (không thêm chi phí đáng kể)
+    -> trả lời 2.2: quy tắc còn cần không khi đã có rerank
+  - Từ số liệu: giữ / thiết kế lại / bỏ bước làm giàu.
+
+======================================================================
+5. KẾT QUẢ ĐO (2026-11-24) — bộ 70 câu viết tay, 70 lần gọi gpt-4o-mini
+======================================================================
+Kết quả: data/eval/results/retrieval_20261124_164642_input-rewrite.json
+Cache kết quả GPT: tmp/eval_rewrite_cache.json (chạy lại không tốn thêm)
+
+                                 Hit@1  Hit@5  MRR   Recall@20  Thời gian/câu
+  full (không làm giàu)            76%    96%   0.85    99%      ~0,8 s
+  full+rewrite (như hệ thống thật) 77%    97%   0.86   100%      ~2,9 s
+  full+rewrite, TẮT quy tắc tay    76%    96%   0.85   100%      ~1,1 s*
+  (* GPT đã có trong cache nên không tính thời gian gọi GPT)
+
+Theo lĩnh vực (Hit@5): dân sự 95% / hình sự 100% — GIỐNG HỆT ở cả 3 chế độ;
+  giao thông 94% -> 97% (có quy tắc) / 94% (tắt quy tắc).
+
+Khác biệt từng câu so với "full":
+  có làm giàu + quy tắc:  "Uống bia rồi chạy xe máy"   hạng 10 -> 4 (vào top 5)
+                          "Chủ xe bồi thường"          hạng 2  -> 1
+  làm giàu, tắt quy tắc:  "Vượt đèn đỏ xe máy"         hạng 6  -> 8 (tệ hơn)
+                          "Uống bia rồi chạy xe máy"   hạng 10 -> 8
+
+Nhận xét:
+  - Làm giàu chỉ giúp đúng 1 câu vào top 5 (+1/70 = trong ngưỡng ngẫu nhiên),
+    nhưng làm mỗi câu chậm thêm ~2 s và tốn 1 lần gọi GPT.
+  - Phần giúp được đến từ QUY TẮC TAY về loại xe, không phải từ câu GPT
+    sinh: tắt quy tắc thì kết quả bằng hệt không làm giàu.
+  - Với dân sự / hình sự: làm giàu KHÔNG giúp mà cũng KHÔNG hại (điểm yếu
+    2.1 "khuôn giao thông" chưa gây hại đo được ở bước tìm kiếm).
+  - Hệ thống tìm kiếm mới (tách từ + rerank) đã tự bắc cầu từ ngữ đời
+    thường sang thuật ngữ luật -> bước làm giàu gần như thừa CHO TÌM KIẾM.
+
+Chưa đo được (bộ đo chỉ đo tìm kiếm): intent còn được dùng cho CÂU TRẢ LỜI
+  - violation -> chọn Khoản bằng GPT
+  - vehicle_type_ambiguous -> GPT nêu mức phạt cho từng loại xe / hỏi lại
+  Bỏ bước làm giàu có thể ảnh hưởng chất lượng câu trả lời ở các chỗ này.
+
+
+======================================================================
+6. ĐÃ BỎ BƯỚC LÀM GIÀU ĐẦU VÀO (2026-11-24) — thiết kế thay thế bàn sau
+======================================================================
+Đã xóa: rewrite_query (câu tìm kiếm + intent giao thông), 5 quy tắc vá về xe
+  (kể cả bộ lọc xe đạp / xe máy chuyên dùng trong retriever.py), mở rộng
+  top_k khi "chưa rõ loại xe", ghi chú intent + phần rà soát "chưa rõ loại
+  xe" trong generate.py, trường "intent" trong API (web không dùng).
+Giữ: condense_question (đổi tên file query_rewrite.py -> rag/input/condense.py),
+  classify_question, bước chọn Khoản bằng GPT (dùng câu hỏi gốc).
+Code cũ còn trong lịch sử git.
+
+Bộ đo 70 câu sau khi bỏ (không gọi OpenAI):
+  Hit@1 76% · Hit@5 96% · MRR 0.85 · Recall@20 99%  -> GIỮ NGUYÊN mức cũ
+  Còn trượt: vượt đèn đỏ xe máy (hạng 6), uống bia (11), thừa kế không di chúc (13)
+Mỗi câu nhanh hơn ~2 s, bớt 1 lần gọi GPT. Test: 75/75 pass.
+Mất (chưa đo, sẽ xử lý trong thiết kế mới): câu thiếu thông tin (vd không nói
+  loại xe) không còn được nêu từng trường hợp / hỏi lại một cách chủ động.

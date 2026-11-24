@@ -1,0 +1,92 @@
+TÓM TẮT CẢI TIẾN TẦNG TÌM KIẾM (EMBEDDING + RERANK) — 2026-11-23 → 2026-11-24
+Trạng thái: ĐÃ THÍ NGHIỆM VÀ CHỐT CẤU HÌNH — CHƯA ÁP DỤNG vào hệ thống thật.
+Chi tiết: inspectation.txt (khảo sát) · result.txt (số liệu từng bước) · re-rank.txt (reranker)
+
+======================================================================
+1. KẾT QUẢ CUỐI
+======================================================================
+Bộ đo 70 câu viết tay (data/eval/retrieval_set.json):
+                    Hiện tại   Đã chốt
+  Hit@1 (đúng hạng 1)  54%       76%
+  Hit@5 (trong top 5)  83%       96%
+  MRR                  0.67      0.85
+Kiểm chứng thêm 125 câu do GPT sinh (chưa duyệt): Hit@5 97%, MRR 0.89.
+
+Đóng góp từng bước (Hit@5):
+  Chia Khoản (embedding)      83% -> 87%
+  + Reranker (sau embedding)  87% -> 90%
+  + Tách từ pyvi (embedding)  90% -> 96%
+
+======================================================================
+2. CẤU HÌNH ĐÃ CHỐT
+======================================================================
+  - Embedding: giữ model bkai-foundation-models/vietnamese-bi-encoder
+  - Văn bản + câu hỏi được tách từ bằng pyvi trước khi embed
+  - Embed cả Điều và từng Khoản (Điều dài > 256 token được chia; Khoản dài
+    chia tiếp theo nhóm Điểm; gắn tiêu đề "Văn bản, Điều N." và Điều cha)
+  - BM25: giữ nguyên (văn bản gốc, tách theo âm tiết), chỉ thêm Khoản
+  - Hybrid RRF -> 20 Điều ứng viên
+  - Rerank bge-reranker-v2-m3: FP16, 256 token, 5 Khoản/Điều, chỉ dùng
+    điểm reranker -> top 5 Điều đưa cho GPT (~0,6 s/câu trên GPU)
+  Đã cân nhắc và KHÔNG làm: bge-m3 / AITeamVN (bước tìm đã đạt Recall@20
+  99%, bkai nhẹ hơn ~4 lần); tách từ cho BM25 (kém hơn: 93% vs 96%);
+  sparse bge-m3 thay BM25; từ điển đồng nghĩa (LLM viết lại câu hỏi đã lo).
+
+======================================================================
+3. ĐÃ LÀM
+======================================================================
+Môi trường / model
+  - Model embedding chuyển từ cache Hugging Face vào models/vietnamese-bi-encoder,
+    load theo đường dẫn -> không gọi mạng khi khởi động (0 request, trước
+    đây vài chục). Đã xoá bản trong ~/.cache.
+  - Cài PyTorch bản CUDA (2.11.0+cu128) cho GPU RTX 5050 (driver hỗ trợ
+    CUDA 12.8; bản cu130 không chạy được). embed.py tự chọn GPU/CPU.
+  - Tải reranker vào models/bge-reranker-v2-m3 (2,2 GB); đã xoá bản cache.
+  - Cài pyvi (thư viện tách từ, model CRF ~29 MB, chạy CPU).
+  - models/* được .gitignore; scripts/download_models.py tải lại model embedding.
+
+Bộ đo
+  - data/eval/retrieval_set.json: 70 câu viết tay có đáp án chunk_id
+    (giao thông 33, dân sự 19, hình sự 18; kiểu người dân 43, thuật ngữ 27).
+  - src/rag/eval_retrieval.py: đo Recall@k, Hit@k, MRR cho dense / BM25 /
+    hybrid / hybrid+LLM viết lại; lưu kết quả vào data/eval/results/.
+  - scripts/eval/generate_retrieval_questions.py: sinh câu hỏi ứng viên
+    bằng gpt-4o-mini -> data/eval/retrieval_set_candidates.json (125 câu).
+
+Thí nghiệm (scripts/experiments/, chạy trong bộ nhớ + tmp/, KHÔNG sửa chroma_db/)
+  - exp_khoan_chunks.py : chia Khoản            -> chọn giữ cả Điều + Khoản
+  - exp_rerank.py       : 12 cấu hình reranker  -> chấm Khoản, pool 20, chỉ điểm rerank
+  - exp_rerank_fast.py  : tối ưu tốc độ         -> FP16, 5 Khoản/Điều, 256 token
+  - exp_wordseg.py      : tách từ pyvi          -> chỉ cho embedding
+  - run_locked.py       : chạy cấu hình đã chốt trên bộ câu bất kỳ, xuất file duyệt
+
+Phát hiện chính
+  - Model bkai chỉ đọc 256 token; 38% chunk bị cắt im lặng (Điều 7 NĐ 168
+    dài ~13.500 ký tự, model chỉ thấy Khoản 1).
+  - Model bkai (PhoBERT) cần văn bản đã tách từ; code cũ đưa văn bản thô.
+  - 1.477 chunk Khoản có sẵn chỉ thuộc văn bản giao thông; 4 bộ luật dân
+    sự/hình sự chưa từng được tách Khoản dù văn bản có cấu trúc Khoản.
+  - Hệ thống chưa có reranker; các bước lọc hiện có đều chạy SAU khi cắt
+    top 5 nên không kéo được Điều đúng ở hạng 6–20 lên.
+  - Lỗi chat "vượt đèn đỏ xe máy -> không tìm thấy": Điều 7 đứng hạng 11–12,
+    không lọt top 5. Sau cải tiến: hạng 6 (còn hụt 1 bậc).
+
+Thay đổi code chính (đã có, chưa commit)
+  - src/ingestion/embed.py: load model từ models/, tự chọn cuda/cpu
+  - .gitignore (models/*), README.md (bước tải model), scripts/download_models.py
+
+======================================================================
+4. CÒN LẠI
+======================================================================
+Áp dụng vào hệ thống thật (làm trên nhánh git mới, sao lưu chroma_db/ trước):
+  1. Tách Khoản cho toàn bộ corpus (cả dân sự, hình sự)
+  2. Thêm pyvi vào embed.py — cho CẢ văn bản và câu hỏi
+  3. Nạp lại Chroma: Điều + Khoản, metadata parent_chunk_id / khoan_number
+  4. BM25: thêm Khoản
+  5. retriever.py: gom về Điều cha + rerank (file mới rag/rerank.py)
+  6. requirements.txt (pyvi), download_models.py (reranker)
+  7. Kiểm tra: pytest, bộ đo (~96%), eval.py (câu trả lời cuối), thử chat
+Đo thêm (sau khi áp dụng): tốc độ trên CPU; kết quả kèm LLM viết lại câu hỏi.
+Bộ câu hỏi: duyệt 125 câu ứng viên (investigation/review_retrieval_set_candidates.md)
+  rồi gộp vào retrieval_set.json.
+Dọn dẹp: thêm tmp/ vào .gitignore; xoá tmp/exp_* khi không cần.

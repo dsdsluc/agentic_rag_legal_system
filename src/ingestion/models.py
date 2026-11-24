@@ -57,7 +57,10 @@ class ArticleChunk(BaseModel):
     article_heading: Optional[str] = None
     text: str
     source_file: str
-    chunk_type: Literal["article", "annex", "preamble", "template", "khoan"]
+    # "subchunk" is never written to corpus.jsonl — it's a retrieval unit
+    # (a khoản / điểm-group / window of a long Điều) built at index time by
+    # retrieval_units.py, see there.
+    chunk_type: Literal["article", "annex", "preamble", "template", "khoan", "subchunk"]
     needs_review: bool = False
     ocr_confidence: Optional[float] = None
     embedding_text: Optional[str] = None

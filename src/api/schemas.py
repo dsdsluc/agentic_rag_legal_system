@@ -4,10 +4,9 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
-from rag.generate import AnswerMode, AnswerResult
-from rag.query_rewrite import QueryIntent
-from rag.retriever import RetrievedChunk
-from rag.usage import UsageEvent
+from rag.generation.generate import AnswerMode, AnswerResult
+from rag.retrieval.retriever import RetrievedChunk
+from rag.generation.usage import UsageEvent
 
 
 class ChatTurn(BaseModel):
@@ -84,22 +83,6 @@ class SourceOut(BaseModel):
         )
 
 
-class IntentOut(BaseModel):
-    violation: Optional[str]
-    vehicle_type: Optional[str]
-    info_need: Optional[str]
-    vehicle_type_ambiguous: bool
-
-    @classmethod
-    def from_intent(cls, intent: QueryIntent) -> "IntentOut":
-        return cls(
-            violation=intent.violation,
-            vehicle_type=intent.vehicle_type,
-            info_need=intent.info_need,
-            vehicle_type_ambiguous=intent.vehicle_type_ambiguous,
-        )
-
-
 class UsageEventOut(BaseModel):
     stage: str
     model: str
@@ -125,7 +108,7 @@ class UsageOut(BaseModel):
     completion_tokens: int
     total_tokens: int
     cost_usd: float
-    # Per-LLM-call detail (query_rewrite, condense_question, khoan_select,
+    # Per-LLM-call detail (classify_question, condense_question, khoan_select,
     # relevance_filter, generate/generate_agent, reflection) — lets the admin
     # dashboard show where within one request the cost actually went, not
     # just the total.
@@ -146,7 +129,6 @@ class QueryResponse(BaseModel):
     answer: str
     sources: list[SourceOut]
     mode: AnswerMode
-    intent: Optional[IntentOut] = None
     condensed_question: Optional[str] = None
     usage: UsageOut
     # Resolved subject-matter domain(s) — the manual override as a 1-item
@@ -155,6 +137,10 @@ class QueryResponse(BaseModel):
     # the system understood the question to be about. All 3 present means no
     # filter was actually applied (ambiguous or genuinely cross-domain).
     domains: list[str] = Field(default_factory=list)
+    # "phap_luat" for answered questions; "ngoai_pham_vi" / "nghi_tan_cong"
+    # when the input scope gate declined the message (answer is a fixed
+    # polite refusal, sources empty). Additive — existing clients ignore it.
+    scope: str = "phap_luat"
 
     @classmethod
     def from_result(cls, result: AnswerResult) -> "QueryResponse":
@@ -162,10 +148,10 @@ class QueryResponse(BaseModel):
             answer=result.answer,
             sources=[SourceOut.from_chunk(c) for c in result.sources],
             mode=result.mode,
-            intent=IntentOut.from_intent(result.intent) if result.intent else None,
             condensed_question=result.condensed_question,
             usage=UsageOut.from_events(result.usage_events),
             domains=result.domains,
+            scope=result.scope,
         )
 
 

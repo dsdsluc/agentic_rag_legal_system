@@ -21,8 +21,16 @@ Hai service độc lập, giao tiếp qua HTTP:
 ```
 ├── src/
 │   ├── api/          FastAPI app (main.py)
-│   ├── rag/           retrieval, generation, domain classification, agent tools
-│   └── ingestion/      pipeline OCR → chunk → embed → nạp Chroma
+│   ├── rag/           xử lý mỗi câu hỏi (online)
+│   │   ├── input/        bảo mật, phân loại lĩnh vực/phạm vi, viết lại câu hỏi
+│   │   ├── retrieval/    hybrid dense + BM25, rerank, đồ thị quan hệ, chọn Khoản
+│   │   ├── generation/   sinh câu trả lời, agent tools, đo chi phí
+│   │   └── evaluation/   eval câu trả lời (LLM-judge), eval tìm kiếm (Recall/MRR)
+│   └── ingestion/      pipeline offline PDF → Chroma
+│       ├── extract/      OCR, làm sạch văn bản, metadata
+│       ├── chunking/     chia Điều / Khoản
+│       ├── enrich/       ngữ cảnh, mức phạt, quan hệ sửa đổi
+│       └── index/        embedding (tách từ), đơn vị Khoản, nạp Chroma
 ├── web/
 │   ├── app/            Next.js routes (chat, van-ban, admin, api/*)
 │   ├── components/
@@ -60,8 +68,12 @@ pip install -r requirements.txt
 
 cp .env.example .env  # điền OPENAI_API_KEY, DATABASE_URL
 
+# Tải embedding model (~500 MB) về models/ — chỉ cần chạy 1 lần/máy.
+# Backend load model từ thư mục này, không gọi huggingface.co lúc khởi động.
+python scripts/download_models.py
+
 # Nạp corpus vào Chroma (chạy từ thư mục gốc dự án)
-PYTHONPATH=src python -m ingestion.load_vectorstore
+PYTHONPATH=src python -m ingestion.index.load_vectorstore
 
 PYTHONPATH=src uvicorn api.main:app --reload --port 8000
 ```

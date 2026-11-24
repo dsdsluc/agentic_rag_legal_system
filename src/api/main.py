@@ -12,12 +12,13 @@ from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.util import get_remote_address
 
-from ingestion.embed import get_embedding_model
-from ingestion.load_vectorstore import load_corpus as load_corpus_chunks
-from ingestion.vectorstore import get_collection
-from rag.bm25_index import get_bm25_index
-from rag.generate import answer_question
-from rag.security import is_suspicious
+from ingestion.index.embed import get_embedding_model
+from ingestion.index.load_vectorstore import load_corpus as load_corpus_chunks
+from ingestion.index.vectorstore import get_collection
+from rag.retrieval.bm25_index import get_bm25_index
+from rag.retrieval.rerank import warm_up as rerank_warm_up
+from rag.generation.generate import answer_question
+from rag.input.security import is_suspicious
 
 from .schemas import HealthResponse, QueryRequest, QueryResponse
 
@@ -41,6 +42,7 @@ async def lifespan(app: FastAPI):
     get_embedding_model()
     get_collection()
     get_bm25_index()
+    rerank_warm_up()
     yield
 
 
@@ -98,7 +100,7 @@ def query(request: Request, body: QueryRequest) -> QueryResponse:
     # phrasings — run before any OpenAI call, on the question and every
     # history turn (a forged "answer" turn is exactly what condense_question
     # treats as untrusted, but there's no reason to even reach that LLM call
-    # for an obvious attempt). See rag/security.py for what this does and
+    # for an obvious attempt). See rag/input/security.py for what this does and
     # does not catch.
     suspicious_texts = [body.question] + [t.question for t in body.history] + [t.answer for t in body.history]
     for text in suspicious_texts:

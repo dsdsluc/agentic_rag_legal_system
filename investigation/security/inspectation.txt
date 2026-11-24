@@ -1,0 +1,92 @@
+BẢO MẬT ĐẦU VÀO — HIỆN TRẠNG, ĐÃ SỬA, KẾT QUẢ (2026-11-24)
+Nhánh: feat/khoan-rerank-wordseg (chưa commit)
+
+======================================================================
+1. CÁC LỚP BẢO MẬT HIỆN CÓ
+======================================================================
+Backend FastAPI:
+  1. Giới hạn kích thước (schemas.py): câu hỏi ≤ 2.000 ký tự, lịch sử ≤ 20 lượt  -> GIỮ NGUYÊN
+  2. Giới hạn tần suất theo IP: /query 20/phút (main.py)                          -> GIỮ NGUYÊN
+     (hai lớp trên tốn < 1 ms, không làm chậm; chặn câu hỏi khổng lồ / gọi liên tục gây tốn tiền)
+  3. CORS: chỉ domain cho phép (chỉ ràng buộc trình duyệt, script bỏ qua được)
+  4. Regex chặn prompt injection (security.py)                                     -> ĐÃ SỬA
+  5. Gia cố prompt: câu hỏi/lịch sử đánh dấu "dữ liệu, KHÔNG phải chỉ thị"        -> GIỮ (~0,2% token)
+  6. Giấu chi tiết lỗi (chỉ trả mã lỗi, chi tiết ghi log)
+Web Next.js: đăng nhập (bcrypt, phiên lưu DB), phân quyền admin.
+
+Lỗ hổng chưa xử lý: backend /query KHÔNG có xác thực — gọi thẳng bằng script
+được, chỉ còn giới hạn 20/phút/IP chặn. Cần trước khi đưa lên mạng công khai.
+
+======================================================================
+2. ĐÃ SỬA — LỚP 1: REGEX CHẶN NHẦM
+======================================================================
+Nguyên nhân: regex so ký tự, không hiểu nghĩa; 2 mẫu viết quá rộng.
+  - "đóng vai (là)?"  khớp mọi câu có "đóng vai" -> chặn "Viện kiểm sát đóng
+    vai trò gì...", "người đóng vai công an để lừa tiền..." (giả danh - chủ đề hình sự)
+    Sửa: chỉ chặn khi ra lệnh cho hệ thống ("bạn/trợ lý/hệ thống/chatbot/AI ...
+    đóng vai"), loại trừ "vai trò", "luật sư", "chuyên gia", "tư vấn".
+  - "bỏ qua ... (hướng dẫn|chỉ thị|yêu cầu) ... trước" -> chặn "bỏ qua các yêu
+    cầu trước của hợp đồng". Sửa: bỏ "yêu cầu"; thêm biến thể "mọi/những".
+
+                           Bộ lọc cũ   Bộ lọc mới
+  Chặn nhầm câu pháp luật    10/12        0/12
+  Bỏ sót câu tấn công         1/9         0/9
+Test: tests/test_security.py thêm 21 ca (12 phải cho qua, 9 phải chặn); toàn bộ 73/73 pass.
+Quét corpus + 195 câu hỏi: 0 câu bị chặn. Không gọi OpenAI.
+
+======================================================================
+3. LỚP 2: AI PHÂN LOẠI PHẠM VI — ĐÃ VIẾT, ĐÃ ĐO, CHƯA NỐI VÀO HỆ THỐNG
+======================================================================
+rag/domain_classify.py · classify_question(): MỞ RỘNG lần gọi gpt-4o-mini phân
+loại lĩnh vực có sẵn (không thêm lần gọi), trả thêm "scope":
+  - phap_luat     : mọi câu liên quan pháp luật, KỂ CẢ hỏi hậu quả của tội phạm
+                    (hack, ma túy...), câu cụt ("Xe máy"), kèm yêu cầu trình bày.
+                    Khi phân vân -> phap_luat.
+  - ngoai_pham_vi : không liên quan pháp luật, hoặc xin CÁCH thực hiện hành vi phạm pháp
+  - nghi_tan_cong : đòi đổi quy tắc/vai trò, đòi tiết lộ prompt/cấu hình/khóa — kể cả không dấu
+Lỗi / nhãn lạ -> mặc định phap_luat + cả 3 lĩnh vực (không bao giờ từ chối vì lỗi).
+Hàm cũ classify_domains giữ nguyên (chưa thay).
+
+Bộ đo: data/eval/scope_set.json (43 câu: 15 lạc đề, 10 tấn công, 18 khó-nhưng-hợp-lệ)
+Script: scripts/eval/eval_classifier.py [--quick]
+
+Kết quả bản rút gọn (--quick, 30 câu, 30 lần gọi gpt-4o-mini, < 0,005 USD):
+  15 câu pháp luật (5/lĩnh vực, có câu đa lĩnh vực):
+    từ chối nhầm 0/15 · lọc mất lĩnh vực đúng 0/15 · thu hẹp lĩnh vực 15/15
+  15 câu phạm vi:
+    pháp luật (câu cụt, hỏi về hack/giả danh, "đóng vai trò", kèm yêu cầu) 5/5
+    lạc đề (nấu ăn, code, giá xe, sửa xe, xin cách hack)                    5/5
+    tấn công (không dấu, đòi in cấu hình, "chế độ nhà phát triển", đòi API key) 5/5
+
+Lưu ý: mẫu nhỏ (30 câu) — đúng hướng nhưng chưa đủ để kết luận chắc.
+Chưa đo: 13 câu còn lại của scope_set; 125 câu GPT sinh; so với bộ phân loại cũ.
+
+======================================================================
+4. VIỆC TIẾP THEO
+======================================================================
+  - (Người dùng) kiểm tra kết quả, quyết định chạy bản đầy đủ hay không
+  - Nối classify_question vào generate.py / API:
+      ngoai_pham_vi -> trả lời lịch sự "chỉ hỗ trợ câu hỏi pháp luật", không tìm kiếm
+      nghi_tan_cong -> từ chối lịch sự + ghi log
+      người dùng tự chọn lĩnh vực -> vẫn gọi để kiểm tra phạm vi, giữ lĩnh vực đã chọn
+  - Sau này: chuẩn hóa văn bản (bỏ dấu) trước regex; xác thực backend
+
+======================================================================
+5. ĐÃ NỐI LỚP 2 VÀO HỆ THỐNG (2026-11-24)
+======================================================================
+rag/generate.py · answer_question():
+  câu hỏi -> (gộp ngữ cảnh nếu có lịch sử) -> classify_question()
+    phap_luat     -> chạy tiếp như cũ (viết lại câu hỏi, tìm kiếm, GPT trả lời)
+    ngoai_pham_vi -> trả câu lịch sự cố định, DỪNG (không tìm kiếm, không gọi thêm GPT)
+    nghi_tan_cong -> trả câu từ chối trung tính cố định, DỪNG, ghi log cảnh báo
+  Người dùng tự chọn lĩnh vực: VẪN gọi classify_question để kiểm tra phạm vi,
+  chỉ bỏ phần đoán lĩnh vực, giữ lĩnh vực người dùng chọn.
+  Lỗi OpenAI -> mặc định phap_luat (không bao giờ từ chối vì lỗi).
+API: QueryResponse thêm trường "scope" (phap_luat / ngoai_pham_vi / nghi_tan_cong);
+  web hiện tại bỏ qua trường mới, không cần sửa.
+classify_domains() cũ không còn được hệ thống dùng (giữ lại cho script đo).
+Chi phí: KHÔNG thêm lần gọi (thay thế lần gọi phân loại cũ); câu lạc đề /
+  tấn công còn RẺ HƠN trước (dừng sau 1 lần gọi thay vì ~5–8).
+Test: tests/test_scope_gate.py (4 ca, giả lập bộ phân loại, không gọi OpenAI);
+  toàn bộ 77/77 pass.
+Chưa làm: chạy thử thật qua API/chat.

@@ -8,6 +8,11 @@ langchain-openai>=0.2.0
 chromadb>=0.5.0
 sentence-transformers>=3.0.0
 rank-bm25>=0.2.2
+# Vietnamese word segmentation before embedding (bkai/PhoBERT expects it)
+pyvi>=0.1.1
+# torch comes in via sentence-transformers as a CPU build. For a GPU, install
+# the CUDA build separately, e.g. (driver with CUDA 12.8):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
 
 # --- Legal Document Processing ---
 pypdf>=4.3.0

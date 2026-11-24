@@ -1,4 +1,4 @@
-"""rag/generate.py::_backfill_citation_markers — deterministic safety net for
+"""rag/generation/generate.py::_backfill_citation_markers — deterministic safety net for
 the professional-mode "[n] (Tên văn bản, Điều X)" citation shape that
 web/components/AnswerText.tsx requires to turn a citation into a Legal
 Workspace link. Added because both the initial generation prompt and a
@@ -7,8 +7,8 @@ answers (verified live, 2026-08-26): the model produced a correct
 "(Bộ luật Dân sự 91/2015/QH13, Điều 167)" citation with no "[n]" in front,
 leaving it as inert plain text instead of a link. Pure logic, no LLM call."""
 
-from rag.generate import _backfill_citation_markers
-from rag.retriever import RetrievedChunk
+from rag.generation.generate import _backfill_citation_markers
+from rag.retrieval.retriever import RetrievedChunk
 
 
 def _chunk(doc_title: str, article_number: int) -> RetrievedChunk:

@@ -1,9 +1,9 @@
 """split_khoan is pure regex logic (no LLM, no I/O) shared by ingestion
-(khoan_split.py) and query-time trimming (rag/subchunk.py) — cheap to test
+(khoan_split.py) and query-time trimming (rag/retrieval/subchunk.py) — cheap to test
 directly and catches boundary regressions before they silently corrupt
 either path."""
 
-from ingestion.khoan_split import split_khoan
+from ingestion.chunking.khoan_split import split_khoan
 
 ARTICLE_TEXT = """Điều 6. Xử phạt người điều khiển xe ô tô
 1. Phạt tiền từ 400.000 đồng đến 600.000 đồng đối với hành vi A.

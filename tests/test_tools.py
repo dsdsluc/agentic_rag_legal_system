@@ -1,4 +1,4 @@
-"""get_article/get_khoan (rag/tools.py) — pure lookups against the cached
+"""get_article/get_khoan (rag/generation/tools.py) — pure lookups against the cached
 corpus, no LLM call. See plans/plan_2.txt Giai đoạn 1: these are the tools
 the generation agent calls to resolve a cross-reference ("theo khoản 3
 Điều 5") that isn't already in the retrieved context, instead of guessing
@@ -6,9 +6,9 @@ or refusing. Verified end-to-end against a live agent run (Điều 12 Khoản 3
 of ND_336_2025) before these were written; these tests lock that lookup
 behavior in without needing an OpenAI call."""
 
-import rag.tools as tools_module
+import rag.generation.tools as tools_module
 from ingestion.models import ArticleChunk, DocType, Domain
-from rag.tools import get_article, get_fine_range, get_khoan
+from rag.generation.tools import get_article, get_fine_range, get_khoan
 
 
 def _fake_chunk(**overrides) -> ArticleChunk:

@@ -1,0 +1,123 @@
+HƯỚNG DẪN CHẠY HỆ THỐNG (BACKEND + WEB) Ở MÁY LOCAL
+================================================================================
+Hệ thống gồm 2 phần PHẢI chạy CÙNG LÚC, độc lập nhau: backend FastAPI (port
+8000) và web Next.js (port 3000). Web gọi thẳng backend qua
+`NEXT_PUBLIC_API_URL` — thiếu backend thì web vẫn mở được nhưng chat sẽ báo
+lỗi kết nối.
+
+
+0. CHUẨN BỊ (chỉ làm 1 lần)
+--------------------------------
+Cần cài sẵn: Python 3.11+, Node.js 20+, Tesseract OCR (kèm gói ngôn ngữ
+tiếng Việt `vie.traineddata` đặt trong thư mục `tessdata/` ở gốc dự án — nếu
+thiếu, các bước OCR trong pipeline ingestion sẽ báo lỗi/0 chunk, nhưng CHẠY
+BACKEND ĐỂ TRẢ LỜI CÂU HỎI không cần Tesseract, chỉ cần khi build lại corpus
+từ PDF gốc).
+
+Điền biến môi trường:
+  - Copy `.env.example` → `.env` (gốc dự án) → điền `OPENAI_API_KEY`,
+    `DATABASE_URL` (connection string Postgres, ví dụ Neon).
+  - Copy `web/.env.example` → `web/.env` (điền `DATABASE_URL`, PHẢI trùng
+    với `.env` ở gốc — 2 file khác nhau, Prisma chỉ đọc `web/.env`).
+  - Copy `web/.env.example` → `web/.env.local` (điền
+    `NEXT_PUBLIC_API_URL=http://127.0.0.1:8000`).
+
+
+1. BACKEND (FastAPI) — chạy từ THƯ MỤC GỐC dự án
+--------------------------------------------------
+```
+python -m venv .venv
+.venv\Scripts\activate          # Windows
+# source .venv/bin/activate     # macOS/Linux
+
+pip install -r requirements.txt
+```
+
+Nạp dữ liệu vào Chroma (chỉ cần chạy lại khi corpus thay đổi — file
+`data/processed/corpus.jsonl` đã có sẵn trong repo, KHÔNG cần build lại từ
+PDF trừ khi bạn sửa văn bản nguồn):
+```
+set PYTHONPATH=src                              # Windows (PowerShell: $env:PYTHONPATH="src")
+python -m ingestion.load_vectorstore
+```
+Lệnh này PHẢI chạy từ thư mục gốc dự án (không phải từ `src/`) — nó đọc
+`data/processed/corpus.jsonl` bằng đường dẫn tương đối.
+
+Khởi động backend:
+```
+set PYTHONPATH=src
+uvicorn api.main:app --reload --port 8000
+```
+Lần đầu khởi động sẽ mất khoảng 15-20 giây (tải embedding model tiếng Việt
+từ Hugging Face về cache local). Kiểm tra đã chạy đúng:
+```
+curl http://127.0.0.1:8000/health
+```
+Kết quả mong đợi: `{"status":"ok"}`.
+
+
+2. WEB (Next.js) — chạy từ thư mục `web/`
+--------------------------------------------
+```
+cd web
+npm install                    # tự chạy "prisma generate" qua postinstall
+npx prisma migrate deploy      # áp dụng schema lên Postgres (lần đầu/mỗi khi có migration mới)
+npm run dev
+```
+Mở trình duyệt: http://localhost:3000
+
+Muốn xem trang quản trị: http://localhost:3000/admin — cần tài khoản có
+role "admin" trong bảng `User` (tự tạo qua `/dang-ky` rồi đổi role thủ công
+trong DB, hoặc dùng script tạo tài khoản test).
+
+
+3. KIỂM TRA NHANH ĐÃ CHẠY ĐÚNG
+------------------------------------
+  - Backend: `curl http://127.0.0.1:8000/health` → `{"status":"ok"}`.
+  - Web: mở http://localhost:3000, gõ thử một câu hỏi (ví dụ "Vượt đèn đỏ
+    bị phạt bao nhiêu tiền?") — nếu backend chưa chạy, sẽ thấy lỗi kết nối
+    ngay khi gửi.
+  - Test logic backend không cần OpenAI key: `pytest` (chạy từ gốc dự án).
+  - Test end-to-end có gọi LLM thật (cần OPENAI_API_KEY hợp lệ):
+    `python eval.py` (từ gốc dự án).
+
+
+4. CÁC LỖI HAY GẶP KHI PHÁT TRIỂN (đã gặp thực tế trong quá trình build)
+----------------------------------------------------------------------------
+  - "Module not found" / route mới tạo không load được trên web: Next.js
+    (Turbopack) đôi khi không nhận file route/component mới tạo trong lúc
+    dev server đang chạy → dừng (Ctrl+C) và `npm run dev` lại.
+
+  - Sau khi đổi `prisma/schema.prisma` mà web báo lỗi kiểu "Unknown field"
+    dù đã migrate: Prisma Client cũ vẫn còn trong bộ nhớ Next.js dev server
+    → chạy `npx prisma generate` rồi RESTART hẳn dev server (không chỉ để
+    Turbopack tự hot-reload).
+
+  - Đổi field/logic mới trong `web/prisma/schema.prisma` nhưng DB local
+    trống hoặc đang có dữ liệu thật cần giữ: dùng `npx prisma migrate dev
+    --name <ten_migration>` (không phải `migrate deploy`) để Prisma tự tạo
+    file migration mới — lệnh này có thể hỏi xác nhận nếu phát hiện thay
+    đổi có nguy cơ mất dữ liệu, đọc kỹ trước khi đồng ý.
+
+  - Trả lời chat cứ báo "Không tìm thấy quy định liên quan" dù rõ ràng có
+    trong corpus: khả năng Chroma đang cũ (thiếu domain metadata hoặc thiếu
+    văn bản mới thêm) → chạy lại bước nạp Chroma ở mục 1
+    (`python -m ingestion.load_vectorstore`, nhớ `PYTHONPATH=src` VÀ chạy từ
+    thư mục gốc dự án cùng lúc — thiếu 1 trong 2 điều kiện này đều lỗi),
+    rồi restart backend.
+
+  - `PYTHONPATH` quên set: mọi lệnh Python chạy module trong `src/`
+    (`ingestion.*`, `rag.*`, `api.*`) đều cần `PYTHONPATH=src` VÀ chạy từ
+    thư mục gốc dự án — thiếu 1 trong 2 sẽ báo `ModuleNotFoundError`.
+
+
+5. DEPLOY (tóm tắt — xem thêm `plans/plan.txt` để phân tích đầy đủ)
+------------------------------------------------------------------------
+  - Web (`web/`) deploy được lên Vercel bình thường — nhớ set **Root
+    Directory = `web`** trong Project Settings (đây là monorepo, không phải
+    Next.js app ở gốc repo), và set env `DATABASE_URL` +
+    `NEXT_PUBLIC_API_URL` trên Vercel.
+  - Backend FastAPI KHÔNG chạy được trên Vercel (serverless, không hợp với
+    process giữ state nặng trong RAM — embedding model, Chroma, BM25 index
+    preload lúc khởi động) — cần host ở nơi hỗ trợ process chạy dài hạn
+    (Render, Railway, Fly.io, hoặc VPS riêng).

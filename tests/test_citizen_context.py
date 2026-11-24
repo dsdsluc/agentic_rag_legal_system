@@ -1,8 +1,8 @@
-"""rag/generate.py — the citizen-mode cross-reference mask (Plan C,
+"""rag/generation/generate.py — the citizen-mode cross-reference mask (Plan C,
 plans/plan.txt 2026-08-25) and per-mode max_tokens. Pure logic, no LLM
 call needed."""
 
-from rag.generate import CITIZEN_MAX_TOKENS, PROFESSIONAL_MAX_TOKENS, _mask_citizen_cross_refs, _max_tokens_for
+from rag.generation.generate import CITIZEN_MAX_TOKENS, PROFESSIONAL_MAX_TOKENS, _mask_citizen_cross_refs, _max_tokens_for
 
 
 def test_mask_strips_multi_number_cross_reference():

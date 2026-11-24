@@ -1,0 +1,128 @@
+RERANKER — KẾ HOẠCH (2026-11-24, chưa tải model, chưa sửa code)
+
+----------------------------------------------------------------------
+1. HIỆN TRẠNG: CHƯA CÓ RERANKER
+----------------------------------------------------------------------
+Các cơ chế hiện có KHÔNG phải rerank:
+  - RRF (retriever.py)          : gộp thứ hạng dense + BM25, không đọc nội dung
+  - Lọc loại xe (retriever.py)  : quy tắc viết tay (xe đạp, xe máy chuyên dùng)
+  - Chọn Khoản bằng LLM         : chỉ cắt gọn / loại Điều trong top 5
+  - Lọc liên quan bằng LLM      : chỉ cho đoạn văn bản sửa đổi, có/không
+Tất cả chạy SAU khi cắt top 5 -> chỉ bỏ bớt được, không kéo được Điều
+đúng ở hạng 6–20 lên. Ví dụ "vượt đèn đỏ xe máy": Điều 7 hạng 11 -> bị cắt.
+
+----------------------------------------------------------------------
+2. VÌ SAO CẦN
+----------------------------------------------------------------------
+- Recall@20 ~92% nhưng Hit@5 ~87% -> Điều đúng thường ĐÃ tìm thấy,
+  chỉ bị xếp hạng thấp. Nút thắt là XẾP HẠNG.
+- Embedding (bi-encoder) nén câu hỏi và đoạn luật thành 2 vector riêng
+  -> nhanh nhưng mất chi tiết, kém với khác từ ngữ ("vượt đèn đỏ" vs
+  "không chấp hành hiệu lệnh của đèn tín hiệu").
+- Reranker (cross-encoder) đọc câu hỏi + đoạn luật CÙNG LÚC -> chấm
+  chính xác hơn; chậm nên chỉ dùng cho ~30 ứng viên.
+
+----------------------------------------------------------------------
+3. CƠ CHẾ
+----------------------------------------------------------------------
+Model: BAAI/bge-reranker-v2-m3 (cross-encoder, đa ngôn ngữ, có tiếng Việt;
+       ~568M tham số, ~2,2 GB; lưu local trong models/, chạy GPU)
+
+Luồng:
+  Hiện tại : tìm (dense+BM25) -> RRF -> CẮT top 5 -> chọn Khoản -> GPT
+  Có rerank: tìm (dense+BM25) -> RRF -> top 30 -> RERANKER chấm lại
+             -> gom về Điều -> CẮT top 5 -> chọn Khoản -> GPT
+
+Các bước rerank:
+  1. Ghép (câu hỏi, đoạn) cho từng ứng viên trong top 30
+  2. Model chấm mỗi cặp 1 điểm liên quan (vd 0.91, 0.23...)
+  3. Sắp xếp lại theo điểm
+  4. Nhiều Khoản cùng Điều -> giữ điểm cao nhất cho Điều
+  5. Lấy top 5 đưa cho GPT
+
+----------------------------------------------------------------------
+4. THÍ NGHIỆM SẼ CHẠY (trên cấu hình "+sub" của bước 1, không sửa hệ thống thật)
+----------------------------------------------------------------------
+  - Số ứng viên        : 20 / 30 / 50
+  - Đơn vị chấm        : Khoản (đoạn ngắn) hay cả Điều
+  - Điểm cuối          : chỉ điểm reranker, hay trộn với RRF
+  - Ngưỡng "không tìm thấy": thử ngưỡng điểm thấp nhất chấp nhận được
+So với mốc: Hybrid Hit@5 83% / MRR 0.67; "+sub" Hit@5 87% / MRR 0.72
+
+----------------------------------------------------------------------
+5. CHI PHÍ / RỦI RO
+----------------------------------------------------------------------
+  - Thời gian: ~0,1–0,3 s/câu trên GPU (RTX 5050); ~2–5 s/câu trên CPU
+    -> cần cân nhắc nếu server triển khai không có GPU.
+  - Tiền: 0 (chạy local, không gọi OpenAI).
+  - Dung lượng: +~2,2 GB trong models/ (không commit lên git).
+  - Kỳ vọng (CHƯA ĐO): kéo Điều đúng từ hạng 6–20 lên top 5; giảm lỗi
+    khác từ ngữ; đẩy lùi đoạn chỉ trùng chữ ("điện thoại", "xe máy");
+    có thể bỏ bớt luật lọc loại xe viết tay.
+
+======================================================================
+6. KẾT QUẢ THÍ NGHIỆM (2026-11-24)
+======================================================================
+Script: scripts/experiments/exp_rerank.py — Kết quả: data/eval/results/exp_rerank.json
+Nền: cấu hình "+sub" của bước 1 (Điều + đoạn Khoản, hybrid). 70 câu.
+
+                                   Hit@1   Hit@5   MRR
+  +sub, không rerank                61%     87%    0.72
+  pool=20 chấm Khoản, chỉ rerank    74%     91%    0.82
+  pool=30 chấm Khoản, chỉ rerank    74%     90%    0.81
+  pool=50 chấm Khoản, chỉ rerank    76%     91%    0.83   <- tốt nhất
+  chấm cả Điều (article)            71–73%  90–91% 0.79–0.81
+  trộn với RRF (blend)              64–67%  90–91% 0.76–0.78
+
+So với mốc ban đầu (Hit@5 83%, MRR 0.67): Hit@5 +8 điểm, MRR +0.16,
+Hit@1 54% -> 76% (Điều đúng đứng ĐẦU tăng mạnh nhất).
+
+Kết luận:
+  - Rerank GIÚP rõ, nhất là thứ hạng đầu (MRR, Hit@1).
+  - Chấm theo Khoản tốt hơn chấm cả Điều.
+  - Chỉ dùng điểm reranker tốt hơn trộn với RRF.
+  - pool 20 ≈ pool 50 (91% / 0.82 vs 0.83) -> pool 20 đủ, rẻ hơn nhiều.
+Theo nhóm (Hit@5, +sub -> rerank tốt nhất):
+  Người dân 79% -> 86%   Giao thông 88% -> 91%   Dân sự 90% -> 95%   Hình sự 83% -> 89%
+Cải thiện lớn: giật điện thoại (ngoài top 20 -> 1), chủ xe bồi thường
+  (18 -> 2), vượt đèn đỏ chung (5 -> 1), không mang bằng lái (5 -> 2)...
+Tệ đi nhẹ (4 câu, đều lệch 1 hạng, vẫn trong top 3).
+Còn trượt top 5 (6 câu): vượt đèn đỏ xe máy (hạng 8), uống bia (9), tai nạn
+  chết người (6); tạm giữ xe, chia thừa kế không di chúc, tự vệ: Điều đúng
+  không có trong pool -> lỗi ở bước TÌM, rerank không cứu được.
+
+Ngưỡng "không tìm thấy": CHƯA đặt được. Điểm cao nhất ở câu trượt
+  (median 0.73) vẫn cao -> bộ câu hỏi chưa có câu "không có trong luật"
+  để hiệu chỉnh ngưỡng.
+
+THỜI GIAN — CẦN ĐO LẠI (ước lượng trước đây quá lạc quan):
+  Thí nghiệm: 36.030 cặp / 1.084 s ≈ 33 cặp/s (FP32, GPU nóng 86°C).
+  Pool 20 chấm Khoản ≈ 100–200 cặp/câu -> ~3–6 s/câu ở FP32, CHƯA phải
+  0,1–0,3 s như ước lượng ban đầu. Cần đo với FP16 + giới hạn số Khoản/Điều
+  trước khi áp dụng. Trên CPU sẽ chậm hơn nhiều.
+
+======================================================================
+7. ĐO TỐC ĐỘ — BẢN NHẸ (FP16, pool 20) (2026-11-24)
+======================================================================
+Script: scripts/experiments/exp_rerank_fast.py — Kết quả: data/eval/results/exp_rerank_fast.json
+Mỗi Điều dài chỉ chấm K Khoản giống câu hỏi nhất (theo embedding đã có sẵn).
+Thời gian = chỉ riêng bước rerank cho 1 câu hỏi, trên GPU RTX 5050.
+
+  Khoản/Điều  max_len  cặp/câu  giây/câu  p90    Hit@1  Hit@5  MRR
+     2          256       34      0.31    0.35   70%    87%   0.78
+     2          512       34      0.41    0.53   70%    89%   0.78
+     3          256       48      0.48    0.60   69%    87%   0.78
+     3          512       48      0.59    0.81   69%    87%   0.77
+     5          256       71      0.61    0.76   73%    90%   0.81   <- đề xuất
+     5          512       71      0.78    1.07   73%    90%   0.81
+  tất cả (FP32, mục 6)  ~100–200   ~3–6     —     74%    91%   0.82
+
+Kết luận:
+  - FP16 + 5 Khoản/Điều + 256 token: ~0,6 s/câu (nhanh hơn ~5–10 lần),
+    độ chính xác gần như giữ nguyên (Hit@5 90% vs 91% = chênh 1 câu / 70).
+  - 256 token đủ cho Khoản (512 không tốt hơn, chỉ chậm hơn).
+  - 2–3 Khoản/Điều: nhanh hơn nhưng mất ~3 điểm Hit@5.
+  - So với hệ thống hiện tại (Hit@5 83%, MRR 0.67, Hit@1 54%):
+    cấu hình đề xuất cho Hit@5 90%, MRR 0.81, Hit@1 73%.
+  - GPU không còn nóng kéo dài: mỗi câu chỉ ~0,6 s tải nặng.
+  - Trên CPU (server không GPU) vẫn chưa đo — cần đo trước khi triển khai.

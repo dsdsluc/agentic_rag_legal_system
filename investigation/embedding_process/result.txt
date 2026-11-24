@@ -1,0 +1,203 @@
+KẾT QUẢ ĐO CHẤT LƯỢNG TÌM KIẾM — MỐC BAN ĐẦU (2026-11-24)
+Model: bkai-foundation-models/vietnamese-bi-encoder (chưa sửa gì)
+
+Bộ đo: data/eval/retrieval_set.json — 70 câu hỏi có đáp án chunk_id
+  (giao thông 33, dân sự 19, hình sự 18; kiểu người dân 43, thuật ngữ 27)
+Script: PYTHONPATH=src python -m rag.eval_retrieval [--with-rewrite] [--label <tên>]
+Kết quả chi tiết: data/eval/results/retrieval_20261124_*_baseline-bkai*.json
+
+Chỉ số: Hit@5 = top 5 có Điều đúng (hệ thống thật chỉ đưa top 5 cho LLM)
+        Recall@10 = tỷ lệ Điều đúng nằm trong top 10
+        MRR = 1/hạng của Điều đúng đầu tiên (1.0 = luôn đứng đầu)
+
+----------------------------------------------------------------------
+TỔNG
+----------------------------------------------------------------------
+Cách tìm                     Hit@5   Recall@10   MRR    Thời gian
+Dense (chỉ embedding)         74%      76%      0.62     12s
+BM25 (chỉ từ khoá)            73%      83%      0.58      1s
+Hybrid (đang dùng)            83%      88%      0.67      4s
+Hybrid + LLM viết lại câu     86%      93%      0.73    145s
+
+----------------------------------------------------------------------
+THEO NHÓM (Hit@5)
+----------------------------------------------------------------------
+                       Hybrid   Hybrid + viết lại
+Thuật ngữ luật          100%        100%
+Kiểu người dân           72%         77%
+Giao thông               76%         85%
+Dân sự                   90%         90%
+Hình sự                  89%         83%
+
+----------------------------------------------------------------------
+NHẬN XÉT
+----------------------------------------------------------------------
+1. Câu hỏi dùng thuật ngữ luật: gần như hoàn hảo. Câu hỏi kiểu người
+   dân: yếu (72–77%) — đây là điểm yếu chính.
+2. Giao thông yếu nhất; lỗi tập trung ở Điều 6, 7 NĐ 168/2024 (mức phạt
+   ô tô, xe máy) — các Điều dài 13–19 nghìn ký tự, model chỉ đọc 256
+   token đầu nên nội dung "đèn tín hiệu", "mũ bảo hiểm"... bị mất.
+3. "Vượt đèn đỏ xe máy": Điều 7 đứng hạng 12 (kể cả khi có viết lại câu
+   hỏi) -> không lọt top 5 -> chat trả lời "không tìm thấy".
+4. Dense kém BM25 ở Recall@10 (76% vs 83%) -> embedding chưa phát huy
+   hết (thiếu tách từ, chunk bị cắt cụt).
+5. Kết hợp dense + BM25 có ích (+9 điểm Hit@5). Bước LLM viết lại câu
+   hỏi chỉ thêm +3 điểm nhưng chậm gấp ~35 lần.
+
+Câu vẫn trượt top 5 (có viết lại câu hỏi), 10 câu:
+  - Điều dài NĐ 168: vượt đèn đỏ (x3), uống bia lái xe, tạm giữ xe
+  - Khác từ ngữ / lệch lĩnh vực: chia tài sản không di chúc, chủ xe bồi
+    thường, tai nạn chết người (hình sự), tự vệ, xoá án tích
+
+----------------------------------------------------------------------
+VÌ SAO MODEL CHỈ ĐỌC 256 TOKEN ĐẦU
+----------------------------------------------------------------------
+- Token = mẩu văn bản model đọc (≈ 1 âm tiết / dấu câu / mảnh số).
+  256 token ≈ 150–200 chữ ≈ 1–2 Khoản đầu của một Điều.
+- Model bkai xây trên PhoBERT (kiểu BERT): bảng "vị trí" có kích thước
+  cố định 256 từ lúc thiết kế; lúc huấn luyện chỉ thấy đoạn ngắn; chi phí
+  tính toán tăng theo bình phương độ dài -> giới hạn có sẵn của model,
+  không phải do code dự án đặt.
+- sentence-transformers CẮT IM LẶNG phần vượt quá: không lỗi, không cảnh
+  báo, vẫn trả về vector -> hệ thống "chạy được" nhưng tìm sai.
+- 1.619 / 4.295 chunk (38%) dài hơn 256 token. Ví dụ Điều 7 NĐ 168
+  (~13.500 ký tự): model chỉ "thấy" Khoản 1, không biết Điều này có nói
+  về đèn đỏ, mũ bảo hiểm, nồng độ cồn.
+- Cách xử lý: chia Điều thành Khoản (mỗi Khoản một vector, vừa 256
+  token) — bước 1; về sau có thể kết hợp model đọc dài hơn (bge-m3,
+  8.192 token) — bước 3.
+
+----------------------------------------------------------------------
+BƯỚC TIẾP THEO (so mỗi bước với mốc: Hybrid Hit@5 83%, MRR 0.67)
+----------------------------------------------------------------------
+1. Chia Điều dài thành Khoản  -> ĐÃ THÍ NGHIỆM, xem bên dưới
+   (1.477 chunk "khoan" có sẵn CHỈ thuộc văn bản giao thông; 4 bộ luật
+   Dân sự / Hình sự / Tố tụng DS / Tố tụng HS có cấu trúc Khoản trong
+   văn bản nhưng chưa từng được tách -> thí nghiệm tự tách bằng split_khoan)
+2. Tách từ tiếng Việt (pyvi) cho embedding và BM25
+3. Thử model bge-m3
+4. Thêm reranker (bge-reranker-v2-m3)
+
+======================================================================
+BƯỚC 1 — KẾT QUẢ THÍ NGHIỆM CHIA KHOẢN (2026-11-24)
+======================================================================
+Script: scripts/experiments/exp_khoan_chunks.py (chạy trong bộ nhớ, KHÔNG
+        sửa chroma_db/ hay corpus). Kết quả: data/eval/results/exp_khoan_chunks.json
+Cách làm:
+  - 1.091 Điều dài (> 256 token) -> 6.694 đoạn nhỏ: theo Khoản; Khoản vẫn
+    dài thì chia theo nhóm Điểm a), b)... (kèm câu dẫn có mức phạt).
+  - Mỗi đoạn gắn tiêu đề "<Văn bản>, Điều N. <tên Điều>" để giữ ngữ cảnh.
+  - Kết quả tìm được gom về Điều cha để so công bằng với mốc.
+  - Embedding chạy trên GPU (RTX 5050, torch 2.11.0+cu128).
+Biến thể:
+  baseline : chỉ Điều (như hệ thống hiện tại)
+  +sub     : Điều + các đoạn nhỏ của Điều dài
+  sub-only : Điều dài thay hẳn bằng đoạn nhỏ
+
+Hybrid (cách hệ thống đang dùng), không viết lại câu hỏi:
+                 Hit@1   Hit@5   Recall@10   MRR
+  baseline        54%     83%       88%      0.67
+  +sub            61%     87%       90%      0.72   <- tốt nhất
+  sub-only        57%     87%       88%      0.70
+
+Theo nhóm (hybrid, Hit@5 baseline -> +sub):
+  Kiểu người dân 72% -> 79%     Thuật ngữ 100% -> 100%
+  Giao thông     76% -> 88%     Dân sự     90% -> 90%    Hình sự 89% -> 83%
+
+Câu cải thiện rõ: mũ bảo hiểm (hạng 9 -> 1), nghe điện thoại (ngoài top 20
+  -> 4), chủ xe giao xe (ngoài top 20 -> 3), không mang bằng lái (9 -> 5),
+  vượt đèn đỏ chung (ngoài top 20 -> 5), đặt cọc (6 -> 2)...
+Câu tệ đi: giật điện thoại (9 -> ngoài top 20), uống bia lái xe (15 -> ngoài
+  top 20), chủ xe bồi thường (5 -> 18), tai nạn chết người (5 -> 8).
+  Nguyên nhân có thể: thêm 6.694 đoạn nhỏ -> nhiều đoạn chứa từ trùng
+  ("điện thoại", "xe máy", "tai nạn") chen lên chiếm chỗ.
+
+Nhận xét:
+  - Chia Khoản GIÚP: Hit@5 +4 điểm, MRR +0.05; giao thông +12 điểm.
+  - "Vượt đèn đỏ xe máy" vẫn hạng 11 -> lỗi này KHÔNG chỉ do cắt 256
+    token, mà do khác từ ngữ: luật viết "không chấp hành hiệu lệnh của
+    đèn tín hiệu giao thông", không có chữ "đèn đỏ". Cần viết lại câu
+    hỏi (LLM) / tách từ / model tốt hơn / reranker.
+  - Giữ cả Điều + đoạn nhỏ (+sub) tốt hơn thay hẳn (sub-only).
+
+======================================================================
+CHỐT CẤU HÌNH TÌM KIẾM (2026-11-24) — chi tiết: investigation/re-rank.txt
+======================================================================
+  1. Chia Điều dài thành Khoản (giữ cả Điều + đoạn Khoản, gắn Điều cha)
+  2. Hybrid dense + BM25 (RRF) -> lấy 20 Điều ứng viên
+  3. Rerank: BAAI/bge-reranker-v2-m3, FP16, max 256 token,
+     mỗi Điều dài chấm 5 Khoản giống câu hỏi nhất, Điều lấy điểm Khoản cao nhất,
+     chỉ dùng điểm reranker (không trộn RRF)
+  4. Lấy top 5 Điều đưa cho GPT
+
+  Kết quả (70 câu):   Hiện tại   ->  Chốt
+    Hit@1               54%          73%
+    Hit@5               83%          90%
+    MRR                 0.67         0.81
+    Rerank thêm ~0,6 s/câu trên GPU (RTX 5050)
+
+  Chưa làm (trước khi áp dụng thật): đo trên CPU; thử kèm LLM viết lại câu hỏi.
+
+BƯỚC TIẾP THEO: B — So sánh model embedding trên cấu hình đã chốt
+  (bkai + tách từ pyvi / bge-m3 / AITeamVN Vietnamese_Embedding)
+
+======================================================================
+BƯỚC B.1 — bkai + TÁCH TỪ (pyvi) (2026-11-24)
+======================================================================
+Script: scripts/experiments/exp_wordseg.py — Kết quả: data/eval/results/exp_wordseg.json
+Trên cấu hình đã chốt (chia Khoản + hybrid pool 20 + rerank). Reranker luôn
+đọc văn bản gốc (không tách từ). Không sửa chroma_db/.
+
+                       Bước tìm (hybrid)            Sau rerank
+                     Hit@5  Recall@20  MRR      Hit@1  Hit@5  MRR
+  raw (đã chốt)       87%     92%     0.72       73%    90%   0.81
+  seg-dense           91%     99%     0.81       76%    96%   0.85   <- tốt nhất
+  seg-all             89%     97%     0.78       76%    93%   0.84
+  (seg-dense = tách từ cho embedding; seg-all = cho cả embedding + BM25)
+
+Nhận xét:
+  - Tách từ cho EMBEDDING giúp rõ: Recall@20 92% -> 99% (gần như mọi
+    Điều đúng đều vào pool), sau rerank Hit@5 90% -> 96%.
+  - Bắt thêm 5 câu trước đây ngoài pool: tạm giữ xe (-> hạng 2), giật
+    điện thoại (-> 1), tự vệ (-> 4), uống bia, chia thừa kế. Không đánh rơi câu nào.
+  - Tách từ cho BM25 lại kém hơn chút -> giữ BM25 trên văn bản gốc.
+  - Đoạn dài hơn 256 token giảm 1.462 -> 962 (từ ghép = ít token hơn).
+  - Lưu ý: 90% -> 96% = 4 câu / 70; bộ câu hỏi nhỏ, nên mở rộng để xác nhận.
+Còn trượt top 5 (3 câu): vượt đèn đỏ xe máy (hạng 6), uống bia (11),
+  chia thừa kế không di chúc (13).
+
+So với hệ thống hiện tại: Hit@1 54% -> 76%, Hit@5 83% -> 96%, MRR 0.67 -> 0.85
+
+======================================================================
+CHỐT CẤU HÌNH TÌM KIẾM — BẢN CẬP NHẬT (2026-11-24)
+======================================================================
+  1. Chia Điều dài thành Khoản (giữ cả Điều + đoạn Khoản, gắn Điều cha)
+  2. Embedding: bkai vietnamese-bi-encoder (models/), văn bản + câu hỏi
+     được TÁCH TỪ bằng pyvi trước khi embed
+  3. BM25: trên văn bản GỐC (không tách từ)
+  4. Hybrid dense + BM25 (RRF) -> 20 Điều ứng viên
+  5. Rerank: bge-reranker-v2-m3, FP16, 256 token, 5 Khoản/Điều, đọc văn bản
+     gốc, chỉ dùng điểm reranker -> top 5 Điều đưa cho GPT
+
+  Kết quả (70 câu):  Hiện tại -> Chốt
+    Hit@1              54%        76%
+    Hit@5              83%        96%
+    MRR                0.67       0.85
+
+  Không thử bge-m3 / AITeamVN: bước tìm đã đạt Recall@20 99%, bkai nhẹ
+  hơn ~4 lần (tốt cho tốc độ và server không GPU).
+
+  Việc còn lại trước khi áp dụng thật:
+    - Mở rộng bộ câu hỏi (150–200 câu) để xác nhận con số
+    - Đo tốc độ trên CPU; thử kèm LLM viết lại câu hỏi
+    - Tách Khoản cho toàn bộ corpus, nạp Chroma, sửa retriever/embed/BM25
+
+----------------------------------------------------------------------
+KIỂM CHỨNG TRÊN BỘ CÂU HỎI MỚI (2026-11-24)
+----------------------------------------------------------------------
+  125 câu do gpt-4o-mini sinh (data/eval/retrieval_set_candidates.json,
+  CHƯA duyệt, CHƯA gộp vào retrieval_set.json):
+    Hit@1 82%  Hit@5 97%  MRR 0.89  -> cấu hình đã chốt ổn định.
+  Câu GPT sinh có vẻ dễ hơn câu người thật -> bộ 70 câu viết tay vẫn là
+  thước đo chính. File duyệt: investigation/review_retrieval_set_candidates.md
+  (để sau).

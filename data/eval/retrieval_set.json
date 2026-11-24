@@ -1,0 +1,501 @@
+[
+  {
+    "id": "gt01",
+    "question": "Vượt đèn đỏ xe máy bị phạt bao nhiêu?",
+    "relevant": ["ND_168_2024::dieu_7"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt02",
+    "question": "Ô tô vượt đèn đỏ thì bị phạt thế nào?",
+    "relevant": ["ND_168_2024::dieu_6"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt03",
+    "question": "Tôi vượt đèn đỏ mất bao nhiêu tiền?",
+    "relevant": [
+      "ND_168_2024::dieu_6",
+      "ND_168_2024::dieu_7",
+      "ND_168_2024::dieu_9"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt04",
+    "question": "Đi xe máy không đội mũ bảo hiểm bị phạt bao nhiêu tiền?",
+    "relevant": ["ND_168_2024::dieu_7"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt05",
+    "question": "Uống bia rồi chạy xe máy bị phạt thế nào?",
+    "relevant": ["ND_168_2024::dieu_7"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt06",
+    "question": "Lái ô tô mà trong hơi thở có nồng độ cồn bị xử phạt ra sao?",
+    "relevant": ["ND_168_2024::dieu_6"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt07",
+    "question": "Vừa lái xe máy vừa nghe điện thoại có bị phạt không?",
+    "relevant": ["ND_168_2024::dieu_7"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt08",
+    "question": "Đi xe đạp vượt đèn đỏ có bị phạt không?",
+    "relevant": ["ND_168_2024::dieu_9"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt09",
+    "question": "Người đi bộ vi phạm quy tắc giao thông bị xử phạt như thế nào?",
+    "relevant": ["ND_168_2024::dieu_10"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt10",
+    "question": "Xe máy bị vỡ gương, hỏng đèn thì có bị phạt không?",
+    "relevant": ["ND_168_2024::dieu_14"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt11",
+    "question": "Không mang bằng lái khi đi xe máy bị phạt bao nhiêu?",
+    "relevant": ["ND_168_2024::dieu_18"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt12",
+    "question": "Học sinh 15 tuổi lái xe máy thì bị xử lý thế nào?",
+    "relevant": ["ND_168_2024::dieu_18"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt13",
+    "question": "Tham gia đua xe trái phép bị phạt hành chính bao nhiêu?",
+    "relevant": ["ND_168_2024::dieu_35"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt14",
+    "question": "Chủ xe giao xe cho người không có bằng lái thì có bị phạt không?",
+    "relevant": ["ND_168_2024::dieu_32"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt15",
+    "question": "Thời hiệu xử phạt vi phạm hành chính về giao thông đường bộ là bao lâu?",
+    "relevant": ["ND_168_2024::dieu_4"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt16",
+    "question": "Khi nào bị tạm giữ xe máy khi vi phạm giao thông?",
+    "relevant": ["ND_168_2024::dieu_48"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt17",
+    "question": "Điểm giấy phép lái xe được phục hồi như thế nào?",
+    "relevant": ["ND_168_2024::dieu_51", "LUAT_TTATGTDB_36_2024_QH15::dieu_58"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt18",
+    "question": "Bằng lái xe có bao nhiêu điểm và bị trừ điểm ra sao?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_58", "ND_168_2024::dieu_50"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt19",
+    "question": "Giấy phép lái xe hạng A1 được cấp cho người lái loại xe nào?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_57"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt20",
+    "question": "Bằng B lái được xe gì?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_57"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt21",
+    "question": "Mấy tuổi thì được lái xe máy?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_59"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt22",
+    "question": "Pháp luật nghiêm cấm những hành vi nào khi tham gia giao thông đường bộ?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_9"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt23",
+    "question": "Đi xe máy được chở tối đa mấy người?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_33"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt24",
+    "question": "Quy định về dừng xe, đỗ xe trên đường bộ như thế nào?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_18"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt25",
+    "question": "Xe cứu thương, xe cứu hỏa được ưu tiên đi trước như thế nào?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_27"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt26",
+    "question": "Gây tai nạn giao thông thì người lái xe có trách nhiệm gì?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_80"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt27",
+    "question": "Biển số xe có thể đấu giá được không?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_37"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt28",
+    "question": "Cảnh sát giao thông được dừng xe để kiểm tra trong những trường hợp nào?",
+    "relevant": [
+      "LUAT_TTATGTDB_36_2024_QH15::dieu_66",
+      "TT_73_2024_TT_BCA::dieu_12"
+    ],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt29",
+    "question": "Luật Trật tự, an toàn giao thông đường bộ có hiệu lực thi hành từ ngày nào?",
+    "relevant": ["LUAT_TTATGTDB_36_2024_QH15::dieu_88"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt30",
+    "question": "Nghị định 238/2026/NĐ-CP có hiệu lực thi hành từ ngày nào?",
+    "relevant": ["ND_238_2026::dieu_20"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt31",
+    "question": "Chở trẻ em dưới 10 tuổi ngồi ghế trước ô tô có bị phạt không?",
+    "relevant": ["ND_238_2026::dieu_2", "ND_168_2024::dieu_6"],
+    "domain": "giao_thong",
+    "style": "colloquial"
+  },
+  {
+    "id": "gt32",
+    "question": "Hành lang an toàn đường bộ được quy định như thế nào?",
+    "relevant": ["ND_165_2024::dieu_11"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+  {
+    "id": "gt33",
+    "question": "Học sinh được hướng dẫn kỹ năng lái xe gắn máy an toàn như thế nào?",
+    "relevant": ["ND_151_2024::dieu_5"],
+    "domain": "giao_thong",
+    "style": "formal"
+  },
+
+  {
+    "id": "ds01",
+    "question": "Bao nhiêu tuổi thì được coi là người thành niên?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_20"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds02",
+    "question": "Cho vay tiền thì lãi suất tối đa được phép là bao nhiêu?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_468"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds03",
+    "question": "Đặt cọc mua nhà rồi bên bán không bán nữa thì xử lý thế nào?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_328"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds04",
+    "question": "Bố mẹ mất không để lại di chúc thì tài sản chia cho ai?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_651", "BLDS_91_2015_QH13::dieu_650"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds05",
+    "question": "Di chúc miệng có hợp pháp không?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_629", "BLDS_91_2015_QH13::dieu_630"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds06",
+    "question": "Một di chúc hợp pháp cần những điều kiện gì?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_630"],
+    "domain": "dan_su",
+    "style": "formal"
+  },
+  {
+    "id": "ds07",
+    "question": "Thời hiệu yêu cầu chia di sản thừa kế là bao lâu?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_623"],
+    "domain": "dan_su",
+    "style": "formal"
+  },
+  {
+    "id": "ds08",
+    "question": "Con chưa thành niên có được hưởng thừa kế dù di chúc không cho không?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_644"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds09",
+    "question": "Chó nhà tôi cắn người khác thì tôi có phải bồi thường không?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_603"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds10",
+    "question": "Xe máy gây tai nạn thì chủ xe có phải bồi thường không, dù không có lỗi?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_601"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds11",
+    "question": "Căn cứ phát sinh trách nhiệm bồi thường thiệt hại ngoài hợp đồng là gì?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_584"],
+    "domain": "dan_su",
+    "style": "formal"
+  },
+  {
+    "id": "ds12",
+    "question": "Vay tiền đến hạn mà không trả thì phải chịu lãi thế nào?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_466"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds13",
+    "question": "Ai có thể làm người giám hộ đương nhiên cho trẻ chưa thành niên?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_52"],
+    "domain": "dan_su",
+    "style": "formal"
+  },
+  {
+    "id": "ds14",
+    "question": "Tặng cho nhà đất có cần công chứng không?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_459"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds15",
+    "question": "Hợp đồng có thể thỏa thuận phạt vi phạm tối đa bao nhiêu?",
+    "relevant": ["BLDS_91_2015_QH13::dieu_418"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds16",
+    "question": "Muốn kiện ra tòa thì đơn khởi kiện cần những nội dung gì?",
+    "relevant": ["BLTTDS_92_2015_QH13::dieu_189"],
+    "domain": "dan_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "ds17",
+    "question": "Thời hạn kháng cáo bản án dân sự sơ thẩm là bao nhiêu ngày?",
+    "relevant": ["BLTTDS_92_2015_QH13::dieu_273"],
+    "domain": "dan_su",
+    "style": "formal"
+  },
+  {
+    "id": "ds18",
+    "question": "Những vụ án dân sự nào không được hòa giải?",
+    "relevant": ["BLTTDS_92_2015_QH13::dieu_206"],
+    "domain": "dan_su",
+    "style": "formal"
+  },
+  {
+    "id": "ds19",
+    "question": "Ai phải chịu án phí sơ thẩm trong vụ án dân sự?",
+    "relevant": ["BLTTDS_92_2015_QH13::dieu_147"],
+    "domain": "dan_su",
+    "style": "formal"
+  },
+
+  {
+    "id": "hs01",
+    "question": "Bao nhiêu tuổi thì phải chịu trách nhiệm hình sự?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_12"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs02",
+    "question": "Ăn trộm tài sản bao nhiêu tiền thì bị đi tù?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_173"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs03",
+    "question": "Lừa đảo chiếm đoạt tài sản bị phạt tù bao nhiêu năm?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_174"],
+    "domain": "hinh_su",
+    "style": "formal"
+  },
+  {
+    "id": "hs04",
+    "question": "Giật điện thoại của người đi đường bị tội gì?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_171"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs05",
+    "question": "Đánh người gây thương tích 11% có bị đi tù không?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_134"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs06",
+    "question": "Gây tai nạn giao thông làm chết người thì bị xử lý hình sự thế nào?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_260"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs07",
+    "question": "Đánh bạc bao nhiêu tiền thì bị truy cứu trách nhiệm hình sự?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_321"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs08",
+    "question": "Tự vệ khi bị tấn công có phạm tội không?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_22"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs09",
+    "question": "Điều kiện để được hưởng án treo là gì?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_65"],
+    "domain": "hinh_su",
+    "style": "formal"
+  },
+  {
+    "id": "hs10",
+    "question": "Sau khi chấp hành xong án bao lâu thì được xóa án tích?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_70"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs11",
+    "question": "Thời hiệu truy cứu trách nhiệm hình sự là bao lâu?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_27"],
+    "domain": "hinh_su",
+    "style": "formal"
+  },
+  {
+    "id": "hs12",
+    "question": "Tàng trữ ma túy bị phạt tù bao nhiêu năm?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_249"],
+    "domain": "hinh_su",
+    "style": "formal"
+  },
+  {
+    "id": "hs13",
+    "question": "Thấy người bị nạn mà không cứu thì có phạm tội không?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_132"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs14",
+    "question": "Cán bộ nhận hối lộ bị xử lý hình sự thế nào?",
+    "relevant": ["BLHS_100_2015_QH13::dieu_354"],
+    "domain": "hinh_su",
+    "style": "formal"
+  },
+  {
+    "id": "hs15",
+    "question": "Công an được tạm giữ người tối đa bao nhiêu ngày?",
+    "relevant": ["BLTTHS_101_2015_QH13::dieu_118"],
+    "domain": "hinh_su",
+    "style": "colloquial"
+  },
+  {
+    "id": "hs16",
+    "question": "Thời hạn tạm giam để điều tra là bao lâu?",
+    "relevant": ["BLTTHS_101_2015_QH13::dieu_173"],
+    "domain": "hinh_su",
+    "style": "formal"
+  },
+  {
+    "id": "hs17",
+    "question": "Thời hạn kháng cáo bản án hình sự sơ thẩm là bao nhiêu ngày?",
+    "relevant": ["BLTTHS_101_2015_QH13::dieu_333"],
+    "domain": "hinh_su",
+    "style": "formal"
+  },
+  {
+    "id": "hs18",
+    "question": "Bắt người phạm tội quả tang được thực hiện như thế nào?",
+    "relevant": ["BLTTHS_101_2015_QH13::dieu_111"],
+    "domain": "hinh_su",
+    "style": "formal"
+  }
+]

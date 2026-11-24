@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .generate import answer_question
+from rag.generation.generate import answer_question
 
 
 def main() -> None:
@@ -10,12 +10,6 @@ def main() -> None:
         if not question or question.lower() in {"exit", "quit"}:
             break
         result = answer_question(question)
-        if result.intent:
-            i = result.intent
-            print(
-                f"[intent] violation={i.violation!r} vehicle_type={i.vehicle_type!r} "
-                f"info_need={i.info_need!r} ambiguous={i.vehicle_type_ambiguous}"
-            )
         print(f"\n{result.answer}\n")
         print("Nguồn:")
         for i, chunk in enumerate(result.sources, start=1):

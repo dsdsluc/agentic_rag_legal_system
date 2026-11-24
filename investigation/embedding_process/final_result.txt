@@ -1,0 +1,48 @@
+KẾT QUẢ SAU KHI ÁP DỤNG VÀO HỆ THỐNG THẬT (2026-11-24)
+Nhánh git: feat/khoan-rerank-wordseg (chưa commit)
+Sao lưu Chroma cũ: chroma_db_backup_20261124/
+
+----------------------------------------------------------------------
+ĐÃ ÁP DỤNG
+----------------------------------------------------------------------
+- Chroma nạp lại: 2.818 Điều/phụ lục + 6.694 đơn vị Khoản = 9.512 vector
+  (embed trên GPU ~2 phút)
+- Tách từ pyvi khi embed (cả văn bản và câu hỏi)
+- BM25 thêm đơn vị Khoản (văn bản gốc)
+- retrieve(): gom kết quả về Điều cha, lấy 20 ứng viên, rerank, top 5
+- corpus.jsonl KHÔNG đổi (đơn vị Khoản tạo khi nạp chỉ mục)
+
+File đã sửa / thêm:
+  src/ingestion/retrieval_units.py (mới), embed.py, vectorstore.py,
+  load_vectorstore.py, models.py
+  src/rag/rerank.py (mới), retriever.py, bm25_index.py, eval_retrieval.py
+  src/api/main.py (nạp sẵn reranker), requirements.txt (pyvi),
+  scripts/download_models.py (thêm reranker), .gitignore (tmp/, backup)
+
+----------------------------------------------------------------------
+BỘ ĐO 70 CÂU — chạy trên retrieve() thật, KHÔNG gọi OpenAI
+----------------------------------------------------------------------
+                       Hit@1   Hit@5   MRR    Recall@20
+  Trước (hệ thống cũ)   54%     83%    0.67     89%
+  Sau  (retrieve thật)  76%     96%    0.85     99%
+
+  Theo nhóm (Hit@5): người dân 93%, thuật ngữ 100%;
+                     giao thông 94%, dân sự 95%, hình sự 100%
+  Khớp đúng số liệu thí nghiệm (76% / 96% / 0.85) -> áp dụng đúng.
+  Thời gian: ~0,8 s/câu cho toàn bộ bước tìm + rerank (GPU).
+
+Còn trượt top 5 (3 câu):
+  - Vượt đèn đỏ xe máy        -> hạng 6 (trước: hạng 11–12)
+  - Uống bia rồi chạy xe máy  -> hạng 10
+  - Chia thừa kế không di chúc -> hạng 13
+
+Kết quả chi tiết: data/eval/results/retrieval_20261124_121114_applied.json
+Test: 52/52 pass.
+
+----------------------------------------------------------------------
+CHƯA LÀM
+----------------------------------------------------------------------
+- Thử trên chat (web + FastAPI) và eval.py (chấm câu trả lời cuối — có gọi OpenAI)
+- Đo kèm LLM viết lại câu hỏi (full+rewrite — có gọi OpenAI)
+- Đo tốc độ trên CPU
+- Commit

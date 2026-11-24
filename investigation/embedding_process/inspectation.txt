@@ -1,0 +1,140 @@
+ĐÁNH GIÁ TẦNG EMBEDDING — HIỆN TRẠNG, ĐIỂM YẾU, HƯỚNG CẢI THIỆN
+(khảo sát 2026-11-23, chưa sửa code)
+
+======================================================================
+1. HIỆN TRẠNG
+======================================================================
+- File: src/ingestion/embed.py
+- Model: bkai-foundation-models/vietnamese-bi-encoder
+  (PhoBERT-base, 768 chiều, max_seq_length = 256 token)
+- Thư viện: sentence-transformers, chạy trên CPU (torch 2.13.0+cpu, không có CUDA).
+- Vector store: Chroma (chroma_db/), kết hợp BM25 (src/rag/bm25_index.py) qua RRF.
+- Corpus: data/processed/corpus.jsonl — 4.295 chunk (theo Điều).
+- Không có bước rerank (cross-encoder) sau retrieval.
+
+Trả lời câu hỏi "đang chạy online hay local?":
+  -> Model ĐÃ chạy LOCAL. Trọng số được tải một lần về ~/.cache/huggingface/hub
+     và suy luận hoàn toàn trên máy. Phần "online" chỉ là lúc khởi động:
+     huggingface_hub gửi hàng chục request HEAD/GET tới huggingface.co để
+     kiểm tra phiên bản (thấy rõ trong tmp/backend.log). Không có dữ liệu
+     câu hỏi nào bị gửi ra ngoài, nhưng:
+       + startup chậm hơn vài giây,
+       + mất mạng / HF bị chặn -> có thể lỗi hoặc treo lúc khởi động,
+       + model có thể bị cập nhật ngầm nếu repo trên HF thay đổi.
+
+Trả lời câu hỏi "có cần tự xây model bằng PyTorch?":
+  -> KHÔNG cần. sentence-transformers vốn đã là PyTorch; tự viết lại
+     kiến trúc không tăng chất lượng. Train từ đầu cần hàng triệu cặp
+     (câu hỏi, đoạn luật) — không khả thi và không đáng. Thứ đáng làm là
+     (a) dùng đúng model hiện có, (b) cân nhắc model tốt hơn, (c) nếu có
+     dữ liệu thì FINE-TUNE model sẵn có trên miền pháp luật (vẫn bằng
+     sentence-transformers).
+
+======================================================================
+2. ĐIỂM YẾU (xếp theo mức độ ảnh hưởng)
+======================================================================
+
+[NGHIÊM TRỌNG] 2.1 Thiếu tách từ (word segmentation) tiếng Việt
+  Model bkai là PhoBERT — được huấn luyện trên văn bản ĐÃ tách từ
+  (dạng "điều_khiển", "mô_tô", "đèn_đỏ"; model card yêu cầu dùng pyvi/
+  RDRSegmenter). Code hiện tại đưa text thô vào.
+  Kiểm chứng bằng tokenizer của chính model:
+    thô     : ['Người','điều','khiển','xe','mô','tô','vượt','đèn','đỏ']
+    tách từ : ['Người','điều_khiển','xe','mô_tô','vượt','đèn_đỏ']
+  -> Model đang nhận input khác phân phối lúc train, embedding kém chính xác.
+  Đây rất có thể là một nguyên nhân khiến câu "vượt đèn đỏ xe máy" chỉ
+  lấy được Điều 14 NĐ 168 với điểm thấp.
+
+[NGHIÊM TRỌNG] 2.2 Chunk bị cắt cụt (truncation)
+  max_seq_length = 256 token. Đo trên corpus:
+    median 187 token, p90 559 token,
+    1.619 / 4.295 chunk (~38%) DÀI HƠN 256 token.
+  Phần vượt quá bị bỏ im lặng -> embedding chỉ đại diện cho đầu Điều.
+  Với luật xử phạt, các Khoản/Điểm chứa mức phạt cụ thể thường nằm ở
+  giữa/cuối Điều -> đúng phần bị mất.
+
+[TRUNG BÌNH] 2.3 Phụ thuộc mạng lúc khởi động (xem mục 1).
+
+[TRUNG BÌNH] 2.4 Không có reranker
+  Dense + BM25 + RRF cho top-k thô; không có bước chấm lại cặp
+  (câu hỏi, đoạn). Điểm RRF hiện ~0.07–0.09 khó dùng làm ngưỡng tin cậy.
+
+[NHẸ] 2.5 BM25 tokenize bằng regex \w+ (từng âm tiết)
+  "mô tô" thành 2 token độc lập -> mất ngữ nghĩa cụm từ; không xử lý
+  từ đồng nghĩa phổ thông ↔ pháp lý ("xe máy" ↔ "xe mô tô, xe gắn máy",
+  "vượt đèn đỏ" ↔ "không chấp hành hiệu lệnh của đèn tín hiệu").
+  (Query rewrite bằng LLM đang bù một phần.)
+
+[NHẸ] 2.6 Chất lượng dữ liệu đầu vào
+  Có chunk OCR lỗi, ví dụ tiêu đề Điều 14 NĐ 168: "giấy Ị›heỵ› lái xe"
+  (needs_review = true). Embedding tốt đến đâu cũng không cứu được
+  text hỏng — đây là vấn đề ingestion, không phải model.
+
+[NHẸ] 2.7 Không có bộ đo retrieval riêng
+  eval.py chấm câu trả lời cuối (LLM-judge), chưa đo Recall@k / MRR
+  của riêng tầng retrieval -> khó biết đổi model có tốt hơn thật không.
+
+======================================================================
+3. HƯỚNG CẢI THIỆN (đề xuất thứ tự làm)
+======================================================================
+
+Bước 0 — Dựng thước đo trước khi đổi gì (bắt buộc)
+  - Tạo bộ ~50–100 cặp (câu hỏi người dân -> chunk_id đúng), tận dụng
+    data/eval/qa_set.json.
+  - Script đo Recall@5, Recall@10, MRR cho: dense riêng, BM25 riêng, hybrid.
+  - Mọi thay đổi phía dưới đều so trên bộ này.
+
+Bước 1 — Chạy offline hoàn toàn (dễ, rủi ro thấp)
+  - Đặt HF_HUB_OFFLINE=1 (và TRANSFORMERS_OFFLINE=1) trong .env, hoặc
+    lưu model vào thư mục dự án (models/…) bằng model.save() và load
+    theo đường dẫn; ghim revision cụ thể.
+  - Lợi ích: khởi động nhanh, không phụ thuộc mạng, tái lập được kết quả.
+
+Bước 2 — Sửa cách dùng model hiện tại (chưa cần đổi model)
+  - Thêm tách từ bằng pyvi (ViTokenizer.tokenize) cho CẢ câu hỏi và
+    chunk trước khi encode. Phải re-embed toàn bộ corpus và nạp lại Chroma.
+  - Xử lý chunk dài: chia Điều theo Khoản (dữ liệu đã có cấu trúc Khoản)
+    hoặc cửa sổ trượt ~200 token có chồng lấp; giữ chunk_id cha để
+    gom kết quả về Điều khi hiển thị.
+  - Kỳ vọng: cải thiện rõ rệt mà không tốn thêm tài nguyên.
+
+Bước 3 — Thử model mạnh hơn (so sánh bằng Bước 0)
+  Ứng viên (đều chạy local qua sentence-transformers):
+  - BAAI/bge-m3: đa ngôn ngữ, hỗ trợ 8192 token (giải quyết luôn 2.2),
+    tiếng Việt tốt, không cần tách từ. ~568M tham số -> chậm hơn trên
+    CPU, nhưng corpus 4.295 chunk chỉ embed một lần; query thì nhanh.
+  - AITeamVN/Vietnamese_Embedding (fine-tune từ bge-m3 cho tiếng Việt).
+  - intfloat/multilingual-e5-base/large (đã có e5-base, e5-small trong
+    cache máy; cần tiền tố "query: " / "passage: ").
+  Khuyến nghị: thử bge-m3 trước vì giải quyết đồng thời tách từ + độ dài.
+
+Bước 4 — Thêm reranker
+  - Cross-encoder rerank top 20–30 từ hybrid xuống top 5:
+    BAAI/bge-reranker-v2-m3 (đa ngôn ngữ, hỗ trợ tiếng Việt).
+    (cross-encoder/ms-marco-MiniLM-L-6-v2 đang có trong cache là model
+    tiếng Anh — không phù hợp.)
+  - Điểm reranker có ý nghĩa tuyệt đối hơn RRF -> có thể dùng làm
+    ngưỡng "không tìm thấy" thay cho việc để LLM tự quyết.
+
+Bước 5 — Cải thiện BM25
+  - Tách từ bằng pyvi cho BM25 (đồng bộ với Bước 2), hoặc dùng
+    sparse vector của bge-m3 thay BM25.
+  - Từ điển đồng nghĩa phổ thông -> pháp lý cho các cụm hay gặp.
+
+Bước 6 — Fine-tune (chỉ khi đã có dữ liệu và Bước 2–4 chưa đủ)
+  - Sinh cặp (câu hỏi, Điều/Khoản) bằng LLM từ chính corpus, lọc lại,
+    fine-tune bằng MultipleNegativesRankingLoss trong sentence-transformers.
+  - Không cần viết model PyTorch từ đầu.
+
+Song song — Sửa dữ liệu OCR (mục 2.6) qua trang /admin; với các
+Điều quan trọng (NĐ 168/2024) nên ưu tiên rà soát thủ công.
+
+======================================================================
+4. TÓM TẮT
+======================================================================
+- Đang chạy local, chỉ có bước kiểm tra phiên bản online lúc khởi động
+  -> bật chế độ offline là đủ.
+- Không cần tự viết model PyTorch.
+- Model bkai không tồi, nhưng ĐANG DÙNG SAI: thiếu tách từ và ~38% chunk
+  bị cắt cụt. Sửa 2 lỗi này trước, rồi mới so với bge-m3 + reranker
+  bằng một bộ đo retrieval.

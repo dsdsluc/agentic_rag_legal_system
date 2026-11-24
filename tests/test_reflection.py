@@ -1,4 +1,4 @@
-"""rag/generate.py::_reflect — the post-draft self-check step. Uses a fake
+"""rag/generation/generate.py::_reflect — the post-draft self-check step. Uses a fake
 LLM stub (no OpenAI call) so these run in the fast pytest suite; the actual
 prompt/model behavior was verified live via eval.py (see plans/plan_2.txt —
 reflection section) and caught a real bug this way: gpt-4o-mini sometimes
@@ -7,7 +7,7 @@ replied with meta-commentary about the draft ("câu trả lời nháp đã đún
 char answer in 2/9 eval cases. These tests lock in the safety net added to
 catch that specific failure mode without needing a live model each run."""
 
-from rag.generate import _REFLECTION_AMBIGUOUS_VEHICLE_ADDENDUM, _REFLECTION_CITIZEN_ADDENDUM, _reflect
+from rag.generation.generate import _REFLECTION_CITIZEN_ADDENDUM, _reflect
 
 
 class _FakeResponse:
@@ -93,23 +93,3 @@ def test_reflect_includes_citizen_addendum_only_for_citizen_mode():
     _reflect(professional_llm, "Ngữ cảnh: ...", DRAFT, "professional")
     system_prompt = professional_llm.last_messages[0].content
     assert _REFLECTION_CITIZEN_ADDENDUM not in system_prompt
-
-
-def test_reflect_includes_ambiguous_vehicle_addendum_only_when_flagged():
-    ambiguous_llm = _FakeLLM(DRAFT)
-    _reflect(ambiguous_llm, "Ngữ cảnh: ...", DRAFT, "professional", vehicle_type_ambiguous=True)
-    system_prompt = ambiguous_llm.last_messages[0].content
-    assert _REFLECTION_AMBIGUOUS_VEHICLE_ADDENDUM in system_prompt
-
-    unambiguous_llm = _FakeLLM(DRAFT)
-    _reflect(unambiguous_llm, "Ngữ cảnh: ...", DRAFT, "professional", vehicle_type_ambiguous=False)
-    system_prompt = unambiguous_llm.last_messages[0].content
-    assert _REFLECTION_AMBIGUOUS_VEHICLE_ADDENDUM not in system_prompt
-
-
-def test_reflect_can_combine_citizen_and_ambiguous_vehicle_addenda():
-    llm = _FakeLLM(DRAFT)
-    _reflect(llm, "Ngữ cảnh: ...", DRAFT, "citizen", vehicle_type_ambiguous=True)
-    system_prompt = llm.last_messages[0].content
-    assert _REFLECTION_CITIZEN_ADDENDUM in system_prompt
-    assert _REFLECTION_AMBIGUOUS_VEHICLE_ADDENDUM in system_prompt

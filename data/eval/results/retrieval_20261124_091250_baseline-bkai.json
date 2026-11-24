@@ -1,0 +1,6187 @@
+{
+  "modes": {
+    "dense": {
+      "overall": {
+        "recall@1": 0.5,
+        "recall@3": 0.6429,
+        "recall@5": 0.7286,
+        "recall@10": 0.7643,
+        "recall@20": 0.8643,
+        "hit@1": 0.5286,
+        "hit@3": 0.6571,
+        "hit@5": 0.7429,
+        "hit@10": 0.7714,
+        "hit@20": 0.8714,
+        "mrr": 0.6206,
+        "n": 70
+      },
+      "groups": {
+        "domain=dan_su": {
+          "recall@1": 0.6053,
+          "recall@3": 0.8421,
+          "recall@5": 0.8947,
+          "recall@10": 0.8947,
+          "recall@20": 0.9474,
+          "hit@1": 0.6316,
+          "hit@3": 0.8421,
+          "hit@5": 0.8947,
+          "hit@10": 0.8947,
+          "hit@20": 0.9474,
+          "mrr": 0.7445,
+          "n": 19
+        },
+        "domain=giao_thong": {
+          "recall@1": 0.4394,
+          "recall@3": 0.5152,
+          "recall@5": 0.5758,
+          "recall@10": 0.6515,
+          "recall@20": 0.803,
+          "hit@1": 0.4848,
+          "hit@3": 0.5455,
+          "hit@5": 0.6061,
+          "hit@10": 0.6667,
+          "hit@20": 0.8182,
+          "mrr": 0.5502,
+          "n": 33
+        },
+        "domain=hinh_su": {
+          "recall@1": 0.5,
+          "recall@3": 0.6667,
+          "recall@5": 0.8333,
+          "recall@10": 0.8333,
+          "recall@20": 0.8889,
+          "hit@1": 0.5,
+          "hit@3": 0.6667,
+          "hit@5": 0.8333,
+          "hit@10": 0.8333,
+          "hit@20": 0.8889,
+          "mrr": 0.619,
+          "n": 18
+        },
+        "style=colloquial": {
+          "recall@1": 0.407,
+          "recall@3": 0.5116,
+          "recall@5": 0.6047,
+          "recall@10": 0.6395,
+          "recall@20": 0.7791,
+          "hit@1": 0.4419,
+          "hit@3": 0.5349,
+          "hit@5": 0.6279,
+          "hit@10": 0.6512,
+          "hit@20": 0.7907,
+          "mrr": 0.5203,
+          "n": 43
+        },
+        "style=formal": {
+          "recall@1": 0.6481,
+          "recall@3": 0.8519,
+          "recall@5": 0.9259,
+          "recall@10": 0.963,
+          "recall@20": 1.0,
+          "hit@1": 0.6667,
+          "hit@3": 0.8519,
+          "hit@5": 0.9259,
+          "hit@10": 0.963,
+          "hit@20": 1.0,
+          "mrr": 0.7804,
+          "n": 27
+        }
+      },
+      "seconds": 12.5,
+      "cases": [
+        {
+          "id": "gt01",
+          "question": "Vượt đèn đỏ xe máy bị phạt bao nhiêu?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_8",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_20",
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_29",
+            "ND_168_2024::dieu_13"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.07142857142857142,
+          "first_rank": 14.0
+        },
+        {
+          "id": "gt02",
+          "question": "Ô tô vượt đèn đỏ thì bị phạt thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_6"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_13",
+            "ND_168_2024::dieu_20",
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_30",
+            "ND_168_2024::dieu_14"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.06666666666666667,
+          "first_rank": 15.0
+        },
+        {
+          "id": "gt03",
+          "question": "Tôi vượt đèn đỏ mất bao nhiêu tiền?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_6",
+            "ND_168_2024::dieu_7",
+            "ND_168_2024::dieu_9"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_271",
+            "ND_168_2024::dieu_13",
+            "BLHS_100_2015_QH13::dieu_266",
+            "ND_168_2024::dieu_30",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_12"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt04",
+          "question": "Đi xe máy không đội mũ bảo hiểm bị phạt bao nhiêu tiền?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_16",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_31",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_54"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt05",
+          "question": "Uống bia rồi chạy xe máy bị phạt thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_16",
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_19",
+            "ND_168_2024::dieu_40"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt06",
+          "question": "Lái ô tô mà trong hơi thở có nồng độ cồn bị xử phạt ra sao?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_6"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_13",
+            "ND_168_2024::dieu_20",
+            "ND_168_2024::dieu_14",
+            "ND_168_2024::dieu_28",
+            "ND_168_2024::dieu_17"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.07142857142857142,
+          "first_rank": 14.0
+        },
+        {
+          "id": "gt07",
+          "question": "Vừa lái xe máy vừa nghe điện thoại có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_8",
+            "ND_151_2024::dieu_18",
+            "ND_238_2026::dieu_2",
+            "ND_168_2024::dieu_16",
+            "ND_168_2024::dieu_15"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt08",
+          "question": "Đi xe đạp vượt đèn đỏ có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_9"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_20",
+            "ND_168_2024::dieu_12",
+            "ND_168_2024::dieu_13"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt09",
+          "question": "Người đi bộ vi phạm quy tắc giao thông bị xử phạt như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_10"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_10",
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_12",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_30",
+            "BLHS_100_2015_QH13::dieu_260"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt10",
+          "question": "Xe máy bị vỡ gương, hỏng đèn thì có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_14"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_13",
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_15",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_20"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.1111111111111111,
+          "first_rank": 9.0
+        },
+        {
+          "id": "gt11",
+          "question": "Không mang bằng lái khi đi xe máy bị phạt bao nhiêu?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_18"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_19",
+            "ND_168_2024::dieu_17",
+            "ND_168_2024::dieu_16",
+            "ND_168_2024::dieu_13"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt12",
+          "question": "Học sinh 15 tuổi lái xe máy thì bị xử lý thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_18"
+          ],
+          "top5": [
+            "ND_238_2026::dieu_2",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59",
+            "ND_168_2024::dieu_16",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_46",
+            "ND_168_2024::dieu_19"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.09090909090909091,
+          "first_rank": 11.0
+        },
+        {
+          "id": "gt13",
+          "question": "Tham gia đua xe trái phép bị phạt hành chính bao nhiêu?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_35"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_35",
+            "BLHS_100_2015_QH13::dieu_265",
+            "BLHS_100_2015_QH13::dieu_266",
+            "ND_168_2024::dieu_12",
+            "BLHS_100_2015_QH13::dieu_263"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt14",
+          "question": "Chủ xe giao xe cho người không có bằng lái thì có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_32"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_13",
+            "ND_168_2024::dieu_17",
+            "BLHS_100_2015_QH13::dieu_270",
+            "BLHS_100_2015_QH13::dieu_264",
+            "ND_168_2024::dieu_20"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.07692307692307693,
+          "first_rank": 13.0
+        },
+        {
+          "id": "gt15",
+          "question": "Thời hiệu xử phạt vi phạm hành chính về giao thông đường bộ là bao lâu?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_4"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_4",
+            "BLHS_100_2015_QH13::dieu_260",
+            "ND_168_2024::dieu_12",
+            "BLHS_100_2015_QH13::dieu_261",
+            "ND_168_2024::dieu_3"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt16",
+          "question": "Khi nào bị tạm giữ xe máy khi vi phạm giao thông?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_48"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_16",
+            "ND_168_2024::dieu_6",
+            "ND_238_2026::dieu_10",
+            "ND_336_2025::dieu_24"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt17",
+          "question": "Điểm giấy phép lái xe được phục hồi như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_51",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_51",
+            "TT_105_2026_TT_BCA::dieu_5",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58",
+            "ND_168_2024::dieu_49",
+            "TT_105_2026_TT_BCA::preamble"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt18",
+          "question": "Bằng lái xe có bao nhiêu điểm và bị trừ điểm ra sao?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58",
+            "ND_168_2024::dieu_50"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_7",
+            "ND_168_2024::dieu_14",
+            "ND_168_2024::dieu_30",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58",
+            "ND_168_2024::dieu_13"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "gt19",
+          "question": "Giấy phép lái xe hạng A1 được cấp cho người lái loại xe nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_60",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_42",
+            "ND_168_2024::dieu_5",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_25"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt20",
+          "question": "Bằng B lái được xe gì?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_34",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_56",
+            "ND_151_2024::dieu_18",
+            "TT_17_2026_TT_BXD::dieu_5"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "gt21",
+          "question": "Mấy tuổi thì được lái xe máy?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59",
+            "ND_238_2026::dieu_6",
+            "ND_168_2024::dieu_18",
+            "ND_168_2024::dieu_16",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt22",
+          "question": "Pháp luật nghiêm cấm những hành vi nào khi tham gia giao thông đường bộ?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_9"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_260",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_56",
+            "ND_168_2024::dieu_12",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_9",
+            "BLHS_100_2015_QH13::dieu_261"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "gt23",
+          "question": "Đi xe máy được chở tối đa mấy người?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_31",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_28",
+            "ND_151_2024::dieu_32",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_10"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt24",
+          "question": "Quy định về dừng xe, đỗ xe trên đường bộ như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_18"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_18",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_10",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_12",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_30",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_44"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt25",
+          "question": "Xe cứu thương, xe cứu hỏa được ưu tiên đi trước như thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_27"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_27",
+            "ND_168_2024::dieu_30",
+            "ND_151_2024::dieu_18",
+            "ND_151_2024::dieu_17",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_54"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt26",
+          "question": "Gây tai nạn giao thông thì người lái xe có trách nhiệm gì?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_82",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_81",
+            "TT_73_2024_TT_BCA::dieu_19",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt27",
+          "question": "Biển số xe có thể đấu giá được không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_37"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_37",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_38",
+            "ND_168_2024::dieu_31",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_36",
+            "ND_151_2024::dieu_18"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt28",
+          "question": "Cảnh sát giao thông được dừng xe để kiểm tra trong những trường hợp nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_66",
+            "TT_73_2024_TT_BCA::dieu_12"
+          ],
+          "top5": [
+            "TT_73_2024_TT_BCA::dieu_12",
+            "TT_73_2024_TT_BCA::dieu_13",
+            "TT_73_2024_TT_BCA::dieu_14",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_66",
+            "TT_73_2024_TT_BCA::dieu_6"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 0.5,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt29",
+          "question": "Luật Trật tự, an toàn giao thông đường bộ có hiệu lực thi hành từ ngày nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_88"
+          ],
+          "top5": [
+            "TT_105_2026_TT_BCA::dieu_6",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_88",
+            "ND_336_2025::dieu_26",
+            "ND_151_2024::dieu_2",
+            "ND_168_2024::dieu_53"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "gt30",
+          "question": "Nghị định 238/2026/NĐ-CP có hiệu lực thi hành từ ngày nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_238_2026::dieu_20"
+          ],
+          "top5": [
+            "ND_336_2025::dieu_26",
+            "ND_168_2024::dieu_53",
+            "BLDS_91_2015_QH13::dieu_689",
+            "ND_241_2026::dieu_26",
+            "LUAT_12_2017_QH14::dieu_3"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.16666666666666666,
+          "first_rank": 6.0
+        },
+        {
+          "id": "gt31",
+          "question": "Chở trẻ em dưới 10 tuổi ngồi ghế trước ô tô có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_238_2026::dieu_2",
+            "ND_168_2024::dieu_6"
+          ],
+          "top5": [
+            "ND_238_2026::dieu_2",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_10",
+            "ND_168_2024::dieu_17",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_46",
+            "ND_168_2024::dieu_20"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 0.5,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "hit@10": 1.0,
+          "recall@10": 0.5,
+          "hit@20": 1.0,
+          "recall@20": 0.5,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt32",
+          "question": "Hành lang an toàn đường bộ được quy định như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_165_2024::dieu_11"
+          ],
+          "top5": [
+            "ND_165_2024::dieu_11",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_2",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_11",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_3",
+            "ND_165_2024::annex_165-pl1_62"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt33",
+          "question": "Học sinh được hướng dẫn kỹ năng lái xe gắn máy an toàn như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_151_2024::dieu_5"
+          ],
+          "top5": [
+            "ND_151_2024::dieu_5",
+            "ND_151_2024::dieu_6",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_35",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_34",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_46"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds01",
+          "question": "Bao nhiêu tuổi thì được coi là người thành niên?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_20"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_20",
+            "BLDS_91_2015_QH13::dieu_21",
+            "BLDS_91_2015_QH13::dieu_625",
+            "BLTTHS_101_2015_QH13::dieu_423",
+            "BLTTHS_101_2015_QH13::dieu_415"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds02",
+          "question": "Cho vay tiền thì lãi suất tối đa được phép là bao nhiêu?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_468"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_201",
+            "BLDS_91_2015_QH13::dieu_468",
+            "BLHS_100_2015_QH13::dieu_81",
+            "BLHS_100_2015_QH13::dieu_206",
+            "BLHS_100_2015_QH13::dieu_291"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "ds03",
+          "question": "Đặt cọc mua nhà rồi bên bán không bán nữa thì xử lý thế nào?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_328"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_328",
+            "BLDS_91_2015_QH13::dieu_452",
+            "BLDS_91_2015_QH13::dieu_453",
+            "BLDS_91_2015_QH13::dieu_440",
+            "BLTTDS_92_2015_QH13::dieu_444"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds04",
+          "question": "Bố mẹ mất không để lại di chúc thì tài sản chia cho ai?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_651",
+            "BLDS_91_2015_QH13::dieu_650"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_654",
+            "BLDS_91_2015_QH13::dieu_612",
+            "BLDS_91_2015_QH13::dieu_645",
+            "BLDS_91_2015_QH13::dieu_72",
+            "BLDS_91_2015_QH13::dieu_69"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "ds05",
+          "question": "Di chúc miệng có hợp pháp không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_629",
+            "BLDS_91_2015_QH13::dieu_630"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_630",
+            "BLDS_91_2015_QH13::dieu_627",
+            "BLDS_91_2015_QH13::dieu_629",
+            "BLDS_91_2015_QH13::dieu_635",
+            "BLDS_91_2015_QH13::dieu_624"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds06",
+          "question": "Một di chúc hợp pháp cần những điều kiện gì?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_630"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_630",
+            "BLDS_91_2015_QH13::dieu_635",
+            "BLDS_91_2015_QH13::dieu_650",
+            "BLDS_91_2015_QH13::dieu_648",
+            "BLDS_91_2015_QH13::dieu_681"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds07",
+          "question": "Thời hiệu yêu cầu chia di sản thừa kế là bao lâu?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_623"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_623",
+            "BLDS_91_2015_QH13::dieu_661",
+            "BLDS_91_2015_QH13::dieu_660",
+            "BLDS_91_2015_QH13::dieu_659",
+            "BLDS_91_2015_QH13::dieu_655"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds08",
+          "question": "Con chưa thành niên có được hưởng thừa kế dù di chúc không cho không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_644"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_637",
+            "BLDS_91_2015_QH13::dieu_655",
+            "BLDS_91_2015_QH13::dieu_644",
+            "BLDS_91_2015_QH13::dieu_652",
+            "BLDS_91_2015_QH13::dieu_619"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "ds09",
+          "question": "Chó nhà tôi cắn người khác thì tôi có phải bồi thường không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_603"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_603",
+            "BLDS_91_2015_QH13::dieu_360",
+            "BLDS_91_2015_QH13::dieu_598",
+            "BLDS_91_2015_QH13::dieu_596",
+            "BLDS_91_2015_QH13::dieu_606"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds10",
+          "question": "Xe máy gây tai nạn thì chủ xe có phải bồi thường không, dù không có lỗi?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_601"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_360",
+            "BLDS_91_2015_QH13::dieu_528",
+            "BLDS_91_2015_QH13::dieu_585",
+            "BLDS_91_2015_QH13::dieu_363",
+            "BLDS_91_2015_QH13::dieu_598"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.0625,
+          "first_rank": 16.0
+        },
+        {
+          "id": "ds11",
+          "question": "Căn cứ phát sinh trách nhiệm bồi thường thiệt hại ngoài hợp đồng là gì?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_584"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_360",
+            "BLDS_91_2015_QH13::dieu_598",
+            "BLDS_91_2015_QH13::dieu_585",
+            "BLDS_91_2015_QH13::dieu_584",
+            "BLDS_91_2015_QH13::dieu_587"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "ds12",
+          "question": "Vay tiền đến hạn mà không trả thì phải chịu lãi thế nào?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_466"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_466",
+            "BLDS_91_2015_QH13::dieu_357",
+            "BLDS_91_2015_QH13::dieu_470",
+            "BLDS_91_2015_QH13::dieu_469",
+            "BLDS_91_2015_QH13::dieu_468"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds13",
+          "question": "Ai có thể làm người giám hộ đương nhiên cho trẻ chưa thành niên?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_52"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_52",
+            "BLDS_91_2015_QH13::dieu_58",
+            "BLDS_91_2015_QH13::dieu_47",
+            "BLDS_91_2015_QH13::dieu_46",
+            "BLDS_91_2015_QH13::dieu_54"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds14",
+          "question": "Tặng cho nhà đất có cần công chứng không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_459"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_637",
+            "BLDS_91_2015_QH13::dieu_459",
+            "BLDS_91_2015_QH13::dieu_633",
+            "BLDS_91_2015_QH13::dieu_133",
+            "BLDS_91_2015_QH13::dieu_646"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "ds15",
+          "question": "Hợp đồng có thể thỏa thuận phạt vi phạm tối đa bao nhiêu?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_418"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_418",
+            "BLTTHS_101_2015_QH13::dieu_3",
+            "BLHS_100_2015_QH13::dieu_371",
+            "BLHS_100_2015_QH13::dieu_58",
+            "BLHS_100_2015_QH13::dieu_255"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds16",
+          "question": "Muốn kiện ra tòa thì đơn khởi kiện cần những nội dung gì?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_189"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_189",
+            "BLTTDS_92_2015_QH13::dieu_190",
+            "BLTTDS_92_2015_QH13::dieu_503",
+            "BLTTDS_92_2015_QH13::dieu_272",
+            "BLTTDS_92_2015_QH13::dieu_186"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds17",
+          "question": "Thời hạn kháng cáo bản án dân sự sơ thẩm là bao nhiêu ngày?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_273"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_273",
+            "BLTTHS_101_2015_QH13::dieu_333",
+            "BLTTDS_92_2015_QH13::dieu_322",
+            "BLTTHS_101_2015_QH13::dieu_337",
+            "BLTTDS_92_2015_QH13::dieu_442"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds18",
+          "question": "Những vụ án dân sự nào không được hòa giải?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_206"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_207",
+            "BLTTDS_92_2015_QH13::dieu_206",
+            "BLTTHS_101_2015_QH13::dieu_30",
+            "BLTTDS_92_2015_QH13::dieu_45",
+            "BLTTDS_92_2015_QH13::dieu_4"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "ds19",
+          "question": "Ai phải chịu án phí sơ thẩm trong vụ án dân sự?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_147"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_147",
+            "BLTTDS_92_2015_QH13::dieu_148",
+            "BLTTDS_92_2015_QH13::dieu_36",
+            "BLTTHS_101_2015_QH13::dieu_463",
+            "BLTTDS_92_2015_QH13::dieu_278"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs01",
+          "question": "Bao nhiêu tuổi thì phải chịu trách nhiệm hình sự?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_12"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_12",
+            "BLHS_100_2015_QH13::dieu_90",
+            "BLTTHS_101_2015_QH13::dieu_427",
+            "BLHS_100_2015_QH13::dieu_368",
+            "BLTTHS_101_2015_QH13::dieu_426"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs02",
+          "question": "Ăn trộm tài sản bao nhiêu tiền thì bị đi tù?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_173"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_173",
+            "BLHS_100_2015_QH13::dieu_353",
+            "BLHS_100_2015_QH13::dieu_171",
+            "BLHS_100_2015_QH13::dieu_323",
+            "BLHS_100_2015_QH13::dieu_180"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs03",
+          "question": "Lừa đảo chiếm đoạt tài sản bị phạt tù bao nhiêu năm?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_174"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_174",
+            "BLHS_100_2015_QH13::dieu_169",
+            "BLHS_100_2015_QH13::dieu_353",
+            "BLHS_100_2015_QH13::dieu_172",
+            "BLHS_100_2015_QH13::dieu_170"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs04",
+          "question": "Giật điện thoại của người đi đường bị tội gì?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_171"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_127",
+            "BLHS_100_2015_QH13::dieu_120",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_69",
+            "BLHS_100_2015_QH13::dieu_109",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_68"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "hs05",
+          "question": "Đánh người gây thương tích 11% có bị đi tù không?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_134"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_137",
+            "BLHS_100_2015_QH13::dieu_373",
+            "BLHS_100_2015_QH13::dieu_138",
+            "BLHS_100_2015_QH13::dieu_134",
+            "BLHS_100_2015_QH13::dieu_139"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "hs06",
+          "question": "Gây tai nạn giao thông làm chết người thì bị xử lý hình sự thế nào?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_260"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_127",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_83",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_81",
+            "BLHS_100_2015_QH13::dieu_278",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.058823529411764705,
+          "first_rank": 17.0
+        },
+        {
+          "id": "hs07",
+          "question": "Đánh bạc bao nhiêu tiền thì bị truy cứu trách nhiệm hình sự?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_321"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_321",
+            "BLHS_100_2015_QH13::dieu_322",
+            "BLHS_100_2015_QH13::dieu_353",
+            "BLHS_100_2015_QH13::dieu_354",
+            "BLHS_100_2015_QH13::dieu_355"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs08",
+          "question": "Tự vệ khi bị tấn công có phạm tội không?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_22"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_164",
+            "BLHS_100_2015_QH13::dieu_167",
+            "BLHS_100_2015_QH13::dieu_47",
+            "TT_73_2024_TT_BCA::dieu_24",
+            "BLHS_100_2015_QH13::dieu_319"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "hs09",
+          "question": "Điều kiện để được hưởng án treo là gì?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_65"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_65",
+            "BLHS_100_2015_QH13::dieu_42",
+            "BLTTDS_92_2015_QH13::dieu_206",
+            "BLHS_100_2015_QH13::dieu_386",
+            "BLTTHS_101_2015_QH13::dieu_456"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs10",
+          "question": "Sau khi chấp hành xong án bao lâu thì được xóa án tích?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_70"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_369",
+            "BLHS_100_2015_QH13::dieu_89",
+            "BLHS_100_2015_QH13::dieu_72",
+            "BLHS_100_2015_QH13::dieu_70",
+            "BLDS_91_2015_QH13::dieu_68"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "hs11",
+          "question": "Thời hiệu truy cứu trách nhiệm hình sự là bao lâu?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_27"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_27",
+            "BLHS_100_2015_QH13::dieu_368",
+            "BLHS_100_2015_QH13::dieu_28",
+            "BLHS_100_2015_QH13::dieu_369",
+            "BLTTHS_101_2015_QH13::dieu_240"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs12",
+          "question": "Tàng trữ ma túy bị phạt tù bao nhiêu năm?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_249"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_256",
+            "BLHS_100_2015_QH13::dieu_255",
+            "BLHS_100_2015_QH13::dieu_249",
+            "BLHS_100_2015_QH13::dieu_42",
+            "BLHS_100_2015_QH13::dieu_257"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "hs13",
+          "question": "Thấy người bị nạn mà không cứu thì có phạm tội không?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_132"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_132",
+            "BLHS_100_2015_QH13::dieu_11",
+            "BLHS_100_2015_QH13::dieu_19",
+            "BLHS_100_2015_QH13::dieu_369",
+            "BLHS_100_2015_QH13::dieu_21"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs14",
+          "question": "Cán bộ nhận hối lộ bị xử lý hình sự thế nào?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_354"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_354",
+            "BLHS_100_2015_QH13::dieu_364",
+            "BLHS_100_2015_QH13::dieu_365",
+            "BLTTHS_101_2015_QH13::dieu_127",
+            "TT_73_2024_TT_BCA::dieu_15"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs15",
+          "question": "Công an được tạm giữ người tối đa bao nhiêu ngày?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_118"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_459",
+            "BLTTHS_101_2015_QH13::dieu_114",
+            "BLTTHS_101_2015_QH13::dieu_74",
+            "BLTTHS_101_2015_QH13::dieu_118",
+            "BLTTHS_101_2015_QH13::dieu_116"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "hs16",
+          "question": "Thời hạn tạm giam để điều tra là bao lâu?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_173"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_459",
+            "BLTTHS_101_2015_QH13::dieu_173",
+            "BLTTHS_101_2015_QH13::dieu_118",
+            "BLHS_100_2015_QH13::dieu_38",
+            "BLTTHS_101_2015_QH13::dieu_460"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs17",
+          "question": "Thời hạn kháng cáo bản án hình sự sơ thẩm là bao nhiêu ngày?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_333"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_273",
+            "BLTTHS_101_2015_QH13::dieu_333",
+            "BLTTDS_92_2015_QH13::dieu_322",
+            "BLTTHS_101_2015_QH13::dieu_337",
+            "BLTTDS_92_2015_QH13::dieu_280"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs18",
+          "question": "Bắt người phạm tội quả tang được thực hiện như thế nào?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_111"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_111",
+            "BLTTHS_101_2015_QH13::dieu_112",
+            "BLTTHS_101_2015_QH13::dieu_10",
+            "BLHS_100_2015_QH13::dieu_157",
+            "BLTTHS_101_2015_QH13::dieu_58"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        }
+      ]
+    },
+    "bm25": {
+      "overall": {
+        "recall@1": 0.4286,
+        "recall@3": 0.6143,
+        "recall@5": 0.7214,
+        "recall@10": 0.8286,
+        "recall@20": 0.9,
+        "hit@1": 0.4571,
+        "hit@3": 0.6286,
+        "hit@5": 0.7286,
+        "hit@10": 0.8429,
+        "hit@20": 0.9143,
+        "mrr": 0.5767,
+        "n": 70
+      },
+      "groups": {
+        "domain=dan_su": {
+          "recall@1": 0.4474,
+          "recall@3": 0.6053,
+          "recall@5": 0.7368,
+          "recall@10": 0.8421,
+          "recall@20": 0.9474,
+          "hit@1": 0.4737,
+          "hit@3": 0.6316,
+          "hit@5": 0.7368,
+          "hit@10": 0.8421,
+          "hit@20": 0.9474,
+          "mrr": 0.5906,
+          "n": 19
+        },
+        "domain=giao_thong": {
+          "recall@1": 0.4394,
+          "recall@3": 0.6212,
+          "recall@5": 0.6515,
+          "recall@10": 0.7576,
+          "recall@20": 0.8182,
+          "hit@1": 0.4848,
+          "hit@3": 0.6364,
+          "hit@5": 0.6667,
+          "hit@10": 0.7879,
+          "hit@20": 0.8485,
+          "mrr": 0.5825,
+          "n": 33
+        },
+        "domain=hinh_su": {
+          "recall@1": 0.3889,
+          "recall@3": 0.6111,
+          "recall@5": 0.8333,
+          "recall@10": 0.9444,
+          "recall@20": 1.0,
+          "hit@1": 0.3889,
+          "hit@3": 0.6111,
+          "hit@5": 0.8333,
+          "hit@10": 0.9444,
+          "hit@20": 1.0,
+          "mrr": 0.5513,
+          "n": 18
+        },
+        "style=colloquial": {
+          "recall@1": 0.2907,
+          "recall@3": 0.4419,
+          "recall@5": 0.5698,
+          "recall@10": 0.7209,
+          "recall@20": 0.8372,
+          "hit@1": 0.3256,
+          "hit@3": 0.4651,
+          "hit@5": 0.5814,
+          "hit@10": 0.7442,
+          "hit@20": 0.8605,
+          "mrr": 0.4432,
+          "n": 43
+        },
+        "style=formal": {
+          "recall@1": 0.6481,
+          "recall@3": 0.8889,
+          "recall@5": 0.963,
+          "recall@10": 1.0,
+          "recall@20": 1.0,
+          "hit@1": 0.6667,
+          "hit@3": 0.8889,
+          "hit@5": 0.963,
+          "hit@10": 1.0,
+          "hit@20": 1.0,
+          "mrr": 0.7892,
+          "n": 27
+        }
+      },
+      "seconds": 0.8,
+      "cases": [
+        {
+          "id": "gt01",
+          "question": "Vượt đèn đỏ xe máy bị phạt bao nhiêu?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_36",
+            "ND_151_2024::dieu_19",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_47",
+            "ND_168_2024::dieu_9",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_13"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt02",
+          "question": "Ô tô vượt đèn đỏ thì bị phạt thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_6"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_49",
+            "ND_168_2024::dieu_36",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_47",
+            "BLHS_100_2015_QH13::dieu_23",
+            "ND_151_2024::dieu_17"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.0625,
+          "first_rank": 16.0
+        },
+        {
+          "id": "gt03",
+          "question": "Tôi vượt đèn đỏ mất bao nhiêu tiền?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_6",
+            "ND_168_2024::dieu_7",
+            "ND_168_2024::dieu_9"
+          ],
+          "top5": [
+            "ND_151_2024::dieu_19",
+            "ND_168_2024::dieu_36",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_47",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_30",
+            "ND_151_2024::dieu_17"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt04",
+          "question": "Đi xe máy không đội mũ bảo hiểm bị phạt bao nhiêu tiền?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "ND_151_2024::dieu_4",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_31",
+            "ND_168_2024::dieu_7",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "gt05",
+          "question": "Uống bia rồi chạy xe máy bị phạt thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_34",
+            "ND_168_2024::dieu_9",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_25",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_13"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.125,
+          "first_rank": 8.0
+        },
+        {
+          "id": "gt06",
+          "question": "Lái ô tô mà trong hơi thở có nồng độ cồn bị xử phạt ra sao?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_6"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "BLHS_100_2015_QH13::dieu_271",
+            "BLHS_100_2015_QH13::dieu_270",
+            "BLHS_100_2015_QH13::dieu_264",
+            "BLHS_100_2015_QH13::dieu_263"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.14285714285714285,
+          "first_rank": 7.0
+        },
+        {
+          "id": "gt07",
+          "question": "Vừa lái xe máy vừa nghe điện thoại có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_418",
+            "ND_151_2024::dieu_11",
+            "BLTTHS_101_2015_QH13::dieu_273",
+            "ND_168_2024::dieu_18",
+            "ND_168_2024::dieu_5"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt08",
+          "question": "Đi xe đạp vượt đèn đỏ có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_9"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_31",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_7",
+            "ND_168_2024::dieu_36",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_4"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt09",
+          "question": "Người đi bộ vi phạm quy tắc giao thông bị xử phạt như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_10"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_10",
+            "ND_168_2024::dieu_11",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_10",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_23",
+            "ND_168_2024::dieu_9"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt10",
+          "question": "Xe máy bị vỡ gương, hỏng đèn thì có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_14"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_14",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_25",
+            "ND_168_2024::dieu_13",
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_36"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt11",
+          "question": "Không mang bằng lái khi đi xe máy bị phạt bao nhiêu?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_18"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "ND_168_2024::dieu_33",
+            "ND_168_2024::dieu_18",
+            "ND_168_2024::dieu_9",
+            "ND_151_2024::dieu_5"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "gt12",
+          "question": "Học sinh 15 tuổi lái xe máy thì bị xử lý thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_18"
+          ],
+          "top5": [
+            "ND_151_2024::dieu_5",
+            "ND_151_2024::dieu_6",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_46",
+            "ND_168_2024::dieu_27",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_56"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.058823529411764705,
+          "first_rank": 17.0
+        },
+        {
+          "id": "gt13",
+          "question": "Tham gia đua xe trái phép bị phạt hành chính bao nhiêu?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_35"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_35",
+            "BLHS_100_2015_QH13::dieu_265",
+            "BLHS_100_2015_QH13::dieu_266",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_9",
+            "ND_168_2024::dieu_34"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt14",
+          "question": "Chủ xe giao xe cho người không có bằng lái thì có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_32"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_50",
+            "ND_168_2024::dieu_19",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_34",
+            "ND_168_2024::dieu_18",
+            "ND_168_2024::dieu_20"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt15",
+          "question": "Thời hiệu xử phạt vi phạm hành chính về giao thông đường bộ là bao lâu?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_4"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_4",
+            "ND_168_2024::dieu_54",
+            "ND_336_2025::dieu_4",
+            "ND_336_2025::dieu_27",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt16",
+          "question": "Khi nào bị tạm giữ xe máy khi vi phạm giao thông?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_48"
+          ],
+          "top5": [
+            "TT_73_2024_TT_BCA::dieu_17",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_8",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_42",
+            "ND_168_2024::dieu_9",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_62"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt17",
+          "question": "Điểm giấy phép lái xe được phục hồi như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_51",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_51",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58",
+            "ND_168_2024::dieu_49",
+            "TT_105_2026_TT_BCA::dieu_4",
+            "TT_105_2026_TT_BCA::dieu_1"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt18",
+          "question": "Bằng lái xe có bao nhiêu điểm và bị trừ điểm ra sao?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58",
+            "ND_168_2024::dieu_50"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58",
+            "ND_168_2024::dieu_50",
+            "TT_17_2026_TT_BXD::dieu_6",
+            "ND_168_2024::dieu_34",
+            "ND_168_2024::dieu_13"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt19",
+          "question": "Giấy phép lái xe hạng A1 được cấp cho người lái loại xe nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_89",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_60",
+            "TT_105_2026_TT_BCA::dieu_1"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt20",
+          "question": "Bằng B lái được xe gì?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_51",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_60",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_56",
+            "TT_105_2026_TT_BCA::dieu_1"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.125,
+          "first_rank": 8.0
+        },
+        {
+          "id": "gt21",
+          "question": "Mấy tuổi thì được lái xe máy?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_56",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_89",
+            "ND_168_2024::dieu_18"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt22",
+          "question": "Pháp luật nghiêm cấm những hành vi nào khi tham gia giao thông đường bộ?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_9"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_9",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_72",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_22",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_65",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_83"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt23",
+          "question": "Đi xe máy được chở tối đa mấy người?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_31",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_34",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_25"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "gt24",
+          "question": "Quy định về dừng xe, đỗ xe trên đường bộ như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_18"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_18",
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_6",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_26",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_25"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt25",
+          "question": "Xe cứu thương, xe cứu hỏa được ưu tiên đi trước như thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_27"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_27",
+            "ND_151_2024::dieu_18",
+            "ND_151_2024::dieu_19",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_9",
+            "ND_151_2024::dieu_20"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt26",
+          "question": "Gây tai nạn giao thông thì người lái xe có trách nhiệm gì?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_83",
+            "ND_151_2024::dieu_11",
+            "ND_151_2024::dieu_10",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_9"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt27",
+          "question": "Biển số xe có thể đấu giá được không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_37"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_38",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_37",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_39",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_89",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_36"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "gt28",
+          "question": "Cảnh sát giao thông được dừng xe để kiểm tra trong những trường hợp nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_66",
+            "TT_73_2024_TT_BCA::dieu_12"
+          ],
+          "top5": [
+            "TT_73_2024_TT_BCA::dieu_13",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_18",
+            "TT_73_2024_TT_BCA::dieu_14",
+            "TT_73_2024_TT_BCA::dieu_30",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_26"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 0.5,
+          "hit@20": 1.0,
+          "recall@20": 0.5,
+          "mrr": 0.125,
+          "first_rank": 8.0
+        },
+        {
+          "id": "gt29",
+          "question": "Luật Trật tự, an toàn giao thông đường bộ có hiệu lực thi hành từ ngày nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_88"
+          ],
+          "top5": [
+            "ND_336_2025::dieu_26",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_88",
+            "TT_105_2026_TT_BCA::dieu_6",
+            "ND_168_2024::dieu_53",
+            "ND_168_2024::dieu_54"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "gt30",
+          "question": "Nghị định 238/2026/NĐ-CP có hiệu lực thi hành từ ngày nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_238_2026::dieu_20"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_53",
+            "ND_238_2026::dieu_20",
+            "ND_241_2026::dieu_26",
+            "ND_336_2025::dieu_26",
+            "ND_238_2026::dieu_18"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "gt31",
+          "question": "Chở trẻ em dưới 10 tuổi ngồi ghế trước ô tô có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_238_2026::dieu_2",
+            "ND_168_2024::dieu_6"
+          ],
+          "top5": [
+            "ND_238_2026::dieu_2",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_10",
+            "ND_168_2024::dieu_27",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_46",
+            "ND_168_2024::dieu_26"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 0.5,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "hit@10": 1.0,
+          "recall@10": 0.5,
+          "hit@20": 1.0,
+          "recall@20": 0.5,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt32",
+          "question": "Hành lang an toàn đường bộ được quy định như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_165_2024::dieu_11"
+          ],
+          "top5": [
+            "ND_165_2024::dieu_11",
+            "ND_241_2026::dieu_6",
+            "ND_241_2026::dieu_9",
+            "ND_165_2024::dieu_20",
+            "ND_165_2024::dieu_69"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt33",
+          "question": "Học sinh được hướng dẫn kỹ năng lái xe gắn máy an toàn như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_151_2024::dieu_5"
+          ],
+          "top5": [
+            "ND_151_2024::dieu_5",
+            "ND_151_2024::dieu_6",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_40",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_29",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_30"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds01",
+          "question": "Bao nhiêu tuổi thì được coi là người thành niên?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_20"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_593",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_40",
+            "BLTTDS_92_2015_QH13::dieu_115",
+            "BLDS_91_2015_QH13::dieu_21",
+            "BLDS_91_2015_QH13::dieu_586"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.1111111111111111,
+          "first_rank": 9.0
+        },
+        {
+          "id": "ds02",
+          "question": "Cho vay tiền thì lãi suất tối đa được phép là bao nhiêu?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_468"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_466",
+            "BLDS_91_2015_QH13::dieu_468",
+            "BLHS_100_2015_QH13::dieu_201",
+            "BLDS_91_2015_QH13::dieu_471",
+            "BLDS_91_2015_QH13::dieu_345"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "ds03",
+          "question": "Đặt cọc mua nhà rồi bên bán không bán nữa thì xử lý thế nào?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_328"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_434",
+            "BLDS_91_2015_QH13::dieu_452",
+            "BLDS_91_2015_QH13::dieu_432",
+            "BLDS_91_2015_QH13::dieu_304",
+            "BLDS_91_2015_QH13::dieu_443"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.05,
+          "first_rank": 20.0
+        },
+        {
+          "id": "ds04",
+          "question": "Bố mẹ mất không để lại di chúc thì tài sản chia cho ai?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_651",
+            "BLDS_91_2015_QH13::dieu_650"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_642",
+            "BLDS_91_2015_QH13::dieu_659",
+            "BLDS_91_2015_QH13::dieu_645",
+            "BLDS_91_2015_QH13::dieu_615",
+            "BLDS_91_2015_QH13::dieu_647"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "ds05",
+          "question": "Di chúc miệng có hợp pháp không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_629",
+            "BLDS_91_2015_QH13::dieu_630"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_629",
+            "BLDS_91_2015_QH13::dieu_627",
+            "BLDS_91_2015_QH13::dieu_650",
+            "BLDS_91_2015_QH13::dieu_630",
+            "BLDS_91_2015_QH13::dieu_648"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 0.5,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds06",
+          "question": "Một di chúc hợp pháp cần những điều kiện gì?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_630"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_630",
+            "BLDS_91_2015_QH13::dieu_650",
+            "BLDS_91_2015_QH13::dieu_648",
+            "BLDS_91_2015_QH13::dieu_640",
+            "BLDS_91_2015_QH13::dieu_645"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds07",
+          "question": "Thời hiệu yêu cầu chia di sản thừa kế là bao lâu?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_623"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_623",
+            "BLDS_91_2015_QH13::dieu_642",
+            "BLDS_91_2015_QH13::dieu_661",
+            "BLDS_91_2015_QH13::dieu_660",
+            "BLDS_91_2015_QH13::dieu_662"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds08",
+          "question": "Con chưa thành niên có được hưởng thừa kế dù di chúc không cho không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_644"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_644",
+            "BLDS_91_2015_QH13::dieu_650",
+            "BLDS_91_2015_QH13::dieu_643",
+            "BLDS_91_2015_QH13::dieu_637",
+            "BLDS_91_2015_QH13::dieu_648"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds09",
+          "question": "Chó nhà tôi cắn người khác thì tôi có phải bồi thường không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_603"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_585",
+            "BLDS_91_2015_QH13::dieu_586",
+            "BLDS_91_2015_QH13::dieu_607",
+            "BLHS_100_2015_QH13::dieu_187",
+            "BLDS_91_2015_QH13::dieu_606"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.14285714285714285,
+          "first_rank": 7.0
+        },
+        {
+          "id": "ds10",
+          "question": "Xe máy gây tai nạn thì chủ xe có phải bồi thường không, dù không có lỗi?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_601"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "BLDS_91_2015_QH13::dieu_603",
+            "BLDS_91_2015_QH13::dieu_585",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_20",
+            "BLDS_91_2015_QH13::dieu_586"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.08333333333333333,
+          "first_rank": 12.0
+        },
+        {
+          "id": "ds11",
+          "question": "Căn cứ phát sinh trách nhiệm bồi thường thiệt hại ngoài hợp đồng là gì?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_584"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_584",
+            "BLDS_91_2015_QH13::dieu_427",
+            "BLDS_91_2015_QH13::dieu_687",
+            "BLDS_91_2015_QH13::dieu_419",
+            "BLDS_91_2015_QH13::dieu_428"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds12",
+          "question": "Vay tiền đến hạn mà không trả thì phải chịu lãi thế nào?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_466"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_466",
+            "BLDS_91_2015_QH13::dieu_469",
+            "BLDS_91_2015_QH13::dieu_470",
+            "BLDS_91_2015_QH13::dieu_468",
+            "BLHS_100_2015_QH13::dieu_201"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds13",
+          "question": "Ai có thể làm người giám hộ đương nhiên cho trẻ chưa thành niên?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_52"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_52",
+            "BLDS_91_2015_QH13::dieu_53",
+            "BLDS_91_2015_QH13::dieu_54",
+            "BLDS_91_2015_QH13::dieu_46",
+            "BLDS_91_2015_QH13::dieu_47"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds14",
+          "question": "Tặng cho nhà đất có cần công chứng không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_459"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_459",
+            "BLDS_91_2015_QH13::dieu_462",
+            "BLDS_91_2015_QH13::dieu_461",
+            "BLDS_91_2015_QH13::dieu_175",
+            "BLTTDS_92_2015_QH13::dieu_254"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds15",
+          "question": "Hợp đồng có thể thỏa thuận phạt vi phạm tối đa bao nhiêu?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_418"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_336",
+            "BLHS_100_2015_QH13::dieu_217",
+            "BLDS_91_2015_QH13::dieu_260",
+            "BLDS_91_2015_QH13::dieu_418",
+            "BLDS_91_2015_QH13::dieu_590"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "ds16",
+          "question": "Muốn kiện ra tòa thì đơn khởi kiện cần những nội dung gì?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_189"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_193",
+            "BLTTDS_92_2015_QH13::dieu_189",
+            "BLTTDS_92_2015_QH13::dieu_218",
+            "BLTTDS_92_2015_QH13::dieu_473",
+            "BLTTDS_92_2015_QH13::dieu_196"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "ds17",
+          "question": "Thời hạn kháng cáo bản án dân sự sơ thẩm là bao nhiêu ngày?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_273"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_333",
+            "BLTTDS_92_2015_QH13::dieu_373",
+            "BLTTDS_92_2015_QH13::dieu_273",
+            "BLTTDS_92_2015_QH13::dieu_413",
+            "BLTTDS_92_2015_QH13::dieu_322"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "ds18",
+          "question": "Những vụ án dân sự nào không được hòa giải?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_206"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_207",
+            "BLTTDS_92_2015_QH13::dieu_205",
+            "BLTTDS_92_2015_QH13::dieu_212",
+            "BLTTDS_92_2015_QH13::dieu_206",
+            "BLTTDS_92_2015_QH13::dieu_417"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "ds19",
+          "question": "Ai phải chịu án phí sơ thẩm trong vụ án dân sự?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_147"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_147",
+            "BLTTDS_92_2015_QH13::dieu_148",
+            "BLTTDS_92_2015_QH13::dieu_299",
+            "BLTTHS_101_2015_QH13::dieu_135",
+            "BLTTDS_92_2015_QH13::dieu_146"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs01",
+          "question": "Bao nhiêu tuổi thì phải chịu trách nhiệm hình sự?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_12"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_90",
+            "BLHS_100_2015_QH13::dieu_26",
+            "BLHS_100_2015_QH13::dieu_21",
+            "BLHS_100_2015_QH13::dieu_19",
+            "BLHS_100_2015_QH13::dieu_12"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.2,
+          "first_rank": 5.0
+        },
+        {
+          "id": "hs02",
+          "question": "Ăn trộm tài sản bao nhiêu tiền thì bị đi tù?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_173"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_173",
+            "BLHS_100_2015_QH13::dieu_195",
+            "BLDS_91_2015_QH13::dieu_285",
+            "BLHS_100_2015_QH13::dieu_389",
+            "BLHS_100_2015_QH13::dieu_223"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs03",
+          "question": "Lừa đảo chiếm đoạt tài sản bị phạt tù bao nhiêu năm?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_174"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_290",
+            "BLHS_100_2015_QH13::dieu_174",
+            "BLHS_100_2015_QH13::dieu_214",
+            "BLHS_100_2015_QH13::dieu_172",
+            "BLHS_100_2015_QH13::dieu_170"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs04",
+          "question": "Giật điện thoại của người đi đường bị tội gì?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_171"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_159",
+            "BLHS_100_2015_QH13::dieu_12",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_23",
+            "BLHS_100_2015_QH13::dieu_171",
+            "ND_168_2024::dieu_9"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "hs05",
+          "question": "Đánh người gây thương tích 11% có bị đi tù không?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_134"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_134",
+            "BLHS_100_2015_QH13::dieu_168",
+            "BLHS_100_2015_QH13::dieu_171",
+            "BLHS_100_2015_QH13::dieu_301",
+            "BLHS_100_2015_QH13::dieu_268"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs06",
+          "question": "Gây tai nạn giao thông làm chết người thì bị xử lý hình sự thế nào?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_260"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_83",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80",
+            "BLHS_100_2015_QH13::dieu_281",
+            "BLHS_100_2015_QH13::dieu_141",
+            "BLHS_100_2015_QH13::dieu_143"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.14285714285714285,
+          "first_rank": 7.0
+        },
+        {
+          "id": "hs07",
+          "question": "Đánh bạc bao nhiêu tiền thì bị truy cứu trách nhiệm hình sự?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_321"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_90",
+            "BLHS_100_2015_QH13::dieu_322",
+            "BLHS_100_2015_QH13::dieu_369",
+            "BLHS_100_2015_QH13::dieu_27",
+            "BLHS_100_2015_QH13::dieu_321"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.2,
+          "first_rank": 5.0
+        },
+        {
+          "id": "hs08",
+          "question": "Tự vệ khi bị tấn công có phạm tội không?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_22"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_168",
+            "BLHS_100_2015_QH13::dieu_285",
+            "BLHS_100_2015_QH13::dieu_333",
+            "BLHS_100_2015_QH13::dieu_51",
+            "BLHS_100_2015_QH13::dieu_137"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.07142857142857142,
+          "first_rank": 14.0
+        },
+        {
+          "id": "hs09",
+          "question": "Điều kiện để được hưởng án treo là gì?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_65"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_456",
+            "BLHS_100_2015_QH13::dieu_65",
+            "BLHS_100_2015_QH13::dieu_7",
+            "BLHS_100_2015_QH13::dieu_70",
+            "BLTTHS_101_2015_QH13::dieu_328"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs10",
+          "question": "Sau khi chấp hành xong án bao lâu thì được xóa án tích?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_70"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_71",
+            "BLHS_100_2015_QH13::dieu_73",
+            "BLHS_100_2015_QH13::dieu_70",
+            "BLHS_100_2015_QH13::dieu_89",
+            "BLHS_100_2015_QH13::dieu_107"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "hs11",
+          "question": "Thời hiệu truy cứu trách nhiệm hình sự là bao lâu?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_27"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_27",
+            "BLHS_100_2015_QH13::dieu_369",
+            "BLHS_100_2015_QH13::dieu_28",
+            "BLTTHS_101_2015_QH13::dieu_499",
+            "BLHS_100_2015_QH13::dieu_368"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs12",
+          "question": "Tàng trữ ma túy bị phạt tù bao nhiêu năm?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_249"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_389",
+            "BLHS_100_2015_QH13::dieu_259",
+            "BLHS_100_2015_QH13::dieu_254",
+            "BLHS_100_2015_QH13::dieu_249",
+            "BLHS_100_2015_QH13::dieu_388"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "hs13",
+          "question": "Thấy người bị nạn mà không cứu thì có phạm tội không?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_132"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_132",
+            "BLHS_100_2015_QH13::dieu_368",
+            "BLHS_100_2015_QH13::dieu_417",
+            "BLHS_100_2015_QH13::dieu_369",
+            "BLHS_100_2015_QH13::dieu_395"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs14",
+          "question": "Cán bộ nhận hối lộ bị xử lý hình sự thế nào?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_354"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_364",
+            "BLHS_100_2015_QH13::dieu_365",
+            "BLHS_100_2015_QH13::dieu_354",
+            "BLTTHS_101_2015_QH13::dieu_177",
+            "ND_165_2024::dieu_6"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "hs15",
+          "question": "Công an được tạm giữ người tối đa bao nhiêu ngày?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_118"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_38",
+            "BLTTHS_101_2015_QH13::dieu_474",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_34",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_38",
+            "BLTTHS_101_2015_QH13::dieu_475"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.14285714285714285,
+          "first_rank": 7.0
+        },
+        {
+          "id": "hs16",
+          "question": "Thời hạn tạm giam để điều tra là bao lâu?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_173"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_173",
+            "BLTTHS_101_2015_QH13::dieu_174",
+            "BLTTHS_101_2015_QH13::dieu_114",
+            "BLTTHS_101_2015_QH13::dieu_459",
+            "BLTTHS_101_2015_QH13::dieu_474"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs17",
+          "question": "Thời hạn kháng cáo bản án hình sự sơ thẩm là bao nhiêu ngày?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_333"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_333",
+            "BLTTDS_92_2015_QH13::dieu_273",
+            "BLTTDS_92_2015_QH13::dieu_322",
+            "BLTTDS_92_2015_QH13::dieu_275",
+            "BLTTDS_92_2015_QH13::dieu_276"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs18",
+          "question": "Bắt người phạm tội quả tang được thực hiện như thế nào?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_111"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_111",
+            "BLTTHS_101_2015_QH13::dieu_456",
+            "BLTTHS_101_2015_QH13::dieu_58",
+            "BLTTHS_101_2015_QH13::dieu_10",
+            "TT_73_2024_TT_BCA::dieu_14"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        }
+      ]
+    },
+    "hybrid": {
+      "overall": {
+        "recall@1": 0.5143,
+        "recall@3": 0.7571,
+        "recall@5": 0.8143,
+        "recall@10": 0.8786,
+        "recall@20": 0.8929,
+        "hit@1": 0.5429,
+        "hit@3": 0.7714,
+        "hit@5": 0.8286,
+        "hit@10": 0.8857,
+        "hit@20": 0.9,
+        "mrr": 0.6654,
+        "n": 70
+      },
+      "groups": {
+        "domain=dan_su": {
+          "recall@1": 0.6053,
+          "recall@3": 0.8421,
+          "recall@5": 0.8947,
+          "recall@10": 0.9474,
+          "recall@20": 0.9474,
+          "hit@1": 0.6316,
+          "hit@3": 0.8421,
+          "hit@5": 0.8947,
+          "hit@10": 0.9474,
+          "hit@20": 0.9474,
+          "mrr": 0.7561,
+          "n": 19
+        },
+        "domain=giao_thong": {
+          "recall@1": 0.4697,
+          "recall@3": 0.6667,
+          "recall@5": 0.7273,
+          "recall@10": 0.803,
+          "recall@20": 0.8333,
+          "hit@1": 0.5152,
+          "hit@3": 0.697,
+          "hit@5": 0.7576,
+          "hit@10": 0.8182,
+          "hit@20": 0.8485,
+          "mrr": 0.6031,
+          "n": 33
+        },
+        "domain=hinh_su": {
+          "recall@1": 0.5,
+          "recall@3": 0.8333,
+          "recall@5": 0.8889,
+          "recall@10": 0.9444,
+          "recall@20": 0.9444,
+          "hit@1": 0.5,
+          "hit@3": 0.8333,
+          "hit@5": 0.8889,
+          "hit@10": 0.9444,
+          "hit@20": 0.9444,
+          "mrr": 0.684,
+          "n": 18
+        },
+        "style=colloquial": {
+          "recall@1": 0.3837,
+          "recall@3": 0.6279,
+          "recall@5": 0.6977,
+          "recall@10": 0.8023,
+          "recall@20": 0.8256,
+          "hit@1": 0.4186,
+          "hit@3": 0.6512,
+          "hit@5": 0.7209,
+          "hit@10": 0.814,
+          "hit@20": 0.8372,
+          "mrr": 0.5464,
+          "n": 43
+        },
+        "style=formal": {
+          "recall@1": 0.7222,
+          "recall@3": 0.963,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "recall@20": 1.0,
+          "hit@1": 0.7407,
+          "hit@3": 0.963,
+          "hit@5": 1.0,
+          "hit@10": 1.0,
+          "hit@20": 1.0,
+          "mrr": 0.8549,
+          "n": 27
+        }
+      },
+      "seconds": 4.3,
+      "cases": [
+        {
+          "id": "gt01",
+          "question": "Vượt đèn đỏ xe máy bị phạt bao nhiêu?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_20",
+            "ND_168_2024::dieu_8",
+            "ND_151_2024::dieu_19",
+            "ND_168_2024::dieu_36"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt02",
+          "question": "Ô tô vượt đèn đỏ thì bị phạt thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_6"
+          ],
+          "top5": [
+            "ND_151_2024::dieu_17",
+            "ND_168_2024::dieu_20",
+            "ND_168_2024::dieu_6",
+            "BLHS_100_2015_QH13::dieu_265",
+            "ND_168_2024::dieu_21"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "gt03",
+          "question": "Tôi vượt đèn đỏ mất bao nhiêu tiền?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_6",
+            "ND_168_2024::dieu_7",
+            "ND_168_2024::dieu_9"
+          ],
+          "top5": [
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_13",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_6",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_16",
+            "BLHS_100_2015_QH13::dieu_271",
+            "ND_151_2024::dieu_19"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt04",
+          "question": "Đi xe máy không đội mũ bảo hiểm bị phạt bao nhiêu tiền?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_31",
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_33",
+            "ND_168_2024::dieu_9"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.1111111111111111,
+          "first_rank": 9.0
+        },
+        {
+          "id": "gt05",
+          "question": "Uống bia rồi chạy xe máy bị phạt thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_35",
+            "ND_168_2024::dieu_12",
+            "BLHS_100_2015_QH13::dieu_265"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.0625,
+          "first_rank": 16.0
+        },
+        {
+          "id": "gt06",
+          "question": "Lái ô tô mà trong hơi thở có nồng độ cồn bị xử phạt ra sao?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_6"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_8",
+            "ND_168_2024::dieu_6",
+            "ND_168_2024::dieu_30",
+            "ND_168_2024::dieu_18",
+            "ND_168_2024::dieu_17"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "gt07",
+          "question": "Vừa lái xe máy vừa nghe điện thoại có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_7"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_19",
+            "ND_168_2024::dieu_9",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_18",
+            "ND_168_2024::dieu_8",
+            "BLDS_91_2015_QH13::dieu_418"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt08",
+          "question": "Đi xe đạp vượt đèn đỏ có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_9"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_8",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_14",
+            "ND_168_2024::dieu_6",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_3"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt09",
+          "question": "Người đi bộ vi phạm quy tắc giao thông bị xử phạt như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_10"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_10",
+            "ND_168_2024::dieu_9",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_10",
+            "ND_168_2024::dieu_11",
+            "ND_168_2024::dieu_12"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt10",
+          "question": "Xe máy bị vỡ gương, hỏng đèn thì có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_14"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_13",
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_14",
+            "ND_168_2024::dieu_8",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_20"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "gt11",
+          "question": "Không mang bằng lái khi đi xe máy bị phạt bao nhiêu?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_18"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "ND_168_2024::dieu_19",
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_20",
+            "ND_168_2024::dieu_7"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.1111111111111111,
+          "first_rank": 9.0
+        },
+        {
+          "id": "gt12",
+          "question": "Học sinh 15 tuổi lái xe máy thì bị xử lý thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_18"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_46",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59",
+            "ND_168_2024::dieu_27",
+            "ND_168_2024::dieu_19",
+            "ND_168_2024::dieu_18"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.2,
+          "first_rank": 5.0
+        },
+        {
+          "id": "gt13",
+          "question": "Tham gia đua xe trái phép bị phạt hành chính bao nhiêu?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_35"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_35",
+            "BLHS_100_2015_QH13::dieu_265",
+            "BLHS_100_2015_QH13::dieu_266",
+            "ND_168_2024::dieu_12",
+            "ND_168_2024::dieu_31"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt14",
+          "question": "Chủ xe giao xe cho người không có bằng lái thì có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_32"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_20",
+            "ND_168_2024::dieu_19",
+            "ND_168_2024::dieu_28",
+            "ND_168_2024::dieu_13",
+            "ND_168_2024::dieu_50"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt15",
+          "question": "Thời hiệu xử phạt vi phạm hành chính về giao thông đường bộ là bao lâu?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_4"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_4",
+            "ND_336_2025::dieu_27",
+            "ND_168_2024::dieu_10",
+            "ND_168_2024::dieu_3",
+            "BLHS_100_2015_QH13::dieu_260"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt16",
+          "question": "Khi nào bị tạm giữ xe máy khi vi phạm giao thông?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_168_2024::dieu_48"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "ND_168_2024::dieu_16",
+            "ND_168_2024::dieu_12",
+            "ND_168_2024::dieu_8",
+            "TT_73_2024_TT_BCA::dieu_17"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "gt17",
+          "question": "Điểm giấy phép lái xe được phục hồi như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_168_2024::dieu_51",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_51",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58",
+            "ND_168_2024::dieu_49",
+            "TT_105_2026_TT_BCA::dieu_5",
+            "TT_105_2026_TT_BCA::preamble"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt18",
+          "question": "Bằng lái xe có bao nhiêu điểm và bị trừ điểm ra sao?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58",
+            "ND_168_2024::dieu_50"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_58",
+            "ND_168_2024::dieu_50",
+            "ND_168_2024::dieu_13",
+            "ND_168_2024::dieu_14",
+            "ND_168_2024::dieu_18"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt19",
+          "question": "Giấy phép lái xe hạng A1 được cấp cho người lái loại xe nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_60",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_89",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_42"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt20",
+          "question": "Bằng B lái được xe gì?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_56",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_34",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_57",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_38"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "gt21",
+          "question": "Mấy tuổi thì được lái xe máy?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_59",
+            "ND_168_2024::dieu_18",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_56",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_34"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt22",
+          "question": "Pháp luật nghiêm cấm những hành vi nào khi tham gia giao thông đường bộ?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_9"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_9",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_72",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_73",
+            "BLHS_100_2015_QH13::dieu_260",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_56"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt23",
+          "question": "Đi xe máy được chở tối đa mấy người?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_33",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_31",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_28",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_10",
+            "ND_168_2024::dieu_9"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt24",
+          "question": "Quy định về dừng xe, đỗ xe trên đường bộ như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_18"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_18",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_26",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_44",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_12",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_25"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt25",
+          "question": "Xe cứu thương, xe cứu hỏa được ưu tiên đi trước như thế nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_27"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_27",
+            "ND_151_2024::dieu_18",
+            "ND_151_2024::dieu_17",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_9",
+            "ND_151_2024::dieu_27"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt26",
+          "question": "Gây tai nạn giao thông thì người lái xe có trách nhiệm gì?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_82",
+            "TT_73_2024_TT_BCA::dieu_19",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_83",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_69"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt27",
+          "question": "Biển số xe có thể đấu giá được không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_37"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_37",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_38",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_36",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_39",
+            "ND_168_2024::dieu_31"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt28",
+          "question": "Cảnh sát giao thông được dừng xe để kiểm tra trong những trường hợp nào?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_66",
+            "TT_73_2024_TT_BCA::dieu_12"
+          ],
+          "top5": [
+            "TT_73_2024_TT_BCA::dieu_13",
+            "TT_73_2024_TT_BCA::dieu_14",
+            "TT_73_2024_TT_BCA::dieu_12",
+            "TT_73_2024_TT_BCA::dieu_9",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_18"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 0.5,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "gt29",
+          "question": "Luật Trật tự, an toàn giao thông đường bộ có hiệu lực thi hành từ ngày nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_88"
+          ],
+          "top5": [
+            "TT_105_2026_TT_BCA::dieu_6",
+            "ND_336_2025::dieu_26",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_88",
+            "ND_168_2024::dieu_53",
+            "TT_73_2024_TT_BCA::dieu_32"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.3333333333333333,
+          "first_rank": 3.0
+        },
+        {
+          "id": "gt30",
+          "question": "Nghị định 238/2026/NĐ-CP có hiệu lực thi hành từ ngày nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_238_2026::dieu_20"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_53",
+            "ND_336_2025::dieu_26",
+            "ND_241_2026::dieu_26",
+            "ND_238_2026::dieu_20",
+            "ND_151_2024::dieu_38"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.25,
+          "first_rank": 4.0
+        },
+        {
+          "id": "gt31",
+          "question": "Chở trẻ em dưới 10 tuổi ngồi ghế trước ô tô có bị phạt không?",
+          "domain": "giao_thong",
+          "style": "colloquial",
+          "relevant": [
+            "ND_238_2026::dieu_2",
+            "ND_168_2024::dieu_6"
+          ],
+          "top5": [
+            "ND_238_2026::dieu_2",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_10",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_46",
+            "ND_168_2024::dieu_27",
+            "ND_168_2024::dieu_20"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 0.5,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "hit@10": 1.0,
+          "recall@10": 0.5,
+          "hit@20": 1.0,
+          "recall@20": 0.5,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt32",
+          "question": "Hành lang an toàn đường bộ được quy định như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_165_2024::dieu_11"
+          ],
+          "top5": [
+            "ND_165_2024::dieu_11",
+            "ND_165_2024::dieu_69",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_2",
+            "ND_241_2026::dieu_6",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_11"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "gt33",
+          "question": "Học sinh được hướng dẫn kỹ năng lái xe gắn máy an toàn như thế nào?",
+          "domain": "giao_thong",
+          "style": "formal",
+          "relevant": [
+            "ND_151_2024::dieu_5"
+          ],
+          "top5": [
+            "ND_151_2024::dieu_5",
+            "ND_151_2024::dieu_6",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_29",
+            "TT_17_2026_TT_BXD::annex_17-bxd-kem_40",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_46"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds01",
+          "question": "Bao nhiêu tuổi thì được coi là người thành niên?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_20"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_21",
+            "BLDS_91_2015_QH13::dieu_20",
+            "BLTTHS_101_2015_QH13::dieu_423",
+            "BLTTDS_92_2015_QH13::dieu_115",
+            "BLHS_100_2015_QH13::dieu_107"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "ds02",
+          "question": "Cho vay tiền thì lãi suất tối đa được phép là bao nhiêu?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_468"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_201",
+            "BLDS_91_2015_QH13::dieu_468",
+            "BLDS_91_2015_QH13::dieu_470",
+            "BLDS_91_2015_QH13::dieu_345",
+            "BLDS_91_2015_QH13::dieu_336"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "ds03",
+          "question": "Đặt cọc mua nhà rồi bên bán không bán nữa thì xử lý thế nào?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_328"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_452",
+            "BLDS_91_2015_QH13::dieu_434",
+            "BLDS_91_2015_QH13::dieu_444",
+            "BLDS_91_2015_QH13::dieu_430",
+            "BLDS_91_2015_QH13::dieu_304"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.16666666666666666,
+          "first_rank": 6.0
+        },
+        {
+          "id": "ds04",
+          "question": "Bố mẹ mất không để lại di chúc thì tài sản chia cho ai?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_651",
+            "BLDS_91_2015_QH13::dieu_650"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_645",
+            "BLDS_91_2015_QH13::dieu_615",
+            "BLDS_91_2015_QH13::dieu_642",
+            "BLDS_91_2015_QH13::dieu_659",
+            "BLDS_91_2015_QH13::dieu_69"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "ds05",
+          "question": "Di chúc miệng có hợp pháp không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_629",
+            "BLDS_91_2015_QH13::dieu_630"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_629",
+            "BLDS_91_2015_QH13::dieu_627",
+            "BLDS_91_2015_QH13::dieu_630",
+            "BLDS_91_2015_QH13::dieu_648",
+            "BLDS_91_2015_QH13::dieu_637"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 0.5,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds06",
+          "question": "Một di chúc hợp pháp cần những điều kiện gì?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_630"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_630",
+            "BLDS_91_2015_QH13::dieu_650",
+            "BLDS_91_2015_QH13::dieu_648",
+            "BLDS_91_2015_QH13::dieu_681",
+            "BLDS_91_2015_QH13::dieu_640"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds07",
+          "question": "Thời hiệu yêu cầu chia di sản thừa kế là bao lâu?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_623"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_623",
+            "BLDS_91_2015_QH13::dieu_661",
+            "BLDS_91_2015_QH13::dieu_660",
+            "BLDS_91_2015_QH13::dieu_642",
+            "BLDS_91_2015_QH13::dieu_659"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds08",
+          "question": "Con chưa thành niên có được hưởng thừa kế dù di chúc không cho không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_644"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_644",
+            "BLDS_91_2015_QH13::dieu_637",
+            "BLDS_91_2015_QH13::dieu_650",
+            "BLDS_91_2015_QH13::dieu_615",
+            "BLDS_91_2015_QH13::dieu_621"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds09",
+          "question": "Chó nhà tôi cắn người khác thì tôi có phải bồi thường không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_603"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_603",
+            "BLDS_91_2015_QH13::dieu_606",
+            "BLDS_91_2015_QH13::dieu_607",
+            "BLDS_91_2015_QH13::dieu_605",
+            "BLDS_91_2015_QH13::dieu_585"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds10",
+          "question": "Xe máy gây tai nạn thì chủ xe có phải bồi thường không, dù không có lỗi?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_601"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_585",
+            "BLDS_91_2015_QH13::dieu_603",
+            "BLDS_91_2015_QH13::dieu_584",
+            "BLDS_91_2015_QH13::dieu_602",
+            "BLDS_91_2015_QH13::dieu_601"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.2,
+          "first_rank": 5.0
+        },
+        {
+          "id": "ds11",
+          "question": "Căn cứ phát sinh trách nhiệm bồi thường thiệt hại ngoài hợp đồng là gì?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_584"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_584",
+            "BLDS_91_2015_QH13::dieu_419",
+            "BLDS_91_2015_QH13::dieu_687",
+            "BLDS_91_2015_QH13::dieu_587",
+            "BLDS_91_2015_QH13::dieu_585"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds12",
+          "question": "Vay tiền đến hạn mà không trả thì phải chịu lãi thế nào?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_466"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_466",
+            "BLDS_91_2015_QH13::dieu_469",
+            "BLDS_91_2015_QH13::dieu_470",
+            "BLDS_91_2015_QH13::dieu_357",
+            "BLDS_91_2015_QH13::dieu_468"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds13",
+          "question": "Ai có thể làm người giám hộ đương nhiên cho trẻ chưa thành niên?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_52"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_52",
+            "BLDS_91_2015_QH13::dieu_53",
+            "BLDS_91_2015_QH13::dieu_47",
+            "BLDS_91_2015_QH13::dieu_54",
+            "BLDS_91_2015_QH13::dieu_46"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds14",
+          "question": "Tặng cho nhà đất có cần công chứng không?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_459"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_459",
+            "BLDS_91_2015_QH13::dieu_646",
+            "BLDS_91_2015_QH13::dieu_460",
+            "BLDS_91_2015_QH13::dieu_637",
+            "BLDS_91_2015_QH13::dieu_462"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds15",
+          "question": "Hợp đồng có thể thỏa thuận phạt vi phạm tối đa bao nhiêu?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLDS_91_2015_QH13::dieu_418"
+          ],
+          "top5": [
+            "BLDS_91_2015_QH13::dieu_418",
+            "BLHS_100_2015_QH13::dieu_217",
+            "BLDS_91_2015_QH13::dieu_336",
+            "BLTTHS_101_2015_QH13::dieu_3",
+            "BLHS_100_2015_QH13::dieu_371"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds16",
+          "question": "Muốn kiện ra tòa thì đơn khởi kiện cần những nội dung gì?",
+          "domain": "dan_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_189"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_189",
+            "BLTTDS_92_2015_QH13::dieu_190",
+            "BLTTDS_92_2015_QH13::dieu_71",
+            "BLTTDS_92_2015_QH13::dieu_193",
+            "BLTTDS_92_2015_QH13::dieu_503"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "ds17",
+          "question": "Thời hạn kháng cáo bản án dân sự sơ thẩm là bao nhiêu ngày?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_273"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_333",
+            "BLTTDS_92_2015_QH13::dieu_273",
+            "BLTTDS_92_2015_QH13::dieu_322",
+            "BLTTDS_92_2015_QH13::dieu_373",
+            "BLTTDS_92_2015_QH13::dieu_443"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "ds18",
+          "question": "Những vụ án dân sự nào không được hòa giải?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_206"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_207",
+            "BLTTDS_92_2015_QH13::dieu_206",
+            "BLTTDS_92_2015_QH13::dieu_45",
+            "BLTTDS_92_2015_QH13::dieu_470",
+            "BLTTDS_92_2015_QH13::dieu_205"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "ds19",
+          "question": "Ai phải chịu án phí sơ thẩm trong vụ án dân sự?",
+          "domain": "dan_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTDS_92_2015_QH13::dieu_147"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_147",
+            "BLTTDS_92_2015_QH13::dieu_148",
+            "BLTTDS_92_2015_QH13::dieu_36",
+            "BLTTDS_92_2015_QH13::dieu_299",
+            "BLTTHS_101_2015_QH13::dieu_463"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs01",
+          "question": "Bao nhiêu tuổi thì phải chịu trách nhiệm hình sự?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_12"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_90",
+            "BLHS_100_2015_QH13::dieu_12",
+            "BLHS_100_2015_QH13::dieu_2",
+            "BLHS_100_2015_QH13::dieu_368",
+            "BLHS_100_2015_QH13::dieu_21"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs02",
+          "question": "Ăn trộm tài sản bao nhiêu tiền thì bị đi tù?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_173"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_173",
+            "BLHS_100_2015_QH13::dieu_353",
+            "BLHS_100_2015_QH13::dieu_323",
+            "BLHS_100_2015_QH13::dieu_355",
+            "BLHS_100_2015_QH13::dieu_354"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs03",
+          "question": "Lừa đảo chiếm đoạt tài sản bị phạt tù bao nhiêu năm?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_174"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_174",
+            "BLHS_100_2015_QH13::dieu_172",
+            "BLHS_100_2015_QH13::dieu_170",
+            "BLHS_100_2015_QH13::dieu_169",
+            "BLHS_100_2015_QH13::dieu_175"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs04",
+          "question": "Giật điện thoại của người đi đường bị tội gì?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_171"
+          ],
+          "top5": [
+            "ND_168_2024::dieu_9",
+            "BLHS_100_2015_QH13::dieu_159",
+            "BLDS_91_2015_QH13::dieu_127",
+            "BLHS_100_2015_QH13::dieu_120",
+            "BLHS_100_2015_QH13::dieu_12"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.1111111111111111,
+          "first_rank": 9.0
+        },
+        {
+          "id": "hs05",
+          "question": "Đánh người gây thương tích 11% có bị đi tù không?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_134"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_134",
+            "BLHS_100_2015_QH13::dieu_137",
+            "BLHS_100_2015_QH13::dieu_373",
+            "BLHS_100_2015_QH13::dieu_168",
+            "BLHS_100_2015_QH13::dieu_138"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs06",
+          "question": "Gây tai nạn giao thông làm chết người thì bị xử lý hình sự thế nào?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_260"
+          ],
+          "top5": [
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_83",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80",
+            "BLHS_100_2015_QH13::dieu_272",
+            "BLHS_100_2015_QH13::dieu_281",
+            "BLHS_100_2015_QH13::dieu_260"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.2,
+          "first_rank": 5.0
+        },
+        {
+          "id": "hs07",
+          "question": "Đánh bạc bao nhiêu tiền thì bị truy cứu trách nhiệm hình sự?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_321"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_322",
+            "BLHS_100_2015_QH13::dieu_321",
+            "BLHS_100_2015_QH13::dieu_368",
+            "BLTTHS_101_2015_QH13::dieu_90",
+            "BLHS_100_2015_QH13::dieu_353"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs08",
+          "question": "Tự vệ khi bị tấn công có phạm tội không?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_22"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_140",
+            "BLHS_100_2015_QH13::dieu_164",
+            "BLHS_100_2015_QH13::dieu_168",
+            "BLHS_100_2015_QH13::dieu_167",
+            "BLHS_100_2015_QH13::dieu_285"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 0.0,
+          "recall@3": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "hit@10": 0.0,
+          "recall@10": 0.0,
+          "hit@20": 0.0,
+          "recall@20": 0.0,
+          "mrr": 0.0,
+          "first_rank": NaN
+        },
+        {
+          "id": "hs09",
+          "question": "Điều kiện để được hưởng án treo là gì?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_65"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_65",
+            "BLTTHS_101_2015_QH13::dieu_456",
+            "BLHS_100_2015_QH13::dieu_42",
+            "BLTTDS_92_2015_QH13::dieu_206",
+            "BLHS_100_2015_QH13::dieu_7"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs10",
+          "question": "Sau khi chấp hành xong án bao lâu thì được xóa án tích?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_70"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_89",
+            "BLHS_100_2015_QH13::dieu_70",
+            "BLHS_100_2015_QH13::dieu_71",
+            "BLHS_100_2015_QH13::dieu_73",
+            "BLTTHS_101_2015_QH13::dieu_369"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs11",
+          "question": "Thời hiệu truy cứu trách nhiệm hình sự là bao lâu?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_27"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_27",
+            "BLHS_100_2015_QH13::dieu_369",
+            "BLHS_100_2015_QH13::dieu_28",
+            "BLHS_100_2015_QH13::dieu_368",
+            "BLTTHS_101_2015_QH13::dieu_499"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs12",
+          "question": "Tàng trữ ma túy bị phạt tù bao nhiêu năm?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_249"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_249",
+            "BLHS_100_2015_QH13::dieu_256",
+            "BLHS_100_2015_QH13::dieu_248",
+            "BLHS_100_2015_QH13::dieu_252",
+            "BLHS_100_2015_QH13::dieu_388"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs13",
+          "question": "Thấy người bị nạn mà không cứu thì có phạm tội không?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_132"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_132",
+            "BLHS_100_2015_QH13::dieu_369",
+            "BLHS_100_2015_QH13::dieu_368",
+            "LUAT_TTATGTDB_36_2024_QH15::dieu_80",
+            "BLHS_100_2015_QH13::dieu_11"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs14",
+          "question": "Cán bộ nhận hối lộ bị xử lý hình sự thế nào?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLHS_100_2015_QH13::dieu_354"
+          ],
+          "top5": [
+            "BLHS_100_2015_QH13::dieu_364",
+            "BLHS_100_2015_QH13::dieu_354",
+            "BLHS_100_2015_QH13::dieu_365",
+            "TT_73_2024_TT_BCA::dieu_22",
+            "TT_73_2024_TT_BCA::dieu_15"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs15",
+          "question": "Công an được tạm giữ người tối đa bao nhiêu ngày?",
+          "domain": "hinh_su",
+          "style": "colloquial",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_118"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_474",
+            "BLTTHS_101_2015_QH13::dieu_118",
+            "BLTTHS_101_2015_QH13::dieu_459",
+            "BLHS_100_2015_QH13::dieu_38",
+            "BLTTHS_101_2015_QH13::dieu_114"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs16",
+          "question": "Thời hạn tạm giam để điều tra là bao lâu?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_173"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_173",
+            "BLTTHS_101_2015_QH13::dieu_459",
+            "BLTTHS_101_2015_QH13::dieu_118",
+            "BLTTHS_101_2015_QH13::dieu_329",
+            "BLTTHS_101_2015_QH13::dieu_174"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        },
+        {
+          "id": "hs17",
+          "question": "Thời hạn kháng cáo bản án hình sự sơ thẩm là bao nhiêu ngày?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_333"
+          ],
+          "top5": [
+            "BLTTDS_92_2015_QH13::dieu_273",
+            "BLTTHS_101_2015_QH13::dieu_333",
+            "BLTTDS_92_2015_QH13::dieu_322",
+            "BLTTHS_101_2015_QH13::dieu_362",
+            "BLTTDS_92_2015_QH13::dieu_373"
+          ],
+          "hit@1": 0.0,
+          "recall@1": 0.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 0.5,
+          "first_rank": 2.0
+        },
+        {
+          "id": "hs18",
+          "question": "Bắt người phạm tội quả tang được thực hiện như thế nào?",
+          "domain": "hinh_su",
+          "style": "formal",
+          "relevant": [
+            "BLTTHS_101_2015_QH13::dieu_111"
+          ],
+          "top5": [
+            "BLTTHS_101_2015_QH13::dieu_111",
+            "BLTTHS_101_2015_QH13::dieu_10",
+            "BLTTHS_101_2015_QH13::dieu_58",
+            "BLTTHS_101_2015_QH13::dieu_113",
+            "BLHS_100_2015_QH13::dieu_24"
+          ],
+          "hit@1": 1.0,
+          "recall@1": 1.0,
+          "hit@3": 1.0,
+          "recall@3": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "hit@10": 1.0,
+          "recall@10": 1.0,
+          "hit@20": 1.0,
+          "recall@20": 1.0,
+          "mrr": 1.0,
+          "first_rank": 1.0
+        }
+      ]
+    }
+  },
+  "meta": {
+    "timestamp": "2026-11-24T09:12:50",
+    "label": "baseline-bkai",
+    "embedding_model": "vietnamese-bi-encoder",
+    "dataset": "data\\eval\\retrieval_set.json"
+  }
+}
